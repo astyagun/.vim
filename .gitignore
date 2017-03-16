@@ -1,0 +1,11 @@
+*.swo
+*.swp
+*~
+.DS_Store
+.netrwhist*
+/autoload/plug.vim
+/plugged/
+/session/
+/spell/
+/undodir/
+tags
