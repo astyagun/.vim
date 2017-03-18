@@ -1,10 +1,20 @@
 " <D-P> is unset in .gvimrc
-let g:ctrlp_map = '<D-p>'
+let g:ctrlp_map = ''
 let g:ctrlp_match_window = 'bottom,order:ttb,min:10,max:10,results:25'
 let g:ctrlp_working_path_mode = 'rw'
 let g:ctrlp_show_hidden = 1
 
-map <D-P> :CtrlPCurFile<CR>
+" Prevent running in home directory
+function! <SID>RunCtrlP(directory, command_name)
+  if a:directory == $HOME
+    echo "Won't run CtrlP in home directory!"
+    return
+  endif
+  execute a:command_name
+endfunction
+
+map <D-p> :call <SID>RunCtrlP(getcwd(), 'CtrlP')<CR>
+map <D-P> :call <SID>RunCtrlP(expand('%:p:h'), 'CtrlPCurFile')<CR>
 imap <D-p> <Esc><D-p>
 imap <D-P> <Esc><D-p>
 " List buffers
