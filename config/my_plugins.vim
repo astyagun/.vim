@@ -1,5 +1,4 @@
 source ~/.vim/my_plugin/capture_message.vim
-source ~/.vim/my_plugin/colors.vim
 source ~/.vim/my_plugin/edit_and_reload_configuration.vim
 source ~/.vim/my_plugin/preserve.vim
 source ~/.vim/my_plugin/profiler.vim

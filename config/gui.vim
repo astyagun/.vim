@@ -1,6 +1,3 @@
-set background=light
-colorscheme mac_classic
-
 if !has('gui_running')
   finish
 endif

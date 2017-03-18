@@ -44,6 +44,7 @@ set foldlevel=2
 set foldnestmax=3
 set nofoldenable
 set sessionoptions-=options
+set diffopt=filler,vertical
 
 " Search
 " Highlight search
