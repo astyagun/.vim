@@ -53,7 +53,7 @@ Plug 'asux/vim-capybara'
 " Integrations
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
-Plug 'airblade/vim-gitgutter'
+Plug 'mhinz/vim-signify'
 Plug 'neilagabriel/vim-geeknote'
 Plug 'tpope/vim-eunuch' " Unix commands
 Plug 'tpope/vim-rails'
