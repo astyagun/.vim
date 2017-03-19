@@ -32,16 +32,22 @@ Plug 'tpope/vim-abolish'
 Plug 'AndrewRadev/splitjoin.vim'
 
 " Text objects
-Plug 'jceb/vim-textobj-uri'
-Plug 'kana/vim-textobj-user'
-  Plug 'nelstrom/vim-textobj-rubyblock'
-  " Conflicts with word column text object
-  " Plug 'jasonlong/vim-textobj-css'
-  Plug 'textobj-comment'
-Plug 'michaeljsmith/vim-indent-object'
-Plug 'vim-scripts/argtextobj.vim'
 Plug 'bootleq/vim-textobj-rubysymbol'
 Plug 'coderifous/textobj-word-column.vim'
+Plug 'jceb/vim-textobj-uri'
+Plug 'kana/vim-textobj-entire'
+Plug 'kana/vim-textobj-lastpat'
+Plug 'kana/vim-textobj-line'
+Plug 'kana/vim-textobj-user'
+Plug 'michaeljsmith/vim-indent-object'
+Plug 'saihoooooooo/vim-textobj-space'
+Plug 'tek/vim-textobj-ruby'
+Plug 'vim-scripts/argtextobj.vim'
+Plug 'whatyouhide/vim-textobj-erb'
+Plug 'whatyouhide/vim-textobj-xmlattr'
+" Conflict with word column text object (c character)
+" Plug 'jasonlong/vim-textobj-css'
+" Plug 'glts/vim-textobj-comment'
 
 " File types
 Plug 'vim-ruby/vim-ruby'
