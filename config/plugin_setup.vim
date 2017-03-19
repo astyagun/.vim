@@ -7,6 +7,7 @@ source ~/.vim/plugin_setup/fugitive.vim
 source ~/.vim/plugin_setup/geeknote.vim
 source ~/.vim/plugin_setup/gitgutter.vim
 source ~/.vim/plugin_setup/netrw.vim
+source ~/.vim/plugin_setup/plug.vim
 source ~/.vim/plugin_setup/rails.vim
 source ~/.vim/plugin_setup/ripgrep.vim
 source ~/.vim/plugin_setup/rspec.vim
