@@ -5,7 +5,7 @@ let g:ctrlp_working_path_mode = 'rw'
 let g:ctrlp_show_hidden = 1
 
 " Prevent running in home directory
-function! <SID>RunCtrlP(directory, command_name)
+function! s:RunCtrlP(directory, command_name)
   if a:directory == $HOME
     echo "Won't run CtrlP in home directory!"
     return
