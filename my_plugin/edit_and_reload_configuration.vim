@@ -1,3 +1,8 @@
+" This is more conveinent as ~/.vim/ is a Git repo and Fugitive sees repository only if editing a file in that directory
+let s:vim_path = expand('~/.vim')
+let $MYVIMRC   = s:vim_path . '/init.vim'
+let $MYGVIMRC  = s:vim_path . '/ginit.vim'
+
 if !exists('*ReloadConfiguration')
   function ReloadConfiguration()
     source $MYVIMRC
@@ -16,5 +21,5 @@ augroup ReloadConfiguration
   autocmd BufWritePost .vimrc,*.vim call ReloadConfiguration()
 augroup END
 
-map <Leader>ve :e $MYVIMRC<cr>
+map <Leader>ve :edit $MYVIMRC<CR>
 map <Leader>vs :call ReloadConfiguration()<CR>
