@@ -1,5 +1,8 @@
 colorscheme mac_classic
 
+" Fix Error visibility when in cursorline
+highlight Error guibg=pink guifg=red gui=bold
+
 " Highlight tabs and trailing spaces with red:		     
 highlight SpecialKey guifg=red
 
