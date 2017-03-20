@@ -22,8 +22,8 @@ map <Leader>lb :CtrlPBuffer<CR>
 
 " Exchange <C-(n|p)> mappings with <C-(j|k)> mappings
 let g:ctrlp_prompt_mappings = {
-  \ 'PrtBS()':              ['<bs>', '<c-]>'],
-  \ 'PrtDelete()':          ['<del>'],
+  \ 'PrtBS()':              ['<bs>', '<c-h>'],
+  \ 'PrtDelete()':          ['<del>', '<C-l>'],
   \ 'PrtDeleteWord()':      ['<c-w>'],
   \ 'PrtClear()':           ['<c-u>'],
   \ 'PrtSelectMove("j")':   ['<c-n>', '<down>'],
@@ -48,8 +48,8 @@ let g:ctrlp_prompt_mappings = {
   \ 'PrtInsert()':          ['<c-\>'],
   \ 'PrtCurStart()':        ['<c-a>'],
   \ 'PrtCurEnd()':          ['<c-e>'],
-  \ 'PrtCurLeft()':         ['<c-h>', '<left>', '<c-^>'],
-  \ 'PrtCurRight()':        ['<c-l>', '<right>'],
+  \ 'PrtCurLeft()':         ['<left>', '<c-^>'],
+  \ 'PrtCurRight()':        ['<right>'],
   \ 'PrtClearCache()':      ['<F5>'],
   \ 'PrtDeleteEnt()':       ['<F7>'],
   \ 'CreateNewFile()':      ['<c-y>'],
