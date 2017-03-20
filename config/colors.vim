@@ -14,7 +14,7 @@ highlight DiffText guibg=#FFFFAA
 
 " Highlight characters when line length is exceeded
 " Test: Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Pink Test Test
-highlight ColorColumn guibg=pink
+highlight ColorColumn guibg=pink guifg=red gui=bold
 call matchadd('ColorColumn', '\%111v', 100)
 
 " Create new buffer with examples of highlighting groups
