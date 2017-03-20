@@ -28,6 +28,4 @@ inoremap <C-w> <C-g>u<C-w>
 " Use <C-l> to:
 " - clear the highlighting of :set hlsearch
 " - update diff
-if maparg('<C-l>', 'n') ==# ''
-  nnoremap <silent> <C-l> :nohlsearch<C-r>=has('diff')?'<Bar>diffupdate':''<CR><CR><C-l>
-endif
+nnoremap <silent> <C-l> :nohlsearch<C-r>=has('diff')?'<Bar>diffupdate':''<CR><CR><C-l>
