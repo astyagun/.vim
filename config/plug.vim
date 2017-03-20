@@ -66,6 +66,7 @@ Plug 'tpope/vim-rails'
 Plug 't9md/vim-ruby-xmpfilter'
 Plug 'w0rp/ale'
 Plug 'thoughtbot/vim-rspec'
+Plug 'emilsoman/spec-outline.vim'
 Plug 'lucapette/vim-ruby-doc'
 " Another option for Arduino development: https://github.com/sudar/Arduino-Makefile
 Plug 'stevearc/vim-arduino'
