@@ -2,6 +2,9 @@
 let g:netrw_banner = 0
 let g:netrw_altv = 1              " open files on right
 let g:netrw_preview = 1           " open previews vertically
+let g:netrw_list_hide = '.*\.swp$'
+" Take .gitignore into account
+" let g:netrw_list_hide = netrw_gitignore#Hide() . '.*\.swp$'
 
 map - :Vexplore<CR>
 map <Leader>- :Vexplore .<CR>
