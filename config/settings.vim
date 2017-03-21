@@ -2,7 +2,7 @@
 set nocompatible
 " Save files before compilation
 set autowrite
-" Syntax and filetypes (must be called after pathogen initialization)
+" Syntax and file types (must be called after pathogen initialization)
 syntax on
 filetype on
 filetype indent on
@@ -78,8 +78,9 @@ set encoding=utf-8
 set nobomb
 " Spell check
 set spelllang=ru_yo,en_us
+set spell
 set wildmode=longest,list:longest,full " Make cmdline tab completion similar to bash
-set wildmenu " Enable ctrl-n and ctrl-p to scroll thru matches
+set wildmenu " Enable <C-n> and <C-p> to scroll through matches
 set wildignore=*.o,*.obj,*~,vendor/bundle/**/* " Stuff to ignore when tab completing
 set nomacmeta
 
