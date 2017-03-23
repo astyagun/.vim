@@ -53,7 +53,7 @@ Plug 'whatyouhide/vim-textobj-xmlattr'
 Plug 'vim-ruby/vim-ruby'
 Plug 'tpope/vim-git'
 Plug 'tpope/vim-haml'
-Plug 'gabrielelana/vim-markdown'
+Plug 'plasticboy/vim-markdown'
 Plug 'asux/vim-capybara'
 
 " Integrations
