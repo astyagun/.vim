@@ -13,6 +13,7 @@ Plug 'wesQ3/vim-windowswap'
 Plug 'tpope/vim-unimpaired'
 Plug 'wincent/ferret'
 Plug 'majutsushi/tagbar'
+Plug 'nixprime/cpsm', {'do': 'PY3=OFF ./install.sh'}
 
 " Editing
 Plug 'tpope/vim-surround'

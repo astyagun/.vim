@@ -58,6 +58,7 @@ let g:ctrlp_prompt_mappings = {
   \ 'PrtExit()':            ['<esc>', '<c-c>', '<c-g>'],
   \ }
 
+let g:ctrlp_match_func = {'match': 'cpsm#CtrlPMatch'}
 
 " Use ripgrep in CtrlP for listing files
 if executable('rg')
