@@ -1,6 +1,7 @@
 source ~/.vim/plugin_setup/airline.vim
 source ~/.vim/plugin_setup/ale.vim
 source ~/.vim/plugin_setup/camelcasemotion.vim
+source ~/.vim/plugin_setup/cmdline_complete.vim
 source ~/.vim/plugin_setup/ctrlp.vim
 source ~/.vim/plugin_setup/easy_align.vim
 source ~/.vim/plugin_setup/ferret.vim

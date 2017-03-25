@@ -6,7 +6,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
 " Navigation and window management
-Plug 'vim-scripts/SearchComplete'
+Plug 'CmdlineComplete'
 Plug 'mhinz/vim-startify'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'wesQ3/vim-windowswap'
