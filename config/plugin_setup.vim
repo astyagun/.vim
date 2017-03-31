@@ -23,3 +23,4 @@ source ~/.vim/plugin_setup/undotree.vim
 source ~/.vim/plugin_setup/window_swap.vim
 source ~/.vim/plugin_setup/xkbswitch.vim
 source ~/.vim/plugin_setup/xmpfilter.vim
+source ~/.vim/plugin_setup/previm.vim
