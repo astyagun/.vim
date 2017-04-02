@@ -67,6 +67,7 @@ set preserveindent
 set cinwords=unless,def,class,if,else,elsif,while,for,switch
 set formatoptions+=j
 set textwidth=0
+set conceallevel=2
 
 " Editing
 "" Input method (localization)
