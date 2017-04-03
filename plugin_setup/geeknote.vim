@@ -10,5 +10,5 @@ python ''
 
 augroup Geeknote
   autocmd!
-  autocmd FileType geeknote setlocal nospell
+  autocmd FileType geeknote setlocal nospell nobuflisted
 augroup END
