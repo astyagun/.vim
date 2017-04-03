@@ -7,7 +7,7 @@ source ~/.vim/plugin_setup/easy_align.vim
 source ~/.vim/plugin_setup/ferret.vim
 source ~/.vim/plugin_setup/fugitive.vim
 source ~/.vim/plugin_setup/geeknote.vim
-source ~/.vim/plugin_setup/incsearch.vim
+source ~/.vim/plugin_setup/search.vim
 source ~/.vim/plugin_setup/markdown.vim
 source ~/.vim/plugin_setup/netrw.vim
 source ~/.vim/plugin_setup/plug.vim
