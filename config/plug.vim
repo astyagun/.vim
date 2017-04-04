@@ -32,6 +32,7 @@ Plug 'danchoi/ruby_bashrockets.vim'
 Plug 'tmhedberg/matchit'
 Plug 'tpope/vim-abolish'
 Plug 'AndrewRadev/splitjoin.vim'
+Plug 'beloglazov/vim-online-thesaurus'
 
 " Text objects
 Plug 'bootleq/vim-textobj-rubysymbol'
