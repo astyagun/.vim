@@ -1,3 +1,4 @@
+source ~/.vim/my_plugin/ack_todo.vim
 source ~/.vim/my_plugin/capture_message.vim
 source ~/.vim/my_plugin/edit_and_reload_configuration.vim
 source ~/.vim/my_plugin/preserve.vim
