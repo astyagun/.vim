@@ -4,6 +4,7 @@
 .DS_Store
 .netrwhist*
 /autoload/plug.vim
+/autoload/plug.vim.old
 /plugged/
 /session/
 /spell/

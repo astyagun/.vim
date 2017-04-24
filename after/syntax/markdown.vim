@@ -1,2 +1,3 @@
 syntax keyword mdTodo FIXME NOTE TODO OPTIMIZE HACK REVIEW XXX todo
-highlight default link mdTodo Todo
+syntax cluster mkdNonListItem add=mdTodo
+highlight link mdTodo Todo
