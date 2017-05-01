@@ -46,6 +46,7 @@ set nofoldenable
 set sessionoptions-=options
 set diffopt=filler,vertical
 set scrolloff=2
+set nostartofline
 
 " Search
 " Highlight search
