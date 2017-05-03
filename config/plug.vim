@@ -16,7 +16,6 @@ Plug 'wincent/ferret'
 Plug 'majutsushi/tagbar'
 Plug 'nixprime/cpsm', {'do': 'PY3=OFF ./install.sh'}
 Plug 'haya14busa/incsearch.vim'
-Plug 'terryma/vim-smooth-scroll'
 
 " Editing
 Plug 'tpope/vim-surround'
