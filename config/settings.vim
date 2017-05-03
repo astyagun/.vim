@@ -47,6 +47,8 @@ set sessionoptions-=options
 set diffopt=filler,vertical
 set scrolloff=2
 set nostartofline
+set ignorecase
+set smartcase
 
 " Search
 " Highlight search
