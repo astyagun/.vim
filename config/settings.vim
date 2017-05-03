@@ -81,7 +81,7 @@ set encoding=utf-8
 set nobomb
 " Spell check
 set spelllang=ru_yo,en_us
-set spell
+set nospell
 set wildmode=longest,list:longest,full " Make cmdline tab completion similar to bash
 set wildmenu " Enable <C-n> and <C-p> to scroll through matches
 set wildignore=*.o,*.obj,*~,vendor/bundle/**/* " Stuff to ignore when tab completing
