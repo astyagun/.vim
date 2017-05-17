@@ -64,6 +64,7 @@ let g:ctrlp_match_func = {'match': 'cpsm#CtrlPMatch'}
 if executable('rg')
   let g:ctrlp_user_command = 'rg' .
         \ ' --hidden' .
+        \ ' --no-ignore-vcs' .
         \ ' --ignore-file ~/.vim/plugin_setup/ctrlp.ignore' .
         \ ' --files' .
         \ ' --color=never %s'
