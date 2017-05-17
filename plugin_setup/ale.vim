@@ -1,3 +1,4 @@
+let g:ale_linters = {'ruby': 'all'}
 let g:ale_ruby_rubocop_options = '--rails --display-style-guide'
 
 function! s:ALEFix() range
