@@ -1,4 +1,7 @@
 !.*
 *.swo
 *.swp
+.DS_Store
 .git/
+tags
+tmp/
