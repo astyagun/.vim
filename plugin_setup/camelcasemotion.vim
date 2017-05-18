@@ -13,5 +13,7 @@ sunmap <Leader>e
 omap <silent> i<Leader>e <Plug>CamelCaseMotion_ie
 xmap <silent> i<Leader>e <Plug>CamelCaseMotion_ie
 
-map <silent> g<Leader>e <Plug>CamelCaseMotion_ge
-sunmap g<Leader>e
+map <silent> <Leader>ge <Plug>CamelCaseMotion_ge
+sunmap <Leader>ge
+omap <silent> <Leader>ge <Plug>CamelCaseMotion_ie
+xmap <silent> <Leader>ge <Plug>CamelCaseMotion_ie
