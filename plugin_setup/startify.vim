@@ -7,13 +7,8 @@ let g:startify_custom_indices      = map(range(1,100), 'string(v:val)') " Start 
 
 let g:startify_bookmarks = [
       \ '~/.rubocop.yml',
+      \ '~/.reek',
       \ '~/.zsh/alias.zsh',
-      \ ]
-let g:startify_commands = [
-      \ {'pi': ['Install plugins', 'PlugInstall']},
-      \ {'pu': ['Update plugins', 'PlugUpdate']},
-      \ {'pc': ['Clean plugins', 'PlugClean']},
-      \ {'pg': ['Upgrade VimPlug', 'PlugUpgrade']},
       \ ]
 let g:startify_skiplist = [
       \ 'COMMIT_EDITMSG',
