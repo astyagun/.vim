@@ -1,3 +1,4 @@
+" ~/.vim/plugin_setup/ctrlp.ignore
 source ~/.vim/plugin_setup/2html.vim
 source ~/.vim/plugin_setup/airline.vim
 source ~/.vim/plugin_setup/ale.vim
