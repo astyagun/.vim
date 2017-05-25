@@ -86,7 +86,4 @@ Plug 'SirVer/ultisnips'
 " Performance profiling
 " Plug 'tweekmonster/startuptime.vim'
 
-" Other
-Plug 'vim-utils/vim-troll-stopper'
-
 call plug#end()
