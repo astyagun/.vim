@@ -34,6 +34,7 @@ Plug 'tmhedberg/matchit'
 Plug 'tpope/vim-abolish'
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'beloglazov/vim-online-thesaurus'
+Plug 'AndrewRadev/deleft.vim'
 
 " Text objects
 Plug 'bootleq/vim-textobj-rubysymbol'
