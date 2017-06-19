@@ -1,2 +1,2 @@
 let g:online_thesaurus_map_keys = 0
-map <C-x><C-t> :OnlineThesaurusCurrentWord<CR>
+imap <C-x><C-t> <Esc>:OnlineThesaurusCurrentWord<CR>
