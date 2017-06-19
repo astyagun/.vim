@@ -83,6 +83,7 @@ Plug 'vim-scripts/ColorX'
 Plug 'SirVer/ultisnips'
   Plug 'honza/vim-snippets'
   Plug 'sudar/vim-arduino-snippets'
+Plug 'alvan/vim-closetag'
 
 " Performance profiling
 " Plug 'tweekmonster/startuptime.vim'
