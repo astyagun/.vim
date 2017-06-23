@@ -39,7 +39,7 @@ set list
 set hidden
 " Folding settings
 set foldmethod=syntax
-set foldcolumn=0
+set foldcolumn=2
 set foldlevel=2
 set foldnestmax=3
 set nofoldenable
