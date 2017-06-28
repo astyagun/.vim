@@ -26,7 +26,6 @@ Plug 'lyokha/vim-xkbswitch'
 Plug 'tpope/vim-repeat'
 Plug 'junegunn/vim-easy-align'
 Plug 'bkad/CamelCaseMotion'
-Plug 'kana/vim-smartinput' " Closes quotes and parentheses pairs
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-endwise'
 Plug 'danchoi/ruby_bashrockets.vim'
