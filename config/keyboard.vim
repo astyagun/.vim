@@ -8,6 +8,8 @@ vmap <Leader>$ :call Preserve("s/\\s\\+$//e")<CR>
 nmap <Leader>= :call Preserve("normal gg=G")<CR>
 
 " Mimic Emacs line editing
+inoremap <C-f> <Right>
+inoremap <C-b> <Left>
 noremap! <C-a> <Home>
 inoremap <C-e> <End>
 noremap! <C-l> <Del>
