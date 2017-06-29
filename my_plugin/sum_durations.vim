@@ -45,10 +45,10 @@ function! s:Hits2Minutes(hits)
 
   for hit in a:hits
     if hit =~ 'h$'
-      let minutes = minutes + str2nr(substitute(hit, 'm$', '', '')) * 60
+      let minutes = minutes + str2nr(hit) * 60
     endif
     if hit =~ 'm$'
-      let minutes = minutes + str2nr(substitute(hit, 'm$', '', ''))
+      let minutes = minutes + str2nr(hit)
     endif
   endfor
 
