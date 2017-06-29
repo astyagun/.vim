@@ -1,5 +1,22 @@
+" SumDurations
+"
 " Vim command to calculate the sum of time durations written in format like '1h 30m'
 " The sum is inserted into a new line after the selected region
+"
+" Usage example:
+"
+" Having this text:
+"
+"   Estimation:
+"     * 1h Install the system
+"     * 1h 30m Import seed data
+"
+" Select the parargph in VISUAL mode and run the command `:'<,'>SumDurations`. The result will look like this:
+"
+"   Estimation:
+"     * 1h Install the system
+"     * 1h 30m Import seed data
+"   2h 30m
 
 command! -nargs=0 -range SumDurations <line1>,<line2>call s:SumDurations()
 
