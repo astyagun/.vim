@@ -9,6 +9,7 @@ let g:startify_bookmarks = [
       \ '~/.rubocop.yml',
       \ '~/.reek',
       \ '~/.zsh/alias.zsh',
+      \ '~/.flexget/config.yml',
       \ ]
 let g:startify_skiplist = [
       \ 'COMMIT_EDITMSG',
