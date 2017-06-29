@@ -21,7 +21,7 @@
 command! -nargs=0 -range SumDurations <line1>,<line2>call s:SumDurations()
 
 function! s:SumDurations() range
-  let hits     = s:GatherTime(a:firstline, a:lastline)
+  let hits     = s:GatherDuration(a:firstline, a:lastline)
   let minutes  = s:Hits2Minutes(hits)
   let duration = s:Minutes2Duration(minutes)
 
@@ -30,7 +30,7 @@ function! s:SumDurations() range
   normal 
 endfunction
 
-function! s:GatherTime(line1, line2)
+function! s:GatherDuration(line1, line2)
   let duration_pattern = '\v(\d+[hm])'
   let hits = []
 
