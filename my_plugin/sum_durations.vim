@@ -1,7 +1,7 @@
 " SumDurations
 "
 " Vim command to calculate the sum of time durations written in format like '1h 30m'
-" The sum is inserted into a new line after the selected region
+" The sum is displayed with :echo command
 "
 " Usage example:
 "
@@ -11,12 +11,9 @@
 "     * 1h Install the system
 "     * 1h 30m Import seed data
 "
-" Select the parargph in VISUAL mode and run the command `:'<,'>SumDurations`. The result will look like this:
+" Select the parargph in VISUAL mode and run the command `:'<,'>SumDurations`
 "
-"   Estimation:
-"     * 1h Install the system
-"     * 1h 30m Import seed data
-"   2h 30m
+" The will echo: '2h 30m'
 
 command! -nargs=0 -range SumDurations <line1>,<line2>call s:SumDurations()
 
@@ -25,17 +22,19 @@ function! s:SumDurations() range
   let minutes  = s:Hits2Minutes(hits)
   let duration = s:Minutes2Duration(minutes)
 
-  execute 'normal ' . a:lastline . 'Go'
-  call setline(line('.'), duration)
-  normal 
+  call s:ProduceOutput(duration)
 endfunction
 
 function! s:GatherDuration(line1, line2)
   let duration_pattern = '\v(\d+[hm])'
   let hits = []
 
-  execute a:line1 . ',' . a:line2 . 's/' . duration_pattern . '/' .
-        \ "\\=len(add(hits, submatch(0))) ? submatch(0) : ''/ge"
+  for line in getline(a:line1, a:line2)
+    let hit = matchstr(line, duration_pattern)
+    if len(hit)
+      call add(hits, hit)
+    endif
+  endfor
 
   return hits
 endfunction
@@ -60,4 +59,9 @@ function! s:Minutes2Duration(minutes)
   let minutes = a:minutes % 60
 
   return hours . 'h ' . minutes . 'm'
+endfunction
+
+function! s:ProduceOutput(duration)
+  redraw
+  echo a:duration
 endfunction
