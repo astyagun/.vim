@@ -1,5 +1,3 @@
-""" Editing
-
 " Remove all extra spaces at the end of all lines
 nmap <Leader>$ :call Preserve("%s/\\s\\+$//e")<CR>
 vmap <Leader>$ :call Preserve("s/\\s\\+$//e")<CR>
@@ -19,6 +17,7 @@ noremap! ∫ <C-Left>
 " <A-d> to delete a word forward
 inoremap ∂ <C-o>dw
 
+" Take what's typed into account when moving through commands history
 cnoremap <C-p> <Up>
 cnoremap <C-n> <Down>
 
@@ -31,3 +30,6 @@ inoremap <C-w> <C-g>u<C-w>
 " - clear the highlighting of :set hlsearch
 " - update diff
 nnoremap <silent> <C-l> :nohlsearch<C-r>=has('diff')?'<Bar>diffupdate':''<CR><CR><C-l>
+
+" Select last paste in visual mode
+nnoremap <expr> gb '`[' . strpart(getregtype(), 0, 1) . '`]'
