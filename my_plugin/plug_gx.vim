@@ -1,13 +1,12 @@
-" gx to open GitHub URLs on browser
+" gx to open GitHub URLs in browser
 function! s:plug_gx()
   if getline('.') =~ '^ *Plug\s'
     let cfile = expand('<cfile>')
     if !filereadable(cfile) && cfile != 'Plug'
-      call netrw#BrowseX(expand((exists('g:netrw_gx') ? g:netrw_gx : 'https://github.com/' . cfile)),
-            \ netrw#CheckIfRemote())
+      call OpenInBrowser('https://github.com/' . cfile)
     endif
   else
-    call netrw#BrowseX(expand((exists('g:netrw_gx') ? g:netrw_gx : '<cfile>')), netrw#CheckIfRemote())
+    call OpenInBrowser('<cfile>')
   endif
 endfunction
 

@@ -1,6 +1,9 @@
 source ~/.vim/my_plugin/ack_todo.vim
 source ~/.vim/my_plugin/capture_message.vim
 source ~/.vim/my_plugin/edit_and_reload_configuration.vim
+source ~/.vim/my_plugin/gemfile_gx.vim
+source ~/.vim/my_plugin/open_in_browser.vim
+source ~/.vim/my_plugin/plug_gx.vim
 source ~/.vim/my_plugin/preserve.vim
 source ~/.vim/my_plugin/profiler.vim
 source ~/.vim/my_plugin/restore_cursor_position.vim

@@ -13,7 +13,6 @@ source ~/.vim/plugin_setup/geeknote.vim
 source ~/.vim/plugin_setup/markdown.vim
 source ~/.vim/plugin_setup/netrw.vim
 source ~/.vim/plugin_setup/online-thesaurus.vim
-source ~/.vim/plugin_setup/plug.vim
 source ~/.vim/plugin_setup/previm.vim
 source ~/.vim/plugin_setup/rails.vim
 source ~/.vim/plugin_setup/ripgrep.vim
