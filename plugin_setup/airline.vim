@@ -1,5 +1,3 @@
-set laststatus=2
-
 let g:airline#extensions#hunks#enabled     = 0
 let g:airline#extensions#wordcount#enabled = 0
 let g:airline#extensions#xkblayout#enabled = 0 " Fixes lag
