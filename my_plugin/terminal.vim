@@ -1,1 +1,1 @@
-command! -nargs=0 Terminal !open -a Terminal .
+command! -nargs=0 Terminal AsyncRun open -a Terminal .
