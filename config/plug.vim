@@ -77,6 +77,7 @@ Plug 'emilsoman/spec-outline.vim'
 Plug 'lucapette/vim-ruby-doc'
 " Another option for Arduino development: https://github.com/sudar/Arduino-Makefile
 Plug 'stevearc/vim-arduino'
+Plug 'astashov/vim-ruby-debugger'
 
 " Snippets and other insertions
 " This script lets you insert hex or RGB color codes directly into the buffer by using OS X's color picker
