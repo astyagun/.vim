@@ -1,4 +1,4 @@
 augroup TagsGenerator
   autocmd!
-  autocmd BufWritePost * :silent AsyncRun ~/bin/generate-tags
+  autocmd BufWritePost *.rb :silent AsyncRun ~/bin/generate-tags
 augroup END
