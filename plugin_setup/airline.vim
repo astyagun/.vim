@@ -3,7 +3,6 @@ let g:airline#extensions#wordcount#enabled = 0
 let g:airline#extensions#xkblayout#enabled = 0 " Fixes lag
 let g:airline_detect_spell                 = 0
 let g:airline_powerline_fonts              = 1
-let g:airline_section_error                = airline#section#create_right(['%{g:asyncrun_status}'])
 let g:airline_theme                        = 'lucius'
 
 " Make text color white in error section to make it distinguishable
