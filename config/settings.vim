@@ -49,7 +49,7 @@ set scrolloff=2
 set nostartofline
 set ignorecase
 set smartcase
-set relativenumber
+set norelativenumber
 
 " Search
 " Highlight search
