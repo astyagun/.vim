@@ -11,7 +11,7 @@
 "     * 1h Install the system
 "     * 1h 30m Import seed data
 "
-" Select the parargph in VISUAL mode and run the command `:'<,'>SumDurations`
+" Select the paragraph in VISUAL mode and run the command `:'<,'>SumDurations`
 "
 " The will echo: '2h 30m'
 
@@ -30,10 +30,12 @@ function! s:GatherDuration(line1, line2)
   let hits = []
 
   for line in getline(a:line1, a:line2)
-    let hit = matchstr(line, duration_pattern)
-    if len(hit)
-      call add(hits, hit)
-    endif
+    " matchstr() returns only on match, so splitting the line by white space before matching
+    let line_hits = map(split(line), {key, value -> matchstr(value, duration_pattern)})
+    " Clear empty List items
+    let line_hits = filter(line_hits, {i, value -> len(value) > 0})
+
+    call extend(hits, line_hits)
   endfor
 
   return hits
@@ -44,10 +46,10 @@ function! s:Hits2Minutes(hits)
 
   for hit in a:hits
     if hit =~ 'h$'
-      let minutes = minutes + str2nr(hit) * 60
+      let minutes += str2nr(hit) * 60
     endif
     if hit =~ 'm$'
-      let minutes = minutes + str2nr(hit)
+      let minutes += str2nr(hit)
     endif
   endfor
 
