@@ -5,6 +5,7 @@ Plug 'nelstrom/vim-mac-classic-theme'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'gerw/vim-HiLinkTrace'
+Plug 'vim-scripts/errormarker.vim'
 
 " Navigation and window management
 Plug 'vim-scripts/CmdlineComplete'
