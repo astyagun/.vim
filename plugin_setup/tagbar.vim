@@ -1,2 +1,2 @@
 " List tags
-nmap <Leader>lt :TagbarToggle<CR>
+nmap <Leader>lt :TagbarOpenAutoClose<CR>
