@@ -2,6 +2,7 @@
 let g:GeeknoteExplorerNodeClosed = '+'
 let g:GeeknoteExplorerNodeOpened = '-'
 
+" Cmd + Shift + e
 map <D-E> :Geeknote<CR>
 
 " Vim selects first Python version, that gets called and doesn't allow other

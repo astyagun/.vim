@@ -11,3 +11,6 @@ augroup AsyncRunOpenQuickFix
   autocmd!
   autocmd User AsyncRunStart call asyncrun#quickfix_toggle(8, 1)
 augroup END
+
+" Mapping for compiler
+map <D-b> :Make<CR>

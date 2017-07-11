@@ -1,4 +1,3 @@
-" <D-P> is unset in .gvimrc
 let g:ctrlp_map = ''
 let g:ctrlp_match_window = 'bottom,order:ttb,min:10,max:10,results:25'
 let g:ctrlp_working_path_mode = 'rw'

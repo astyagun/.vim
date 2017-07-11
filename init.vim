@@ -11,7 +11,7 @@ source ~/.vim/config/my_plugins.vim
 
 " Other configuration files, sourced automatically
 
-" ~/.gvimrc
+" ~/.vim/ginit.vim
 
 "" vim-plug
 " ~/.vim/autoload/plug.vim
