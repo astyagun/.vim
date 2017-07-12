@@ -6,6 +6,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'gerw/vim-HiLinkTrace'
 Plug 'vim-scripts/errormarker.vim'
+Plug 'vim-scripts/SyntaxAttr.vim'
 
 " Navigation and window management
 Plug 'vim-scripts/CmdlineComplete'
