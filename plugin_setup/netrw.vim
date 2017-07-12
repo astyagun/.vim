@@ -6,8 +6,8 @@ let g:netrw_list_hide = '.*\.swp$'
 " Take .gitignore into account
 " let g:netrw_list_hide = netrw_gitignore#Hide() . '.*\.swp$'
 
-map - :Vexplore<CR>
-map <Leader>- :Vexplore .<CR>
+map - :Explore<CR>
+map <Leader>- :Explore .<CR>
 
 " Borrowed from vim-vinegar
 function! s:fnameescape(file) abort
