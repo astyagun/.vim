@@ -9,7 +9,6 @@ Plug 'vim-scripts/errormarker.vim'
 Plug 'vim-scripts/SyntaxAttr.vim'
 
 " Navigation and window management
-Plug 'vim-scripts/CmdlineComplete'
 Plug 'mhinz/vim-startify'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'wesQ3/vim-windowswap'
