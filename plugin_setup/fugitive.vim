@@ -4,3 +4,5 @@ augroup FugitiveHightlight
   autocmd FileType gitcommit setlocal listchars-=tab:»» |
         \ setlocal listchars+=tab:\ \ 
 augroup END
+
+command! Greview :Git! diff --cached
