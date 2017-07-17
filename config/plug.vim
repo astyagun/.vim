@@ -7,6 +7,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'gerw/vim-HiLinkTrace'
 Plug 'vim-scripts/errormarker.vim'
 Plug 'vim-scripts/SyntaxAttr.vim'
+Plug 'kshenoy/vim-signature'
 
 " Navigation and window management
 Plug 'mhinz/vim-startify'
