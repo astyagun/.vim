@@ -1,8 +1,8 @@
 let g:test#strategy = 'asyncrun'
-let test#ruby#minitest#options = '--format progress'
+let test#ruby#rspec#options = '--format progress'
 
 function! DockerTransform(cmd) abort
-  return 'docker-compose exec -T tests ' . a:cmd
+  return 'docker-compose exec -T tests bash -ic ' . a:cmd
 endfunction
 
 let g:test#custom_transformations = {'docker': function('DockerTransform')}
