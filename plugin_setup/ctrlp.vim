@@ -14,8 +14,10 @@ endfunction
 
 map <D-p> :call <SID>RunCtrlP(getcwd(), 'CtrlP')<CR>
 map <D-P> :call <SID>RunCtrlP(expand('%:p:h'), 'CtrlPCurFile')<CR>
+map <D-T> :call <SID>RunCtrlP(expand('%:p:h'), 'CtrlPTag')<CR>
 imap <D-p> <Esc><D-p>
 imap <D-P> <Esc><D-p>
+imap <D-T> <Esc><D-T>
 " List buffers
 map <Leader>lb :CtrlPBuffer<CR>
 
