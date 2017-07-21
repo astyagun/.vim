@@ -3,7 +3,7 @@ let g:test#ruby#rspec#executable = 'rspec'
 let g:test#ruby#rspec#options = '--format progress'
 
 function! DockerTransform(cmd) abort
-  return 'docker-compose exec -T tests bash -ic "' . a:cmd . '"'
+  return 'docker-compose exec -T tests bash -c "' . a:cmd . '"'
 endfunction
 
 let g:test#custom_transformations = {'docker': function('DockerTransform')}
