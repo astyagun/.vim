@@ -1,12 +1,16 @@
-let g:test#strategy = 'asyncrun'
 let g:test#ruby#rspec#executable = './bin/rspec'
 let g:test#ruby#rspec#options = '--format progress'
 
-function! DockerTransform(cmd) abort
+function! TestAsyncRunStrategy(cmd)
+  execute 'AsyncRun! -save=1 ' . a:cmd
+endfunction
+let g:test#custom_strategies = {'custom_asyncrun': function('TestAsyncRunStrategy')}
+let g:test#strategy = 'custom_asyncrun'
+
+function! TestDockerTransform(cmd) abort
   return 'docker-compose exec -T tests bash -c "' . a:cmd . '"'
 endfunction
-
-let g:test#custom_transformations = {'docker': function('DockerTransform')}
+let g:test#custom_transformations = {'docker': function('TestDockerTransform')}
 let g:test#transformation = 'docker'
 
 nmap <silent> <Leader>tn :wall<CR>:TestNearest<CR>
