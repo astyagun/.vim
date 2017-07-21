@@ -16,13 +16,10 @@ let g:rails_projections = {
       \ },
       \ "features/support/*.rb": {"type": "support"},
       \ "features/support/env.rb": {"type": "support"},
-      \ "app/models/*.rb": {
-      \   "type": "model",
-      \   "alternate": "spec/models/{}_spec.rb",
-      \   "test": "spec/models/{}_spec.rb"
+      \ "app/*.rb": {
+      \   "alternate": "spec/{}_spec.rb",
+      \   "test": "spec/{}_spec.rb"
       \ },
-      \ "spec/models/*_spec.rb": {
-      \   "type": "modelspec",
-      \   "alternate": "app/models/{}.rb",
-      \   "test": "app/models/{}.rb"
+      \ "spec/*_spec.rb": {
+      \   "alternate": "app/{}.rb",
       \ }}
