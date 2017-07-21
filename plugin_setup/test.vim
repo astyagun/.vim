@@ -1,5 +1,5 @@
 let g:test#strategy = 'asyncrun'
-let g:test#ruby#rspec#executable = 'rspec'
+let g:test#ruby#rspec#executable = './bin/rspec'
 let g:test#ruby#rspec#options = '--format progress'
 
 function! DockerTransform(cmd) abort
