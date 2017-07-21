@@ -1,6 +1,13 @@
 let g:test#strategy = 'asyncrun'
-let g:test#ruby#rspec#executable = 'docker-compose exec -T tests bash -ic rspec'
+let g:test#ruby#rspec#executable = 'rspec'
 let g:test#ruby#rspec#options = '--format progress'
+
+function! DockerTransform(cmd) abort
+  return 'docker-compose exec -T tests bash -ic "' . a:cmd . '"'
+endfunction
+
+let g:test#custom_transformations = {'docker': function('DockerTransform')}
+let g:test#transformation = 'docker'
 
 nmap <silent> <Leader>tn :wall<CR>:TestNearest<CR>
 nmap <silent> <Leader>tf :wall<CR>:call <SID>TestProjectFile()<CR>
