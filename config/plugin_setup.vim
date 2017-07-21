@@ -25,6 +25,7 @@ source ~/.vim/plugin_setup/splitjoin.vim
 source ~/.vim/plugin_setup/startify.vim
 source ~/.vim/plugin_setup/tagbar.vim
 source ~/.vim/plugin_setup/test.vim
+source ~/.vim/plugin_setup/textobj-comment.vim
 source ~/.vim/plugin_setup/ultisnips.vim
 source ~/.vim/plugin_setup/undotree.vim
 source ~/.vim/plugin_setup/window_swap.vim

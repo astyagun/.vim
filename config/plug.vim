@@ -52,9 +52,9 @@ Plug 'tek/vim-textobj-ruby'
 Plug 'vim-scripts/argtextobj.vim'
 Plug 'whatyouhide/vim-textobj-erb'
 Plug 'whatyouhide/vim-textobj-xmlattr'
+Plug 'glts/vim-textobj-comment'
 " Conflict with word column text object (c character)
 " Plug 'jasonlong/vim-textobj-css'
-" Plug 'glts/vim-textobj-comment'
 
 " File types
 Plug 'vim-ruby/vim-ruby'
