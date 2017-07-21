@@ -93,3 +93,7 @@ set nomacmeta
 if has('nvim')
   set inccommand=split
 endif
+
+" Command line
+set shell=/bin/zsh
+set shellcmdflag=-ic
