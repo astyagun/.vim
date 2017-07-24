@@ -1,5 +1,5 @@
 let g:test#ruby#rspec#executable = './bin/rspec'
-let g:test#ruby#rspec#options = '--format progress'
+let g:test#ruby#rspec#options = '--require=vim_formatter --format VimFormatter'
 
 function! TestAsyncRunStrategy(cmd)
   execute 'AsyncRun! -save=1 ' . a:cmd
