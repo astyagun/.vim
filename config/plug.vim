@@ -62,7 +62,6 @@ Plug 'tpope/vim-git'
 Plug 'tpope/vim-haml'
 Plug 'plasticboy/vim-markdown'
 Plug 'asux/vim-capybara'
-Plug 'kannokanno/previm'
 Plug 'JamshedVesuna/vim-markdown-preview'
 
 " Integrations
