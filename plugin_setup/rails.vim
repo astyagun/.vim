@@ -22,4 +22,7 @@ let g:rails_projections = {
       \ },
       \ 'spec/*_spec.rb': {
       \   'alternate': 'app/{}.rb',
+      \ },
+      \ 'app/interactors/*.rb': {
+      \   'type': 'interactor'
       \ }}
