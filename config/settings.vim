@@ -50,6 +50,7 @@ set nostartofline
 set ignorecase
 set smartcase
 set norelativenumber
+set confirm
 
 " Search
 " Highlight search
