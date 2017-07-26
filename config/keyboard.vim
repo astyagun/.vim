@@ -26,10 +26,14 @@ cnoremap <C-n> <Down>
 inoremap <C-u> <C-g>u<C-u>
 inoremap <C-w> <C-g>u<C-w>
 
-" Use <C-l> to:
-" - clear the highlighting of :set hlsearch
-" - update diff
-nnoremap <silent> <C-l> :nohlsearch<C-r>=has('diff')?'<Bar>diffupdate':''<CR><CR><C-l>
+nnoremap <silent> <C-l> :call <SID>Refresh()<CR><C-l>
+
+function! s:Refresh()
+  nohlsearch
+  if has('diff')
+    diffupdate
+  endif
+endfunction
 
 " Select last paste in visual mode
 nnoremap <expr> gb '`[' . strpart(getregtype(), 0, 1) . '`]'
