@@ -26,10 +26,9 @@ cnoremap <C-n> <Down>
 inoremap <C-u> <C-g>u<C-u>
 inoremap <C-w> <C-g>u<C-w>
 
-nnoremap <silent> <C-l> :call <SID>Refresh()<CR><C-l>
+nnoremap <silent> <C-l> :nohlsearch <Bar> call <SID>Refresh()<CR><C-l>
 
 function! s:Refresh()
-  nohlsearch
   if has('diff')
     diffupdate
   endif
