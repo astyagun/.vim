@@ -33,6 +33,9 @@ function! s:Refresh()
   if has('diff')
     diffupdate
   endif
+  if &ft ==# "netrw"
+    execute "normal \<Plug>NetrwRefresh"
+  endif
 endfunction
 
 " Select last paste in visual mode
