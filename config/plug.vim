@@ -15,7 +15,6 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'wesQ3/vim-windowswap'
 Plug 'tpope/vim-unimpaired'
 Plug 'wincent/ferret'
-Plug 'majutsushi/tagbar'
 Plug 'nixprime/cpsm', {'do': 'PY3=OFF ./install.sh'}
 Plug 'haya14busa/incsearch.vim'
 Plug 'tpope/vim-projectionist'

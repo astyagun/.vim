@@ -22,7 +22,6 @@ source ~/.vim/plugin_setup/search.vim
 source ~/.vim/plugin_setup/signify.vim
 source ~/.vim/plugin_setup/splitjoin.vim
 source ~/.vim/plugin_setup/startify.vim
-source ~/.vim/plugin_setup/tagbar.vim
 source ~/.vim/plugin_setup/test.vim
 source ~/.vim/plugin_setup/textobj-comment.vim
 source ~/.vim/plugin_setup/ultisnips.vim
