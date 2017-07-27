@@ -39,9 +39,10 @@ set list
 set hidden
 " Folding settings
 set foldmethod=syntax
-set foldcolumn=2
+set foldcolumn=0
 set foldlevel=2
 set foldnestmax=3
+set signcolumn=yes
 set nofoldenable
 set sessionoptions-=options
 set diffopt=filler,vertical
