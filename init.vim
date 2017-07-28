@@ -23,3 +23,6 @@ source ~/.vim/config/my_plugins.vim
 
 "" VimL
 " ~/.vim/ftplugin/vim.vim
+
+"" YAML
+" ~/.vim/ftdetect/yaml.vim
