@@ -33,6 +33,7 @@ set breakindent
 let &showbreak = '> '
 let &listchars = "tab:\uBB\uBB,trail:\uB7,nbsp:~"
 set list
+set noballooneval
 
 " Navigation
 " Hide buffers when not displayed
