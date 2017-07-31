@@ -1,7 +1,7 @@
 require 'rspec/core/formatters/base_text_formatter'
 
 class VimFormatter < RSpec::Core::Formatters::BaseFormatter
-  RSpec::Core::Formatters.register self, :example_failed
+  RSpec::Core::Formatters.register self, :example_failed, :dump_summary
 
   # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
   def example_failed(failure)
@@ -20,6 +20,10 @@ class VimFormatter < RSpec::Core::Formatters::BaseFormatter
     end
   end
   # rubocop:enable Metrics/AbcSize, Metrics/MethodLength
+
+  def dump_summary(summary)
+    output.puts summary.fully_formatted
+  end
 
   private
 

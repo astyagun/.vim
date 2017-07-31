@@ -1,4 +1,5 @@
 " ~/.vim/plugin_setup/ctrlp.ignore
+" ~/.vim/plugin_setup/vim_formatter.rb
 source ~/.vim/plugin_setup/2html.vim
 source ~/.vim/plugin_setup/airline.vim
 source ~/.vim/plugin_setup/ale.vim
