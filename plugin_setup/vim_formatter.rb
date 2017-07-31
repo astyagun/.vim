@@ -22,7 +22,8 @@ class VimFormatter < RSpec::Core::Formatters::BaseFormatter
   # rubocop:enable Metrics/AbcSize, Metrics/MethodLength
 
   def dump_summary(summary)
-    output.puts summary.fully_formatted
+    output.print summary.totals_line
+    output.puts ", took #{summary.formatted_load_time} to load, #{summary.formatted_duration} to run"
   end
 
   private
