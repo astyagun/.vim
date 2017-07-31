@@ -1,5 +1,5 @@
 let g:test#ruby#rspec#executable = './bin/rspec'
-let g:test#ruby#rspec#options = '--require=vim_formatter --format VimFormatter'
+let g:test#ruby#rspec#options = '--require=./tmp/vim_formatter --format VimFormatter'
 
 function! TestAsyncRunStrategy(cmd)
   execute 'AsyncRun! -save=1 ' . a:cmd
@@ -39,3 +39,5 @@ function! s:TestProjectFile()
     TestFile
   endif
 endfunction
+
+command! CopyVimFormatter !cp ~/.vim/plugin_setup/vim_formatter.rb ./tmp/
