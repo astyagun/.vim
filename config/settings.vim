@@ -4,9 +4,7 @@ set nocompatible
 set autowrite
 " Syntax and file types (must be called after pathogen initialization)
 syntax on
-filetype on
-filetype indent on
-filetype plugin on
+filetype plugin indent on
 
 " Visual
 set cursorline
