@@ -6,12 +6,13 @@ let g:ale_sign_column_always = 1
 
 " Fixes slowness
 let g:ale_lint_on_enter = 0
+let g:ale_lint_on_filetype_changed = 0
 let g:ale_lint_on_save = 0
 
-" Fixes problem with double mappings in INSERT mode. Vim would not way for
+" Fixes problem with double mappings in INSERT mode. Vim would not wait for
 " double keystroke mapping and will fire a simgle keystroke mapping instead.
-let g:ale_lint_on_text_changed = 'normal'
-let g:ale_lint_on_insert_leave = 1
+let g:ale_lint_on_text_changed = 'never'
+let g:ale_lint_on_insert_leave = 0
 
 let g:ale_fixers = {
       \   'ruby': [
@@ -25,3 +26,5 @@ function! s:ALERubocopFix() range
 endfunction
 
 command! -range ALERubocopFix <line1>,<line2>call <SID>ALERubocopFix()
+
+map <Leader>ll :ALELint<CR>
