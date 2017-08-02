@@ -2,6 +2,7 @@
 nmap <Leader>$ :call Preserve("%s/\\s\\+$//e")<CR>
 vmap <Leader>$ :call Preserve("s/\\s\\+$//e")<CR>
 
+
 " Reindent file
 nmap <Leader>= :call Preserve("normal gg=G")<CR>
 
@@ -39,3 +40,7 @@ endfunction
 
 " Select last paste in visual mode
 nnoremap <expr> gb '`[' . strpart(getregtype(), 0, 1) . '`]'
+
+" Prevent page scroll on <S-CR>, I mistakenly press <S-CR> somethimes because
+" I have <D-S-CR> mapping to insert a new line before current
+nnoremap <S-CR> <CR>
