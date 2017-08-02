@@ -3,6 +3,7 @@
 *.swp
 .DS_Store
 .git/
+.keep
 public/uploads
 tags
 tmp/
