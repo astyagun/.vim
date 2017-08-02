@@ -5,4 +5,7 @@ augroup FugitiveHightlight
         \ setlocal listchars+=tab:\ \ 
 augroup END
 
-command! Greview :Git! diff --cached
+augroup FugitiveCommands
+  autocmd!
+  autocmd User Fugitive command! -buffer Greview :Git! diff --cached
+augroup END
