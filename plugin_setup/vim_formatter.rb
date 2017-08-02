@@ -1,5 +1,6 @@
 require 'rspec/core/formatters/base_text_formatter'
 
+# :reek:FeatureEnvy :reek:DuplicateMethodCall :reek:ManualDispatch :reek:NilCheck
 class VimFormatter < RSpec::Core::Formatters::BaseFormatter
   RSpec::Core::Formatters.register self, :example_failed, :dump_summary
 
@@ -28,8 +29,6 @@ class VimFormatter < RSpec::Core::Formatters::BaseFormatter
 
   private
 
-  # :reek:FeatureEnvy
-  # :reek:DuplicateMthodCall
   def format_failure(failure)
     call_stack = failure.exception.backtrace.
       find { |item| item.match?(%r{/usr/src/app/}) }&.gsub('/usr/src/app/', '')
