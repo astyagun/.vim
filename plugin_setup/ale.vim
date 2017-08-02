@@ -22,9 +22,18 @@ let g:ale_fixers = {
 
 function! s:ALERubocopFix() range
   execute a:firstline . ',' . a:lastline . '!rubocop --auto-correct --stdin "%" | sed "1,/=\{20\}/d"'
-  normal gv=
+  normal! gv=
 endfunction
 
 command! -range ALERubocopFix <line1>,<line2>call <SID>ALERubocopFix()
 
-map <Leader>ll :ALELint<CR>
+map <Leader>ll <Plug>(ale_lint):echom 'ALE running...'<CR>
+augroup ALEJumpToFirstError
+  autocmd!
+  autocmd User ALELint if len(getloclist(0)) > 0 |
+        \   ll |
+        \   unsilent ALEDetail |
+        \ else |
+        \   unsilent echom 'ALE: no errors! 👍' |
+        \ endif
+augroup END
