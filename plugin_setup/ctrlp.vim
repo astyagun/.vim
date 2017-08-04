@@ -18,8 +18,8 @@ map <D-T> :call <SID>RunCtrlP(expand('%:p:h'), 'CtrlPTag')<CR>
 imap <D-p> <Esc><D-p>
 imap <D-P> <Esc><D-p>
 imap <D-T> <Esc><D-T>
-" List buffers
 map <Leader>lb :CtrlPBuffer<CR>
+map <Leader>lr :CtrlPMRUFiles<CR>
 
 " Exchange <C-(n|p)> mappings with <C-(j|k)> mappings
 let g:ctrlp_prompt_mappings = {
