@@ -1,22 +1,24 @@
+scriptencoding utf-8
+
 " Remove all extra spaces at the end of all lines
 nmap <Leader>$ :call Preserve("%s/\\s\\+$//e")<CR>
 vmap <Leader>$ :call Preserve("s/\\s\\+$//e")<CR>
-
 
 " Reindent file
 nmap <Leader>= :call Preserve("normal gg=G")<CR>
 
 " Mimic Emacs line editing
-inoremap <C-f> <Right>
-inoremap <C-b> <Left>
+noremap! <C-f> <Right>
+noremap! <C-b> <Left>
 noremap! <C-a> <Home>
-inoremap <C-e> <End>
-noremap! <C-l> <Del>
+noremap! <C-e> <End>
+noremap! <C-d> <Del>
+inoremap <C-q> <C-d>
 " <A-f> and <A-b> to jump words
 noremap! ƒ <C-Right>
 noremap! ∫ <C-Left>
 " <A-d> to delete a word forward
-inoremap ∂ <C-o>dw
+noremap! ∂ <C-o>dw
 
 " Take what's typed into account when moving through commands history
 cnoremap <C-p> <Up>
@@ -33,7 +35,7 @@ function! s:Refresh()
   if has('diff')
     diffupdate
   endif
-  if &ft ==# "netrw"
+  if &filetype ==# 'netrw'
     execute "normal \<Plug>NetrwRefresh"
   endif
 endfunction
