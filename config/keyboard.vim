@@ -30,6 +30,7 @@ inoremap <C-u> <C-g>u<C-u>
 inoremap <C-w> <C-g>u<C-w>
 
 nnoremap <silent> <C-l> :nohlsearch <Bar> call <SID>Refresh()<CR><C-l>
+imap <C-l> <Esc><C-l>
 
 function! s:Refresh()
   if has('diff')
