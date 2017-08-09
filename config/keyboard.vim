@@ -47,3 +47,8 @@ nnoremap <expr> gb '`[' . strpart(getregtype(), 0, 1) . '`]'
 " Prevent page scroll on <S-CR>, I mistakenly press <S-CR> somethimes because
 " I have <D-S-CR> mapping to insert a new line before current
 nnoremap <S-CR> <CR>
+
+" Change word case in INSERT mode
+inoremap ç <C-o>guiw
+inoremap Ç <C-o>gUiw
+inoremap <C-c> <Esc>guiw~bi
