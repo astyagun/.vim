@@ -68,7 +68,8 @@ if executable('rg')
         \ ' --no-ignore-vcs' .
         \ ' --ignore-file ~/.vim/plugin_setup/ctrlp.ignore' .
         \ ' --files' .
-        \ ' --color=never %s'
+        \ ' --color=never %s' .
+        \ ' --ignore-case'
 
   " ripgrep is fast enough that CtrlP doesn't need to cache
   let g:ctrlp_use_caching = 0
