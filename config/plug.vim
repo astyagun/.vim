@@ -63,6 +63,7 @@ Plug 'plasticboy/vim-markdown', {'for': 'markdown'}
 Plug 'asux/vim-capybara'
 Plug 'JamshedVesuna/vim-markdown-preview', {'for': 'markdown'}
 Plug 'vim-scripts/confluencewiki.vim', {'for': 'confluencewiki'}
+Plug 'dart-lang/dart-vim-plugin'
 
 " Integrations
 Plug 'tpope/vim-fugitive'
