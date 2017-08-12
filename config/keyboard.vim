@@ -19,6 +19,11 @@ noremap! ƒ <C-Right>
 noremap! ∫ <C-Left>
 " <A-d> to delete a word forward
 noremap! ∂ <C-o>dw
+" In Russian
+noremap! ÷ <C-Right>
+" Using Ukelele
+noremap! ← <C-Left>
+noremap! ћ <C-o>dw
 
 " Take what's typed into account when moving through commands history
 cnoremap <C-p> <Up>
@@ -49,9 +54,12 @@ nnoremap <expr> gb '`[' . strpart(getregtype(), 0, 1) . '`]'
 nnoremap <S-CR> <CR>
 
 " Change word case in INSERT mode
-inoremap ç <C-o>guiw
-inoremap Ç <C-o>gUiw
 inoremap <C-c> <Esc>guiw~bi
-" inoremap ≠ <C-o>guiw
-" inoremap ≠ <C-o>gUiw
-" inoremap <C-с> <Esc>guiw~bi
+" <A-c>
+inoremap ç <C-o>guiw
+" <A-S-c>
+inoremap Ç <C-o>gUiw
+" <A-с> (Russian)
+inoremap ≠ <C-o>guiw
+" <A-S-с> (Russian), became possible after using Ukelele to change the character typed by this key combination
+inoremap ≉ <C-o>gUiw
