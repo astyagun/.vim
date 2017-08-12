@@ -52,6 +52,6 @@ nnoremap <S-CR> <CR>
 inoremap ç <C-o>guiw
 inoremap Ç <C-o>gUiw
 inoremap <C-c> <Esc>guiw~bi
-inoremap ≠ <C-o>guiw
+" inoremap ≠ <C-o>guiw
 " inoremap ≠ <C-o>gUiw
-inoremap <C-с> <Esc>guiw~bi
+" inoremap <C-с> <Esc>guiw~bi
