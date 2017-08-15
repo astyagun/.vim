@@ -1,2 +1,2 @@
 map ☯ <Plug>JumpDiffCharPrevEnd
-map ☯ <Plug>JumpDiffCharNextEnd
+map ☁︎ <Plug>JumpDiffCharNextEnd
