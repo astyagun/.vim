@@ -21,4 +21,5 @@ augroup AirlineSetup
       \ '%{airline#util#wrap(airline#extensions#ale#get_error(),0)}',
       \ '%{g:asyncrun_status != "success" ? toupper(g:asyncrun_status) : ""}'
       \ ])
+  autocmd User ConfigurationReloaded AirlineRefresh
 augroup END
