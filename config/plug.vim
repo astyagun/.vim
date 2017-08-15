@@ -2,10 +2,11 @@ call plug#begin()
 
 " Visual
 Plug 'nelstrom/vim-mac-classic-theme'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 Plug 'gerw/vim-HiLinkTrace', {'on': 'HLT'}
 " Plug 'vim-scripts/errormarker.vim'
 Plug 'vim-scripts/SyntaxAttr.vim'
-Plug 'itchyny/lightline.vim'
 
 " Navigation and window management
 Plug 'mhinz/vim-startify'

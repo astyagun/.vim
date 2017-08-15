@@ -12,7 +12,7 @@ if !exists('*ReloadConfiguration')
       source $MYGVIMRC
       echom 'Reloaded ' . $MYGVIMRC
     endif
-    doautocmd User ConfigurationReloaded
+    AirlineRefresh
   endfunction
 endif
 
