@@ -42,3 +42,6 @@ augroup ALEJumpToFirstError
         \   unsilent echom 'ALE: no errors! 👍' |
         \ endif
 augroup END
+
+let g:ale_sign_warning = '●'
+let g:ale_sign_error = '●'
