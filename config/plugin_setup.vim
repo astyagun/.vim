@@ -21,6 +21,7 @@ source ~/.vim/plugin_setup/rails.vim
 source ~/.vim/plugin_setup/ripgrep.vim
 source ~/.vim/plugin_setup/ruby-debugger.vim
 source ~/.vim/plugin_setup/ruby-doc.vim
+source ~/.vim/plugin_setup/ruby.vim
 source ~/.vim/plugin_setup/search.vim
 source ~/.vim/plugin_setup/signify.vim
 source ~/.vim/plugin_setup/splitjoin.vim
