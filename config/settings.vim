@@ -37,7 +37,7 @@ set noballooneval
 " Hide buffers when not displayed
 set hidden
 " Folding settings
-set foldmethod=syntax
+set foldmethod=manual
 set foldcolumn=0
 set foldlevel=2
 set foldnestmax=3
