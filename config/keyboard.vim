@@ -7,7 +7,7 @@ vmap <Leader>$ :call Preserve("s/\\s\\+$//e")<CR>
 " Reindent file
 nmap <Leader>= :call Preserve("normal gg=G")<CR>
 
-" Mimic Emacs line editing
+" Mimic Emacs line editing (as I see it)
 noremap! <C-f> <Right>
 noremap! <C-b> <Left>
 noremap! <C-a> <Home>
@@ -17,13 +17,14 @@ inoremap <C-q> <C-d>
 " <A-f> and <A-b> to jump words
 noremap! ƒ <C-Right>
 noremap! ∫ <C-Left>
+map! ÷ ƒ
+" <A-b> mapped to this character using Ukelele
+map! ← ∫
 " <A-d> to delete a word forward
-noremap! ∂ <C-o>dw
-" In Russian
-noremap! ÷ <C-Right>
-" Using Ukelele
-noremap! ← <C-Left>
-noremap! ћ <C-o>dw
+inoremap ∂ <C-o>dw
+cnoremap ∂ <C-Right><C-w>
+imap ћ ∂
+cmap ћ ∂
 
 " Take what's typed into account when moving through commands history
 cnoremap <C-p> <Up>
@@ -57,9 +58,8 @@ nnoremap <S-CR> <CR>
 inoremap <C-c> <Esc>guiw~bi
 " <A-c>
 inoremap ç <C-o>guiw
+imap ≠ ç
 " <A-S-c>
 inoremap Ç <C-o>gUiw
-" <A-с> (Russian)
-inoremap ≠ <C-o>guiw
-" <A-S-с> (Russian), became possible after using Ukelele to change the character typed by this key combination
-inoremap ≉ <C-o>gUiw
+" Russian, became possible after using Ukelele to change the character typed by this key combination
+imap ≉ Ç
