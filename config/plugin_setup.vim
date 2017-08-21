@@ -1,7 +1,6 @@
 " ~/.vim/plugin_setup/ctrlp.ignore
 " ~/.vim/plugin_setup/vim_formatter.rb
 source ~/.vim/plugin_setup/2html.vim
-source ~/.vim/plugin_setup/airline.vim
 source ~/.vim/plugin_setup/ale.vim
 source ~/.vim/plugin_setup/asyncrun.vim
 source ~/.vim/plugin_setup/camelcasemotion.vim
@@ -12,6 +11,7 @@ source ~/.vim/plugin_setup/easy_align.vim
 source ~/.vim/plugin_setup/ferret.vim
 source ~/.vim/plugin_setup/fugitive.vim
 source ~/.vim/plugin_setup/geeknote.vim
+source ~/.vim/plugin_setup/lightline.vim
 source ~/.vim/plugin_setup/markdown-preview.vim
 source ~/.vim/plugin_setup/markdown.vim
 source ~/.vim/plugin_setup/netrw.vim
