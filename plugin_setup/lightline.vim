@@ -24,6 +24,7 @@ endfunction
 augroup AsyncRunUpdateLightline
   autocmd!
   autocmd User AsyncRunStop call lightline#update()
+  autocmd User AsyncRunStart call lightline#update()
 augroup END
 
 " Reload Lightline when configuration is reloaded
