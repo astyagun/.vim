@@ -13,6 +13,9 @@ source ~/.vim/config/my_plugins.vim
 
 " ~/.vim/ginit.vim
 
+"" Lightline colorscheme custom_solarized
+" ~/.vim/autoload/lightline/colorscheme/custom_solarized.vim
+
 "" vim-plug
 " ~/.vim/autoload/plug.vim
 

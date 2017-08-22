@@ -1,5 +1,5 @@
 let g:lightline = {}
-let g:lightline.colorscheme = 'solarized'
+let g:lightline.colorscheme = 'custom_solarized'
 let g:lightline.enable = {'tabline': 0}
 
 " AsyncRun status
