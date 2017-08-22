@@ -31,7 +31,7 @@ endif
 
 let s:base03 = [ '#002b36', s:cuicolors.base03[s:cuiindex] ]
 let s:base02 = [ '#073642', s:cuicolors.base02[s:cuiindex] ]
-let s:base01 = [ '#586e75', s:cuicolors.base01[s:cuiindex] ]
+let s:base01 = [ '#000000', s:cuicolors.base01[s:cuiindex] ]
 let s:base00 = [ '#657b83', s:cuicolors.base00[s:cuiindex] ]
 let s:base0 = [ '#83b3c5', s:cuicolors.base0[s:cuiindex] ]
 let s:base1 = [ '#93a1a1', s:cuicolors.base1[s:cuiindex] ]
@@ -56,12 +56,12 @@ endif
 
 let s:p = {'normal': {}, 'inactive': {}, 'insert': {}, 'replace': {}, 'visual': {}, 'tabline': {}}
 let s:p.normal.left = [ [ s:base03, s:blue ], [ s:base03, s:base00 ] ]
-let s:p.normal.right = [ [ s:base03, s:base1 ], [ s:base03, s:base00 ] ]
+let s:p.normal.right = [ [ s:base03, s:base0 ], [ s:base03, s:base00 ] ]
 let s:p.inactive.right = [ [ s:base0, s:gray ] ]
 let s:p.inactive.left =  [ [ s:base0, s:gray ] ]
 let s:p.insert.left = [ [ s:base03, s:green ], [ s:base03, s:base00 ] ]
 let s:p.replace.left = [ [ s:base03, s:red ], [ s:base03, s:base00 ] ]
-let s:p.visual.left = [ [ s:base03, s:magenta ], [ s:base03, s:base00 ] ]
+let s:p.visual.left = [ [ s:base03, s:orange ], [ s:base03, s:base00 ] ]
 let s:p.normal.middle = [ [ s:base1, s:base02 ] ]
 let s:p.inactive.middle = [ [ s:base01, s:gray ] ]
 let s:p.tabline.left = [ [ s:base03, s:base00 ] ]
