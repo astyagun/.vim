@@ -6,6 +6,7 @@ Plug 'gerw/vim-HiLinkTrace', {'on': 'HLT'}
 " Plug 'vim-scripts/errormarker.vim'
 Plug 'vim-scripts/SyntaxAttr.vim'
 Plug 'itchyny/lightline.vim'
+Plug 'chrisbra/Colorizer'
 
 " Navigation and window management
 Plug 'mhinz/vim-startify'
