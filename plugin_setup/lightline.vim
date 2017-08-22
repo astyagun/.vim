@@ -1,37 +1,17 @@
 let g:lightline = {}
 let g:lightline.colorscheme = 'solarized'
+let g:lightline.enable = {'tabline': 0}
 
-let g:lightline.active = {
-      \   'left':  [['mode', 'paste'],
-      \             ['readonly', 'filename', 'modified']],
-      \   'right': [['asyncrun_status', 'lineinfo'],
-      \             ['percent'],
-      \             ['filetype', 'fileencoding']]
-      \ }
-
-let g:lightline.inactive = {
-      \   'left':  [['filename']],
-      \   'right': [['lineinfo'], ['percent']]
-      \ }
-
-let g:lightline.tabline = {
-      \   'left':  [['tabs']],
-      \   'right': [['close']]
-      \ }
-
-let g:lightline.component = {
-      \   'asyncrun_status': '%{toupper(g:asyncrun_status)}'
-      \ }
-
-let g:lightline.component_expand = {
-      \   'asyncrun_status': 'AsyncRunStatus'
-      \ }
-
-let g:lightline.component_type = {
-      \   'asyncrun_status': 'error'
-      \ }
-
-let g:lightline.enable = {'statusline': 1, 'tabline': 0}
+" AsyncRun status
+let g:lightline.active = {}
+let g:lightline.active.right = [
+      \   ['asyncrun_status', 'lineinfo'],
+      \   ['percent'],
+      \   ['filetype', 'fileencoding']
+      \ ]
+let g:lightline.component        = {'asyncrun_status': '%{toupper(g:asyncrun_status)}'}
+let g:lightline.component_expand = {'asyncrun_status': 'AsyncRunStatus'}
+let g:lightline.component_type   = {'asyncrun_status': 'error'}
 
 function! AsyncRunStatus()
   if g:asyncrun_status == 'success' || g:asyncrun_status == ''
@@ -46,6 +26,7 @@ augroup AsyncRunUpdateLightline
   autocmd User AsyncRunStop call lightline#update()
 augroup END
 
+" Reload Lightline when configuration is reloaded
 augroup LightlineReload
   autocmd!
   autocmd User ConfigurationReloaded
