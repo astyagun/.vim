@@ -6,4 +6,5 @@
 .keep
 public/uploads
 tags
-tmp/
+tmp/*
+!tmp/dart
