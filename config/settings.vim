@@ -71,7 +71,7 @@ set nosmartindent
 set preserveindent
 " Keywords that start extra indent on next line
 set cinwords=unless,def,class,if,else,elsif,while,for,switch
-set formatoptions+=j
+set formatoptions=croqnj
 set textwidth=110
 set conceallevel=2
 
