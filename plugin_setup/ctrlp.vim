@@ -24,7 +24,7 @@ map <Leader>lr :CtrlPMRUFiles<CR>
 " Exchange <C-(n|p)> mappings with <C-(j|k)> mappings
 let g:ctrlp_prompt_mappings = {
   \ 'PrtBS()':              ['<bs>', '<c-h>'],
-  \ 'PrtDelete()':          ['<del>', '<C-l>'],
+  \ 'PrtDelete()':          ['<del>', '<C-d>'],
   \ 'PrtDeleteWord()':      ['<c-w>'],
   \ 'PrtClear()':           ['<c-u>'],
   \ 'PrtSelectMove("j")':   ['<c-n>', '<down>'],
@@ -41,7 +41,7 @@ let g:ctrlp_prompt_mappings = {
   \ 'AcceptSelection("v")': ['<c-v>', '<RightMouse>'],
   \ 'ToggleFocus()':        ['<s-tab>'],
   \ 'ToggleRegex()':        ['<c-r>'],
-  \ 'ToggleByFname()':      ['<c-d>'],
+  \ 'ToggleByFname()':      ['<d-d>'],
   \ 'ToggleType(1)':        ['<c-up>'],
   \ 'ToggleType(-1)':       ['<c-down>'],
   \ 'PrtExpandDir()':       ['<tab>'],
