@@ -1,9 +1,19 @@
 let g:lightline = {}
+let g:lightline.active = {}
+let g:lightline.inactive = {}
 let g:lightline.colorscheme = 'custom_solarized'
 let g:lightline.enable = {'tabline': 0}
 
+" Show file path
+let g:lightline.active.left = [
+      \   ['mode', 'paste'],
+      \   ['readonly', 'relativepath', 'modified']
+      \ ]
+let g:lightline.inactive.left = [
+      \   ['relativepath']
+      \ ]
+
 " AsyncRun status
-let g:lightline.active = {}
 let g:lightline.active.right = [
       \   ['asyncrun_status', 'lineinfo'],
       \   ['percent'],
