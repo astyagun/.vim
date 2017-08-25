@@ -42,7 +42,6 @@ Plug 'bootleq/vim-textobj-rubysymbol', {'for': ['ruby', 'eruby', 'haml']}
 Plug 'coderifous/textobj-word-column.vim'
 Plug 'jceb/vim-textobj-uri'
 Plug 'kana/vim-textobj-entire'
-Plug 'kana/vim-textobj-lastpat'
 Plug 'kana/vim-textobj-line'
 Plug 'kana/vim-textobj-user'
 Plug 'michaeljsmith/vim-indent-object'
@@ -54,6 +53,7 @@ Plug 'whatyouhide/vim-textobj-xmlattr', {'for': ['html', 'eruby']}
 Plug 'glts/vim-textobj-comment'
 " Conflict with word column text object (c character)
 " Plug 'jasonlong/vim-textobj-css'
+Plug 'sgur/vim-textobj-parameter'
 
 " File types
 Plug 'vim-ruby/vim-ruby', {'for': ['ruby', 'eruby']}
