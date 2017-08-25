@@ -1,7 +1,7 @@
 snippet rspec
 require "rails_helper"
 
-RSpec.describe ${1}, type: :${2} do
+RSpec.describe ${1:`!v substitute(substitute(expand('%:p:t:r'), '_spec$', '', ''), '\(_\|^\)\(.\)', '\u\2', 'g')`}, type: :${2} do
 	${3}
 end
 endsnippet
