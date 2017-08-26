@@ -12,4 +12,5 @@ source ~/.vim/my_plugin/restore_cursor_position.vim
 source ~/.vim/my_plugin/search_vmaps.vim
 source ~/.vim/my_plugin/setcolors.vim
 source ~/.vim/my_plugin/sum_durations.vim
+source ~/.vim/my_plugin/tags.vim
 source ~/.vim/my_plugin/terminal.vim

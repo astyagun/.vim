@@ -48,10 +48,6 @@ augroup AsyncRunUpdateLightline
   autocmd User AsyncRunStart call lightline#update()
 augroup END
 
-" Gutentags
-call add(g:lightline.active.left, ['gutentags'])
-let g:lightline.component.gutentags = '%{gutentags#statusline("Generating...")}'
-
 " Reload Lightline when configuration is reloaded
 augroup LightlineReload
   autocmd!
