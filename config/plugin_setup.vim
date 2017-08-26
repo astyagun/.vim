@@ -2,6 +2,7 @@
 " ~/.vim/plugin_setup/vim_formatter.rb
 source ~/.vim/plugin_setup/2html.vim
 source ~/.vim/plugin_setup/ale.vim
+source ~/.vim/plugin_setup/asyncomplete.vim
 source ~/.vim/plugin_setup/asyncrun.vim
 source ~/.vim/plugin_setup/camelcasemotion.vim
 source ~/.vim/plugin_setup/cmdline_complete.vim

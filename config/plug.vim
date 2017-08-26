@@ -38,6 +38,14 @@ Plug 'AndrewRadev/splitjoin.vim'
 Plug 'beloglazov/vim-online-thesaurus',
       \ {'on': ['OnlineThesaurusCurrentWord', 'OnlineThesaurusLookup', 'Thesaurus']}
 
+" Autocomplete
+Plug 'prabirshrestha/asyncomplete.vim'
+Plug 'prabirshrestha/async.vim'
+Plug 'prabirshrestha/asyncomplete-buffer.vim'
+Plug 'prabirshrestha/asyncomplete-ultisnips.vim'
+Plug 'prabirshrestha/asyncomplete-tags.vim'
+Plug 'yami-beta/asyncomplete-omni.vim'
+
 " Text objects
 Plug 'bootleq/vim-textobj-rubysymbol', {'for': ['ruby', 'eruby', 'haml']}
 Plug 'coderifous/textobj-word-column.vim'
