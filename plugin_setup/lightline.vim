@@ -1,27 +1,38 @@
-let g:lightline = {}
-let g:lightline.active = {}
-let g:lightline.inactive = {}
-let g:lightline.colorscheme = 'custom_solarized'
-let g:lightline.enable = {'tabline': 0}
+let g:lightline                  = {}
+let g:lightline.colorscheme      = 'custom_solarized'
+let g:lightline.component        = {}
+let g:lightline.component_expand = {}
+let g:lightline.component_type   = {}
+let g:lightline.enable           = {'tabline': 0}
+
+" Initial config
+let g:lightline.active = {
+      \ 'left': [ [ 'mode', 'paste' ],
+      \           [ 'readonly', 'filename', 'modified' ] ],
+      \ 'right': [ [ 'lineinfo' ],
+      \            [ 'percent' ],
+      \            [ 'fileformat', 'fileencoding', 'filetype' ] ] }
+let g:lightline.inactive = {
+      \ 'left': [ [ 'filename' ] ],
+      \ 'right': [ [ 'lineinfo' ],
+      \            [ 'percent' ] ] }
 
 " Show file path
-let g:lightline.active.left = [
-      \   ['mode', 'paste'],
-      \   ['readonly', 'relativepath', 'modified']
-      \ ]
-let g:lightline.inactive.left = [
-      \   ['relativepath']
-      \ ]
+let g:lightline.active.left[1][1]   = 'relativepath'
+let g:lightline.inactive.left[0][0] = 'relativepath'
 
-" AsyncRun status
-let g:lightline.active.right = [
-      \   ['asyncrun_status', 'lineinfo'],
-      \   ['percent'],
-      \   ['filetype', 'fileencoding']
-      \ ]
-let g:lightline.component        = {'asyncrun_status': '%{toupper(g:asyncrun_status)}'}
-let g:lightline.component_expand = {'asyncrun_status': 'AsyncRunStatus'}
-let g:lightline.component_type   = {'asyncrun_status': 'error'}
+" Don't show file format
+call remove(g:lightline.active.right[2], 0)
+
+" Show modified in inactive windows
+call add(g:lightline.inactive.left[0], 'modified')
+
+" AsyncRun
+call insert(g:lightline.active.right[0], 'asyncrun', 0)
+
+let g:lightline.component.asyncrun        = '%{toupper(g:asyncrun_status)}'
+let g:lightline.component_expand.asyncrun = 'AsyncRunStatus'
+let g:lightline.component_type.asyncrun   = 'error'
 
 function! AsyncRunStatus()
   if g:asyncrun_status == 'success' || g:asyncrun_status == ''
@@ -36,6 +47,10 @@ augroup AsyncRunUpdateLightline
   autocmd User AsyncRunStop call lightline#update()
   autocmd User AsyncRunStart call lightline#update()
 augroup END
+
+" Gutentags
+call add(g:lightline.active.left, ['gutentags'])
+let g:lightline.component.gutentags = '%{gutentags#statusline("Generating...")}'
 
 " Reload Lightline when configuration is reloaded
 augroup LightlineReload
