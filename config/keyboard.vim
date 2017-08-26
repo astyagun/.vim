@@ -45,6 +45,7 @@ function! s:Refresh()
   if &filetype ==# 'netrw'
     execute "normal \<Plug>NetrwRefresh"
   endif
+  SignifyRefresh
 endfunction
 
 " Select last paste in visual mode
