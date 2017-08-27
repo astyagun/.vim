@@ -38,12 +38,12 @@ set laststatus=2
 " Hide buffers when not displayed
 set hidden
 " Folding settings
-set foldmethod=manual
-set foldcolumn=0
-set foldlevel=2
+set foldmethod=marker
+set foldcolumn=1
+set foldlevel=0
 set foldnestmax=3
 set signcolumn=yes
-set nofoldenable
+set foldenable
 set sessionoptions-=options
 set diffopt=filler,vertical
 set scrolloff=2
