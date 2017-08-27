@@ -1,7 +1,8 @@
-let g:ctrlp_map = ''
-let g:ctrlp_match_window = 'bottom,order:ttb,min:10,max:10,results:25'
-let g:ctrlp_working_path_mode = 'rw'
-let g:ctrlp_show_hidden = 1
+let g:ctrlp_map                = ''
+let g:ctrlp_match_window       = 'bottom,order:ttb,min:10,max:10,results:25'
+let g:ctrlp_mruf_default_order = 1
+let g:ctrlp_show_hidden        = 1
+let g:ctrlp_working_path_mode  = 'rw'
 
 " Prevent running in home directory
 function! s:RunCtrlP(directory, command_name)
