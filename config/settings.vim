@@ -33,6 +33,7 @@ let &listchars = "tab:\uBB\uBB,trail:\uB7,nbsp:~"
 set list
 set noballooneval
 set laststatus=2
+set signcolumn=yes
 
 " Navigation
 " Hide buffers when not displayed
@@ -42,7 +43,6 @@ set foldmethod=marker
 set foldcolumn=1
 set foldlevel=0
 set foldnestmax=3
-set signcolumn=yes
 set foldenable
 set sessionoptions-=options
 set diffopt=filler,vertical
