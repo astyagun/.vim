@@ -38,6 +38,7 @@ Plug 'tpope/vim-abolish'
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'beloglazov/vim-online-thesaurus',
       \ {'on': ['OnlineThesaurusCurrentWord', 'OnlineThesaurusLookup', 'Thesaurus']}
+Plug 'tommcdo/vim-exchange'
 " }}} Editing "
 
 " Autocomplete {{{ "
