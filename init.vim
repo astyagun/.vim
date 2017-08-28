@@ -22,6 +22,7 @@ source ~/.vim/config/my_plugins.vim
 "" Markdown
 " ~/.vim/compiler/markdown.vim
 " ~/.vim/ftplugin/markdown.vim
+" ~/.vim/after/ftplugin/markdown.vim
 " ~/.vim/after/syntax/markdown.vim
 
 "" VimL
