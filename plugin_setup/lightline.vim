@@ -1,9 +1,12 @@
-let g:lightline                  = {}
-let g:lightline.colorscheme      = 'custom_solarized'
-let g:lightline.component        = {}
-let g:lightline.component_expand = {}
-let g:lightline.component_type   = {}
-let g:lightline.enable           = {'tabline': 0}
+let g:lightline                    = {}
+let g:lightline.colorscheme        = 'custom_solarized'
+let g:lightline.component          = {}
+let g:lightline.component_expand   = {}
+let g:lightline.component_function = {}
+let g:lightline.component_type     = {}
+let g:lightline.enable             = {'tabline': 0}
+let g:lightline.separator          = {'left': '', 'right': ''}
+let g:lightline.subseparator       = {'left': '|', 'right': '|'}
 
 " Initial config
 let g:lightline.active = {
@@ -18,8 +21,17 @@ let g:lightline.inactive = {
       \            [ 'percent' ] ] }
 
 " Show file path
-let g:lightline.active.left[1][1]   = 'relativepath'
+let g:lightline.active.left[1][1]   = 'shrinkable_filename'
 let g:lightline.inactive.left[0][0] = 'relativepath'
+
+let g:lightline.component_function['shrinkable_filename'] = 'LightlineShrinkableFilename'
+function! LightlineShrinkableFilename()
+  if len(expand('%')) > 0
+    return (winwidth(0) > 90 ? expand('%') : expand('%:t'))
+  else
+    return '[No Name]'
+  end
+endfunction
 
 " Don't show file format
 call remove(g:lightline.active.right[2], 0)
