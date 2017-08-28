@@ -22,7 +22,7 @@ let g:lightline.inactive = {
 
 " Show file path
 let g:lightline.active.left[1][1]   = 'shrinkable_filename'
-let g:lightline.inactive.left[0][0] = 'relativepath'
+let g:lightline.inactive.left[0][0] = 'shrinkable_filename'
 
 let g:lightline.component_function['shrinkable_filename'] = 'LightlineShrinkableFilename'
 function! LightlineShrinkableFilename()
