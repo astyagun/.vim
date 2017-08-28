@@ -64,7 +64,7 @@ set notagbsearch
 " Formatting
 set autoindent
 set shiftwidth=2 tabstop=2 softtabstop=2 expandtab
-set linespace=3
+set linespace=1
 " Round indent to multiple of 'shiftwidth'
 set shiftround
 set nosmartindent

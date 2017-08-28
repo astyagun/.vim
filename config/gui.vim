@@ -9,4 +9,4 @@ set macligatures
 set macthinstrokes
 
 set columns=135
-set lines=42
+set lines=47
