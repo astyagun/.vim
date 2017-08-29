@@ -43,7 +43,7 @@ set foldmethod=marker
 set foldcolumn=0
 set foldlevel=0
 set foldnestmax=3
-set foldenable
+set nofoldenable
 set sessionoptions-=options
 set diffopt=filler,vertical
 set scrolloff=2
