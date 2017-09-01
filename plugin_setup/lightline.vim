@@ -33,8 +33,8 @@ function! LightlineShrinkableFilename()
   end
 endfunction
 
-" Don't show file format
-call remove(g:lightline.active.right[2], 0)
+" Reorder file information components
+let g:lightline.active.right[2] = ['filetype', 'fileencoding', 'fileformat']
 
 " Show modified in inactive windows
 call add(g:lightline.inactive.left[0], 'modified')
