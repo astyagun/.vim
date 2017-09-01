@@ -4,8 +4,9 @@
 .DS_Store
 .git/
 .keep
+coverage/
+node_modules/
 public/uploads
-tags
-tmp/*
-!tmp/dart
 spec/cassettes/
+tags
+vendor/assets/
