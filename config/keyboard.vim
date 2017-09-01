@@ -56,11 +56,11 @@ nnoremap <expr> gb '`[' . strpart(getregtype(), 0, 1) . '`]'
 nnoremap <S-CR> <CR>
 
 " Change word case in INSERT mode
-inoremap <C-c> <Esc>guiw~bi
+inoremap <C-c> <Esc>lguiw~bi
 " <A-c>
-inoremap ç <C-o>guiw
+inoremap ç <Esc>lguiwi
 imap ≠ ç
 " <A-S-c>
-inoremap Ç <C-o>gUiw
+inoremap Ç <Esc>lgUiwi
 " Russian, became possible after using Ukelele to change the character typed by this key combination
 imap ≉ Ç
