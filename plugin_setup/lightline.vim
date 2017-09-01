@@ -8,6 +8,8 @@ let g:lightline.enable             = {'tabline': 0}
 let g:lightline.separator          = {'left': '', 'right': ''}
 let g:lightline.subseparator       = {'left': '|', 'right': '|'}
 
+let s:min_window_width_and_file_name_length_difference_for_full_file_name = 55
+
 " Initial config
 let g:lightline.active = {
       \ 'left': [ [ 'mode', 'paste' ],
@@ -25,9 +27,18 @@ let g:lightline.active.left[1][1]   = 'shrinkable_filename'
 let g:lightline.inactive.left[0][0] = 'shrinkable_filename'
 
 let g:lightline.component_function['shrinkable_filename'] = 'LightlineShrinkableFilename'
+
 function! LightlineShrinkableFilename()
-  if len(expand('%')) > 0
-    return (winwidth(0) > 90 ? expand('%') : expand('%:t'))
+  let l:file_name = expand('%')
+  let l:window_width_without_file_name = winwidth(0) - len(l:file_name)
+
+  if len(l:file_name) > 0
+    if l:window_width_without_file_name >=
+          \ s:min_window_width_and_file_name_length_difference_for_full_file_name
+      return expand('%')
+    else
+      return expand('%:t')
+    endif
   else
     return '[No Name]'
   end
