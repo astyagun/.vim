@@ -5,5 +5,5 @@ xmap ah <plug>(signify-motion-outer-visual)
 
 augroup SignifyRefresh
   autocmd!
-  autocmd User Fugitive SignifyRefresh
+  autocmd User Fugitive if &buftype == '' | SignifyRefresh | endif
 augroup END
