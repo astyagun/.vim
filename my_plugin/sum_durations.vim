@@ -1,6 +1,6 @@
 " SumDurations
 "
-" Vim command to calculate the sum of time durations written in format like '1h 30m'
+" Vim command to calculate the sum of time durations written in format like '1h 30m' (or '3Y 5M')
 " The sum is displayed with :echo command
 "
 " Usage example:
@@ -14,53 +14,83 @@
 " Select the paragraph in VISUAL mode and run the command `:'<,'>SumDurations`
 "
 " The will echo: '2h 30m'
+"
+" Calling command without a range counts durations on current line
+"
+" Providing bang (!) makes command count months (M) and years (Y)
 
-command! -nargs=0 -range SumDurations <line1>,<line2>call s:SumDurations()
+command! -nargs=0 -range -bang SumDurations <line1>,<line2>call s:SumDurations(<bang>1)
 
-function! s:SumDurations() range
-  let hits     = s:GatherDuration(a:firstline, a:lastline)
-  let minutes  = s:Hits2Minutes(hits)
-  let duration = s:Minutes2Duration(minutes)
+let s:units = {
+      \   'minutes': {'character': 'm', 'multiplier': 1},
+      \   'hours':   {'character': 'h', 'multiplier': 60},
+      \   'months':  {'character': 'M', 'multiplier': 1},
+      \   'years':   {'character': 'Y', 'multiplier': 12}
+      \ }
 
-  call s:ProduceOutput(duration)
+function! s:SumDurations(minutes_and_hours) range
+  let l:selected_units = s:SelectedUnits(a:minutes_and_hours)
+  let l:hits           = s:GatherDurations(a:firstline, a:lastline, l:selected_units)
+  let l:low_units_sum  = s:Hits2LowUnitsSum(l:hits, l:selected_units)
+  let l:duration       = s:LowUnits2DurationText(l:low_units_sum, l:selected_units)
+
+  call s:ProduceOutput(l:duration)
 endfunction
 
-function! s:GatherDuration(line1, line2)
-  let duration_pattern = '\v(\d+[hm])'
-  let hits = []
+function! s:SelectedUnits(minutes_and_hours)
+  if a:minutes_and_hours
+    return {'low': s:units.minutes, 'high': s:units.hours}
+  else
+    return {'low': s:units.months, 'high': s:units.years}
+  endif
+endfunction
 
-  for line in getline(a:line1, a:line2)
-    " matchstr() returns only on match, so splitting the line by white space before matching
-    let line_hits = map(split(line), {key, value -> matchstr(value, duration_pattern)})
+function! s:GatherDurations(line1, line2, selected_units)
+  let l:units_characters = a:selected_units.low.character . a:selected_units.high.character
+  let l:duration_pattern = '\v(\d+[' . l:units_characters . '])'
+  let l:hits             = []
+
+  let l:ignorecase = &ignorecase
+  setlocal noignorecase
+
+  for l:line in getline(a:line1, a:line2)
+    " matchstr() returns only one match, so splitting the line by white space before matching
+    let l:line_hits = map(split(l:line), {key, value -> matchstr(value, l:duration_pattern)})
     " Clear empty List items
-    let line_hits = filter(line_hits, {i, value -> len(value) > 0})
+    let l:line_hits = filter(l:line_hits, {i, value -> len(value) > 0})
 
-    call extend(hits, line_hits)
+    call extend(l:hits, l:line_hits)
   endfor
 
-  return hits
+  let &ignorecase = l:ignorecase
+  return l:hits
 endfunction
 
-function! s:Hits2Minutes(hits)
-  let minutes = 0
+function! s:Hits2LowUnitsSum(hits, selected_units)
+  let l:units_sum = 0
 
-  for hit in a:hits
-    if hit =~ 'h$'
-      let minutes += str2nr(hit) * 60
-    endif
-    if hit =~ 'm$'
-      let minutes += str2nr(hit)
-    endif
+  for l:hit in a:hits
+    for [l:unit_type, l:unit] in items(a:selected_units)
+      if l:hit =~ l:unit.character . '$'
+        let l:units_sum += str2nr(l:hit) * l:unit.multiplier
+      endif
+    endfor
   endfor
 
-  return minutes
+  return l:units_sum
 endfunction
 
-function! s:Minutes2Duration(minutes)
-  let hours   = a:minutes / 60
-  let minutes = a:minutes % 60
+function! s:LowUnits2DurationText(units, selected_units)
+  let l:divider    = a:selected_units.high.multiplier
+  let l:high_units = a:units / l:divider
+  let l:low_units  = a:units % l:divider
+  let l:output     = ''
 
-  return hours . 'h ' . minutes . 'm'
+  if l:high_units > 0
+    let l:output = l:high_units . a:selected_units.high.character . ' '
+  endif
+
+  return l:output . l:low_units . a:selected_units.low.character
 endfunction
 
 function! s:ProduceOutput(duration)
