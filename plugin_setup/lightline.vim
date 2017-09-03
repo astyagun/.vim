@@ -50,6 +50,19 @@ let g:lightline.active.right[2] = ['filetype', 'fileencoding', 'fileformat']
 " Show modified in inactive windows
 call add(g:lightline.inactive.left[0], 'modified')
 
+" Swap places of right sections
+let s:old_right_0 = g:lightline.active.right[0]
+let g:lightline.active.right[0] = g:lightline.active.right[1]
+let g:lightline.active.right[1] = s:old_right_0
+let s:old_right_0 = g:lightline.inactive.right[0]
+let g:lightline.inactive.right[0] = g:lightline.inactive.right[1]
+let g:lightline.inactive.right[1] = s:old_right_0
+
+" Total lines count
+call add(g:lightline.active.right[0], 'total_lines')
+call add(g:lightline.inactive.right[0], 'total_lines')
+let g:lightline.component.total_lines = '%L'
+
 " AsyncRun
 call insert(g:lightline.active.right[0], 'asyncrun', 0)
 
