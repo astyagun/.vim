@@ -44,8 +44,9 @@ function! LightlineShrinkableFilename()
   end
 endfunction
 
-" Reorder file information components
-let g:lightline.active.right[2] = ['filetype', 'fileencoding', 'fileformat']
+" Remove extra file info components
+call remove(g:lightline.active.right[2], 'fileencoding')
+call remove(g:lightline.active.right[2], 'fileformat')
 
 " Show modified in inactive windows
 call add(g:lightline.inactive.left[0], 'modified')
@@ -66,7 +67,6 @@ let g:lightline.component.total_lines = '%L'
 " AsyncRun
 call insert(g:lightline.active.right[0], 'asyncrun', 0)
 
-let g:lightline.component.asyncrun        = '%{toupper(g:asyncrun_status)}'
 let g:lightline.component_expand.asyncrun = 'AsyncRunStatus'
 let g:lightline.component_type.asyncrun   = 'error'
 
