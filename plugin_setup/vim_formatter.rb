@@ -30,10 +30,11 @@ class VimFormatter < RSpec::Core::Formatters::BaseFormatter
   private
 
   def format_failure(failure)
-    call_stack = failure.exception.backtrace.
-      find { |item| item =~ %r{/usr/src/app/} }&.gsub('/usr/src/app/', '')
+    app_directories = %r{/usr/src/app/|/home/apps/app/}
+    file_path = failure.exception.backtrace.
+      find { |item| item =~ app_directories }&.gsub(app_directories, '')
 
-    result = format '%s: %s', call_stack, failure.exception.message
+    result = format '%s: %s', file_path, failure.exception.message
     result.tr("\n", ' ')
   end
 end
