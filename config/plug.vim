@@ -7,6 +7,7 @@ Plug 'gerw/vim-HiLinkTrace', {'on': 'HLT'}
 Plug 'vim-scripts/SyntaxAttr.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'chrisbra/Colorizer'
+Plug 'blueyed/vim-diminactive'
 " }}} Visual "
 
 " Navigation and window management {{{ "

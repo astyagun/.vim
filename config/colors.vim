@@ -8,9 +8,13 @@ highlight SpecialKey guifg=red
 
 " Highlight characters when line length is exceeded
 " Test: Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Pink Test Test
-call matchadd('ColorColumn', '\%111v', 100)
-highlight clear ColorColumn
-highlight link ColorColumn Error
+augroup LineLengthColumn
+  autocmd!
+  " It requires late execution for some reason
+  autocmd FileType * highlight link LineLengthColumn Error | call matchadd('LineLengthColumn', '\%111v', 100)
+augroup END
+
+highlight ColorColumn guibg=#F5F5F5
 
 " Diff
 highlight DiffAdd guibg=#DDFFDD
