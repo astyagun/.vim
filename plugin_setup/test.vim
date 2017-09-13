@@ -8,7 +8,7 @@ let g:test#custom_strategies = {'custom_asyncrun': function('TestAsyncRunStrateg
 let g:test#strategy = 'custom_asyncrun'
 
 function! TestDockerTransform(cmd) abort
-  return 'docker-compose exec -T tests bash -c "' . a:cmd . '"'
+  return 'docker-compose exec -T tests bash -c "NO_COVERAGE=true ' . a:cmd . '"'
 endfunction
 let g:test#custom_transformations = {'docker': function('TestDockerTransform')}
 let g:test#transformation = 'docker'
