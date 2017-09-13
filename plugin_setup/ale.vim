@@ -33,11 +33,9 @@ endfunction
 command! -range ALERubocopFix <line1>,<line2>call <SID>ALERubocopFix()
 
 map <Leader>ll <Plug>(ale_lint):echom 'ALE running...'<CR>
-augroup ALEJumpToFirstError
+augroup ALEEchoResult
   autocmd!
-  autocmd User ALELint if len(getloclist(0)) > 0 |
-        \   ll |
-        \ else |
+  autocmd User ALELint if len(getloclist(0)) == 0 |
         \   unsilent echom 'ALE: no errors! 👍' |
         \ endif
 augroup END
