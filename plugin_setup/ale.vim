@@ -37,7 +37,6 @@ augroup ALEJumpToFirstError
   autocmd!
   autocmd User ALELint if len(getloclist(0)) > 0 |
         \   ll |
-        \   unsilent ALEDetail |
         \ else |
         \   unsilent echom 'ALE: no errors! 👍' |
         \ endif
