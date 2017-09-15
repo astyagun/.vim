@@ -1,3 +1,4 @@
+let g:ale_echo_cursor = 0
 let g:ale_lint_delay = 2000
 let g:ale_ruby_reek_show_wiki_link = 1
 let g:ale_ruby_rubocop_options = '--rails --display-style-guide --parallel'
