@@ -64,3 +64,7 @@ imap ≠ ç
 inoremap Ç <Esc>lgUiwi
 " Russian, became possible after using Ukelele to change the character typed by this key combination
 imap ≉ Ç
+
+" Set window size, useful for netrw and quickfix windows
+nmap <Leader>w<Bar> 40<C-w><Bar>
+nmap <Leader>w_ 10<C-w>_
