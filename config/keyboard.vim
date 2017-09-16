@@ -66,5 +66,7 @@ inoremap Ç <Esc>lgUiwi
 imap ≉ Ç
 
 " Set window size, useful for netrw and quickfix windows
-nmap <Leader>w<Bar> 40<C-w><Bar>
-nmap <Leader>w_ 10<C-w>_
+nnoremap <Leader>w<Bar> 40<C-w><Bar>
+nnoremap <Leader>w_ 10<C-w>_
+" Mazimize window
+nnoremap <C-w>/ <C-w>_<C-w><Bar>
