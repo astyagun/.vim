@@ -78,6 +78,9 @@ Plug 'plasticboy/vim-markdown', {'for': 'markdown'}
 Plug 'asux/vim-capybara'
 Plug 'JamshedVesuna/vim-markdown-preview', {'for': 'markdown'}
 Plug 'vim-scripts/confluencewiki.vim', {'for': 'confluencewiki'}
+" Markdown and Mermaid live preview with :PrevimOpen command
+Plug 'kannokanno/previm', {'for': 'markdown'}
+Plug 'wannesm/wmgraphviz.vim', {'for': 'dot'}
 " }}} File types "
 
 " Integrations {{{ "
