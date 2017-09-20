@@ -1,9 +1,9 @@
 " gx to open GitHub URLs in browser
 function! s:plug_gx()
-  if getline('.') =~ '^ *Plug\s'
-    let cfile = expand('<cfile>')
-    if !filereadable(cfile) && cfile != 'Plug'
-      call OpenInBrowser('https://github.com/' . cfile)
+  if getline('.') =~# '^ *Plug\s'
+    let l:cfile = expand('<cfile>')
+    if !filereadable(l:cfile) && l:cfile !=# 'Plug'
+      call OpenInBrowser('https://github.com/' . l:cfile)
     endif
   else
     call OpenInBrowser('<cfile>')

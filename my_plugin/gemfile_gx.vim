@@ -1,11 +1,10 @@
 " gx to open Rubygems URLs in browser
 function! s:GemfileGx()
-  let line = getline('.')
-  if line =~ '^ *gem\s' || line =~ '^ *spec.add_dependency\s' || line =~ '^ *spec.add_development_dependency\s'
-    echom 'Gx'
-    let cfile = expand('<cfile>')
-    if !filereadable(cfile) && cfile != 'gem' && cfile != 'spec.add_dependency' && cfile != 'spec.add_development_dependency'
-      call OpenInBrowser('https://rubygems.org/gems/' . cfile)
+  let l:line = getline('.')
+  if l:line =~# '^ *gem\s' || l:line =~# '^ *spec.add_dependency\s' || l:line =~# '^ *spec.add_development_dependency\s'
+    let l:cfile = expand('<cfile>')
+    if !filereadable(l:cfile) && l:cfile !=# 'gem' && l:cfile !=# 'spec.add_dependency' && l:cfile !=# 'spec.add_development_dependency'
+      call OpenInBrowser('https://rubygems.org/gems/' . l:cfile)
     endif
   else
     call OpenInBrowser('<cfile>')
