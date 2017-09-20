@@ -14,6 +14,7 @@ noremap! <C-a> <Home>
 noremap! <C-e> <End>
 noremap! <C-d> <Del>
 inoremap <C-q> <C-d>
+cnoremap <C-k> <C-\>estrpart(getcmdline(),0,getcmdpos()-1)<CR>
 " <A-f> and <A-b> to jump words
 noremap! ƒ <C-Right>
 noremap! ∫ <C-Left>
@@ -34,6 +35,7 @@ cnoremap <C-n> <Down>
 " http://vim.wikia.com/wiki/Recover_from_accidental_Ctrl-U
 inoremap <C-u> <C-g>u<C-u>
 inoremap <C-w> <C-g>u<C-w>
+inoremap <C-k> <C-g>u<C-o>D
 
 nnoremap <silent> <C-l> :nohlsearch <Bar> call <SID>Refresh()<CR><C-l>
 imap <C-l> <Esc><C-l>
