@@ -1,5 +1,6 @@
-" ~/.vim/plugin_setup/ctrlp.ignore
-" ~/.vim/plugin_setup/vim_formatter.rb
+" ~/.vim/runtime/ctrlp.ignore
+" ~/.vim/runtime/generate-tags
+" ~/.vim/runtime/vim_formatter.rb
 source ~/.vim/plugin_setup/2html.vim
 source ~/.vim/plugin_setup/ale.vim
 source ~/.vim/plugin_setup/asyncomplete.vim

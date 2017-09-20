@@ -40,4 +40,4 @@ function! s:TestProjectFile()
   endif
 endfunction
 
-command! CopyVimFormatter !cp ~/.vim/plugin_setup/vim_formatter.rb ./tmp/
+command! CopyVimFormatter !cp ~/.vim/runtime/vim_formatter.rb ./tmp/

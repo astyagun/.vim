@@ -65,7 +65,7 @@ if executable('rg')
   let g:ctrlp_user_command = 'rg' .
         \ ' --hidden' .
         \ ' --no-ignore-vcs' .
-        \ ' --ignore-file ~/.vim/plugin_setup/ctrlp.ignore' .
+        \ ' --ignore-file ~/.vim/runtime/ctrlp.ignore' .
         \ ' --files' .
         \ ' --color=never %s' .
         \ ' --ignore-case'
