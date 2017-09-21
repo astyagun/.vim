@@ -72,3 +72,16 @@ nnoremap <Leader>w<Bar> 40<C-w><Bar>
 nnoremap <Leader>w_ 10<C-w>_
 " Mazimize window
 nnoremap <C-w>/ <C-w>_<C-w><Bar>
+
+" Open, close and toggle QuickFix window
+noremap <silent> [oq :copen<CR>
+noremap <silent> ]oq :cclose<CR>
+noremap <silent> =oq :call ToggleQuickFix()<CR>
+
+function! ToggleQuickFix()
+  if len(filter(range(1, winnr('$')), 'getwinvar(v:val, "&filetype") == "qf"')) > 0
+    cclose
+  else
+    copen
+  endif
+endfunction
