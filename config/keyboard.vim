@@ -85,3 +85,6 @@ function! ToggleQuickFix()
     copen
   endif
 endfunction
+
+" Close all buffers
+nnoremap <Leader><C-w>c :%bw<CR>
