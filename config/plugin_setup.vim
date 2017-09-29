@@ -14,6 +14,7 @@ source ~/.vim/plugin_setup/easy_align.vim
 source ~/.vim/plugin_setup/ferret.vim
 source ~/.vim/plugin_setup/fugitive.vim
 source ~/.vim/plugin_setup/geeknote.vim
+source ~/.vim/plugin_setup/history-traverse.vim
 source ~/.vim/plugin_setup/lightline.vim
 source ~/.vim/plugin_setup/markdown-preview.vim
 source ~/.vim/plugin_setup/markdown.vim
