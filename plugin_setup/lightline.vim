@@ -26,16 +26,31 @@ let g:lightline.inactive = {
 let g:lightline.active.left[1][1]   = 'shrinkable_filename'
 let g:lightline.inactive.left[0][0] = 'shrinkable_filename'
 
-let g:lightline.component_function['shrinkable_filename'] = 'LightlineShrinkableFilename'
+let g:lightline.component_function['shrinkable_filename'] = 'CachedLightlineShrinkableFilename'
+
+function! CachedLightlineShrinkableFilename()
+  if !exists('b:lightline_shrinkable_filename_cached')
+    let b:lightline_shrinkable_filename_cached = LightlineShrinkableFilename()
+  endif
+  return b:lightline_shrinkable_filename_cached
+endfunction
+
+augroup LightlineShrinkableFilename
+  autocmd!
+  autocmd BufRead,BufWritePost,VimResized * if exists('b:lightline_shrinkable_filename_cached') |
+        \   unlet b:lightline_shrinkable_filename_cached |
+        \ endif
+augroup END
 
 function! LightlineShrinkableFilename()
   let l:file_name = expand('%')
-  let l:window_width_without_file_name = winwidth(0) - len(l:file_name)
+  let l:file_name_length = len(l:file_name)
+  let l:window_width_without_file_name = winwidth(0) - l:file_name_length
 
-  if len(l:file_name) > 0
+  if l:file_name_length > 0
     if l:window_width_without_file_name >=
           \ s:min_window_width_and_file_name_length_difference_for_full_file_name
-      return expand('%')
+      return l:file_name
     else
       return expand('%:t')
     endif
