@@ -68,10 +68,13 @@ inoremap Ç <Esc>lgUiwi
 imap ≉ Ç
 
 " Set window size, useful for netrw and quickfix windows
-nnoremap <Leader>w<Bar> 40<C-w><Bar>
-nnoremap <Leader>w_ 10<C-w>_
+nnoremap <Leader><C-w><Bar> 40<C-w><Bar>
+nnoremap <Leader><C-w>_ 10<C-w>_
 " Mazimize window
 nnoremap <C-w>/ <C-w>_<C-w><Bar>
+
+" Close all buffers
+nnoremap <Leader><C-w>c :%bw<CR>
 
 " Open, close and toggle QuickFix window
 noremap <silent> [oq :copen<CR>
@@ -85,6 +88,3 @@ function! ToggleQuickFix()
     copen
   endif
 endfunction
-
-" Close all buffers
-nnoremap <Leader><C-w>c :%bw<CR>
