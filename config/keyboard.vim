@@ -79,7 +79,6 @@ nnoremap <Leader><C-w>c :%bw<CR>
 " Open, close and toggle QuickFix window
 noremap <silent> [oq :copen<CR>
 noremap <silent> ]oq :cclose<CR>
-noremap <silent> =oq :call ToggleQuickFix()<CR>
 
 function! ToggleQuickFix()
   if len(filter(range(1, winnr('$')), 'getwinvar(v:val, "&filetype") == "qf"')) > 0
