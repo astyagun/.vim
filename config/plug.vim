@@ -69,6 +69,7 @@ Plug 'glts/vim-textobj-comment'
 " Conflict with word column text object (c character)
 " Plug 'jasonlong/vim-textobj-css'
 Plug 'sgur/vim-textobj-parameter'
+Plug 'wellle/targets.vim'
 " }}} Text objects "
 
 " File types {{{ "
