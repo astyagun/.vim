@@ -58,14 +58,15 @@ nnoremap <expr> gb '`[' . strpart(getregtype(), 0, 1) . '`]'
 nnoremap <S-CR> <CR>
 
 " Change word case in INSERT mode
-inoremap <C-c> <Esc>lguiw~bi
-" <A-c>
-inoremap ç <Esc>lguiwi
+" <A-c> - capitalize
+inoremap ç <Esc>lguiw~wi
 imap ≠ ç
-" <A-S-c>
-inoremap Ç <Esc>lgUiwi
-" Russian, became possible after using Ukelele to change the character typed by this key combination
-imap ≉ Ç
+" <A-l> - lowercase
+inoremap ¬ <Esc>lguiwwi
+imap ∆ ¬
+" <A-u> - uppercase
+inoremap ¨ <Esc>lgUiwwi
+imap ѓ ¨
 
 " Set window size, useful for netrw and quickfix windows
 nnoremap <Leader><C-w><Bar> 40<C-w><Bar>

@@ -20,10 +20,10 @@ source ~/.vim/config/my_plugins.vim
 " ~/.vim/autoload/plug.vim
 
 "" Markdown
-" ~/.vim/compiler/markdown.vim
-" ~/.vim/ftplugin/markdown.vim
 " ~/.vim/after/ftplugin/markdown.vim
 " ~/.vim/after/syntax/markdown.vim
+" ~/.vim/compiler/markdown.vim
+" ~/.vim/ftplugin/markdown.vim
 
 "" VimL
 " ~/.vim/ftplugin/vim.vim
