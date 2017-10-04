@@ -65,8 +65,9 @@ imap ≠ ç
 inoremap ¬ <Esc>lguiwwi
 imap ∆ ¬
 " <A-u> - uppercase
-inoremap ¨ <Esc>lgUiwwi
-imap ѓ ¨
+inoremap Ò <Esc>lgUiwwi
+" Depends on Russian layout modified by Ukelele
+imap 𝛥 Ò
 
 " Set window size, useful for netrw and quickfix windows
 nnoremap <Leader><C-w><Bar> 40<C-w><Bar>
