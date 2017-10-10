@@ -83,6 +83,7 @@ Plug 'vim-scripts/confluencewiki.vim', {'for': 'confluencewiki'}
 " Markdown and Mermaid live preview with :PrevimOpen command
 Plug 'kannokanno/previm', {'for': 'markdown'}
 Plug 'wannesm/wmgraphviz.vim', {'for': 'dot'}
+Plug 'slim-template/vim-slim', {'for': 'slim'}
 " }}} File types "
 
 " Integrations {{{ "
