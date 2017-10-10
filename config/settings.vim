@@ -34,6 +34,7 @@ set list
 set noballooneval
 set laststatus=2
 set signcolumn=yes
+set guioptions-=rL
 
 " Navigation
 " Hide buffers when not displayed
