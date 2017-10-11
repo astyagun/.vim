@@ -33,8 +33,9 @@ class VimFormatter < RSpec::Core::Formatters::BaseFormatter
     app_directories = %r{/usr/src/app/|/home/apps/app/}
     file_path = failure.exception.backtrace.
       find { |item| item =~ app_directories }.try(:gsub, app_directories, '')
+    message   = failure.exception.message
+    separator = message.lines.size > 1 ? '' : "\n\t"
 
-    result = format '%s: %s', file_path, failure.exception.message
-    result.tr("\n", ' ')
+    [file_path, message].join(separator)
   end
 end
