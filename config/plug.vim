@@ -20,7 +20,6 @@ Plug 'nixprime/cpsm', {'do': 'PY3=OFF ./install.sh'}
 Plug 'haya14busa/incsearch.vim'
 Plug 'tpope/vim-projectionist'
 Plug 'kshenoy/vim-signature'
-Plug 'ckarnell/history-traverse'
 " }}} Navigation and window management "
 
 " Editing {{{ "
