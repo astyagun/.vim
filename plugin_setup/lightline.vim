@@ -22,8 +22,13 @@ let g:lightline.inactive = {
       \ 'right': [ [ 'lineinfo' ],
       \            [ 'percent' ] ] }
 
+" Move 'readonly' and 'modified' into a new section
+call remove(g:lightline.active.left[1], 'readonly')
+call remove(g:lightline.active.left[1], 'modified')
+call add(g:lightline.active.left, ['readonly', 'modified'])
+
 " Show file path
-let g:lightline.active.left[1][1]   = 'shrinkable_filename'
+let g:lightline.active.left[1][0]   = 'shrinkable_filename'
 let g:lightline.inactive.left[0][0] = 'shrinkable_filename'
 
 let g:lightline.component_function['shrinkable_filename'] = 'CachedLightlineShrinkableFilename'
