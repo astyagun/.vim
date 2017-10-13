@@ -99,4 +99,4 @@ endif
 
 " Command line
 set shell=/bin/zsh
-set shellcmdflag=-ic
+set shellcmdflag=-c
