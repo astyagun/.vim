@@ -27,6 +27,12 @@ call remove(g:lightline.active.left[1], 'readonly')
 call remove(g:lightline.active.left[1], 'modified')
 call add(g:lightline.active.left, ['readonly', 'modified'])
 
+" Read only
+let g:lightline.component_function['readonly'] = 'LightlineReadonly'
+function! LightlineReadonly()
+  return &readonly ? '' : ''
+endfunction
+
 " Show file path
 let g:lightline.active.left[1][0]   = 'shrinkable_filename'
 let g:lightline.inactive.left[0][0] = 'shrinkable_filename'
