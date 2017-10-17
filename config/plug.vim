@@ -83,6 +83,7 @@ Plug 'vim-scripts/confluencewiki.vim', {'for': 'confluencewiki'}
 Plug 'kannokanno/previm', {'for': 'markdown'}
 Plug 'wannesm/wmgraphviz.vim', {'for': 'dot'}
 Plug 'slim-template/vim-slim', {'for': 'slim'}
+Plug 'sudar/vim-arduino-syntax', {'for': ['ino', 'pde']}
 " }}} File types "
 
 " Integrations {{{ "
@@ -111,6 +112,7 @@ Plug 'SirVer/ultisnips'
   Plug 'honza/vim-snippets'
   " Plug 'sudar/vim-arduino-snippets'
 Plug 'alvan/vim-closetag', {'for': 'html'}
+Plug 'sudar/vim-arduino-snippets', {'for': ['ino', 'pde']}
 " }}} Snippets and other insertions "
 
 " Performance profiling {{{ "
