@@ -4,6 +4,7 @@
 .DS_Store
 .git/
 .keep
+build-uno/
 coverage/
 node_modules/
 public/uploads
