@@ -33,3 +33,6 @@ source ~/.vim/config/my_plugins.vim
 
 "" Ruby
 " ~/.vim/after/ftplugin/ruby.vim
+
+"" Arduino
+" ~/.vim/ftplugin/arduino.vim
