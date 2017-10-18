@@ -16,9 +16,10 @@ end
 class TagsGenerator
   TAGS_FILE = ARGV[0] || 'tags'
   EXCLUDES  = %w(
+    .git
     node_modules
-    vendor
     tmp
+    vendor
   )
 
   def call
