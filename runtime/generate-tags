@@ -24,7 +24,7 @@ class TagsGenerator
 
   def call
     system "ripper-tags -R -f #{tmp_file_name} #{exclusion_options}"
-    system "ctags -R --exclude=*.rb -af #{tmp_file_name} #{exclusion_options}"
+    system "ctags -R --langmap=c++:+.ino.pde --exclude=*.rb -af #{tmp_file_name} #{exclusion_options}"
     FileUtils.mv tmp_file_name, TAGS_FILE, force: true
   end
 
@@ -41,8 +41,9 @@ end
 
 class DirectoryFilter
   ALLOWED_DIRECTORIES = %w(
-    ~/Code
     ~/.vim
+    ~/Code
+    ~/Documents/Arduino
   )
 
   attr_reader :current_directory
