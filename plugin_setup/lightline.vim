@@ -11,11 +11,11 @@ let g:lightline.subseparator       = {'left': '|', 'right': '|'}
 let s:min_window_width_and_file_name_length_difference_for_full_file_name = 55
 
 let g:lightline.active = {
-      \   'left': [['mode', 'paste'], ['shrinkable_filename'], ['readonly', 'modified']],
+      \   'left': [['mode', 'paste'], ['shrinkable_filename', 'fugitive_version'], ['readonly', 'modified']],
       \   'right': [['asyncrun', 'percent', 'total_lines'], ['lineinfo'], ['filetype']]
       \ }
 let g:lightline.inactive = {
-      \   'left': [['shrinkable_filename', 'modified']],
+      \   'left': [['shrinkable_filename', 'fugitive_version', 'modified']],
       \   'right': [['percent', 'total_lines'], ['lineinfo']]
       \ }
 
@@ -37,7 +37,7 @@ augroup LightlineShrinkableFilename
 augroup END
 
 function! LightlineShrinkableFilename()
-  let l:file_name = @%
+  let l:file_name = substitute(@%, '^fugitive://.*/\.git//\d/', '', '')
   let l:file_name_length = len(l:file_name)
   let l:window_width_without_file_name = winwidth(0) - l:file_name_length
 
@@ -53,8 +53,20 @@ function! LightlineShrinkableFilename()
   end
 endfunction
 
+" Fugitive file version
+let g:lightline.component_function['fugitive_version'] = 'LightlineFugitiveVersion'
+
+function! LightlineFugitiveVersion()
+  if @% =~# '^fugitive://'
+    return ':' . matchstr(@%, '^fugitive://.*\.git//\zs\d\ze/')
+  else
+    return ''
+  endif
+endfunction
+
 " Read only
 let g:lightline.component_function['readonly'] = 'LightlineReadonly'
+
 function! LightlineReadonly()
   return &readonly ? '' : ''
 endfunction
@@ -68,7 +80,7 @@ let g:lightline.component_type.asyncrun   = 'error'
 
 function! AsyncRunStatus()
   if g:asyncrun_status == 'success' || g:asyncrun_status == ''
-    return false
+    return ''
   else
     return toupper(g:asyncrun_status)
   endif
