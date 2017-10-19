@@ -10,33 +10,16 @@ let g:lightline.subseparator       = {'left': '|', 'right': '|'}
 
 let s:min_window_width_and_file_name_length_difference_for_full_file_name = 55
 
-" Initial config
 let g:lightline.active = {
-      \ 'left': [ [ 'mode', 'paste' ],
-      \           [ 'readonly', 'filename', 'modified' ] ],
-      \ 'right': [ [ 'lineinfo' ],
-      \            [ 'percent' ],
-      \            [ 'fileformat', 'fileencoding', 'filetype' ] ] }
+      \   'left': [['mode', 'paste'], ['shrinkable_filename'], ['readonly', 'modified']],
+      \   'right': [['asyncrun', 'percent', 'total_lines'], ['lineinfo'], ['filetype']]
+      \ }
 let g:lightline.inactive = {
-      \ 'left': [ [ 'filename' ] ],
-      \ 'right': [ [ 'lineinfo' ],
-      \            [ 'percent' ] ] }
-
-" Move 'readonly' and 'modified' into a new section
-call remove(g:lightline.active.left[1], 'readonly')
-call remove(g:lightline.active.left[1], 'modified')
-call add(g:lightline.active.left, ['readonly', 'modified'])
-
-" Read only
-let g:lightline.component_function['readonly'] = 'LightlineReadonly'
-function! LightlineReadonly()
-  return &readonly ? '' : ''
-endfunction
+      \   'left': [['shrinkable_filename', 'modified']],
+      \   'right': [['percent', 'total_lines'], ['lineinfo']]
+      \ }
 
 " Show file path
-let g:lightline.active.left[1][0]   = 'shrinkable_filename'
-let g:lightline.inactive.left[0][0] = 'shrinkable_filename'
-
 let g:lightline.component_function['shrinkable_filename'] = 'CachedLightlineShrinkableFilename'
 
 function! CachedLightlineShrinkableFilename()
@@ -54,7 +37,7 @@ augroup LightlineShrinkableFilename
 augroup END
 
 function! LightlineShrinkableFilename()
-  let l:file_name = expand('%')
+  let l:file_name = @%
   let l:file_name_length = len(l:file_name)
   let l:window_width_without_file_name = winwidth(0) - l:file_name_length
 
@@ -70,29 +53,16 @@ function! LightlineShrinkableFilename()
   end
 endfunction
 
-" Remove extra file info components
-call remove(g:lightline.active.right[2], 'fileencoding')
-call remove(g:lightline.active.right[2], 'fileformat')
-
-" Show modified in inactive windows
-call add(g:lightline.inactive.left[0], 'modified')
-
-" Swap places of right sections
-let s:old_right_0 = g:lightline.active.right[0]
-let g:lightline.active.right[0] = g:lightline.active.right[1]
-let g:lightline.active.right[1] = s:old_right_0
-let s:old_right_0 = g:lightline.inactive.right[0]
-let g:lightline.inactive.right[0] = g:lightline.inactive.right[1]
-let g:lightline.inactive.right[1] = s:old_right_0
+" Read only
+let g:lightline.component_function['readonly'] = 'LightlineReadonly'
+function! LightlineReadonly()
+  return &readonly ? '' : ''
+endfunction
 
 " Total lines count
-call add(g:lightline.active.right[0], 'total_lines')
-call add(g:lightline.inactive.right[0], 'total_lines')
 let g:lightline.component.total_lines = '%L'
 
 " AsyncRun
-call insert(g:lightline.active.right[0], 'asyncrun', 0)
-
 let g:lightline.component_expand.asyncrun = 'AsyncRunStatus'
 let g:lightline.component_type.asyncrun   = 'error'
 
