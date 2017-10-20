@@ -15,8 +15,14 @@ let s:min_window_width_and_file_name_length_difference_for_full_file_name = 55
 let g:lightline.active = {
       \   'left': [['mode', 'paste'], ['shrinkable_filename', 'fugitive_version'], ['readonly', 'modified']],
       \   'right': [
-      \     ['asyncrun', 'linter_errors', 'linter_warnings'],
-      \     ['percent', 'total_lines'],
+      \     [
+      \       'asyncrun_failure',
+      \       'linter_errors',
+      \       'linter_warnings',
+      \       'asyncrun_running',
+      \       'percent',
+      \       'total_lines',
+      \     ],
       \     ['lineinfo'],
       \     ['filetype']
       \   ]
@@ -82,14 +88,28 @@ endfunction
 let g:lightline.component.total_lines = '%L'
 
 " AsyncRun
-let g:lightline.component_expand.asyncrun = 'AsyncRunStatus'
-let g:lightline.component_type.asyncrun   = 'error'
+call extend(g:lightline.component_expand, {
+      \   'asyncrun_failure': 'AsyncRunFailure',
+      \   'asyncrun_running': 'AsyncRunRunning',
+      \ })
+call extend(g:lightline.component_type, {
+      \   'asyncrun_failure': 'error',
+      \   'asyncrun_running': 'warning',
+      \ })
 
-function! AsyncRunStatus()
-  if g:asyncrun_status ==# 'success' || g:asyncrun_status ==# ''
-    return ''
-  else
+function! AsyncRunFailure()
+  if g:asyncrun_status ==# 'failure'
     return toupper(g:asyncrun_status)
+  else
+    return ''
+  endif
+endfunction
+
+function! AsyncRunRunning()
+  if g:asyncrun_status ==# 'running'
+    return toupper(g:asyncrun_status)
+  else
+    return ''
   endif
 endfunction
 
