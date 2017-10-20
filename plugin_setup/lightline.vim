@@ -1,4 +1,5 @@
 scriptencoding utf-8
+
 let g:lightline                    = {}
 let g:lightline.colorscheme        = 'custom_solarized'
 let g:lightline.component          = {}
@@ -14,7 +15,7 @@ let s:min_window_width_and_file_name_length_difference_for_full_file_name = 55
 let g:lightline.active = {
       \   'left': [['mode', 'paste'], ['shrinkable_filename', 'fugitive_version'], ['readonly', 'modified']],
       \   'right': [
-      \     ['asyncrun', 'linter_warnings', 'linter_errors', 'linter_ok'],
+      \     ['asyncrun', 'linter_errors', 'linter_warnings'],
       \     ['percent', 'total_lines'],
       \     ['lineinfo'],
       \     ['filetype']
@@ -101,13 +102,11 @@ augroup END
 " ALE
 call extend(g:lightline.component_expand, {
       \   'linter_errors': 'LightlineLinterErrors',
-      \   'linter_ok': 'LightlineLinterOK',
       \   'linter_warnings': 'LightlineLinterWarnings',
       \ })
 call extend(g:lightline.component_type, {
-      \   'linter_ok': 'ok',
+      \   'linter_errors': 'error',
       \   'linter_warnings': 'warning',
-      \   'linter_errors': 'warning',
       \ })
 
 augroup ALEUpdateLightline
@@ -115,25 +114,18 @@ augroup ALEUpdateLightline
   autocmd User ALELint call lightline#update()
 augroup END
 
-function! LightlineLinterWarnings() abort
-  let l:counts = ale#statusline#Count(bufnr(''))
-  let l:all_errors = l:counts.error + l:counts.style_error
-  let l:all_non_errors = l:counts.total - l:all_errors
-  return l:counts.total == 0 ? '' : printf('%d --', l:all_non_errors)
-endfunction
-
 function! LightlineLinterErrors() abort
   let l:counts = ale#statusline#Count(bufnr(''))
   let l:all_errors = l:counts.error + l:counts.style_error
   let l:all_non_errors = l:counts.total - l:all_errors
-  return l:counts.total == 0 ? '' : printf('%d >>', l:all_errors)
+  return l:all_errors == 0 ? '' : printf('%d E', l:all_errors)
 endfunction
 
-function! LightlineLinterOK() abort
+function! LightlineLinterWarnings() abort
   let l:counts = ale#statusline#Count(bufnr(''))
   let l:all_errors = l:counts.error + l:counts.style_error
   let l:all_non_errors = l:counts.total - l:all_errors
-  return l:counts.total == 0 ? '✓' : ''
+  return l:all_non_errors == 0 ? '' : printf('%d W', l:all_non_errors)
 endfunction
 
 " Reload Lightline when configuration is reloaded

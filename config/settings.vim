@@ -1,3 +1,6 @@
+set encoding=utf-8
+scriptencoding utf-8
+
 " General
 set nocompatible
 " Save files before compilation
@@ -83,7 +86,6 @@ set keymap=russian-jcukenwin
 set noimcmdline
 set iminsert=0
 set imsearch=0
-set encoding=utf-8
 set nobomb
 " Spell check
 set spelllang=ru_yo,en_us
