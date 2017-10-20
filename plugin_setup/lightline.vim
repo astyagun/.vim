@@ -1,3 +1,4 @@
+scriptencoding utf-8
 let g:lightline                    = {}
 let g:lightline.colorscheme        = 'custom_solarized'
 let g:lightline.component          = {}
@@ -12,7 +13,12 @@ let s:min_window_width_and_file_name_length_difference_for_full_file_name = 55
 
 let g:lightline.active = {
       \   'left': [['mode', 'paste'], ['shrinkable_filename', 'fugitive_version'], ['readonly', 'modified']],
-      \   'right': [['asyncrun', 'percent', 'total_lines'], ['lineinfo'], ['filetype']]
+      \   'right': [
+      \     ['asyncrun', 'linter_warnings', 'linter_errors', 'linter_ok'],
+      \     ['percent', 'total_lines'],
+      \     ['lineinfo'],
+      \     ['filetype']
+      \   ]
       \ }
 let g:lightline.inactive = {
       \   'left': [['shrinkable_filename', 'fugitive_version', 'modified']],
@@ -79,7 +85,7 @@ let g:lightline.component_expand.asyncrun = 'AsyncRunStatus'
 let g:lightline.component_type.asyncrun   = 'error'
 
 function! AsyncRunStatus()
-  if g:asyncrun_status == 'success' || g:asyncrun_status == ''
+  if g:asyncrun_status ==# 'success' || g:asyncrun_status ==# ''
     return ''
   else
     return toupper(g:asyncrun_status)
@@ -91,6 +97,44 @@ augroup AsyncRunUpdateLightline
   autocmd User AsyncRunStop call lightline#update()
   autocmd User AsyncRunStart call lightline#update()
 augroup END
+
+" ALE
+call extend(g:lightline.component_expand, {
+      \   'linter_errors': 'LightlineLinterErrors',
+      \   'linter_ok': 'LightlineLinterOK',
+      \   'linter_warnings': 'LightlineLinterWarnings',
+      \ })
+call extend(g:lightline.component_type, {
+      \   'linter_ok': 'ok',
+      \   'linter_warnings': 'warning',
+      \   'linter_errors': 'warning',
+      \ })
+
+augroup ALEUpdateLightline
+  autocmd!
+  autocmd User ALELint call lightline#update()
+augroup END
+
+function! LightlineLinterWarnings() abort
+  let l:counts = ale#statusline#Count(bufnr(''))
+  let l:all_errors = l:counts.error + l:counts.style_error
+  let l:all_non_errors = l:counts.total - l:all_errors
+  return l:counts.total == 0 ? '' : printf('%d --', l:all_non_errors)
+endfunction
+
+function! LightlineLinterErrors() abort
+  let l:counts = ale#statusline#Count(bufnr(''))
+  let l:all_errors = l:counts.error + l:counts.style_error
+  let l:all_non_errors = l:counts.total - l:all_errors
+  return l:counts.total == 0 ? '' : printf('%d >>', l:all_errors)
+endfunction
+
+function! LightlineLinterOK() abort
+  let l:counts = ale#statusline#Count(bufnr(''))
+  let l:all_errors = l:counts.error + l:counts.style_error
+  let l:all_non_errors = l:counts.total - l:all_errors
+  return l:counts.total == 0 ? '✓' : ''
+endfunction
 
 " Reload Lightline when configuration is reloaded
 augroup LightlineReload
