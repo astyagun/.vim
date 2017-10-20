@@ -100,3 +100,7 @@ endif
 " Command line
 set shell=/bin/zsh
 set shellcmdflag=-c
+
+" CScope
+set cscopetag cscopeverbose
+set cscopequickfix=s-,c-,d-,i-,t-,e-
