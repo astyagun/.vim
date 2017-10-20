@@ -35,4 +35,5 @@ source ~/.vim/config/my_plugins.vim
 " ~/.vim/after/ftplugin/ruby.vim
 
 "" Arduino
+" ~/.vim/ftdetect/arduino.vim
 " ~/.vim/ftplugin/arduino.vim
