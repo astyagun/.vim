@@ -21,12 +21,12 @@ Plug 'nixprime/cpsm', {'do': 'PY3=OFF ./install.sh'}
 Plug 'haya14busa/incsearch.vim'
 Plug 'tpope/vim-projectionist'
 Plug 'kshenoy/vim-signature'
+Plug 'henrik/vim-indexed-search' " Show 'Match 123 of 456 /search term/' in Vim searches
 " }}} Navigation and window management "
 
 " Editing {{{ "
 Plug 'tpope/vim-surround'
 Plug 'mbbill/undotree', {'on': 'UndotreeToggle'}
-Plug 'henrik/vim-indexed-search' " Show 'Match 123 of 456 /search term/' in Vim searches
 Plug 'vim-scripts/YankRing.vim'
 Plug 'lyokha/vim-xkbswitch'
 Plug 'tpope/vim-repeat'
@@ -46,7 +46,6 @@ Plug 'tommcdo/vim-exchange'
 " Autocomplete {{{ "
 Plug 'prabirshrestha/asyncomplete.vim'
 Plug 'prabirshrestha/async.vim'
-Plug 'prabirshrestha/asyncomplete-buffer.vim'
 Plug 'prabirshrestha/asyncomplete-ultisnips.vim'
 Plug 'prabirshrestha/asyncomplete-tags.vim'
 Plug 'yami-beta/asyncomplete-omni.vim'
