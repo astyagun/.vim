@@ -5,8 +5,10 @@ scriptencoding utf-8
 set nocompatible
 " Save files before compilation
 set autowrite
-" Syntax and file types (must be called after pathogen initialization)
-syntax on
+" Syntax and file types
+if !exists('g:syntax_on')
+  syntax on
+endif
 filetype plugin indent on
 
 " Visual
