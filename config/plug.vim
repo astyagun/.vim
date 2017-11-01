@@ -84,6 +84,7 @@ Plug 'kannokanno/previm', {'for': 'markdown'}
 Plug 'wannesm/wmgraphviz.vim', {'for': 'dot'}
 Plug 'slim-template/vim-slim', {'for': 'slim'}
 Plug 'sudar/vim-arduino-syntax', {'for': ['ino', 'pde']}
+Plug 'mechatroner/rainbow_csv', {'for': 'csv'}
 " }}} File types "
 
 " Integrations {{{ "
