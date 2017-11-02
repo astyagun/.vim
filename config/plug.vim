@@ -1,6 +1,7 @@
 call plug#begin()
 
 " Visual {{{ "
+
 Plug 'nelstrom/vim-mac-classic-theme'
 Plug 'gerw/vim-HiLinkTrace', {'on': 'HLT'}
 Plug 'vim-scripts/errormarker.vim'
@@ -9,9 +10,11 @@ Plug 'itchyny/lightline.vim'
 Plug 'chrisbra/Colorizer'
 Plug 'blueyed/vim-diminactive'
 Plug 'ap/vim-css-color'
+
 " }}} Visual "
 
 " Navigation and window management {{{ "
+
 Plug 'mhinz/vim-startify'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'wesQ3/vim-windowswap'
@@ -22,9 +25,11 @@ Plug 'haya14busa/incsearch.vim'
 Plug 'tpope/vim-projectionist'
 Plug 'kshenoy/vim-signature'
 Plug 'henrik/vim-indexed-search' " Show 'Match 123 of 456 /search term/' in Vim searches
+
 " }}} Navigation and window management "
 
 " Editing {{{ "
+
 Plug 'tpope/vim-surround'
 Plug 'mbbill/undotree', {'on': 'UndotreeToggle'}
 Plug 'vim-scripts/YankRing.vim'
@@ -41,17 +46,21 @@ Plug 'AndrewRadev/splitjoin.vim'
 Plug 'beloglazov/vim-online-thesaurus',
       \ {'on': ['OnlineThesaurusCurrentWord', 'OnlineThesaurusLookup', 'Thesaurus']}
 Plug 'tommcdo/vim-exchange'
+
 " }}} Editing "
 
 " Autocomplete {{{ "
+
 Plug 'prabirshrestha/asyncomplete.vim'
 Plug 'prabirshrestha/async.vim'
 Plug 'prabirshrestha/asyncomplete-ultisnips.vim'
 Plug 'prabirshrestha/asyncomplete-tags.vim'
 Plug 'yami-beta/asyncomplete-omni.vim'
+
 " }}} Autocomplete "
 
 " Text objects {{{ "
+
 Plug 'bootleq/vim-textobj-rubysymbol', {'for': ['ruby', 'eruby', 'haml']}
 Plug 'coderifous/textobj-word-column.vim'
 Plug 'jceb/vim-textobj-uri'
@@ -69,9 +78,11 @@ Plug 'glts/vim-textobj-comment'
 " Plug 'jasonlong/vim-textobj-css'
 Plug 'sgur/vim-textobj-parameter'
 Plug 'wellle/targets.vim'
+
 " }}} Text objects "
 
 " File types {{{ "
+
 Plug 'vim-ruby/vim-ruby', {'for': ['ruby', 'eruby']}
 Plug 'tpope/vim-git'
 Plug 'tpope/vim-haml', {'for': 'haml'}
@@ -85,9 +96,11 @@ Plug 'wannesm/wmgraphviz.vim', {'for': 'dot'}
 Plug 'slim-template/vim-slim', {'for': 'slim'}
 Plug 'sudar/vim-arduino-syntax', {'for': ['ino', 'pde']}
 Plug 'mechatroner/rainbow_csv', {'for': 'csv'}
+
 " }}} File types "
 
 " Integrations {{{ "
+
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
 Plug 'shumphrey/fugitive-gitlab.vim'
@@ -104,20 +117,24 @@ Plug 'lucapette/vim-ruby-doc', {'for': 'ruby'}
 Plug 'astashov/vim-ruby-debugger', {'for': 'ruby'}
 Plug 'lambdalisue/vim-gista'
 Plug 'lambdalisue/vim-gista-ctrlp'
+
 " }}} Integrations "
 
 " Snippets and other insertions {{{ "
-" This script lets you insert hex or RGB color codes directly into the buffer by using OS X's color picker
+
 Plug 'vim-scripts/ColorX'
 Plug 'SirVer/ultisnips'
   Plug 'honza/vim-snippets'
   " Plug 'sudar/vim-arduino-snippets'
 Plug 'alvan/vim-closetag', {'for': 'html'}
 Plug 'sudar/vim-arduino-snippets', {'for': ['ino', 'pde']}
+
 " }}} Snippets and other insertions "
 
 " Performance profiling {{{ "
+
 " Plug 'tweekmonster/startuptime.vim'
+
 " }}} Performance profiling "
 
 call plug#end()

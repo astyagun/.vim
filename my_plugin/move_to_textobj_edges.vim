@@ -1,10 +1,14 @@
-nmap <silent> [d :set operatorfunc=<SID>move_to_textobj_near_edge<CR>g@
-nmap <silent> ]d :set operatorfunc=<SID>move_to_textobj_far_edge<CR>g@
+" Move to text objects edges
+" d stands for eDge, since ]e is already occupied by unimpaired
+nmap <silent> [d :set operatorfunc=<SID>MoveToTextobjNearEdge<CR>g@
+nmap <silent> ]d :set operatorfunc=<SID>MoveToTextobjFarEdge<CR>g@
 
-function! s:move_to_textobj_near_edge(...)
-  silent execute "normal! `["
+" TODO: Make it work in operator pending mode
+
+function! s:MoveToTextobjNearEdge(...)
+  execute "normal! `["
 endfunction
 
-function! s:move_to_textobj_far_edge(...)
-  silent execute "normal! `]"
+function! s:MoveToTextobjFarEdge(...)
+  execute "normal! `]"
 endfunction
