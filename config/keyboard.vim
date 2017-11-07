@@ -76,7 +76,7 @@ nmap ≠ ç
 " <A-l> - lowercase
 nnoremap ¬ guiww
 nmap ∆ ¬
-" <A-u> - uppercase
+" <A-S-l> - uppercase
 nnoremap Ò gUiww
 " Depends on Russian layout modified by Ukelele
 nmap 𝛥 Ò

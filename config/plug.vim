@@ -21,7 +21,6 @@ Plug 'wesQ3/vim-windowswap'
 Plug 'tpope/vim-unimpaired'
 Plug 'wincent/ferret'
 Plug 'nixprime/cpsm', {'do': 'PY3=OFF ./install.sh'}
-Plug 'haya14busa/incsearch.vim'
 Plug 'tpope/vim-projectionist'
 Plug 'kshenoy/vim-signature'
 Plug 'henrik/vim-indexed-search' " Show 'Match 123 of 456 /search term/' in Vim searches
