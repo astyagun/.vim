@@ -3,7 +3,7 @@ source ~/.vim/my_plugin/capture_message.vim
 source ~/.vim/my_plugin/edit_and_reload_configuration.vim
 source ~/.vim/my_plugin/execure_macro_over_visual_range.vim
 source ~/.vim/my_plugin/gemfile_gx.vim
-source ~/.vim/my_plugin/move_to_textobj_edges.vim
+" source ~/.vim/my_plugin/move_to_textobj_edges.vim
 source ~/.vim/my_plugin/open_in_browser.vim
 source ~/.vim/my_plugin/plug_gx.vim
 source ~/.vim/my_plugin/preserve.vim

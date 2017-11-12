@@ -11,6 +11,7 @@ source ~/.vim/plugin_setup/ctrlp.vim
 source ~/.vim/plugin_setup/dart.vim
 source ~/.vim/plugin_setup/diminactive.vim
 source ~/.vim/plugin_setup/easy_align.vim
+source ~/.vim/plugin_setup/edgemotion.vim
 source ~/.vim/plugin_setup/ferret.vim
 source ~/.vim/plugin_setup/fugitive.vim
 source ~/.vim/plugin_setup/geeknote.vim

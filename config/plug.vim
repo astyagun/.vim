@@ -24,6 +24,7 @@ Plug 'nixprime/cpsm', {'do': 'PY3=OFF ./install.sh'}
 Plug 'tpope/vim-projectionist'
 Plug 'kshenoy/vim-signature'
 Plug 'henrik/vim-indexed-search' " Show 'Match 123 of 456 /search term/' in Vim searches
+Plug 'haya14busa/vim-edgemotion'
 
 " }}} Navigation and window management "
 
