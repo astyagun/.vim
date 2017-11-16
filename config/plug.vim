@@ -40,7 +40,6 @@ Plug 'bkad/CamelCaseMotion'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-endwise'
 Plug 'danchoi/ruby_bashrockets.vim', {'for': ['ruby', 'eruby', 'haml']}
-Plug 'andymass/vim-matchup'
 Plug 'tmhedberg/matchit'
 Plug 'tpope/vim-abolish'
 Plug 'AndrewRadev/splitjoin.vim'
@@ -71,7 +70,6 @@ Plug 'kana/vim-textobj-user'
 Plug 'michaeljsmith/vim-indent-object'
 Plug 'saihoooooooo/vim-textobj-space'
 Plug 'tek/vim-textobj-ruby', {'for': ['ruby', 'eruby', 'haml']}
-Plug 'vim-scripts/argtextobj.vim'
 Plug 'whatyouhide/vim-textobj-erb', {'for': 'eruby'}
 Plug 'whatyouhide/vim-textobj-xmlattr', {'for': ['html', 'eruby']}
 Plug 'glts/vim-textobj-comment'
