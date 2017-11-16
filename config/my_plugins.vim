@@ -16,3 +16,4 @@ source ~/.vim/my_plugin/setcolors.vim
 source ~/.vim/my_plugin/sum_durations.vim
 source ~/.vim/my_plugin/tags.vim
 source ~/.vim/my_plugin/terminal.vim
+source ~/.vim/my_plugin/render_resume.vim
