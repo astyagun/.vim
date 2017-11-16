@@ -67,19 +67,15 @@ imap ∆ ¬
 " <A-u> - uppercase
 inoremap Ò <Esc>lgUiwwi
 " Depends on Russian layout modified by Ukelele
-imap 𝛥 Ò
+imap ∇ Ò
 
 " Change word case in NORMAL mode
 " <A-c> - capitalize
 nnoremap ç guiw~w
-nmap ≠ ç
 " <A-l> - lowercase
 nnoremap ¬ guiww
-nmap ∆ ¬
 " <A-S-l> - uppercase
 nnoremap Ò gUiww
-" Depends on Russian layout modified by Ukelele
-nmap 𝛥 Ò
 
 " Set window size, useful for netrw and quickfix windows
 nnoremap <Leader><C-w><Bar> 40<C-w><Bar>
