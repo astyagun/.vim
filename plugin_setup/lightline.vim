@@ -148,6 +148,25 @@ function! LightlineLinterWarnings() abort
   return l:all_non_errors == 0 ? '' : printf('%d W', l:all_non_errors)
 endfunction
 
+" LightlineColorscheme command
+
+function! s:SetLightlineColorscheme(name) abort
+  let g:lightline.colorscheme = a:name
+  call lightline#init()
+  call lightline#colorscheme()
+  call lightline#update()
+endfunction
+
+function! s:LightlineColorschemes(...) abort
+  return join(map(
+        \ globpath(&runtimepath, 'autoload/lightline/colorscheme/*.vim', 1, 1),
+        \ "fnamemodify(v:val,':t:r')"),
+        \ "\n")
+endfunction
+
+command! -nargs=1 -complete=custom,s:LightlineColorschemes LightlineColorscheme
+      \ call s:SetLightlineColorscheme(<q-args>)
+
 " Reload Lightline when configuration is reloaded
 augroup LightlineReload
   autocmd!
