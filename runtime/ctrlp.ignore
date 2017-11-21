@@ -2,6 +2,7 @@
 *.swo
 *.swp
 .DS_Store
+.docker-sync/
 .git/
 .keep
 build-uno/
