@@ -40,6 +40,7 @@ set noballooneval
 set laststatus=2
 set signcolumn=yes
 set guioptions-=rL
+set colorcolumn=111
 
 " Navigation
 " Hide buffers when not displayed
