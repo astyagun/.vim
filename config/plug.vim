@@ -46,6 +46,7 @@ Plug 'AndrewRadev/splitjoin.vim'
 Plug 'beloglazov/vim-online-thesaurus',
       \ {'on': ['OnlineThesaurusCurrentWord', 'OnlineThesaurusLookup', 'Thesaurus']}
 Plug 'tommcdo/vim-exchange'
+Plug 'vim-scripts/LargeFile'
 
 " }}} Editing "
 
