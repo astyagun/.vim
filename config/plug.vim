@@ -77,6 +77,7 @@ Plug 'glts/vim-textobj-comment'
 " Plug 'jasonlong/vim-textobj-css'
 Plug 'sgur/vim-textobj-parameter'
 Plug 'wellle/targets.vim'
+Plug 'Julian/vim-textobj-variable-segment'
 
 " }}} Text objects "
 
