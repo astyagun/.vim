@@ -97,3 +97,6 @@ function! ToggleQuickFix()
     copen
   endif
 endfunction
+
+" Visually select the text that was last edited/pasted
+nnoremap gV `[v`]
