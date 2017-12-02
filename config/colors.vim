@@ -12,5 +12,8 @@ highlight DiffDelete guibg=#FFDDDD
 highlight DiffChange guibg=#FFFFDD
 highlight DiffText guibg=#FFFFAA
 
+" Hide tilde from empty lines after file contents
+highlight EndOfBuffer guifg=bg
+
 " Create new buffer with examples of highlighting groups
 command! HiTest so $VIMRUNTIME/syntax/hitest.vim
