@@ -24,7 +24,7 @@ let g:lightline.active = {
       \       'total_lines',
       \     ],
       \     ['lineinfo'],
-      \     ['filetype']
+      \     ['fileformat', 'filetype']
       \   ]
       \ }
 let g:lightline.inactive = {
