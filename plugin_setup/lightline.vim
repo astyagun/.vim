@@ -29,7 +29,7 @@ let g:lightline.active = {
       \ }
 let g:lightline.inactive = {
       \   'left': [['shrinkable_filename', 'fugitive_version', 'modified']],
-      \   'right': [['percent', 'total_lines'], ['lineinfo']]
+      \   'right': [['percent', 'total_lines'], ['lineinfo'], ['fileformat', 'filetype']]
       \ }
 
 " Show file path
