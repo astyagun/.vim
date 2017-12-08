@@ -38,7 +38,7 @@ let &listchars = "tab:\uBB\uBB,trail:\uB7,nbsp:~"
 set list
 set noballooneval
 set laststatus=2
-set signcolumn=yes
+set signcolumn=auto
 set guioptions-=rL
 set colorcolumn=111
 
