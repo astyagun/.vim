@@ -1,5 +1,9 @@
 colorscheme mac_classic
 
+highlight LineNr guibg=white
+highlight CursorLineNR guibg=#F0F6FF
+highlight VertSplit guibg=white guifg=#808080
+
 " Fix Error visibility when in cursor line
 highlight Error guibg=#FFDDDD guifg=red gui=bold
 
