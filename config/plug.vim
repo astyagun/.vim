@@ -97,6 +97,7 @@ Plug 'wannesm/wmgraphviz.vim', {'for': 'dot'}
 Plug 'slim-template/vim-slim', {'for': 'slim'}
 Plug 'sudar/vim-arduino-syntax', {'for': ['ino', 'pde']}
 Plug 'mechatroner/rainbow_csv', {'for': 'csv'}
+Plug 'kchmck/vim-coffee-script', {'for': 'coffee'}
 
 " }}} File types "
 
