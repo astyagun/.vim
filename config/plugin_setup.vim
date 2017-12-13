@@ -20,6 +20,7 @@ source ~/.vim/plugin_setup/markdown-preview.vim
 source ~/.vim/plugin_setup/markdown.vim
 source ~/.vim/plugin_setup/netrw.vim
 source ~/.vim/plugin_setup/online-thesaurus.vim
+source ~/.vim/plugin_setup/open-browser.vim
 source ~/.vim/plugin_setup/previm.vim
 source ~/.vim/plugin_setup/rails.vim
 source ~/.vim/plugin_setup/ripgrep.vim
