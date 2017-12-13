@@ -59,6 +59,8 @@ set ignorecase
 set smartcase
 set norelativenumber
 set confirm
+let &grepprg = 'rg --vimgrep --hidden --no-ignore-vcs'
+set grepformat=%f:%l:%c:%m
 
 " Search
 " Highlight search

@@ -19,7 +19,6 @@ Plug 'mhinz/vim-startify'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'wesQ3/vim-windowswap'
 Plug 'tpope/vim-unimpaired'
-Plug 'wincent/ferret'
 Plug 'nixprime/cpsm', {'do': 'PY3=OFF ./install.sh'}
 Plug 'tpope/vim-projectionist'
 Plug 'kshenoy/vim-signature'
