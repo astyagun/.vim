@@ -59,7 +59,7 @@ set ignorecase
 set smartcase
 set norelativenumber
 set confirm
-let &grepprg = 'rg --vimgrep --hidden --no-ignore-vcs'
+let &grepprg = 'rg --vimgrep --hidden --no-ignore-vcs --ignore-file ~/.vim/runtime/grep.ignore'
 set grepformat=%f:%l:%c:%m
 
 " Search

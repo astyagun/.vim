@@ -1,4 +1,4 @@
-" ~/.vim/runtime/ctrlp.ignore
+" ~/.vim/runtime/grep.ignore
 " ~/.vim/runtime/generate-tags
 " ~/.vim/runtime/vim_formatter.rb
 source ~/.vim/plugin_setup/2html.vim

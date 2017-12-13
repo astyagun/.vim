@@ -1,0 +1,16 @@
+!.*
+*.swo
+*.swp
+.DS_Store
+.docker-sync/
+.git/
+.keep
+build-uno/
+coverage/
+node_modules/
+public/uploads
+spec/cassettes/
+tags
+tmp/cache/
+tmp/pids/
+vendor/assets/
