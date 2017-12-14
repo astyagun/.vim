@@ -31,6 +31,8 @@ function! s:setup_netrw() abort
   xnoremap <buffer> . <Esc>: <C-R>=<SID>escaped(line("'<"), line("'>"))<CR><Home>
   nmap <buffer> ! .!
   xmap <buffer> ! .!
+
+  nunmap <buffer> <C-l>
 endfunction
 
 augroup NetrwMappings
