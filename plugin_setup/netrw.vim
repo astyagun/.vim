@@ -32,7 +32,7 @@ function! s:setup_netrw() abort
   nmap <buffer> ! .!
   xmap <buffer> ! .!
 
-  nunmap <buffer> <C-l>
+  nunmap! <buffer> <C-l>
 endfunction
 
 augroup NetrwMappings
