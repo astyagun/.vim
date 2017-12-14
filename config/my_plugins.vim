@@ -7,6 +7,7 @@ source ~/.vim/my_plugin/open_in_browser.vim
 source ~/.vim/my_plugin/plug_gx.vim
 source ~/.vim/my_plugin/preserve.vim
 source ~/.vim/my_plugin/profiler.vim
+source ~/.vim/my_plugin/read_file_from_docker.vim
 source ~/.vim/my_plugin/render_resume.vim
 source ~/.vim/my_plugin/repeat_change.vim
 source ~/.vim/my_plugin/restore_cursor_position.vim
