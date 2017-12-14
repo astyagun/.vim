@@ -8,7 +8,6 @@ Plug 'vim-scripts/errormarker.vim'
 Plug 'vim-scripts/SyntaxAttr.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'chrisbra/Colorizer'
-Plug 'blueyed/vim-diminactive'
 Plug 'ap/vim-css-color'
 
 " }}} Visual "
