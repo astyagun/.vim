@@ -8,6 +8,7 @@ function! s:ReadFileFromDocker()
   new
   0read !docker-compose exec spring cat '#'
 
+  setlocal buftype=nofile bufhidden=wipe noswapfile nobuflisted nomodified
   execute 'setfiletype ' . l:file_type
   execute ':'            . l:current_line
   execute ':normal '     . l:current_column . '|'
