@@ -53,7 +53,6 @@ set foldnestmax=3
 set nofoldenable
 set sessionoptions-=options
 set diffopt=filler,vertical
-set scrolloff=2
 set nostartofline
 set ignorecase
 set smartcase
