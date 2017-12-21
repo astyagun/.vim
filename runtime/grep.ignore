@@ -13,5 +13,6 @@ public/uploads
 spec/cassettes/
 tags
 tmp/cache/
+tmp/capybara/
 tmp/pids/
 vendor/assets/
