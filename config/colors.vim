@@ -6,9 +6,9 @@ highlight VertSplit guibg=white guifg=#808080
 highlight SignColumn guibg=white
 
 " Signify plugin sign colors
-highlight SignifySignAdd    gui=bold guibg=white guifg=#00BC41
-highlight SignifySignDelete gui=bold guibg=white guifg=red
-highlight SignifySignChange gui=bold guibg=white guifg=brown
+highlight SignifySignAdd    gui=bold guibg=NONE guifg=#00BC41
+highlight SignifySignDelete gui=bold guibg=NONE guifg=red
+highlight SignifySignChange gui=bold guibg=NONE guifg=brown
 
 " Fix Error visibility when in cursor line
 highlight Error guibg=#FFDDDD guifg=red gui=bold
