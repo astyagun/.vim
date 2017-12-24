@@ -9,6 +9,7 @@ Plug 'vim-scripts/SyntaxAttr.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'chrisbra/Colorizer'
 Plug 'ap/vim-css-color'
+Plug 'machakann/vim-highlightedyank'
 
 " }}} Visual "
 
