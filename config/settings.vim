@@ -41,6 +41,7 @@ set laststatus=2
 set signcolumn=auto
 set guioptions-=rL
 set colorcolumn=111
+set fillchars=vert:│,fold:·
 
 " Navigation
 " Hide buffers when not displayed
