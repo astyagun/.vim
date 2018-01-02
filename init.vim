@@ -31,6 +31,7 @@ doautocmd User ConfigurationLoaded
 " ~/.vim/ftplugin/vim.vim
 
 "" YAML
+" ~/.vim/after/ftplugin/eruby.yaml.vim
 " ~/.vim/ftdetect/yaml.vim
 
 "" Ruby
