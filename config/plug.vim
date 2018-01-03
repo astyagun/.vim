@@ -10,6 +10,7 @@ Plug 'itchyny/lightline.vim'
 Plug 'chrisbra/Colorizer'
 Plug 'ap/vim-css-color'
 Plug 'machakann/vim-highlightedyank'
+Plug 'xtal8/traces.vim'
 
 " }}} Visual "
 
