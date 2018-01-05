@@ -40,3 +40,6 @@ doautocmd User ConfigurationLoaded
 "" Arduino
 " ~/.vim/ftdetect/arduino.vim
 " ~/.vim/ftplugin/arduino.vim
+
+"" ZSH
+" ~/.vim/ftdetect/zsh.vim
