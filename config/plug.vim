@@ -117,7 +117,6 @@ Plug 'janko-m/vim-test', {'for': 'ruby'}
   Plug 'skywind3000/asyncrun.vim'
 Plug 'emilsoman/spec-outline.vim', {'for': 'ruby'}
 Plug 'lucapette/vim-ruby-doc', {'for': 'ruby'}
-Plug 'astashov/vim-ruby-debugger', {'for': 'ruby'}
 Plug 'lambdalisue/vim-gista'
 Plug 'lambdalisue/vim-gista-ctrlp'
 
