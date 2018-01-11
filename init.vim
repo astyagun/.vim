@@ -36,6 +36,7 @@ doautocmd User ConfigurationLoaded
 
 "" Ruby
 " ~/.vim/after/ftplugin/ruby.vim
+" ~/.vim/ftdetect/ruby.vim
 
 "" Arduino
 " ~/.vim/ftdetect/arduino.vim
