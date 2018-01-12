@@ -1,4 +1,4 @@
-#!/usr/local/bin/ruby
+#!/usr/bin/env ruby
 # Generates tags file for current directory
 # Features:
 # - Run only in subdirectories of allowed directories (DirectoryFilter::ALLOWED_DIRECTORIES)
