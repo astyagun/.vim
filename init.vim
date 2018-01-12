@@ -9,8 +9,6 @@ source ~/.vim/config/snippets.vim
 
 source ~/.vim/config/my_plugins.vim
 
-doautocmd User ConfigurationLoaded
-
 " Other configuration files, sourced automatically
 
 " ~/.vim/ginit.vim
