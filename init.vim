@@ -44,3 +44,6 @@ doautocmd User ConfigurationLoaded
 
 "" ZSH
 " ~/.vim/ftdetect/zsh.vim
+
+"" gitcommit
+" ~/.vim/ftdetect/gitcommit.vim
