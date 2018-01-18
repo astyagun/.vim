@@ -3,6 +3,7 @@ if !has('gui_running')
 endif
 
 set guioptions-=T " Hide toolbar
+set guioptions-=e " Don't use graphical tabs to prevent decrease of `lines` by one when closing the second tab
 set noballooneval
 set guifont=Fira\ Code:h14
 set macligatures
