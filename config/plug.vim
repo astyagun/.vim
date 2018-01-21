@@ -119,6 +119,7 @@ Plug 'emilsoman/spec-outline.vim', {'for': 'ruby'}
 Plug 'lucapette/vim-ruby-doc', {'for': 'ruby'}
 Plug 'lambdalisue/vim-gista'
 Plug 'lambdalisue/vim-gista-ctrlp'
+Plug 'jreybert/vimagit'
 
 " }}} Integrations "
 
