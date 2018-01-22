@@ -29,7 +29,7 @@ source ~/.vim/config/my_plugins.vim
 " ~/.vim/ftplugin/vim.vim
 
 "" YAML
-" ~/.vim/after/ftplugin/eruby.yaml.vim
+" ~/.vim/after/ftplugin/eruby_yaml.vim
 " ~/.vim/ftdetect/yaml.vim
 
 "" Ruby
