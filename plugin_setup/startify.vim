@@ -18,6 +18,10 @@ let g:startify_skiplist = [
       \ escape(fnamemodify(resolve($VIMRUNTIME), ':p'), '\') .'doc',
       \ 'plugged/.*/doc',
       \ ]
+" Comands to run when session is loaded
+let g:startify_session_savecmds = [
+      \ 'call InitializeCscope()'
+      \ ]
 
 nmap <Leader>ss :SSave<CR>
 nmap <Leader>sl :Startify<CR>
