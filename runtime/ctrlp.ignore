@@ -5,6 +5,9 @@
 .docker-sync/
 .git/
 .keep
+GPATH
+GRTAGS
+GTAGS
 build-uno/
 coverage/
 node_modules/
