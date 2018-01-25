@@ -5,7 +5,6 @@ source ~/.vim/config/settings.vim
 source ~/.vim/config/colors.vim
 source ~/.vim/config/gui.vim
 source ~/.vim/config/keyboard.vim
-source ~/.vim/config/snippets.vim
 
 source ~/.vim/config/my_plugins.vim
 

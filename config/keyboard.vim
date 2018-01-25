@@ -56,9 +56,13 @@ endfunction
 " Select last paste in visual mode
 nnoremap <expr> gb '`[' . strpart(getregtype(), 0, 1) . '`]'
 
-" Prevent page scroll on <S-CR>, I mistakenly press <S-CR> somethimes because
-" I have <D-S-CR> mapping to insert a new line before current
-nnoremap <S-CR> <CR>
+" Add lines before and after current
+nnoremap <D-S-CR> O<Esc>
+inoremap <D-S-CR> <Esc>O
+nnoremap <S-CR> O<Esc>
+inoremap <S-CR> <Esc>O
+nnoremap <D-CR> o<Esc>
+inoremap <D-CR> <Esc>o
 
 " Change word case in INSERT mode
 " <A-c> - capitalize
