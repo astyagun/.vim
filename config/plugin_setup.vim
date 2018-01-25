@@ -7,6 +7,7 @@ source ~/.vim/plugin_setup/asyncomplete.vim
 source ~/.vim/plugin_setup/asyncrun.vim
 source ~/.vim/plugin_setup/camelcasemotion.vim
 source ~/.vim/plugin_setup/cmdline_complete.vim
+source ~/.vim/plugin_setup/cscope.vim
 source ~/.vim/plugin_setup/ctrlp.vim
 source ~/.vim/plugin_setup/dart.vim
 source ~/.vim/plugin_setup/easy_align.vim
