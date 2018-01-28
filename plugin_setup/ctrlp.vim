@@ -15,8 +15,6 @@ endfunction
 
 map <D-p> :call <SID>RunCtrlP(getcwd(), 'CtrlP')<CR>
 map <D-P> :call <SID>RunCtrlP(expand('%:p:h'), 'CtrlPCurFile')<CR>
-map <Leader><D-t> :CtrlPBufTag<CR>
-map <Leader><D-T> :CtrlPTag<CR>
 map <Leader><D-b> :CtrlPBuffer<CR>
 map <Leader><D-r> :CtrlPMRUFiles<CR>
 

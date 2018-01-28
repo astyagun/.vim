@@ -56,7 +56,6 @@ Plug 'vim-scripts/LargeFile'
 Plug 'prabirshrestha/asyncomplete.vim'
 Plug 'prabirshrestha/async.vim'
 Plug 'prabirshrestha/asyncomplete-ultisnips.vim'
-Plug 'prabirshrestha/asyncomplete-tags.vim'
 Plug 'yami-beta/asyncomplete-omni.vim'
 
 " }}} Autocomplete "

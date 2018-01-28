@@ -23,16 +23,6 @@ function! s:AsyncompleteSetup()
         \ 'completor': function('asyncomplete#sources#ultisnips#completor'),
         \ }))
 
-  call asyncomplete#unregister_source('tags')
-  call asyncomplete#register_source(asyncomplete#sources#tags#get_source_options({
-        \ 'name': 'tags',
-        \ 'whitelist': ['*'],
-        \ 'completor': function('asyncomplete#sources#tags#completor'),
-        \ 'config': {
-        \    'max_file_size': 100000000,
-        \  },
-        \ }))
-
   call asyncomplete#unregister_source('omni')
   call asyncomplete#register_source(asyncomplete#sources#omni#get_source_options({
         \ 'name': 'omni',
