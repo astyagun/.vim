@@ -16,6 +16,13 @@ augroup AsyncompleteSetup
 augroup END
 
 function! s:AsyncompleteSetup()
+  call asyncomplete#unregister_source('buffer')
+  call asyncomplete#register_source(asyncomplete#sources#buffer#get_source_options({
+        \ 'name': 'buffer',
+        \ 'whitelist': ['*'],
+        \ 'completor': function('asyncomplete#sources#buffer#completor'),
+        \ }))
+
   call asyncomplete#unregister_source('ultisnips')
   call asyncomplete#register_source(asyncomplete#sources#ultisnips#get_source_options({
         \ 'name': 'ultisnips',
