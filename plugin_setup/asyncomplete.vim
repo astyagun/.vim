@@ -37,18 +37,4 @@ function! s:AsyncompleteSetup()
         \ 'blacklist': ['html'],
         \ 'completor': function('asyncomplete#sources#omni#completor')
         \  }))
-
-  call asyncomplete#unregister_source('emoji')
-  call asyncomplete#register_source(asyncomplete#sources#emoji#get_source_options({
-        \ 'name': 'emoji',
-        \ 'whitelist': ['*'],
-        \ 'completor': function('asyncomplete#sources#emoji#completor'),
-        \ }))
-  call s:AddAbbreviationsForEmojis()
-endfunction
-
-function! s:AddAbbreviationsForEmojis()
-  for l:emoji in keys(asyncomplete#sources#emoji#data#dict())
-    execute 'iabbrev :' . l:emoji . ': ' . asyncomplete#sources#emoji#data#emoji_for(l:emoji)
-  endfor
 endfunction
