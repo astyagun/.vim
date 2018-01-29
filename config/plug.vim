@@ -58,6 +58,7 @@ Plug 'prabirshrestha/async.vim'
 Plug 'prabirshrestha/asyncomplete-ultisnips.vim'
 Plug 'yami-beta/asyncomplete-omni.vim'
 Plug 'prabirshrestha/asyncomplete-buffer.vim'
+Plug 'prabirshrestha/asyncomplete-emoji.vim'
 
 " }}} Autocomplete "
 
