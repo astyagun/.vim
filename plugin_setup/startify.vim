@@ -11,6 +11,7 @@ let g:startify_bookmarks = [
       \ '~/.rubocop.yml',
       \ '~/.reek',
       \ '~/Library/KeyBindings/DefaultKeyBinding.dict',
+      \ '/usr/local/share/gtags/gtags.conf',
       \ ]
 let g:startify_skiplist = [
       \ 'COMMIT_EDITMSG',
