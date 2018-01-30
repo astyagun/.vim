@@ -1,7 +1,8 @@
 set encoding=utf-8
 scriptencoding utf-8
 
-" General
+" General {{{
+
 set nocompatible
 " Save files before compilation
 set autowrite
@@ -11,103 +12,113 @@ if !exists('g:syntax_on')
 endif
 filetype plugin indent on
 
-" Visual
+" }}} General
+
+" Visual {{{
+
+let &listchars = "tab:\uBB\uBB,trail:\uB7,nbsp:~"
+let &showbreak = '> '
+set breakindent
+set cmdheight=2
+set colorcolumn=111
 set cursorline
+set fillchars=vert:│,fold:·
+set guioptions-=rL
+set laststatus=2
+set linebreak " Wrap lines at convenient points
+set list
+set noballooneval
+set noerrorbells visualbell t_vb=
+set number
+set ruler
+set scrolloff=2
+set showcmd
+set showmode
+set showtabline=1
+set sidescrolloff=5
+set signcolumn=auto
+set wrap      " Wrap lines
+
 augroup CursorLine
   autocmd!
   autocmd WinEnter * setlocal cursorline
   autocmd WinLeave * setlocal nocursorline
 augroup END
-" Lines number
-set number
-set ruler
-" Disable beeps and flashes
-set noerrorbells visualbell t_vb=
-" Show tabs (not symbols)
-set showtabline=1
-set showcmd
-set showmode
-set cmdheight=2
-set scrolloff=2
-set sidescrolloff=5
-set wrap      " Wrap lines
-set linebreak " Wrap lines at convenient points
-set breakindent
-let &showbreak = '> '
-let &listchars = "tab:\uBB\uBB,trail:\uB7,nbsp:~"
-set list
-set noballooneval
-set laststatus=2
-set signcolumn=auto
-set guioptions-=rL
-set colorcolumn=111
-set fillchars=vert:│,fold:·
 
-" Navigation
-" Hide buffers when not displayed
-set hidden
-" Folding settings
-set foldmethod=marker
-set foldcolumn=0
-set foldlevel=0
-set foldnestmax=3
-set nofoldenable
-set sessionoptions-=options
-set diffopt=filler,vertical
-set nostartofline
-set ignorecase
-set smartcase
-set norelativenumber
-set confirm
+" }}} Visual
+
+" Navigation {{{
+
 let &grepprg = 'rg --vimgrep --hidden --no-ignore-vcs --ignore-file ~/.vim/runtime/grep.ignore'
+set confirm
+set diffopt=filler,vertical
+set foldcolumn=1
+set foldenable
+set foldlevel=0
+set foldmethod=marker
+set foldnestmax=3
 set grepformat=%f:%l:%c:%m
+set hidden
+set ignorecase
+set norelativenumber
+set nostartofline
+set sessionoptions-=options
+set smartcase
 
-" Search
-" Highlight search
+" }}}
+
+" Search {{{
+
 set hlsearch
-" Highlight matches when typing search pattern
 set incsearch
-" Turn tag binary search off
 set notagbsearch
 
-" Formatting
+" }}} Search
+
+" Formatting {{{
+
 set autoindent
-set shiftwidth=2 tabstop=2 softtabstop=2 expandtab
+set cinwords=unless,def,class,if,else,elsif,while,for,switch
+set conceallevel=2
+set formatoptions=croqnj
 set linespace=1
-" Round indent to multiple of 'shiftwidth'
-set shiftround
 set nosmartindent
 set preserveindent
-" Keywords that start extra indent on next line
-set cinwords=unless,def,class,if,else,elsif,while,for,switch
-set formatoptions=croqnj
+set shiftround
+set shiftwidth=2 tabstop=2 softtabstop=2 expandtab
 set textwidth=110
-set conceallevel=2
 
-" Editing
-"" Input method (localization)
-set keymap=russian-jcukenwin
-"set langmap=ёйцукенгшщзхъфывапролджэячсмитьбюЙЦУКЕHГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮ;`qwertyuiop[]asdfghjkl;'zxcvbnm,.QWERTYUIOP{}ASDFGHJKL:\"ZXCVBNM<>
-set noimcmdline
+" }}} Formatting
+
+" Editing {{{
+
 set iminsert=0
 set imsearch=0
 set nobomb
-" Spell check
-set spelllang=ru_yo,en_us
-set nospell
-set wildmode=longest,list:longest,full " Make cmdline tab completion similar to bash
-set wildmenu " Enable <C-n> and <C-p> to scroll through matches
-set wildignore=*.o,*.obj,*~,vendor/bundle/**/* " Stuff to ignore when tab completing
+set noimcmdline
 set nomacmeta
+set nospell
+set spelllang=ru_yo,en_us
+set wildignore=*.o,*.obj,*~,vendor/bundle/**/* " Stuff to ignore when tab completing
+set wildmenu " Enable <C-n> and <C-p> to scroll through matches
+set wildmode=longest,list:longest,full " Make cmdline tab completion similar to bash
 
 if has('nvim')
   set inccommand=split
 endif
 
-" Command line
+" }}} Editing
+
+" Command line {{{
+
 set shell=/bin/zsh
 set shellcmdflag=-c
 
-" CScope
-set cscopetag cscopeverbose
+" }}} Command line
+
+" CScope {{{
+
 set cscopequickfix=s-,c-,d-,i-,t-,e-
+set cscopetag cscopeverbose
+
+" }}} CScope
