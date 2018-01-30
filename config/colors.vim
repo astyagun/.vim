@@ -1,14 +1,16 @@
 colorscheme mac_classic
 
-highlight LineNr guibg=white
+" Mac Classic colorscheme customization
 highlight CursorLineNR guibg=#F0F6FF
-highlight VertSplit guibg=white guifg=#CFCFCF
+highlight FoldColumn guibg=white
+highlight LineNr guibg=white
 highlight SignColumn guibg=white
+highlight VertSplit guibg=white guifg=#CFCFCF
 
 " Signify plugin sign colors
 highlight SignifySignAdd    gui=bold guibg=NONE guifg=#00BC41
-highlight SignifySignDelete gui=bold guibg=NONE guifg=red
 highlight SignifySignChange gui=bold guibg=NONE guifg=brown
+highlight SignifySignDelete gui=bold guibg=NONE guifg=red
 
 " Fix Error visibility when in cursor line
 highlight Error guibg=#FFDDDD guifg=red gui=bold
@@ -18,8 +20,8 @@ highlight SpecialKey guifg=red
 
 " Diff
 highlight DiffAdd guibg=#DDFFDD
-highlight DiffDelete guibg=#FFDDDD
 highlight DiffChange guibg=#FFFFDD
+highlight DiffDelete guibg=#FFDDDD
 highlight DiffText guibg=#FFFFAA
 
 " Hide tilde from empty lines after file contents
