@@ -53,9 +53,6 @@ function! s:Refresh()
   SignifyRefresh
 endfunction
 
-" Select last paste in visual mode
-nnoremap <expr> gb '`[' . strpart(getregtype(), 0, 1) . '`]'
-
 " Add lines before and after current
 nnoremap <D-S-CR> O<Esc>
 inoremap <D-S-CR> <Esc>O
@@ -93,17 +90,8 @@ nnoremap <C-w>/ <C-w>_<C-w><Bar>
 " Close all buffers
 nnoremap <Leader><C-w>c :%bw<CR>
 
-" Open, close and toggle QuickFix window
-noremap <silent> [oq :copen<CR>
-noremap <silent> ]oq :cclose<CR>
-
-function! ToggleQuickFix()
-  if len(filter(range(1, winnr('$')), 'getwinvar(v:val, "&filetype") == "qf"')) > 0
-    cclose
-  else
-    copen
-  endif
-endfunction
-
-" Visually select the text that was last edited/pasted
+" Select last edited or pasted text
 nnoremap gV `[v`]
+
+" Make Y act more consistently with other mappings
+nnoremap Y y$
