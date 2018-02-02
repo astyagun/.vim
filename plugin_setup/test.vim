@@ -24,12 +24,9 @@ function! s:TestProjectFile()
   let test_path = ''
 
   if !empty('b:projectionist')
-    for [root, value] in projectionist#query('type')
-      if value != 'test'
-        for [root, value] in projectionist#query('test')
-          let test_path = value
-        endfor
-      endif
+    for [value] in projectionist#query_file('test')
+      let test_path = value
+      break
     endfor
   endif
 
