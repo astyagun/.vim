@@ -26,6 +26,7 @@ Plug 'kshenoy/vim-signature'
 Plug 'henrik/vim-indexed-search' " Show 'Match 123 of 456 /search term/' in Vim searches
 Plug 'haya14busa/vim-edgemotion'
 Plug 'tyru/open-browser.vim'
+Plug 'jasoncodes/ctrlp-modified.vim'
 
 " }}} Navigation and window management "
 

@@ -17,6 +17,8 @@ map <D-p> :call <SID>RunCtrlP(getcwd(), 'CtrlP')<CR>
 map <D-P> :call <SID>RunCtrlP(expand('%:p:h'), 'CtrlPCurFile')<CR>
 map <Leader><D-b> :CtrlPBuffer<CR>
 map <Leader><D-r> :CtrlPMRUFiles<CR>
+map <D-u> :CtrlPModified<CR>
+map <D-i> :CtrlPBranch<CR>
 
 " Exchange <C-(n|p)> mappings with <C-(j|k)> mappings
 let g:ctrlp_prompt_mappings = {
