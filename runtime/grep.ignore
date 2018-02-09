@@ -18,4 +18,5 @@ tags
 tmp/cache/
 tmp/capybara/
 tmp/pids/
+undodir/
 vendor/assets/
