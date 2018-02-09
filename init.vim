@@ -24,6 +24,9 @@ source ~/.vim/config/my_plugins.vim
 " ~/.vim/compiler/markdown.vim
 " ~/.vim/ftplugin/markdown.vim
 
+"" Confluence Wiki
+" ~/.vim/ftdetect/confluencewiki.vim
+
 "" VimL
 " ~/.vim/ftplugin/vim.vim
 
