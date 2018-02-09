@@ -1,9 +1,16 @@
-command! -bang CopyFilePath call s:CopyFilePath(<bang>0)
+command! -bang CopyFilePath call s:CopyFilePath(<bang>0, 0)
+command! -bang CopyFilePathWithLineNumber call s:CopyFilePath(<bang>0, 1)
 
-function! s:CopyFilePath(absolute_path)
+function! s:CopyFilePath(absolute_path, line_number)
   let l:file_path_variable = '%'
   if a:absolute_path
     let l:file_path_variable .= ':p'
   endif
-  let @+ = expand(l:file_path_variable)
+  let l:result = expand(l:file_path_variable)
+
+  if a:line_number
+    let l:result .= ':' . line('.')
+  endif
+
+  let @+ = l:result
 endfunction
