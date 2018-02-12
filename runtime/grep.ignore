@@ -8,6 +8,7 @@
 GPATH
 GRTAGS
 GTAGS
+app/assets/javascripts/i18n/
 build-uno/
 coverage/
 log/
