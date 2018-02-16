@@ -47,3 +47,4 @@ source ~/.vim/config/my_plugins.vim
 
 "" gitcommit
 " ~/.vim/ftdetect/gitcommit.vim
+" ~/.vim/ftplugin/gitcommit.vim
