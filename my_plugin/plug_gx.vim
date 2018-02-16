@@ -12,5 +12,5 @@ endfunction
 
 augroup PlugGx
   autocmd!
-  autocmd BufRead plug.vim nnoremap <buffer> <silent> gx :call <SID>plug_gx()<cr>
+  autocmd BufNewFile,BufRead plug.vim nnoremap <buffer> <silent> gx :call <SID>plug_gx()<cr>
 augroup END

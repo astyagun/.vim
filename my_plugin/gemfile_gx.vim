@@ -13,5 +13,5 @@ endfunction
 
 augroup GemfileGx
   autocmd!
-  autocmd BufRead Gemfile,*.gemspec nnoremap <buffer> <silent> gx :call <SID>GemfileGx()<cr>
+  autocmd BufNewFile,BufRead Gemfile,*.gemspec nnoremap <buffer> <silent> gx :call <SID>GemfileGx()<cr>
 augroup END
