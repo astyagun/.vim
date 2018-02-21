@@ -13,6 +13,7 @@ build-uno/
 coverage/
 log/
 node_modules/
+plugged/
 public/uploads
 spec/cassettes/
 tags
