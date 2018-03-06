@@ -19,6 +19,8 @@ map <Leader><D-b> :CtrlPBuffer<CR>
 map <Leader><D-r> :CtrlPMRUFiles<CR>
 map <D-u> :CtrlPModified<CR>
 map <D-i> :CtrlPBranch<CR>
+map <D-g> :CtrlPGlobalTags<CR>
+map <D-G> :CtrlPGlobalFileTags<CR>
 
 " Exchange <C-(n|p)> mappings with <C-(j|k)> mappings
 let g:ctrlp_prompt_mappings = {
