@@ -7,9 +7,6 @@ vmap <Leader>$ :call Preserve("s/\\s\\+$//e")<CR>
 " Reindent file
 nmap <Leader>= :call Preserve("normal gg=G")<CR>
 
-" Sort near lines with current indentation level
-nmap <Leader>si vii:sort<CR>
-
 " Mimic Emacs line editing (as I see it)
 noremap! <C-f> <Right>
 noremap! <C-b> <Left>

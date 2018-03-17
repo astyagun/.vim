@@ -49,6 +49,7 @@ Plug 'beloglazov/vim-online-thesaurus',
       \ {'on': ['OnlineThesaurusCurrentWord', 'OnlineThesaurusLookup', 'Thesaurus']}
 Plug 'tommcdo/vim-exchange'
 Plug 'vim-scripts/LargeFile'
+Plug 'kana/vim-operator-user'
 
 " }}} Editing "
 
