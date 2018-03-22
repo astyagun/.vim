@@ -45,6 +45,9 @@ source ~/.vim/config/my_plugins.vim
 "" ZSH
 " ~/.vim/ftdetect/zsh.vim
 
+"" SH
+" ~/.vim/after/syntax/sh.vim
+
 "" gitcommit
 " ~/.vim/ftdetect/gitcommit.vim
 " ~/.vim/ftplugin/gitcommit.vim
