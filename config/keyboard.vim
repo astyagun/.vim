@@ -1,7 +1,7 @@
 scriptencoding utf-8
 
 " Remove all extra spaces at the end of all lines
-omap <Leader>$ :call Preserve("%s/\\s\\+$//e")<CR>
+nmap <Leader>$ :call Preserve("%s/\\s\\+$//e")<CR>
 vmap <Leader>$ :call Preserve("s/\\s\\+$//e")<CR>
 
 " Reindent file
