@@ -112,7 +112,6 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
 Plug 'shumphrey/fugitive-gitlab.vim'
 Plug 'mhinz/vim-signify'
-Plug 'neilagabriel/vim-geeknote', {'on': 'Geeknote'}
 Plug 'tpope/vim-eunuch' " Unix commands
 Plug 'tpope/vim-rails', {'for': ['ruby', 'eruby']}
 Plug 't9md/vim-ruby-xmpfilter', {'for': 'ruby'}
