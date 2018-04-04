@@ -1,6 +1,6 @@
-map <Leader>s <Plug>(operator-sort)
+map <Leader>S <Plug>(operator-sort)
 call operator#user#define('sort', 'SortOperator')
 
 function! SortOperator(motion_wiseness)
-  '[,']sort n
+  '[,']sort
 endfunction
