@@ -1,1 +1,1 @@
-autocmd BufNewFile,BufRead Bowerfile setfiletype ruby
+autocmd BufNewFile,BufRead Bowerfile,*.rb.tt setfiletype ruby
