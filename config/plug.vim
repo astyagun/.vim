@@ -21,7 +21,6 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'wesQ3/vim-windowswap'
 Plug 'tpope/vim-unimpaired'
 Plug 'nixprime/cpsm', {'do': 'PY3=OFF ./install.sh'}
-Plug 'tpope/vim-projectionist'
 Plug 'kshenoy/vim-signature'
 Plug 'henrik/vim-indexed-search' " Show 'Match 123 of 456 /search term/' in Vim searches
 Plug 'haya14busa/vim-edgemotion'
@@ -113,7 +112,6 @@ Plug 'tpope/vim-rhubarb'
 Plug 'shumphrey/fugitive-gitlab.vim'
 Plug 'mhinz/vim-signify'
 Plug 'tpope/vim-eunuch' " Unix commands
-Plug 'tpope/vim-rails', {'for': ['ruby', 'eruby']}
 Plug 't9md/vim-ruby-xmpfilter', {'for': 'ruby'}
 Plug 'w0rp/ale'
 Plug 'janko-m/vim-test', {'for': 'ruby'}
