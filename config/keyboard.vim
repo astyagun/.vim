@@ -58,25 +58,25 @@ inoremap <S-CR> <Esc>O
 nnoremap <D-CR> o<Esc>
 inoremap <D-CR> <Esc>o
 
-" Change word case in INSERT mode
-" <A-c> - capitalize
-inoremap ç <Esc>lguiw~wi
-imap ≠ ç
-" <A-l> - lowercase
-inoremap ¬ <Esc>lguiwwi
-imap ∆ ¬
-" <A-u> - uppercase
-inoremap Ò <Esc>lgUiwwi
-" Depends on Russian layout modified by Ukelele
-imap ∇ Ò
-
 " Change word case in NORMAL mode
 " <A-c> - capitalize
-nnoremap ç guiw~w
+nnoremap ç ebguiw~e
 " <A-l> - lowercase
-nnoremap ¬ guiww
+nnoremap ¬ ebguiwe
 " <A-S-l> - uppercase
-nnoremap Ò gUiww
+nnoremap Ò ebgUiwe
+
+" Change word case in INSERT mode
+" <A-c> - capitalize
+imap ç <Esc>ça
+imap ≠ ç
+" <A-l> - lowercase
+imap ¬ <Esc>¬a
+imap ∆ ¬
+" <A-u> - uppercase
+imap Ò <Esc>Òa
+" Depends on Russian layout modified by Ukelele
+imap ∇ Ò
 
 " Set window size, useful for netrw and quickfix windows
 nnoremap <Leader><C-w><Bar> 40<C-w><Bar>
