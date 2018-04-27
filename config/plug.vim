@@ -53,16 +53,6 @@ Plug 'henrik/vim-yaml-flattener'
 
 " }}} Editing "
 
-" Autocomplete {{{ "
-
-Plug 'prabirshrestha/asyncomplete.vim'
-Plug 'prabirshrestha/async.vim'
-Plug 'prabirshrestha/asyncomplete-ultisnips.vim'
-Plug 'yami-beta/asyncomplete-omni.vim'
-Plug 'prabirshrestha/asyncomplete-buffer.vim'
-
-" }}} Autocomplete "
-
 " Text objects {{{ "
 
 Plug 'bootleq/vim-textobj-rubysymbol', {'for': ['ruby', 'eruby', 'haml']}
