@@ -25,6 +25,7 @@ source ~/.vim/config/my_plugins.vim
 " ~/.vim/ftplugin/markdown.vim
 
 "" Confluence Wiki
+" ~/.vim/after/syntax/confluencewiki.vim
 " ~/.vim/ftdetect/confluencewiki.vim
 " ~/.vim/ftplugin/confluencewiki.vim
 
