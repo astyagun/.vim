@@ -32,7 +32,6 @@ source ~/.vim/plugin_setup/test.vim
 source ~/.vim/plugin_setup/textobj-comment.vim
 source ~/.vim/plugin_setup/ultisnips.vim
 source ~/.vim/plugin_setup/undotree.vim
-source ~/.vim/plugin_setup/unimpaired.vim
 source ~/.vim/plugin_setup/window_swap.vim
 source ~/.vim/plugin_setup/xkbswitch.vim
 source ~/.vim/plugin_setup/xmpfilter.vim
