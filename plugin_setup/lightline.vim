@@ -59,7 +59,7 @@ function! LightlineShrinkableFilename()
           \ s:min_window_width_and_file_name_length_difference_for_full_file_name
       return l:file_name
     else
-      return expand('%:t')
+      return pathshorten(expand('%:f'))
     endif
   else
     return '[No Name]'
