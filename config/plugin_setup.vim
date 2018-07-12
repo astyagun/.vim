@@ -12,7 +12,6 @@ source ~/.vim/plugin_setup/dart.vim
 source ~/.vim/plugin_setup/easy_align.vim
 source ~/.vim/plugin_setup/edgemotion.vim
 source ~/.vim/plugin_setup/fugitive.vim
-source ~/.vim/plugin_setup/geeknote.vim
 source ~/.vim/plugin_setup/highlightedyank.vim
 source ~/.vim/plugin_setup/lightline.vim
 source ~/.vim/plugin_setup/markdown-preview.vim
