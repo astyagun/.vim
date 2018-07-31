@@ -92,6 +92,7 @@ Plug 'sudar/vim-arduino-syntax', {'for': ['ino', 'pde']}
 Plug 'mechatroner/rainbow_csv', {'for': 'csv'}
 Plug 'kchmck/vim-coffee-script', {'for': 'coffee'}
 Plug 'martinda/Jenkinsfile-vim-syntax', {'for': 'Jeninsfile'}
+Plug 'pearofducks/ansible-vim', {'for': ['yaml.ansible', 'ansible_hosts', 'jinja2', '*.jinja2']}
 
 " }}} File types "
 
