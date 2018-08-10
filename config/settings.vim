@@ -15,13 +15,28 @@ set rubydll=/usr/lib/libruby.dylib
 
 " }}} General
 
+" Formatting {{{
+
+set autoindent
+set cinwords=unless,def,class,if,else,elsif,while,for,switch
+set conceallevel=2
+set formatoptions=croqnj
+set linespace=1
+set nosmartindent
+set preserveindent
+set shiftround
+set shiftwidth=2 tabstop=2 softtabstop=2 expandtab
+set textwidth=120
+
+" }}} Formatting
+
 " Visual {{{
 
+let &colorcolumn = &textwidth + 1
 let &listchars = "tab:\uBB\uBB,trail:\uB7,nbsp:~"
 let &showbreak = '> '
 set breakindent
 set cmdheight=2
-set colorcolumn=121
 set cursorline
 set fillchars=vert:│,fold:·
 set guioptions-=rL
@@ -75,21 +90,6 @@ set incsearch
 set notagbsearch
 
 " }}} Search
-
-" Formatting {{{
-
-set autoindent
-set cinwords=unless,def,class,if,else,elsif,while,for,switch
-set conceallevel=2
-set formatoptions=croqnj
-set linespace=1
-set nosmartindent
-set preserveindent
-set shiftround
-set shiftwidth=2 tabstop=2 softtabstop=2 expandtab
-set textwidth=110
-
-" }}} Formatting
 
 " Editing {{{
 
