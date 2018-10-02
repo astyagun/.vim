@@ -8,7 +8,7 @@ let g:test#custom_strategies = {'custom_asyncrun': function('TestAsyncRunStrateg
 let g:test#strategy = 'custom_asyncrun'
 
 function! TestDockerTransform(cmd) abort
-  return 'docker-compose exec -T spring bash -c "NO_COVERAGE=true ' . a:cmd . '"'
+  return 'docker-compose exec -T spring bash -c "RUBY_OPT=-W0 NO_COVERAGE=true ' . a:cmd . '"'
 endfunction
 let g:test#custom_transformations = {'docker': function('TestDockerTransform')}
 let g:test#transformation = 'docker'
