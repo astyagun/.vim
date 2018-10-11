@@ -72,7 +72,7 @@ set foldcolumn=1
 set nofoldenable
 set foldlevel=0
 set foldmethod=marker
-set foldnestmax=3
+set foldnestmax=10
 set grepformat=%f:%l:%c:%m
 set hidden
 set ignorecase
