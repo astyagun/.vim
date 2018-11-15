@@ -10,5 +10,5 @@ endfunction
 
 augroup RubocopGx
   autocmd!
-  autocmd BufNewFile,BufRead .rubocop.yml,.rubocop.todo.yml nnoremap <buffer> <silent> gx :call <SID>RubocopGx()<cr>
+  autocmd BufNewFile,BufRead .rubocop.yml,.rubocop_todo.yml nnoremap <buffer> <silent> gx :call <SID>RubocopGx()<cr>
 augroup END
