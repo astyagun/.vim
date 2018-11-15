@@ -40,6 +40,7 @@ command! -range ALERubocopFix <line1>,<line2>call <SID>ALERubocopFix()
 
 map <Leader>ll <Plug>(ale_lint):echom 'ALE running...'<CR>
 map <Leader>lr <Plug>(ale_reset)
+map <Leader>ld <Plug>(ale_detail)
 
 augroup ALEEchoResult
   autocmd!
