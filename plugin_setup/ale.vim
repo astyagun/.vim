@@ -3,6 +3,7 @@ let g:ale_echo_cursor = 0
 let g:ale_lint_delay = 2000
 let g:ale_ruby_reek_show_wiki_link = 1
 let g:ale_ruby_rubocop_options = '--rails --display-style-guide --parallel'
+let g:ale_ruby_rubocop_executable = expand('$HOME') . '/.gem/ruby/2.3.0/bin/rubocop'
 let g:ale_set_balloons = 0
 let g:ale_sign_column_always = 0
 let g:ale_sign_error = '●'
