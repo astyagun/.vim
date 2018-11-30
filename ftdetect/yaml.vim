@@ -1,1 +1,1 @@
-autocmd BufNewFile,BufRead .reek setfiletype yaml
+autocmd BufNewFile,BufRead .reek,*.yml.sample setfiletype yaml
