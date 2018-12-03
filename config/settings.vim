@@ -69,7 +69,6 @@ let &grepprg = 'rg --vimgrep --hidden --no-ignore-vcs --ignore-file ~/.vim/runti
 set confirm
 set diffopt=filler,vertical
 set foldcolumn=1
-set nofoldenable
 set foldlevel=0
 set foldmethod=marker
 set foldnestmax=10
