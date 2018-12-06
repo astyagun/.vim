@@ -13,4 +13,5 @@ function! s:ReadFileFromDocker()
   execute 'setfiletype ' . l:file_type
   execute ':'            . l:current_line
   execute ':normal '     . l:current_column . '|'
+  normal zv
 endfunction
