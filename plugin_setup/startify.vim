@@ -15,6 +15,7 @@ let g:startify_list_order = [
 
 let g:startify_bookmarks = [
       \ '~/Desktop/statuses.md',
+      \ '~/Desktop/meeting.md',
       \ '~/.zprezto/includes/alias.zsh',
       \ '~/.rubocop.yml',
       \ '~/.reek',
