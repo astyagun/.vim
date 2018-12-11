@@ -1,21 +1,21 @@
 " Folding
-if expand('%:t:r') !~ '_spec$'
-  setlocal foldtext=ruby#foldtext()
-endif
+setlocal foldtext=ruby#foldtext()
 
 let s:middot = '·'
+let s:raquo = '»'
 
 function! ruby#foldtext()
-  let s:line = getline(v:foldstart)
-  let s:preview_maxwidth = &columns - 7 - strdisplaywidth(s:stats()) - 2
+  let l:line = getline(v:foldstart)
+  let l:preview_maxwidth = &columns - 7 - strdisplaywidth(s:stats()) - 2
 
-  let s:preview = s:drop_trailing_do(s:line)[0:(s:preview_maxwidth - 1)]
-  let s:preview = substitute(s:preview, '^\( *\)  ', '\1' . s:middot . ' ', '')
+  let l:preview = s:drop_trailing_do(l:line)[0:(l:preview_maxwidth - 1)]
+  let l:pre_padding = repeat(s:middot, strdisplaywidth(substitute(l:preview, '^\( *\).*', '\1', '')) - 2)
+  let l:preview = substitute(l:preview, '^ *', s:raquo . l:pre_padding . ' ', '')
 
-  let s:padding = repeat(s:middot, s:preview_maxwidth - strdisplaywidth(s:preview) + 1)
-  let s:padding = substitute(s:padding, '\(^.\|.$\)', ' ', 'g')
+  let l:padding = repeat(s:middot, l:preview_maxwidth - strdisplaywidth(l:preview) + 1)
+  let l:padding = substitute(l:padding, '\(^.\|.$\)', ' ', 'g')
 
-  return s:preview . s:padding . s:stats() . ' ' . s:middot
+  return l:preview . l:padding . s:stats() . ' ' . s:middot
 endfunction
 
 function! s:stats()
