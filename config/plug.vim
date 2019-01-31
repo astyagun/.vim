@@ -51,6 +51,7 @@ Plug 'tommcdo/vim-exchange'
 Plug 'vim-scripts/LargeFile'
 Plug 'kana/vim-operator-user'
 Plug 'henrik/vim-yaml-flattener'
+Plug 'tmsvg/pear-tree'
 
 " }}} Editing "
 
