@@ -76,6 +76,7 @@ set foldnestmax=10
 set grepformat=%f:%l:%c:%m
 set hidden
 set ignorecase
+set nofoldenable
 set norelativenumber
 set nostartofline
 set sessionoptions-=options
