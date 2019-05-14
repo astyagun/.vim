@@ -22,3 +22,4 @@ tmp/capybara/
 tmp/pids/
 undodir/
 vendor/assets/
+vendor/bundle/
