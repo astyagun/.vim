@@ -1,4 +1,5 @@
 !.*
+*.retry
 *.swo
 *.swp
 .DS_Store
