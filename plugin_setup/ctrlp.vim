@@ -65,12 +65,13 @@ let g:ctrlp_match_func = {'match': 'cpsm#CtrlPMatch'}
 " Use ripgrep in CtrlP for listing files
 if executable('rg')
   let g:ctrlp_user_command = 'rg' .
+        \ ' --files' .
         \ ' --hidden' .
         \ ' --no-ignore-vcs' .
         \ ' --ignore-file ~/.vim/runtime/grep.ignore' .
-        \ ' --files' .
-        \ ' --color=never %s' .
-        \ ' --ignore-case'
+        \ ' --color=never' .
+        \ ' --ignore-case' .
+        \ ' %s'
 
   " ripgrep is fast enough that CtrlP doesn't need to cache
   let g:ctrlp_use_caching = 0
