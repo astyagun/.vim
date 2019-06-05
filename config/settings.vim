@@ -12,6 +12,7 @@ if !exists('g:syntax_on')
 endif
 filetype plugin indent on
 set rubydll=/usr/lib/libruby.dylib
+set nomodeline
 
 " }}} General
 
