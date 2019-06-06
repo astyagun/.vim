@@ -112,6 +112,7 @@ Plug 'lucapette/vim-ruby-doc', {'for': 'ruby'}
 Plug 'lambdalisue/vim-gista'
 Plug 'lambdalisue/vim-gista-ctrlp'
 Plug 'rbong/vim-flog'
+Plug 'samoshkin/vim-mergetool'
 
 " }}} Integrations "
 
