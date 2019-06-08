@@ -115,7 +115,7 @@ endif
 " Command line {{{
 
 set shell=/bin/zsh
-set shellcmdflag=-c
+set shellcmdflag=-ic
 
 " }}} Command line
 

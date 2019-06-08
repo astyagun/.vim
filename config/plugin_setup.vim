@@ -1,5 +1,4 @@
 " ~/.vim/runtime/generate-tags
-" ~/.vim/runtime/grep.ignore
 " ~/.vim/runtime/vim_formatter.rb
 source ~/.vim/plugin_setup/2html.vim
 source ~/.vim/plugin_setup/ale.vim
@@ -7,10 +6,10 @@ source ~/.vim/plugin_setup/asyncrun.vim
 source ~/.vim/plugin_setup/camelcasemotion.vim
 source ~/.vim/plugin_setup/cmdline_complete.vim
 source ~/.vim/plugin_setup/cscope.vim
-source ~/.vim/plugin_setup/ctrlp.vim
 source ~/.vim/plugin_setup/easy_align.vim
 source ~/.vim/plugin_setup/edgemotion.vim
 source ~/.vim/plugin_setup/fugitive.vim
+source ~/.vim/plugin_setup/fzf.vim
 source ~/.vim/plugin_setup/highlightedyank.vim
 source ~/.vim/plugin_setup/lightline.vim
 source ~/.vim/plugin_setup/markdown-preview.vim

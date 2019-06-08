@@ -16,7 +16,6 @@ Plug 'xtal8/traces.vim'
 " Navigation and window management {{{ "
 
 Plug 'mhinz/vim-startify'
-Plug 'ctrlpvim/ctrlp.vim'
 Plug 'wesQ3/vim-windowswap'
 Plug 'tpope/vim-unimpaired'
 Plug 'nixprime/cpsm', {'do': 'PY3=ON ./install.sh'}
@@ -26,6 +25,8 @@ Plug 'haya14busa/vim-edgemotion'
 Plug 'tyru/open-browser.vim'
 Plug 'jasoncodes/ctrlp-modified.vim'
 Plug 'Konfekt/FastFold'
+Plug '/usr/local/opt/fzf'
+Plug 'junegunn/fzf.vim'
 
 " }}} Navigation and window management "
 
@@ -110,7 +111,6 @@ Plug 'janko-m/vim-test', {'for': 'ruby'}
 Plug 'emilsoman/spec-outline.vim', {'for': 'ruby'}
 Plug 'lucapette/vim-ruby-doc', {'for': 'ruby'}
 Plug 'lambdalisue/vim-gista'
-Plug 'lambdalisue/vim-gista-ctrlp'
 Plug 'rbong/vim-flog'
 Plug 'samoshkin/vim-mergetool'
 
