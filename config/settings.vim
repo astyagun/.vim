@@ -13,6 +13,7 @@ endif
 filetype plugin indent on
 set rubydll=/usr/lib/libruby.dylib
 set nomodeline
+set termwinkey=†
 
 " }}} General
 
