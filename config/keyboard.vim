@@ -92,3 +92,23 @@ nnoremap gV `[v`]
 
 " Make Y act more consistently with other mappings
 nnoremap Y y$
+
+" Alt+ mappings for the terminal
+
+function s:tmap_meta(key)
+    call term_sendkeys(bufnr('%'), "\<Esc>" . a:key)
+endfunction
+
+let s:terminal_alt_keys_to_pass = {
+      \   'ƒ': 'f',
+      \   '∫': 'b',
+      \   '≠': 'c',
+      \   '∆': 'l',
+      \   '∇': 'u',
+      \   '∂': 'd',
+      \ }
+
+for from_key in keys(s:terminal_alt_keys_to_pass)
+  let to_key = s:terminal_alt_keys_to_pass[from_key]
+  execute 'tnoremap <silent> ' . from_key . ' ' . &termwinkey . ':call <SID>tmap_meta("' . to_key . '")<CR>'
+endfor
