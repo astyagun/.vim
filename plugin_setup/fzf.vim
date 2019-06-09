@@ -17,6 +17,13 @@ let g:fzf_colors =
   \ 'spinner': ['fg', 'Label'],
   \ 'header':  ['fg', 'Comment'] }
 
+" Hide statusline in FZF buffer
+augroup HideFZFStatusline
+  autocmd!
+  autocmd FileType fzf set laststatus=0 noshowmode noruler
+        \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler
+augroup END
+
 " Import FZF environment variables from the 'shell'
 
 " Need to delay, because the 'shell' option is set later in the startup sequence
