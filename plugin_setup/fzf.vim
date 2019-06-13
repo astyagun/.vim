@@ -29,7 +29,7 @@ augroup END
 " Need to delay, because the 'shell' option is set later in the startup sequence
 augroup DelayImportingEnvironmentVariables
   autocmd!
-  autocmd VimEnter * call s:ImportFzfEnvironmentVariablesFromShell()
+  autocmd VimEnter * call timer_start(1, { _ -> execute('call <SID>ImportFzfEnvironmentVariablesFromShell()') })
   autocmd User ConfigurationReloaded call s:ImportFzfEnvironmentVariablesFromShell()
 augroup END
 
