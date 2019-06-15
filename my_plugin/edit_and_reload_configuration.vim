@@ -1,4 +1,4 @@
-" This is more conveinent as ~/.vim/ is a Git repo and Fugitive sees repository only if editing a file in that directory
+" This is more convenient as ~/.vim/ is a Git repo and Fugitive sees repository only if editing a file in that directory
 let s:vim_path = expand('~/.vim')
 let $MYVIMRC   = s:vim_path . '/init.vim'
 let $MYGVIMRC  = s:vim_path . '/ginit.vim'

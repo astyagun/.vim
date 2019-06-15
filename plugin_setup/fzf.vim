@@ -6,9 +6,10 @@ let g:fzf_colors =
 \ { 'fg':      ['fg', 'Normal'],
   \ 'bg':      ['bg', 'Normal'],
   \ 'hl':      ['fg', 'Comment'],
-  \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
-  \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
+  \ 'fg+':     ['fg', 'Normal'],
+  \ 'bg+':     ['bg', 'PmenuSel'],
   \ 'hl+':     ['fg', 'Statement'],
+  \ 'gutter':  ['bg', 'Normal'],
   \ 'info':    ['fg', 'PreProc'],
   \ 'border':  ['fg', 'Ignore'],
   \ 'prompt':  ['fg', 'Conditional'],
@@ -42,4 +43,6 @@ function! s:ImportFzfEnvironmentVariablesFromShell()
 
     execute 'let $' . variable_name . ' = "' . escaped_variable_value . '"'
   endfor
+
+  let $FZF_DEFAULT_OPTS = $FZF_DEFAULT_OPTS . ' --no-bold'
 endfunction
