@@ -67,7 +67,7 @@ augroup END
 
 " Navigation {{{
 
-let &grepprg = 'rg --vimgrep --hidden --no-ignore-vcs --ignore-file ~/.vim/runtime/grep.ignore'
+let &grepprg = 'rg --vimgrep --hidden --no-ignore-vcs --ignore-file ~/.files/zsh/find.ignore'
 set confirm
 set diffopt=filler,vertical
 set foldcolumn=1
