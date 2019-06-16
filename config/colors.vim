@@ -6,8 +6,8 @@ highlight FoldColumn guibg=white
 highlight LineNr guibg=white
 highlight SignColumn guibg=white
 highlight VertSplit guibg=white guifg=#CFCFCF
-highlight TabLine guifg=DarkGray guibg=White
-highlight TabLineSel guifg=DarkBlue
+highlight TabLine guifg=#808080 guibg=White gui=NONE
+highlight TabLineSel guifg=#3C4C72
 highlight TabLineFill guifg=White
 
 " Signify plugin sign colors
