@@ -19,7 +19,8 @@ source ~/.vim/config/my_plugins.vim
 " ~/.vim/autoload/plug.vim
 
 "" Docker
-" ~/.vim/ftdetect/docker.vim
+" ~/.vim/after/syntax/dockerfile.vim
+" ~/.vim/ftdetect/dockerfile.vim
 
 "" Markdown
 " ~/.vim/after/ftplugin/markdown.vim
