@@ -13,15 +13,6 @@ let g:startify_list_order = [
       \   'commands'
       \ ]
 
-let g:startify_bookmarks = [
-      \ '~/Desktop/statuses.md',
-      \ '~/Desktop/meeting.md',
-      \ '~/.zprezto/includes/alias.zsh',
-      \ '~/.rubocop.yml',
-      \ '~/.reek',
-      \ '~/Library/KeyBindings/DefaultKeyBinding.dict',
-      \ '/usr/local/share/gtags/gtags.conf',
-      \ ]
 let g:startify_skiplist = [
       \ 'COMMIT_EDITMSG',
       \ '.git/index',
