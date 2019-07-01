@@ -5,7 +5,6 @@ source ~/.vim/plugin_setup/ale.vim
 source ~/.vim/plugin_setup/asyncrun.vim
 source ~/.vim/plugin_setup/camelcasemotion.vim
 source ~/.vim/plugin_setup/cmdline_complete.vim
-source ~/.vim/plugin_setup/cscope.vim
 source ~/.vim/plugin_setup/easy_align.vim
 source ~/.vim/plugin_setup/edgemotion.vim
 source ~/.vim/plugin_setup/fugitive.vim
