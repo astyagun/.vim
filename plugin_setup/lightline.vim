@@ -28,7 +28,7 @@ let g:lightline.active = {
       \   ]
       \ }
 let g:lightline.inactive = {
-      \   'left': [['shrinkable_filename', 'fugitive_version', 'modified']],
+      \   'left': [['shrinkable_filename', 'fugitive_version'], ['modified']],
       \   'right': [['percent', 'total_lines'], ['lineinfo'], ['fileformat', 'filetype']]
       \ }
 
