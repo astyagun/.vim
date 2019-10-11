@@ -171,6 +171,7 @@ command! -nargs=1 -complete=custom,s:LightlineColorschemes LightlineColorscheme
 augroup LightlineReload
   autocmd!
   autocmd User ConfigurationReloaded
+        \ runtime autoload/lightline/colorscheme/custom_solarized.vim |
         \ call lightline#init() |
         \ call lightline#colorscheme() |
         \ call lightline#update()
