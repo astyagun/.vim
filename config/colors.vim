@@ -5,6 +5,7 @@ let s:interface_style = systemlist('defaults read -g AppleInterfaceStyle')
 if !empty(s:interface_style) && s:interface_style[0] ==? 'Dark'
   colorscheme darkblue
 
+  highlight CursorLine guibg=#202080
   highlight SignColumn guibg=NONE
   highlight StatusLine guibg=#808080
   highlight TabLine guifg=#808080 guibg=NONE gui=NONE
