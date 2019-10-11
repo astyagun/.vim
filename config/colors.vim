@@ -1,6 +1,8 @@
 highlight clear
 
-if systemlist('defaults read -g AppleInterfaceStyle')[0] ==? 'dark'
+let s:interface_style = systemlist('defaults read -g AppleInterfaceStyle')
+
+if !empty(s:interface_style) && s:interface_style[0] ==? 'Dark'
   colorscheme darkblue
 
   highlight SignColumn guibg=NONE
