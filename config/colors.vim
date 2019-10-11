@@ -10,9 +10,6 @@ if !empty(s:interface_style) && s:interface_style[0] ==? 'Dark'
   highlight TabLine guifg=#808080 guibg=NONE gui=NONE
   highlight TabLineFill guifg=#000040
   highlight VertSplit guibg=#000040 guifg=#808080
-
-  let g:fzf_colors['hl'] = ['fg', 'Statement']
-  let g:fzf_colors['bg+'] = ['bg', 'Error']
 else
   colorscheme mac_classic
 
