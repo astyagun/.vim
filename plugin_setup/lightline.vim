@@ -1,7 +1,7 @@
 scriptencoding utf-8
 
 let g:lightline                    = {}
-let g:lightline.colorscheme        = 'custom_solarized'
+let g:lightline.colorscheme        = 'ayu'
 let g:lightline.component          = {}
 let g:lightline.component_expand   = {}
 let g:lightline.component_function = {}
@@ -171,7 +171,6 @@ command! -nargs=1 -complete=custom,s:LightlineColorschemes LightlineColorscheme
 augroup LightlineReload
   autocmd!
   autocmd User ConfigurationReloaded
-        \ runtime autoload/lightline/colorscheme/custom_solarized.vim |
         \ call lightline#init() |
         \ call lightline#colorscheme() |
         \ call lightline#update()

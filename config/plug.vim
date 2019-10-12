@@ -2,7 +2,8 @@ call plug#begin()
 
 " Visual {{{ "
 
-Plug 'nelstrom/vim-mac-classic-theme'
+Plug 'ayu-theme/ayu-vim'
+Plug 'yarisgutierrez/ayu-lightline'
 Plug 'gerw/vim-HiLinkTrace', {'on': 'HLT'}
 Plug 'vim-scripts/errormarker.vim'
 Plug 'vim-scripts/SyntaxAttr.vim'

@@ -18,14 +18,6 @@ let g:fzf_colors =
   \ 'spinner': ['fg', 'Label'],
   \ 'header':  ['fg', 'Comment'] }
 
-augroup FzfAdaptForDarkInterfaceStyle
-  autocmd!
-  autocmd User ConfigurationReloaded if &background == 'dark' |
-        \ let g:fzf_colors['hl'] = ['fg', 'Statement'] |
-        \ let g:fzf_colors['bg+'] = ['bg', 'Error'] |
-        \ endif
-augroup END
-
 " Hide statusline in FZF buffer
 augroup HideFZFStatusline
   autocmd!

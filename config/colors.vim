@@ -1,41 +1,11 @@
-highlight clear
-
 let s:interface_style = systemlist('defaults read -g AppleInterfaceStyle')
-
 if !empty(s:interface_style) && s:interface_style[0] ==? 'Dark'
-  colorscheme darkblue
-
-  highlight CursorLine guibg=#202080
-  highlight SignColumn guibg=NONE
-  highlight StatusLine guibg=#808080
-  highlight TabLine guifg=#808080 guibg=NONE gui=NONE
-  highlight TabLineFill guifg=#000040
-  highlight VertSplit guibg=#000040 guifg=#808080
+  let ayucolor = 'dark'
 else
-  colorscheme mac_classic
-
-  " Mac Classic colorscheme customization
-  highlight CursorLineNR guibg=#F0F6FF
-  highlight FoldColumn guibg=white
-  highlight LineNr guibg=white
-  highlight SignColumn guibg=white
-  highlight TabLine guifg=#808080 guibg=White gui=NONE
-  highlight TabLineFill guifg=White
-  highlight TabLineSel guifg=#3C4C72
-  highlight VertSplit guibg=white guifg=#CFCFCF
-
-  " Fix Error visibility when in cursor line
-  highlight Error guibg=#FFDDDD guifg=red gui=bold
-
-  " Diff
-  highlight DiffAdd guibg=#DDFFDD
-  highlight DiffChange guibg=#FFFFDD
-  highlight DiffDelete guibg=#FFDDDD
-  highlight DiffText guibg=#FFFFAA
-
-  " ColorColumn
-  highlight ColorColumn guibg=#F5F5F5
+  let ayucolor = 'light'
 endif
+set termguicolors
+colorscheme ayu
 
 " Signify plugin sign colors
 highlight SignifySignAdd    gui=bold guibg=NONE guifg=#00BC41

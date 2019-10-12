@@ -55,7 +55,7 @@ set showmode
 set showtabline=1
 set sidescrolloff=5
 set signcolumn=auto
-set wrap      " Wrap lines
+set wrap
 
 augroup CursorLine
   autocmd!
