@@ -1,3 +1,4 @@
+highlight clear
 let s:interface_style = systemlist('defaults read -g AppleInterfaceStyle')
 if !empty(s:interface_style) && s:interface_style[0] ==? 'Dark'
   let ayucolor = 'dark'
@@ -11,6 +12,9 @@ colorscheme ayu
 highlight SignifySignAdd    gui=bold guibg=NONE guifg=#00BC41
 highlight SignifySignChange gui=bold guibg=NONE guifg=brown
 highlight SignifySignDelete gui=bold guibg=NONE guifg=red
+
+" Diff
+highlight DiffText guibg=#FFFFAA
 
 " Highlight tabs and trailing spaces with red:		     
 highlight SpecialKey guifg=red
