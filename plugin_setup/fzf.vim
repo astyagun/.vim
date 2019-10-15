@@ -35,7 +35,7 @@ augroup DelayImportingEnvironmentVariables
 augroup END
 
 function! s:ImportFzfEnvironmentVariablesFromShell()
-  for line in split(system('env | grep "^FZF_"'), '[[:cntrl:]]')
+  for line in systemlist('env | grep "^FZF_"')
     let variable_string = split(line, '=')
     let variable_name = variable_string[0]
     let variable_value = join(variable_string[1:-1], '=')

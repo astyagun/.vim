@@ -38,7 +38,7 @@ let &colorcolumn = &textwidth + 1
 let &listchars = "tab:\uBB\uBB,trail:\uB7,nbsp:~"
 let &showbreak = '> '
 set breakindent
-set cmdheight=2
+set cmdheight=1
 set cursorline
 set fillchars=vert:│,fold:·
 set guioptions-=rL
