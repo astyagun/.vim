@@ -1,1 +1,1 @@
-autocmd BufNewFile,BufRead prompt_*_setup setfiletype zsh
+autocmd BufNewFile,BufRead prompt_*_setup,zprofile setfiletype zsh
