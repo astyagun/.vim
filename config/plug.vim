@@ -121,9 +121,7 @@ Plug 'samoshkin/vim-mergetool'
 Plug 'vim-scripts/ColorX'
 Plug 'SirVer/ultisnips'
   Plug 'honza/vim-snippets'
-  " Plug 'sudar/vim-arduino-snippets'
 Plug 'alvan/vim-closetag', {'for': 'html'}
-Plug 'sudar/vim-arduino-snippets', {'for': ['ino', 'pde']}
 
 " }}} Snippets and other insertions "
 
