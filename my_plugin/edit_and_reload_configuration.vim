@@ -22,4 +22,5 @@ augroup ReloadConfiguration
 augroup END
 
 map <Leader>ve :edit $MYVIMRC<CR>
+map <Leader>vp :edit <C-r>=fnamemodify(expand("$MYVIMRC"), ":p:h")<CR>/config/plug.vim<CR>
 map <Leader>vs :call ReloadConfiguration()<CR>
