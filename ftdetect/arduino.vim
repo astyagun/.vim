@@ -1,1 +1,1 @@
-autocmd BufNewFile,BufRead *.h,*.cpp setfiletype arduino
+autocmd BufNewFile,BufRead *.h,*.c,*.cpp set filetype=arduino

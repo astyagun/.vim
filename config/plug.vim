@@ -89,7 +89,7 @@ Plug 'vim-scripts/confluencewiki.vim', {'for': 'confluencewiki'}
 Plug 'kannokanno/previm', {'on': 'PrevimOpen'}
 Plug 'wannesm/wmgraphviz.vim', {'for': 'dot'}
 Plug 'slim-template/vim-slim', {'for': 'slim'}
-Plug 'sudar/vim-arduino-syntax', {'for': ['ino', 'pde']}
+Plug 'sudar/vim-arduino-syntax', {'for': 'arduino'}
 Plug 'mechatroner/rainbow_csv', {'for': 'csv'}
 Plug 'kchmck/vim-coffee-script', {'for': 'coffee'}
 Plug 'martinda/Jenkinsfile-vim-syntax', {'for': 'Jeninsfile'}
