@@ -55,9 +55,3 @@ source ~/.vim/config/my_plugins.vim
 "" gitcommit
 " ~/.vim/ftdetect/gitcommit.vim
 " ~/.vim/ftplugin/gitcommit.vim
-
-"" CtrlP plugins
-" ~/.vim/autoload/ctrlp/global_file_tags.vim
-" ~/.vim/autoload/ctrlp/global_tags.vim
-" ~/.vim/plugin/global_file_tags.vim
-" ~/.vim/plugin/global_tags.vim
