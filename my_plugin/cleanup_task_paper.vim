@@ -1,1 +1,1 @@
-command! CleanupTaskPaper %s/ @\(\(parallel\|autodone\)(false)\|\(context\|tags\)([^)]\+)\)//g
+command! CleanupTaskPaper %s/ @\(autodone(false)\|\(context\|tags\)([^)]\+)\)//g
