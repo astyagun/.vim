@@ -1,7 +1,7 @@
 scriptencoding utf-8
 
 let g:lightline                    = {}
-let g:lightline.colorscheme        = 'ayu'
+let g:lightline.colorscheme        = 'default'
 let g:lightline.component          = {}
 let g:lightline.component_expand   = {}
 let g:lightline.component_function = {}
