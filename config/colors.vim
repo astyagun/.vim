@@ -3,8 +3,10 @@ highlight clear
 
 let s:interface_style = systemlist('defaults read -g AppleInterfaceStyle')
 if !empty(s:interface_style) && s:interface_style[0] ==? 'Dark'
+  set background=dark
   colorscheme xcodedark
 else
+  set background=light
   colorscheme xcodelight
 endif
 
