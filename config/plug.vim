@@ -62,7 +62,7 @@ Plug 'jceb/vim-textobj-uri'
 Plug 'kana/vim-textobj-entire'
 Plug 'kana/vim-textobj-line'
 Plug 'kana/vim-textobj-user'
-Plug 'michaeljsmith/vim-indent-object'
+Plug 'kana/vim-textobj-indent'
 Plug 'saihoooooooo/vim-textobj-space'
 Plug 'tek/vim-textobj-ruby', {'for': ['ruby', 'eruby', 'haml']}
 Plug 'whatyouhide/vim-textobj-erb', {'for': 'eruby'}
