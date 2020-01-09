@@ -152,6 +152,7 @@ endfunction
 
 function! s:SetLightlineColorscheme(name) abort
   let g:lightline.colorscheme = a:name
+  execute 'source' globpath(&runtimepath, 'autoload/lightline/colorscheme/' . a:name . '.vim')
   call lightline#init()
   call lightline#colorscheme()
   call lightline#update()

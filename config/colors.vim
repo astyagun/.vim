@@ -10,6 +10,7 @@ function! s:SetColorscheme()
     colorscheme xcodelight
   endif
   redraw!
+  execute 'LightlineColorscheme ' . g:lightline.colorscheme
 endfunction
 
 call s:SetColorscheme()
