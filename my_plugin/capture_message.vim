@@ -1,5 +1,5 @@
 " Capture output of Vim command into a new buffer
-function! CaptureMessage(cmd)
+function! CaptureMessage(cmd) abort
   redir => message
   silent execute a:cmd
   redir END

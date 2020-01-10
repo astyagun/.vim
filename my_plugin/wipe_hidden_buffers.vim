@@ -1,7 +1,7 @@
 command! WipeHiddenBuffers call s:WipeHiddenBuffers()
 map <Leader><C-w>C :WipeHiddenBuffers<CR>
 
-function! s:WipeHiddenBuffers()
+function! s:WipeHiddenBuffers() abort
   let l:open_buffers = []
 
   for i in range(tabpagenr('$'))

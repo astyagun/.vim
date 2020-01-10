@@ -1,7 +1,7 @@
 " Jump to last cursor position when opening a file
 " Don't do it when writing a commit log entry
 autocmd BufReadPost * call SetCursorPosition()
-function! SetCursorPosition()
+function! SetCursorPosition() abort
   if &filetype !~ 'commit\c'
     if line("'\"") > 0 && line("'\"") <= line("$")
       exe "normal g`\""

@@ -1,6 +1,6 @@
 command! RenderResume silent call <SID>RenderResume()
 
-function! s:RenderResume()
+function! s:RenderResume() abort
   let l:winview = winsaveview()
 
   " Copy contents to a new buffer

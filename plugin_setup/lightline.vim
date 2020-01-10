@@ -35,7 +35,7 @@ let g:lightline.inactive = {
 " Show file path
 let g:lightline.component_function['shrinkable_filename'] = 'CachedLightlineShrinkableFilename'
 
-function! CachedLightlineShrinkableFilename()
+function! CachedLightlineShrinkableFilename() abort
   if !exists('b:lightline_shrinkable_filename_cached')
     let b:lightline_shrinkable_filename_cached = LightlineShrinkableFilename()
   endif
@@ -49,7 +49,7 @@ augroup LightlineShrinkableFilename
         \ endif
 augroup END
 
-function! LightlineShrinkableFilename()
+function! LightlineShrinkableFilename() abort
   let l:file_name = substitute(@%, '^fugitive://.*/\.git//\d/', '', '')
   let l:file_name_length = len(l:file_name)
   let l:window_width_without_file_name = winwidth(0) - l:file_name_length
@@ -69,7 +69,7 @@ endfunction
 " Fugitive file version
 let g:lightline.component_function['fugitive_version'] = 'LightlineFugitiveVersion'
 
-function! LightlineFugitiveVersion()
+function! LightlineFugitiveVersion() abort
   if @% =~# '^fugitive://'
     return ':' . matchstr(@%, '^fugitive://.*\.git//\zs\d\ze/')
   else
@@ -80,7 +80,7 @@ endfunction
 " Read only
 let g:lightline.component_function['readonly'] = 'LightlineReadonly'
 
-function! LightlineReadonly()
+function! LightlineReadonly() abort
   return &readonly ? '' : ''
 endfunction
 
@@ -97,7 +97,7 @@ call extend(g:lightline.component_type, {
       \   'asyncrun_running': 'warning',
       \ })
 
-function! AsyncRunFailure()
+function! AsyncRunFailure() abort
   if g:asyncrun_status ==# 'failure'
     return toupper(g:asyncrun_status)
   else
@@ -105,7 +105,7 @@ function! AsyncRunFailure()
   endif
 endfunction
 
-function! AsyncRunRunning()
+function! AsyncRunRunning() abort
   if g:asyncrun_status ==# 'running'
     return toupper(g:asyncrun_status)
   else

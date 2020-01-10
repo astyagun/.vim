@@ -1,5 +1,5 @@
 " gx to open Rubocop cops documentation in a browser
-function! s:RubocopGx()
+function! s:RubocopGx() abort
   let l:cfile = expand('<cfile>')
   if !filereadable(l:cfile) && l:cfile =~? '^\w\+/\w\+$'
     call OpenInBrowser('http://www.rubydoc.info/github/bbatsov/RuboCop/RuboCop/Cop/' . l:cfile)

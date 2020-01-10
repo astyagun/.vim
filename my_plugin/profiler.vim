@@ -1,10 +1,10 @@
-function! ProfileStart()
+function! ProfileStart() abort
   profile start ~/Desktop/vim-profile.log
   profile func *
   profile file *
 endfunction
 
-function! ProfileEnd()
+function! ProfileEnd() abort
   profile pause
   qall!
 endfunction

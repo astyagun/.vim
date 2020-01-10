@@ -1,7 +1,7 @@
 set termguicolors
 highlight clear
 
-function! s:SetColorscheme()
+function! s:SetColorscheme() abort
   if v:os_appearance == 1
     set background=dark
     colorscheme xcodedark

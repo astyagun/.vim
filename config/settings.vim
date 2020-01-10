@@ -3,7 +3,6 @@ scriptencoding utf-8
 
 " General {{{
 
-set nocompatible
 " Save files before compilation
 set autowrite
 " Syntax and file types

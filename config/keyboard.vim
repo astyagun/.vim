@@ -40,7 +40,7 @@ inoremap <C-k> <C-g>u<C-o>D
 nnoremap <silent> <C-l> :nohlsearch <Bar> call <SID>Refresh()<CR><C-l>
 imap <C-l> <Esc><C-l>
 
-function! s:Refresh()
+function! s:Refresh() abort
   if has('diff')
     diffupdate
   endif
@@ -95,7 +95,7 @@ nnoremap Y y$
 
 " Alt+ mappings for the terminal
 
-function s:tmap_meta(key)
+function s:tmap_meta(key) abort
     call term_sendkeys(bufnr('%'), "\<Esc>" . a:key)
 endfunction
 

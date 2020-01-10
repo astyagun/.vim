@@ -33,7 +33,7 @@ augroup DelayImportingEnvironmentVariables
   autocmd User ConfigurationReloaded call s:ImportFzfEnvironmentVariablesFromShell()
 augroup END
 
-function! s:ImportFzfEnvironmentVariablesFromShell()
+function! s:ImportFzfEnvironmentVariablesFromShell() abort
   for line in systemlist('env | grep "^FZF_"')
     let variable_string = split(line, '=')
     let variable_name = variable_string[0]

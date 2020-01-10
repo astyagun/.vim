@@ -28,7 +28,7 @@ let s:units = {
       \   'years':   {'character': 'Y', 'multiplier': 12}
       \ }
 
-function! s:SumDurations(minutes_and_hours) range
+function! s:SumDurations(minutes_and_hours) range abort
   let l:selected_units = s:SelectedUnits(a:minutes_and_hours)
   let l:hits           = s:GatherDurations(a:firstline, a:lastline, l:selected_units)
   let l:low_units_sum  = s:Hits2LowUnitsSum(l:hits, l:selected_units)
@@ -37,7 +37,7 @@ function! s:SumDurations(minutes_and_hours) range
   call s:ProduceOutput(l:duration)
 endfunction
 
-function! s:SelectedUnits(minutes_and_hours)
+function! s:SelectedUnits(minutes_and_hours) abort
   if a:minutes_and_hours
     return {'low': s:units.minutes, 'high': s:units.hours}
   else
@@ -45,7 +45,7 @@ function! s:SelectedUnits(minutes_and_hours)
   endif
 endfunction
 
-function! s:GatherDurations(line1, line2, selected_units)
+function! s:GatherDurations(line1, line2, selected_units) abort
   let l:units_characters = a:selected_units.low.character . a:selected_units.high.character
   let l:duration_pattern = '\v(\d+[' . l:units_characters . '])'
   let l:hits             = []
@@ -66,7 +66,7 @@ function! s:GatherDurations(line1, line2, selected_units)
   return l:hits
 endfunction
 
-function! s:Hits2LowUnitsSum(hits, selected_units)
+function! s:Hits2LowUnitsSum(hits, selected_units) abort
   let l:units_sum = 0
 
   for l:hit in a:hits
@@ -80,7 +80,7 @@ function! s:Hits2LowUnitsSum(hits, selected_units)
   return l:units_sum
 endfunction
 
-function! s:LowUnits2DurationText(units, selected_units)
+function! s:LowUnits2DurationText(units, selected_units) abort
   let l:divider    = a:selected_units.high.multiplier
   let l:high_units = a:units / l:divider
   let l:low_units  = a:units % l:divider
@@ -93,7 +93,7 @@ function! s:LowUnits2DurationText(units, selected_units)
   return l:output . l:low_units . a:selected_units.low.character
 endfunction
 
-function! s:ProduceOutput(duration)
+function! s:ProduceOutput(duration) abort
   redraw
   echo a:duration
 endfunction

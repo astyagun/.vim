@@ -32,7 +32,7 @@ let g:ale_fixers = {
       \   'ruby': ['rubocop'],
       \ }
 
-function! s:ALERubocopFix() range
+function! s:ALERubocopFix() range abort
   execute a:firstline . ',' . a:lastline . '!rubocop --auto-correct --stdin "%" | sed "1,/=\{20\}/d"'
   normal! gv=
 endfunction

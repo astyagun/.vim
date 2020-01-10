@@ -1,7 +1,7 @@
 let g:test#ruby#rspec#executable = './bin/rspec'
 let g:test#ruby#rspec#options = '--no-profile --require=./tmp/vim_formatter --format VimFormatter'
 
-function! TestAsyncRunStrategy(cmd)
+function! TestAsyncRunStrategy(cmd) abort
   execute 'AsyncRun! -save=1 ' . a:cmd
 endfunction
 let g:test#custom_strategies = {'custom_asyncrun': function('TestAsyncRunStrategy')}

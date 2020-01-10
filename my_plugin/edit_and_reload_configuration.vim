@@ -4,7 +4,7 @@ let $MYVIMRC   = s:vim_path . '/init.vim'
 let $MYGVIMRC  = s:vim_path . '/ginit.vim'
 
 if !exists('*ReloadConfiguration')
-  function ReloadConfiguration()
+  function ReloadConfiguration() abort
     source $MYVIMRC
     redraw " Prevents redraw after echo, which would hide echoed messages
     echom 'Reloaded ' . $MYVIMRC

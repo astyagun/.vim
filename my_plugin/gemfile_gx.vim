@@ -1,5 +1,5 @@
 " gx to open Rubygems URLs in browser
-function! s:GemfileGx()
+function! s:GemfileGx() abort
   let l:line = getline('.')
   if l:line =~# '^ *gem\s' || l:line =~# '^ *spec.add_dependency\s' || l:line =~# '^ *spec.add_development_dependency\s'
     let l:cfile = expand('<cfile>')

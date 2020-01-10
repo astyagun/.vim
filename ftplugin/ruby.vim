@@ -4,7 +4,7 @@ setlocal foldtext=ruby#foldtext()
 let s:middot = '·'
 let s:raquo = '»'
 
-function! ruby#foldtext()
+function! ruby#foldtext() abort
   let l:line = getline(v:foldstart)
   let l:preview_maxwidth = &columns - 7 - strdisplaywidth(s:stats()) - 2
 
@@ -18,7 +18,7 @@ function! ruby#foldtext()
   return l:preview . l:padding . s:stats() . ' ' . s:middot
 endfunction
 
-function! s:stats()
+function! s:stats() abort
   let l:inner_block = range(v:foldstart + 1, prevnonblank(v:foldend) - 1)
 
   " Don't count blank lines or comments
@@ -26,6 +26,6 @@ function! s:stats()
   return '[' . len(l:inner_block) . ']'
 endfunction
 
-function! s:drop_trailing_do(str)
+function! s:drop_trailing_do(str) abort
   return substitute(a:str, '\s\+do\( |.\+|\)\=$', '', '')
 endfunction

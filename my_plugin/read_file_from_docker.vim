@@ -1,6 +1,6 @@
 command! ReadFileFromDocker call <SID>ReadFileFromDocker()
 
-function! s:ReadFileFromDocker()
+function! s:ReadFileFromDocker() abort
   let l:file_type      = &filetype
   let l:current_line   = line('.')
   let l:current_column = col('.')

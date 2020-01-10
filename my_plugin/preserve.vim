@@ -1,4 +1,4 @@
-function! Preserve(command)
+function! Preserve(command) abort
   " Preparation: save last search, and cursor position
   let l:win_view = winsaveview()
 
