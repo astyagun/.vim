@@ -4,7 +4,6 @@ source ~/.vim/my_plugin/copy_file_path.vim
 source ~/.vim/my_plugin/edit_and_reload_configuration.vim
 source ~/.vim/my_plugin/execure_macro_over_visual_range.vim
 source ~/.vim/my_plugin/gemfile_gx.vim
-source ~/.vim/my_plugin/global_complete.vim
 source ~/.vim/my_plugin/grep_todo.vim
 source ~/.vim/my_plugin/merge_conflict_markers.vim
 source ~/.vim/my_plugin/open_in_browser.vim
