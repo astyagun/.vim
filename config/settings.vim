@@ -22,7 +22,7 @@ set autoindent
 set cinwords=unless,def,class,if,else,elsif,while,for,switch
 set conceallevel=2
 set formatoptions=croqnj
-set linespace=1
+set linespace=4
 set nosmartindent
 set preserveindent
 set shiftround

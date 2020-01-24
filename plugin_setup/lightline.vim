@@ -7,8 +7,6 @@ let g:lightline.component_expand   = {}
 let g:lightline.component_function = {}
 let g:lightline.component_type     = {}
 let g:lightline.enable             = {'tabline': 0}
-let g:lightline.separator          = {'left': '', 'right': ''}
-let g:lightline.subseparator       = {'left': '|', 'right': '|'}
 
 let s:min_window_width_and_file_name_length_difference_for_full_file_name = 55
 
