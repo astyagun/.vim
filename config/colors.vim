@@ -1,5 +1,4 @@
 set termguicolors
-highlight clear
 
 function! s:ApplyCustomHighlights() abort
   " Signify plugin sign colors
@@ -14,7 +13,16 @@ function! s:ApplyCustomHighlights() abort
   highlight EndOfBuffer guifg=bg
 endfunction
 
+function! s:ApplyCustomColorschemeHighlights() abort
+  if &background is 'dark'
+    " Add more contrast
+    highlight Visual guibg=#646F83
+    highlight Search guifg=white guibg=#545558
+  endif
+endfunction
+
 function! s:SetColorscheme() abort
+  highlight clear
   if v:os_appearance == 1
     set background=dark
     colorscheme xcodedark
@@ -24,6 +32,7 @@ function! s:SetColorscheme() abort
   endif
   execute 'LightlineColorscheme ' . g:lightline.colorscheme
   call s:ApplyCustomHighlights()
+  call s:ApplyCustomColorschemeHighlights()
   redraw!
 endfunction
 
