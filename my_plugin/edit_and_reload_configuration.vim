@@ -1,4 +1,3 @@
-" This is more convenient as ~/.vim/ is a Git repo and Fugitive sees repository only if editing a file in that directory
 let s:vim_path = expand('~/.vim')
 let $MYVIMRC   = s:vim_path . '/init.vim'
 let $MYGVIMRC  = s:vim_path . '/ginit.vim'
@@ -6,12 +5,11 @@ let $MYGVIMRC  = s:vim_path . '/ginit.vim'
 if !exists('*ReloadConfiguration')
   function ReloadConfiguration() abort
     source $MYVIMRC
-    redraw " Prevents redraw after echo, which would hide echoed messages
-    echom 'Reloaded ' . $MYVIMRC
     if has('gui_running')
       source $MYGVIMRC
-      echom 'Reloaded ' . $MYGVIMRC
     endif
+    redraw " Prevents redraw after echo, which would hide echoed messages
+    echom 'Configuration reloaded'
     doautocmd User ConfigurationReloaded
   endfunction
 endif
