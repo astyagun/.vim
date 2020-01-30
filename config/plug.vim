@@ -10,6 +10,7 @@ Plug 'machakann/vim-highlightedyank'
 Plug 'vim-scripts/SyntaxAttr.vim'
 Plug 'vim-scripts/errormarker.vim'
 Plug 'xtal8/traces.vim'
+Plug 'PeterRincker/vim-searchlight'
 
 " }}} Visual "
 
