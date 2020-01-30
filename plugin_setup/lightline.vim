@@ -75,13 +75,6 @@ function! LightlineFugitiveVersion() abort
   endif
 endfunction
 
-" Read only
-let g:lightline.component_function['readonly'] = 'LightlineReadonly'
-
-function! LightlineReadonly() abort
-  return &readonly ? '' : ''
-endfunction
-
 " Total lines count
 let g:lightline.component.total_lines = '%L'
 
