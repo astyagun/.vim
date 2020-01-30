@@ -1,5 +1,34 @@
 set termguicolors
 
+function! s:SetColorscheme() abort
+  highlight clear
+  if v:os_appearance == 1
+    set background=dark
+    colorscheme xcodedark
+  else
+    set background=light
+    colorscheme xcodelight
+  endif
+  doautocmd User ColorSchemeChanged
+  redraw!
+endfunction
+
+call s:SetColorscheme()
+
+augroup OSAppearance
+  autocmd!
+  autocmd OSAppearanceChanged *
+        \ call s:SetColorscheme() |
+        \ execute 'LightlineColorscheme ' . g:lightline.colorscheme
+augroup END
+
+augroup ColorSchemeChanged
+  autocmd!
+  autocmd User ColorSchemeChanged
+        \ call s:ApplyCustomHighlights() |
+        \ call s:ApplyCustomColorschemeHighlights()
+augroup END
+
 function! s:ApplyCustomHighlights() abort
   " Signify plugin sign colors
   highlight SignifySignAdd    gui=NONE guibg=NONE guifg=#00BC41
@@ -20,28 +49,6 @@ function! s:ApplyCustomColorschemeHighlights() abort
     highlight Search guifg=white guibg=#545558
   endif
 endfunction
-
-function! s:SetColorscheme() abort
-  highlight clear
-  if v:os_appearance == 1
-    set background=dark
-    colorscheme xcodedark
-  else
-    set background=light
-    colorscheme xcodelight
-  endif
-  execute 'LightlineColorscheme ' . g:lightline.colorscheme
-  call s:ApplyCustomHighlights()
-  call s:ApplyCustomColorschemeHighlights()
-  redraw!
-endfunction
-
-call s:SetColorscheme()
-
-augroup OSAppearance
-  autocmd!
-  autocmd OSAppearanceChanged * call s:SetColorscheme()
-augroup END
 
 " Create new buffer with examples of highlighting groups
 command! HiTest so $VIMRUNTIME/syntax/hitest.vim
