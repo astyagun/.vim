@@ -9,7 +9,7 @@ function! s:SetColorscheme() abort
     set background=light
     colorscheme xcodelight
   endif
-  doautocmd User ColorSchemeChanged
+  silent doautocmd User ColorSchemeChanged
   redraw!
 endfunction
 
