@@ -45,7 +45,8 @@ endfunction
 function! s:ApplyCustomColorschemeHighlights() abort
   if &background is 'dark'
     " Add more contrast
-    highlight Search guifg=white
+    highlight Visual guibg=#646F83
+    highlight Search guifg=white guibg=#545558
   endif
 endfunction
 
