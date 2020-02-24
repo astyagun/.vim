@@ -54,7 +54,7 @@ set showcmd
 set showmode
 set showtabline=1
 set sidescrolloff=5
-set signcolumn=yes
+set signcolumn=auto
 set updatetime=300
 set wrap
 

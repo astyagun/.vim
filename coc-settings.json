@@ -1,6 +1,6 @@
 {
   "solargraph.checkGemVersion": false,
-  "solargraph.diagnostics": true,
+  "solargraph.diagnostics": false,
   "solargraph.externalServer": {
     "host": "localhost",
     "port": 7658
