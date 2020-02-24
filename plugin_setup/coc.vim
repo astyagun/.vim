@@ -3,7 +3,6 @@ let g:coc_global_extensions = [
       \ 'coc-markdownlint',
       \ 'coc-solargraph',
       \ 'coc-vimlsp',
-      \ 'coc-yaml',
       \ ]
 
 nmap <silent> gd <Plug>(coc-definition)
