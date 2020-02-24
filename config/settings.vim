@@ -49,11 +49,13 @@ set noerrorbells visualbell t_vb=
 set number
 set ruler
 set scrolloff=2
+set shortmess+=c
 set showcmd
 set showmode
 set showtabline=1
 set sidescrolloff=5
-set signcolumn=auto
+set signcolumn=yes
+set updatetime=300
 set wrap
 
 augroup CursorLine

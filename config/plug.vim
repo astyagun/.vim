@@ -110,6 +110,7 @@ Plug 'tpope/vim-eunuch' " Unix commands
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
 Plug 'w0rp/ale'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " }}} Integrations "
 
