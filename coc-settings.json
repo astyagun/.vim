@@ -1,4 +1,5 @@
 {
+  "markdownlint.config": {"line_length": false},
   "solargraph.checkGemVersion": false,
   "solargraph.diagnostics": false,
   "solargraph.externalServer": {
