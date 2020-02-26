@@ -58,6 +58,9 @@ set signcolumn=auto
 set updatetime=300
 set wrap
 
+language messages ru_RU.UTF-8
+set langmenu=ru_RU.UTF-8
+
 augroup CursorLine
   autocmd!
   autocmd WinEnter * setlocal cursorline
