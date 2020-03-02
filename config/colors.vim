@@ -30,11 +30,6 @@ augroup ColorSchemeChanged
 augroup END
 
 function! s:ApplyCustomHighlights() abort
-  " Signify plugin sign colors
-  highlight SignifySignAdd    gui=NONE guibg=NONE guifg=#00BC41
-  highlight SignifySignChange gui=NONE guibg=NONE guifg=brown
-  highlight SignifySignDelete gui=NONE guibg=NONE guifg=red
-
   " Highlight tabs and trailing spaces with red:		     
   highlight SpecialKey guifg=red
 
