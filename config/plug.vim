@@ -3,6 +3,7 @@ call plug#begin()
 " Visual {{{ "
 
 Plug 'arzg/vim-colors-xcode'
+" Plug 'rakr/vim-one'
 Plug 'chrisbra/Colorizer'
 Plug 'gerw/vim-HiLinkTrace', {'on': 'HLT'}
 Plug 'itchyny/lightline.vim'
