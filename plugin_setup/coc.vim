@@ -32,8 +32,8 @@ endfunction
 
 augroup Coc
   autocmd!
-  autocmd FileType ruby nnoremap <buffer><silent> <C-]> :call <SID>gotoDefinition()<CR>
-  autocmd FileType ruby nnoremap <buffer><silent> K :call CocAction('doHover')<CR>
-  autocmd FileType ruby,json setl formatexpr=CocAction('formatSelected')
+  autocmd FileType ruby,vim nnoremap <buffer><silent> <C-]> :call <SID>gotoDefinition()<CR>
+  autocmd FileType ruby,vim nnoremap <buffer><silent> K :call CocAction('doHover')<CR>
+  autocmd FileType ruby,vim,json setlocal formatexpr=CocAction('formatSelected')
   autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
 augroup end
