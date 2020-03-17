@@ -74,7 +74,7 @@ augroup END
 let &grepprg = 'rg --vimgrep --hidden --no-ignore-vcs --ignore-file ~/.files/zsh/find.ignore'
 set confirm
 set diffopt=filler,vertical,hiddenoff,internal,indent-heuristic,algorithm:patience
-set foldcolumn=1
+set foldcolumn=0
 set foldlevel=0
 set foldmethod=marker
 set foldminlines=2
