@@ -26,16 +26,18 @@ inoremap ∂ <C-o>dw
 cnoremap ∂ <C-Right><C-w>
 imap ћ ∂
 cmap ћ ∂
-
-" Take what's typed into account when moving through commands history
-cnoremap <C-p> <Up>
-cnoremap <C-n> <Down>
-
 " Create new change to be able to undo <C-u> and <C-w> deletions
 " http://vim.wikia.com/wiki/Recover_from_accidental_Ctrl-U
 inoremap <C-u> <C-g>u<C-u>
 inoremap <C-w> <C-g>u<C-w>
 inoremap <C-k> <C-g>u<C-o>D
+
+" Bring back a mapping for digraphs
+noremap! <D-k> <C-k>
+
+" Take what's typed into account when moving through commands history
+cnoremap <C-p> <Up>
+cnoremap <C-n> <Down>
 
 nnoremap <silent> <C-l> :nohlsearch <Bar> call <SID>Refresh()<CR><C-l>
 imap <C-l> <Esc><C-l>
