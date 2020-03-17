@@ -1,6 +1,6 @@
-let g:signify_sign_add    = '┃'
-let g:signify_sign_change = '┃'
-let g:signify_sign_delete = '•'
+let g:signify_sign_add    = ' ┃'
+let g:signify_sign_change = ' ┃'
+let g:signify_sign_delete = ' •'
 let g:signify_sign_show_count = 0
 
 omap ih <plug>(signify-motion-inner-pending)
