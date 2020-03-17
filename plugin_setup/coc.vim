@@ -7,7 +7,7 @@ let g:coc_global_extensions = [
 
 nmap <silent> gr <Plug>(coc-references)
 
-function! s:gotoDefinition() abort
+function! s:GotoDefinition() abort
   let l:current_tag = expand('<cWORD>')
 
   let l:current_position    = getcurpos()
@@ -19,7 +19,7 @@ function! s:gotoDefinition() abort
 
   if CocAction('jumpDefinition')
     let l:new_tag_index = l:current_tag_index + 1
-    let l:new_tag_item = [#{tagname: l:current_tag, from: l:current_position}]
+    let l:new_tag_item  = [#{tagname: l:current_tag, from: l:current_position}]
     let l:new_tag_items = l:current_tag_items[:]
     if l:current_tag_index <= len(l:current_tag_items)
       call remove(l:new_tag_items, l:current_tag_index - 1, -1)
@@ -32,8 +32,13 @@ endfunction
 
 augroup Coc
   autocmd!
-  autocmd FileType ruby,vim nnoremap <buffer><silent> <C-]> :call <SID>gotoDefinition()<CR>
+
+  autocmd FileType ruby nnoremap <buffer><silent> <C-]> :call <SID>GotoDefinition()<CR>
+  autocmd FileType ruby nnoremap <buffer><silent> <C-w><C-]> :wincmd s <Bar> call <SID>GotoDefinition()<CR>
+  autocmd FileType vim setlocal tagfunc=CocTagFunc
+
   autocmd FileType ruby,vim nnoremap <buffer><silent> K :call CocAction('doHover')<CR>
   autocmd FileType ruby,vim,json setlocal formatexpr=CocAction('formatSelected')
+
   autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
 augroup end

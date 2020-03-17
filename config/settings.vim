@@ -123,10 +123,3 @@ set shell=/bin/zsh
 set shellcmdflag=-lc
 
 " }}} Command line
-
-" CScope {{{
-
-set cscopequickfix=s-,c-,d-,i-,t-,e-
-set cscopetag cscopeverbose
-
-" }}} CScope
