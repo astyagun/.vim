@@ -37,7 +37,7 @@ augroup Coc
   autocmd FileType ruby nnoremap <buffer><silent> <C-w><C-]> :wincmd s <Bar> call <SID>GotoDefinition()<CR>
   autocmd FileType vim setlocal tagfunc=CocTagFunc
 
-  autocmd FileType ruby,vim nnoremap <buffer><silent> K :call CocAction('doHover')<CR>
+  autocmd FileType ruby nnoremap <buffer><silent> K :call CocAction('doHover')<CR>
   autocmd FileType ruby,vim,json setlocal formatexpr=CocAction('formatSelected')
 
   autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
