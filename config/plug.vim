@@ -91,6 +91,7 @@ Plug 'tpope/vim-haml', {'for': 'haml'}
 Plug 'vim-ruby/vim-ruby', {'for': ['ruby', 'eruby']}
 Plug 'vim-scripts/confluencewiki.vim', {'for': 'confluencewiki'}
 Plug 'wannesm/wmgraphviz.vim', {'for': 'dot'}
+Plug 'zinit-zsh/zinit-vim-syntax'
 
 " }}} File types "
 
