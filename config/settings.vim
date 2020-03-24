@@ -1,6 +1,3 @@
-set encoding=utf-8
-scriptencoding utf-8
-
 " General {{{
 
 " Save files before compilation
@@ -15,6 +12,15 @@ set nomodeline
 set termwinkey=†
 
 " }}} General
+
+" Encoding {{{
+
+language messages ru_RU.UTF-8
+scriptencoding utf-8
+set encoding=utf-8
+set langmenu=ru_RU.UTF-8
+
+" }}} Encoding
 
 " Formatting {{{
 
@@ -58,9 +64,6 @@ set sidescrolloff=5
 set signcolumn=yes
 set updatetime=300
 set wrap
-
-language messages ru_RU.UTF-8
-set langmenu=ru_RU.UTF-8
 
 augroup CursorLine
   autocmd!
@@ -110,10 +113,6 @@ set spelllang=ru_yo,en_us
 set wildignore=*.o,*.obj,*~,vendor/bundle/**/* " Stuff to ignore when tab completing
 set wildmenu " Enable <C-n> and <C-p> to scroll through matches
 set wildmode=longest,list:longest,full " Make cmdline tab completion similar to bash
-
-if has('nvim')
-  set inccommand=split
-endif
 
 " }}} Editing
 
