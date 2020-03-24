@@ -46,7 +46,8 @@ set linebreak " Wrap lines at convenient points
 set list
 set noballooneval
 set noerrorbells visualbell t_vb=
-set number
+set nonumber
+set norelativenumber
 set ruler
 set scrolloff=2
 set shortmess+=c
@@ -54,7 +55,7 @@ set showcmd
 set showmode
 set showtabline=1
 set sidescrolloff=5
-set signcolumn=auto
+set signcolumn=yes
 set updatetime=300
 set wrap
 
@@ -83,7 +84,6 @@ set grepformat=%f:%l:%c:%m
 set hidden
 set ignorecase
 set nofoldenable
-set norelativenumber
 set nostartofline
 set sessionoptions-=options
 set smartcase
