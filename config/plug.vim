@@ -130,3 +130,5 @@ Plug 'vim-scripts/ColorX'
 " }}} Performance profiling "
 
 call plug#end()
+
+command! PU PlugUpgrade <Bar> PlugUpdate
