@@ -4,6 +4,9 @@ function! s:SourceFilesFromDirectory(directory_name) abort
   endfor
 endfunction
 
+" Make sure only :py3 is used
+py3 ''
+
 call s:SourceFilesFromDirectory('plugin_setup')
 source ~/.vim/config/plug.vim
 
