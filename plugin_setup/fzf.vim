@@ -44,15 +44,9 @@ function! s:ImportFzfEnvironmentVariablesFromShell() abort
   endfor
 
   if &background ==? 'dark'
-    let l:bat_theme = 'Monokai Extended'
+    let $BAT_THEME = 'Monokai Extended'
   else
-    let l:bat_theme = 'GitHub'
+    let $BAT_THEME = 'GitHub'
   endif
-  let $FZF_DEFAULT_OPTS = substitute(
-        \ $FZF_DEFAULT_OPTS,
-        \ '\(--color=always \)\@<=\(--theme=".*"\)\?\( {} ||\)\@=',
-        \ '--theme="' . l:bat_theme . '"',
-        \ ''
-        \ )
   let $FZF_DEFAULT_OPTS = $FZF_DEFAULT_OPTS . ' --no-bold'
 endfunction
