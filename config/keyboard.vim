@@ -114,3 +114,5 @@ for from_key in keys(s:terminal_alt_keys_to_pass)
   let to_key = s:terminal_alt_keys_to_pass[from_key]
   execute 'tnoremap <silent> ' . from_key . ' ' . &termwinkey . ':call <SID>tmap_meta("' . to_key . '")<CR>'
 endfor
+
+imap <D-[> <C-[>
