@@ -42,6 +42,7 @@ function! s:ApplyCustomColorschemeHighlights() abort
     " Add more contrast
     highlight Visual guibg=#646F83
     highlight Search guifg=white guibg=#545558
+    highlight Folded guifg=#dfdfe0
   endif
 endfunction
 
