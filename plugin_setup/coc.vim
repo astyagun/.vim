@@ -5,7 +5,7 @@ let g:coc_global_extensions = [
       \ 'coc-vimlsp',
       \ ]
 
-nmap <silent> gr <Plug>(coc-references)
+inoremap <silent><expr> <C-Space> coc#refresh()
 
 function! s:GotoDefinition() abort
   let l:current_tag = expand('<cWORD>')
