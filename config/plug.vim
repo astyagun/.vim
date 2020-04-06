@@ -1,6 +1,6 @@
 call plug#begin()
 
-" Visual {{{ "
+" Visual {{{
 
 Plug 'arzg/vim-colors-xcode'
 Plug 'chrisbra/Colorizer'
@@ -12,9 +12,9 @@ Plug 'vim-scripts/errormarker.vim'
 Plug 'xtal8/traces.vim'
 Plug 'PeterRincker/vim-searchlight'
 
-" }}} Visual "
+" }}} Visual
 
-" Navigation and window management {{{ "
+" Navigation and window management {{{
 
 Plug '/usr/local/opt/fzf'
 Plug 'Konfekt/FastFold'
@@ -28,9 +28,9 @@ Plug 'tpope/vim-unimpaired'
 Plug 'tyru/open-browser.vim'
 Plug 'wesQ3/vim-windowswap'
 
-" }}} Navigation and window management "
+" }}} Navigation and window management
 
-" Editing {{{ "
+" Editing {{{
 
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'beloglazov/vim-online-thesaurus', {'on': ['OnlineThesaurusCurrentWord', 'OnlineThesaurusLookup', 'Thesaurus']}
@@ -51,9 +51,9 @@ Plug 'tpope/vim-surround'
 Plug 'vim-scripts/LargeFile'
 Plug 'vim-scripts/YankRing.vim'
 
-" }}} Editing "
+" }}} Editing
 
-" Text objects {{{ "
+" Text objects {{{
 
 Plug 'Julian/vim-textobj-variable-segment'
 Plug 'bootleq/vim-textobj-rubysymbol', {'for': ['ruby', 'eruby', 'haml']}
@@ -71,9 +71,9 @@ Plug 'wellle/targets.vim'
 Plug 'whatyouhide/vim-textobj-erb', {'for': 'eruby'}
 Plug 'whatyouhide/vim-textobj-xmlattr', {'for': ['html', 'eruby']}
 
-" }}} Text objects "
+" }}} Text objects
 
-" File types {{{ "
+" File types {{{
 
 Plug 'asux/vim-capybara'
 Plug 'davidoc/taskpaper.vim', {'for': 'taskpaper'}
@@ -92,9 +92,9 @@ Plug 'vim-scripts/confluencewiki.vim', {'for': 'confluencewiki'}
 Plug 'wannesm/wmgraphviz.vim', {'for': 'dot'}
 Plug 'zinit-zsh/zinit-vim-syntax'
 
-" }}} File types "
+" }}} File types
 
-" Integrations {{{ "
+" Integrations {{{
 
 Plug 'emilsoman/spec-outline.vim', {'for': 'ruby'}
 Plug 'janko-m/vim-test', {'for': 'ruby'} " Depends on skywind3000/asyncrun.vim
@@ -112,22 +112,22 @@ Plug 'tpope/vim-rhubarb'
 Plug 'w0rp/ale'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
-" }}} Integrations "
+" }}} Integrations
 
-" Snippets and other insertions {{{ "
+" Snippets and other insertions {{{
 
 Plug 'SirVer/ultisnips'
 Plug 'alvan/vim-closetag', {'for': 'html'}
 Plug 'honza/vim-snippets'
 Plug 'vim-scripts/ColorX'
 
-" }}} Snippets and other insertions "
+" }}} Snippets and other insertions
 
-" Performance profiling {{{ "
+" Performance profiling {{{
 
 " Plug 'tweekmonster/startuptime.vim'
 
-" }}} Performance profiling "
+" }}} Performance profiling
 
 call plug#end()
 
