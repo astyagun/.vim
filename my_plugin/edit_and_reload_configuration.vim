@@ -11,6 +11,7 @@ if !exists('*ReloadConfiguration')
     redraw " Prevents redraw after echo, which would hide echoed messages
     echom 'Configuration reloaded'
     doautocmd User ConfigurationReloaded
+    normal zv
   endfunction
 endif
 
