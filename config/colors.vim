@@ -43,6 +43,8 @@ function! s:ApplyCustomColorschemeHighlights() abort
     highlight Visual guibg=#646F83
     highlight Search guifg=white guibg=#545558
     highlight Folded guifg=#dfdfe0
+  else
+    highlight Folded guifg=#262626
   endif
 endfunction
 
