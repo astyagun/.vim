@@ -1,12 +1,13 @@
 command! ReadFileFromDocker call <SID>ReadFileFromDocker()
 
 function! s:ReadFileFromDocker() abort
-  let l:file_type      = &filetype
-  let l:current_line   = line('.')
+  let l:container_name = systemlist('dkc-executable-container')[0]
   let l:current_column = col('.')
+  let l:current_line   = line('.')
+  let l:file_type      = &filetype
 
   new
-  0read !docker-compose exec spring cat '#'
+  execute "0read !docker-compose exec " . l:container_name . " cat '#'"
   $delete
 
   setlocal buftype=nofile bufhidden=wipe noswapfile nobuflisted nomodified

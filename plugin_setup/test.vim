@@ -8,12 +8,8 @@ let g:test#custom_strategies = {'custom_asyncrun': function('TestAsyncRunStrateg
 let g:test#strategy = 'custom_asyncrun'
 
 function! TestDockerTransform(cmd) abort
-  let container_name = 'ruby'
-  if filereadable('bin/rails')
-    let container_name = 'spring'
-  endif
-
-  return 'docker-compose exec -T ' . container_name . ' bash -c "RUBY_OPT=-W0 NO_COVERAGE=true ' . a:cmd . '"'
+  let l:container_name = systemlist('dkc-executable-container')[0]
+  return 'docker-compose exec -T ' . l:container_name . ' bash -c "RUBYOPT=-W0 NO_COVERAGE=true ' . a:cmd . '"'
 endfunction
 let g:test#custom_transformations = {'docker': function('TestDockerTransform')}
 let g:test#transformation = 'docker'
