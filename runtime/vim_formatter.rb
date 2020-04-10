@@ -31,8 +31,14 @@ class VimFormatter < RSpec::Core::Formatters::BaseFormatter
 
   def format_failure(failure)
     app_directories = %r{/usr/src/app/|/home/apps/app/}
-    file_path = failure.exception.backtrace.
-      find { |item| item =~ app_directories }.try(:gsub, app_directories, '')
+    bundle_path = %r{vendor/bundle}
+    file_path = failure
+      .exception
+      .backtrace
+      .select { |item| item =~ app_directories }
+      .reject { |item| item =~ bundle_path }
+      .first
+      .try(:gsub, app_directories, '')
     message   = failure.exception.message
     separator = message.lines.size > 1 ? ': ' : "\n\t"
 
