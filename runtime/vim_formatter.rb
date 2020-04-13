@@ -10,13 +10,13 @@ class VimFormatter < RSpec::Core::Formatters::BaseFormatter
 
     if failure.exception.respond_to? :failures
       failure.exception.failures.each do |aggregated_failure|
-        output.puts format_failure(aggregated_failure)
+        output.puts format_failure aggregated_failure
       end
     end
 
     if failure.exception.respond_to? :other_errors # rubocop:disable Style/GuardClause
       failure.exception.other_errors.each do |other_failure|
-        output.puts format_failure(other_failure)
+        output.puts format_failure other_failure
       end
     end
   end
@@ -29,6 +29,7 @@ class VimFormatter < RSpec::Core::Formatters::BaseFormatter
 
   private
 
+  # :reek:TooManyStatements
   def format_failure(failure)
     app_directories = %r{/usr/src/app/|/home/apps/app/}
     bundle_path = %r{vendor/bundle}
@@ -38,10 +39,10 @@ class VimFormatter < RSpec::Core::Formatters::BaseFormatter
       .select { |item| item =~ app_directories }
       .reject { |item| item =~ bundle_path }
       .first
-      .try(:gsub, app_directories, '')
+      &.gsub app_directories, ''
     message   = failure.exception.message
     separator = message.lines.size > 1 ? ': ' : "\n\t"
 
-    [file_path, message].join(separator)
+    [file_path, message].join separator
   end
 end
