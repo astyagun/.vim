@@ -1,13 +1,11 @@
-set termguicolors
-
 function! s:SetColorscheme() abort
   highlight clear
-  if v:os_appearance == 1
-    set background=dark
-    colorscheme xcodedark
-  else
+  if exists('v:os_appearance') && v:os_appearance != 1
     set background=light
     colorscheme xcodelight
+  else
+    set background=dark
+    colorscheme xcodedark
   endif
   silent doautocmd User ColorSchemeChanged
   redraw!
@@ -15,12 +13,14 @@ endfunction
 
 call s:SetColorscheme()
 
-augroup OSAppearance
-  autocmd!
-  autocmd OSAppearanceChanged *
-        \ call s:SetColorscheme() |
-        \ execute 'LightlineColorscheme ' . g:lightline.colorscheme
-augroup END
+if exists('##OSAppearanceChanged')
+  augroup OSAppearance
+    autocmd!
+    autocmd OSAppearanceChanged *
+          \ call s:SetColorscheme() |
+          \ execute 'LightlineColorscheme ' . g:lightline.colorscheme
+  augroup END
+endif
 
 augroup ColorSchemeChanged
   autocmd!

@@ -104,7 +104,6 @@ set iminsert=0
 set imsearch=0
 set nobomb
 set noimcmdline
-set nomacmeta
 set nospell
 set spelllang=ru_yo,en_us
 set wildignore=*.o,*.obj,*~,vendor/bundle/**/* " Stuff to ignore when tab completing
