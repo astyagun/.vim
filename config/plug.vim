@@ -2,6 +2,7 @@ call plug#begin()
 
 " Visual {{{
 
+Plug 'PeterRincker/vim-searchlight'
 Plug 'arzg/vim-colors-xcode'
 Plug 'chrisbra/Colorizer'
 Plug 'gerw/vim-HiLinkTrace', #{on: 'HLT'}
@@ -10,7 +11,8 @@ Plug 'machakann/vim-highlightedyank'
 Plug 'vim-scripts/SyntaxAttr.vim'
 Plug 'vim-scripts/errormarker.vim'
 Plug 'xtal8/traces.vim'
-Plug 'PeterRincker/vim-searchlight'
+
+" Plug 'rhysd/vim-color-spring-night'
 
 " }}} Visual
 
@@ -33,6 +35,7 @@ Plug 'wesQ3/vim-windowswap'
 " Editing {{{
 
 Plug 'AndrewRadev/splitjoin.vim'
+Plug 'andymass/vim-matchup'
 Plug 'beloglazov/vim-online-thesaurus', #{on: ['OnlineThesaurusCurrentWord', 'OnlineThesaurusLookup', 'Thesaurus']}
 Plug 'bkad/CamelCaseMotion'
 Plug 'danchoi/ruby_bashrockets.vim', #{for: ['ruby', 'eruby', 'haml']}
@@ -40,7 +43,6 @@ Plug 'junegunn/vim-easy-align'
 Plug 'kana/vim-operator-user'
 Plug 'lyokha/vim-xkbswitch'
 Plug 'mbbill/undotree', #{on: 'UndotreeToggle'}
-Plug 'andymass/vim-matchup'
 Plug 'tmsvg/pear-tree'
 Plug 'tommcdo/vim-exchange'
 Plug 'tpope/vim-abolish'
@@ -101,6 +103,7 @@ Plug 'janko-m/vim-test', #{for: 'ruby'} " Depends on skywind3000/asyncrun.vim
 Plug 'lambdalisue/vim-gista'
 Plug 'lucapette/vim-ruby-doc', #{for: 'ruby'}
 Plug 'mhinz/vim-signify'
+Plug 'neoclide/coc.nvim', #{branch: 'release'}
 Plug 'rbong/vim-flog'
 Plug 'samoshkin/vim-mergetool'
 Plug 'shumphrey/fugitive-gitlab.vim'
@@ -110,7 +113,6 @@ Plug 'tpope/vim-eunuch' " Unix commands
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
 Plug 'w0rp/ale'
-Plug 'neoclide/coc.nvim', #{branch: 'release'}
 
 " }}} Integrations
 

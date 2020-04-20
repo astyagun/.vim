@@ -25,8 +25,8 @@ endif
 augroup ColorSchemeChanged
   autocmd!
   autocmd User ColorSchemeChanged
-        \ call s:ApplyCustomHighlights() |
-        \ call s:ApplyCustomColorschemeHighlights()
+        \ call s:ApplyCustomHighlights()
+        \| call s:ApplyCustomColorschemeHighlights()
 augroup END
 
 function! s:ApplyCustomHighlights() abort
