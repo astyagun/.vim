@@ -17,8 +17,8 @@ if exists('##OSAppearanceChanged')
   augroup OSAppearance
     autocmd!
     autocmd OSAppearanceChanged *
-          \ call s:SetColorscheme() |
-          \ execute 'LightlineColorscheme ' . g:lightline.colorscheme
+          \ call s:SetColorscheme()
+          \| execute 'LightlineColorscheme ' . g:lightline.colorscheme
   augroup END
 endif
 
@@ -27,6 +27,7 @@ augroup ColorSchemeChanged
   autocmd User ColorSchemeChanged
         \ call s:ApplyCustomHighlights()
         \| call s:ApplyCustomColorschemeHighlights()
+        \| call s:SetBatThemeEnvironmentVariable()
 augroup END
 
 function! s:ApplyCustomHighlights() abort
@@ -50,6 +51,14 @@ function! s:ApplyCustomColorschemeHighlights() abort
   else
     highlight clear Folded
     highlight link Folded StatusLineNC
+  endif
+endfunction
+
+function! s:SetBatThemeEnvironmentVariable() abort
+  if &background ==? 'dark'
+    let $BAT_THEME = 'Monokai Extended'
+  else
+    let $BAT_THEME = 'GitHub'
   endif
 endfunction
 
