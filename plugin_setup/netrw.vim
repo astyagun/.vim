@@ -1,7 +1,6 @@
 " Many things are borrowed from https://github.com/tpope/vim-vinegar/blob/master/plugin/vinegar.vim
 let g:netrw_altv = 1              " open files on right
 let g:netrw_banner = 0
-let g:netrw_list_hide = '.*\.swp$'
 let g:netrw_nobeval = 1
 let g:netrw_preview = 1           " open previews vertically
 
