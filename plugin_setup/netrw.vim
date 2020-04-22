@@ -4,8 +4,10 @@ let g:netrw_banner = 0
 let g:netrw_nobeval = 1
 let g:netrw_preview = 1           " open previews vertically
 
-map - <C-w>v\<C-w><Bar>:Explore<CR>
-map <Leader>- <C-w>v\<C-w><Bar>:Explore .<CR>
+map - :Explore<CR>
+map <Leader>- :Explore .<CR>
+map _ <C-w>v\<C-w><Bar>:Explore<CR>
+map <Leader>_ <C-w>v\<C-w><Bar>:Explore .<CR>
 
 " Borrowed from vim-vinegar
 function! s:fnameescape(file) abort
