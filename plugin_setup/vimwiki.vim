@@ -22,14 +22,17 @@ let g:vimwiki_toc_header = 'Содержание'
 let g:vimwiki_key_mappings =
   \ #{
   \   global:  0,
-  \   headers: 0,
   \   html:    0,
   \ }
 
 function s:CustomizeVimwikiMappings() abort
   imap <buffer> <C-Q> <Plug>VimwikiDecreaseLvlSingleItem
-  " TODO: bring back <D-CR> and <S-CR> for newline creation from normal mode
-  " |vimwiki_<D-CR>| |vimwiki_<S-CR>|
+  nnoremap <buffer> <D-CR> o<Esc>
+  nnoremap <buffer> <S-CR> O<Esc>
+
+  " Unmap header mappings to avoid conflicts with other mapping, that I have (- to :Explore)
+  map <buffer> <Plug>VimwikiNoop1 <Plug>VimwikiAddHeaderLevel
+  map <buffer> <Plug>VimwikiNoop2 <Plug>VimwikiRemoveHeaderLevel
 endfunction
 
 augroup Vimwiki
