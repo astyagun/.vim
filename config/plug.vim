@@ -131,6 +131,12 @@ Plug 'vim-scripts/ColorX'
 
 " }}} Performance profiling
 
+" Other {{{
+
+Plug 'vimwiki/vimwiki', #{branch: 'dev'}
+
+" }}} Other
+
 call plug#end()
 
 command! PU PlugUpgrade <Bar> PlugUpdate
