@@ -1,10 +1,12 @@
 if has('persistent_undo')
-  let myUndoDir = expand('$HOME/.vim/undodir')
+  let s:undodir_path = expand('$HOME/.vim/undodir')
 
   " Create dir
-  call system('mkdir ' . myUndoDir)
+  if !isdirectory(s:undodir_path)
+    call mkdir(s:undodir_path, 'p')
+  endif
 
-  let &undodir = myUndoDir
+  let &undodir = s:undodir_path
   set undofile
 endif
 
