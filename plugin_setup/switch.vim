@@ -1,1 +1,1 @@
-let g:switch_mapping = '<CR>'
+let g:switch_mapping = '<Space>'
