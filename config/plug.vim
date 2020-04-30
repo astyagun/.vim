@@ -39,6 +39,7 @@ Plug 'mbbill/undotree', #{on: 'UndotreeToggle'}
 Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-rsi'
 Plug 'tpope/vim-surround'
 Plug 'vim-scripts/LargeFile'
 Plug 'vim-scripts/YankRing.vim'

@@ -1,5 +1,7 @@
 scriptencoding utf-8
 
+" Formatting {{{
+
 " Remove all extra spaces at the end of all lines
 nmap <Leader>$ :call Preserve("%s/\\s\\+$//e")<CR>
 vmap <Leader>$ :call Preserve("s/\\s\\+$//e")<CR>
@@ -7,14 +9,11 @@ vmap <Leader>$ :call Preserve("s/\\s\\+$//e")<CR>
 " Reindent file
 nmap <Leader>= :call Preserve("normal gg=G")<CR>
 
-" Mimic Emacs line editing (as I see it)
-noremap! <C-f> <Right>
-noremap! <C-b> <Left>
-noremap! <C-a> <Home>
-noremap! <C-e> <End>
-noremap! <C-d> <Del>
-inoremap <C-q> <C-d>
+" }}} Formatting
+
+" Readline {{{
 cnoremap <C-k> <C-\>estrpart(getcmdline(),0,getcmdpos()-1)<CR>
+noremap! <D-k> <C-k>
 " <A-f> and <A-b> to jump words
 noremap! ƒ <C-Right>
 noremap! ∫ <C-Left>
@@ -32,12 +31,35 @@ inoremap <C-u> <C-g>u<C-u>
 inoremap <C-w> <C-g>u<C-w>
 inoremap <C-k> <C-g>u<C-o>D
 
-" Bring back a mapping for digraphs
-noremap! <D-k> <C-k>
-
 " Take what's typed into account when moving through commands history
 cnoremap <C-p> <Up>
 cnoremap <C-n> <Down>
+
+" }}} Readline
+
+" Alt+ mappings for the terminal {{{
+
+function s:tmap_meta(key) abort
+  call term_sendkeys(bufnr('%'), "\<Esc>" . a:key)
+endfunction
+
+let s:terminal_alt_keys_to_pass = {
+      \   'ƒ': 'f',
+      \   '∫': 'b',
+      \   '≠': 'c',
+      \   '∆': 'l',
+      \   '∇': 'u',
+      \   '∂': 'd',
+      \ }
+
+for from_key in keys(s:terminal_alt_keys_to_pass)
+  let to_key = s:terminal_alt_keys_to_pass[from_key]
+  execute 'tnoremap <silent> ' . from_key . ' ' . &termwinkey . ':call <SID>tmap_meta("' . to_key . '")<CR>'
+endfor
+
+" }}} Alt+ mappings for the terminal
+
+"  Clever <C-l> {{{
 
 nnoremap <silent> <C-l> :nohlsearch <Bar> call <SID>Refresh()<CR><C-l>
 imap <C-l> <Esc><C-l>
@@ -52,13 +74,21 @@ function! s:Refresh() abort
   SignifyRefresh
 endfunction
 
-" Add lines before and after current
+" }}}
+
+" Add new lines from NORMAL mode {{{
+
+" Add lines before and after current without leaving NORMAL mode
 nnoremap <D-S-CR> O<Esc>
 inoremap <D-S-CR> <Esc>O
 nnoremap <S-CR> O<Esc>
 inoremap <S-CR> <Esc>O
 nnoremap <D-CR> o<Esc>
 inoremap <D-CR> <Esc>o
+
+" }}} Add new lines from NORMAL mode
+
+" CHange word case {{{
 
 " Change word case in NORMAL mode
 " <A-c> - capitalize
@@ -80,7 +110,11 @@ imap Ò <Esc>Òa
 " Depends on Russian layout modified by Ukelele
 imap ∇ Ò
 
-" Set window size, useful for netrw and quickfix windows
+" }}} CHange word case
+
+" Window management {{{
+
+" Useful for netrw and quickfix windows
 nnoremap <Leader><C-w><Bar> 40<C-w><Bar>
 nnoremap <Leader><C-w>_ 10<C-w>_
 " Mazimize window
@@ -89,30 +123,17 @@ nnoremap <C-w>/ <C-w>_<C-w><Bar>
 " Close all buffers
 nnoremap <Leader><C-w>c :%bw<CR>
 
+" }}} Window management
+
+" Other {{{
+
 " Select last edited or pasted text
 nnoremap gV `[v`]
 
 " Make Y act more consistently with other mappings
 nnoremap Y y$
 
-" Alt+ mappings for the terminal
-
-function s:tmap_meta(key) abort
-    call term_sendkeys(bufnr('%'), "\<Esc>" . a:key)
-endfunction
-
-let s:terminal_alt_keys_to_pass = {
-      \   'ƒ': 'f',
-      \   '∫': 'b',
-      \   '≠': 'c',
-      \   '∆': 'l',
-      \   '∇': 'u',
-      \   '∂': 'd',
-      \ }
-
-for from_key in keys(s:terminal_alt_keys_to_pass)
-  let to_key = s:terminal_alt_keys_to_pass[from_key]
-  execute 'tnoremap <silent> ' . from_key . ' ' . &termwinkey . ':call <SID>tmap_meta("' . to_key . '")<CR>'
-endfor
-
+" Handle accidental <D-[> presses in INSERT mode
 imap <D-[> <C-[>
+
+" }}} Other

@@ -26,7 +26,6 @@ let g:vimwiki_key_mappings =
   \ }
 
 function s:CustomizeVimwikiMappings() abort
-  imap <buffer> <C-Q> <Plug>VimwikiDecreaseLvlSingleItem
   nnoremap <buffer> <D-CR> o<Esc>
   nnoremap <buffer> <S-CR> O<Esc>
 
