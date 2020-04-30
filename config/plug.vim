@@ -36,6 +36,7 @@ Plug 'AndrewRadev/switch.vim'
 Plug 'junegunn/vim-easy-align'
 Plug 'lyokha/vim-xkbswitch'
 Plug 'mbbill/undotree', #{on: 'UndotreeToggle'}
+Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
