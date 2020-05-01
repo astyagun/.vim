@@ -1,17 +1,17 @@
 scriptencoding utf-8
 
-let g:lightline                    = {}
-let g:lightline.colorscheme        = 'one'
-let g:lightline.component          = {}
-let g:lightline.component_expand   = {}
-let g:lightline.component_function = {}
-let g:lightline.component_type     = {}
-let g:lightline.enable             = {'tabline': 0}
+let g:lightline                             = {}
+let g:lightline.colorscheme                 = 'one'
+let g:lightline.component                   = {}
+let g:lightline.component_expand            = {}
+let g:lightline.component_function          = {}
+let g:lightline.component_type              = {}
+let g:lightline.component_visible_condition = {}
 
 let s:min_window_width_and_file_name_length_difference_for_full_file_name = 55
 
 let g:lightline.active = {
-      \   'left': [['mode', 'paste'], ['shrinkable_filename', 'fugitive_version'], ['readonly', 'modified']],
+      \   'left': [['mode', 'keymap_name'], ['shrinkable_filename', 'fugitive_version'], ['readonly', 'modified']],
       \   'right': [
       \     [
       \       'asyncrun_failure',
@@ -30,7 +30,15 @@ let g:lightline.inactive = {
       \   'right': [['percent', 'total_lines'], ['lineinfo'], ['fileformat', 'filetype']]
       \ }
 
-" Show file path
+" Keymap name {{{
+
+let g:lightline.component['keymap_name'] = '%{&iminsert && exists("b:keymap_name") ? toupper(b:keymap_name) : ""}'
+let g:lightline.component_visible_condition['keymap_name'] = '&iminsert && exists("b:keymap_name")'
+
+" }}} Keymap name
+
+" Show file path {{{
+
 let g:lightline.component_function['shrinkable_filename'] = 'CachedLightlineShrinkableFilename'
 
 function! CachedLightlineShrinkableFilename() abort
@@ -64,7 +72,10 @@ function! LightlineShrinkableFilename() abort
   end
 endfunction
 
-" Fugitive file version
+" }}} Show file path
+
+" Fugitive file version {{{
+
 let g:lightline.component_function['fugitive_version'] = 'LightlineFugitiveVersion'
 
 function! LightlineFugitiveVersion() abort
@@ -75,10 +86,16 @@ function! LightlineFugitiveVersion() abort
   endif
 endfunction
 
-" Total lines count
+" }}} Fugitive file version
+
+" Total lines count {{{
+
 let g:lightline.component.total_lines = '%L'
 
-" AsyncRun
+" }}} Total lines count
+
+" AsyncRun {{{
+
 call extend(g:lightline.component_expand, {
       \   'asyncrun_failure': 'AsyncRunFailure',
       \   'asyncrun_running': 'AsyncRunRunning',
@@ -110,7 +127,10 @@ augroup AsyncRunUpdateLightline
   autocmd User AsyncRunStart call lightline#update()
 augroup END
 
-" ALE
+" }}} AsyncRun
+
+" ALE {{{
+
 call extend(g:lightline.component_expand, {
       \   'linter_errors': 'LightlineLinterErrors',
       \   'linter_warnings': 'LightlineLinterWarnings',
@@ -139,7 +159,9 @@ function! LightlineLinterWarnings() abort
   return l:all_non_errors == 0 ? '' : printf('%d W', l:all_non_errors)
 endfunction
 
-" LightlineColorscheme command
+" }}} ALE
+
+" LightlineColorscheme command {{{
 
 function! s:SetLightlineColorscheme(name) abort
   let g:lightline.colorscheme = a:name
@@ -159,7 +181,10 @@ endfunction
 command! -nargs=1 -complete=custom,s:LightlineColorschemes LightlineColorscheme
       \ call s:SetLightlineColorscheme(<q-args>)
 
-" Reload Lightline when configuration is reloaded
+" }}} LightlineColorscheme command
+
+" Reload Lightline when configuration is reloaded {{{
+
 augroup LightlineReload
   autocmd!
   autocmd User ConfigurationReloaded
@@ -167,3 +192,5 @@ augroup LightlineReload
         \ call lightline#colorscheme() |
         \ call lightline#update()
 augroup END
+
+" }}} Reload Lightline when configuration is reloaded

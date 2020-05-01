@@ -39,11 +39,6 @@ function! s:ApplyCustomHighlights() abort
 endfunction
 
 function! s:ApplyCustomColorschemeHighlights() abort
-  highlight clear TabLineFill
-  highlight link TabLineFill Normal
-  highlight clear TabLine
-  highlight link TabLine ModeMsg
-
   if &background is 'dark'
     highlight Visual guibg=#646F83
     highlight Search guifg=white guibg=#545558
