@@ -27,7 +27,7 @@ set langmenu=ru_RU.UTF-8
 set autoindent
 set cinwords=unless,def,class,if,else,elsif,while,for,switch
 set conceallevel=2
-set formatoptions=croqnj
+set formatoptions=crqnj
 set nosmartindent
 set preserveindent
 set shiftround
@@ -99,8 +99,6 @@ set notagbsearch
 
 " Editing {{{
 
-set iminsert=0
-set imsearch=0
 set nobomb
 set noimcmdline
 set nospell
