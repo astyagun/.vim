@@ -114,7 +114,7 @@ Plug 'w0rp/ale'
 
 " Other {{{
 
-Plug 'vimwiki/vimwiki', #{for: 'vimwiki', branch: 'dev'}
+Plug 'vimwiki/vimwiki', #{branch: 'dev'}
 
 " }}} Other
 

@@ -1,14 +1,20 @@
-let g:XkbSwitchEnabled = 1
+let s:xkb_default_layout = 'org.sil.ukelele.keyboardlayout..keylayout.USmodified'
+
+let g:XkbSwitchEnabled   = 1
 let g:XkbSwitchIMappings = ['ru']
-let g:XkbSwitchLib = '/usr/local/lib/libInputSourceSwitcher.dylib'
+let g:XkbSwitchLib       = '/usr/local/lib/libInputSourceSwitcher.dylib'
 
 " Enable keymap
 let g:XkbSwitchAssistNKeymap = 1    " for commands r and f
 let g:XkbSwitchAssistSKeymap = 1    " for search lines
 
 function! s:XkbSwitchToILayoutOfAlternateBuffer() abort
-  let l:ilayout_of_alternate_buffer = getbufvar(bufname(winbufnr(winnr('#'))), 'xkb_ilayout')
-  if len(l:ilayout_of_alternate_buffer) > 0
+  let l:ilayout_of_alternate_buffer = getbufvar(
+        \   bufname(winbufnr(winnr('#'))),
+        \   'xkb_ilayout',
+        \   get(g:, 'XkbSwitchILayout', v:null)
+        \ )
+  if !empty(l:ilayout_of_alternate_buffer)
     call libcall(
           \   g:XkbSwitchLib,
           \   'Xkb_Switch_setXkbLayout',
@@ -17,12 +23,21 @@ function! s:XkbSwitchToILayoutOfAlternateBuffer() abort
   endif
 endfunction
 
+function! s:XkbSwitchToDefaultLayout() abort
+  call libcall(
+        \   g:XkbSwitchLib,
+        \   'Xkb_Switch_setXkbLayout',
+        \   s:xkb_default_layout
+        \ )
+endfunction
+
 augroup XkbSwitchCustomizations
   autocmd!
   " Reset to US layout
   autocmd VimEnter,FocusGained * if mode() != 'i'
-        \ | call libcall(g:XkbSwitchLib, 'Xkb_Switch_setXkbLayout', 'com.apple.keylayout.US')
+        \ | call libcall(g:XkbSwitchLib, 'Xkb_Switch_setXkbLayout', s:xkb_default_layout)
         \ | endif
   " Treat terminal mode as INSERT mode
   autocmd TerminalWinOpen * call s:XkbSwitchToILayoutOfAlternateBuffer()
+  autocmd WinLeave * if &buftype ==# 'terminal' | call s:XkbSwitchToDefaultLayout() | endif
 augroup END
