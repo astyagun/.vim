@@ -1,6 +1,7 @@
 let g:XkbSwitchEnabled   = 1
 let g:XkbSwitchIMappings = ['ru']
 let g:XkbSwitchLib       = '/usr/local/lib/libInputSourceSwitcher.dylib'
+let g:XkbSwitchNLayout   = 'org.sil.ukelele.keyboardlayout..keylayout.USmodified'
 
 " Enable keymap
 let g:XkbSwitchAssistNKeymap = 1    " for commands r and f
@@ -10,8 +11,6 @@ set keymap=russian-jcukenmac
 
 set iminsert=0
 set imsearch=0
-
-let s:xkb_default_layout = 'org.sil.ukelele.keyboardlayout..keylayout.USmodified'
 
 function! s:XkbSwitchToILayoutOfAlternateBuffer() abort
   let l:ilayout_of_alternate_buffer = getbufvar(
@@ -32,7 +31,7 @@ function! s:XkbSwitchToDefaultLayout() abort
   call libcall(
         \   g:XkbSwitchLib,
         \   'Xkb_Switch_setXkbLayout',
-        \   s:xkb_default_layout
+        \   g:XkbSwitchNLayout
         \ )
 endfunction
 
@@ -40,7 +39,7 @@ augroup XkbSwitchCustomizations
   autocmd!
   " Reset to US layout
   autocmd VimEnter,FocusGained * if mode() != 'i'
-        \ | call libcall(g:XkbSwitchLib, 'Xkb_Switch_setXkbLayout', s:xkb_default_layout)
+        \ | call libcall(g:XkbSwitchLib, 'Xkb_Switch_setXkbLayout', g:XkbSwitchNLayout)
         \ | endif
   " Treat terminal mode as INSERT mode
   autocmd TerminalWinOpen * call s:XkbSwitchToILayoutOfAlternateBuffer()
