@@ -11,54 +11,6 @@ nmap <Leader>= :call Preserve("normal gg=G")<CR>
 
 " }}} Formatting
 
-" Readline {{{
-cnoremap <C-k> <C-\>estrpart(getcmdline(),0,getcmdpos()-1)<CR>
-noremap! <D-k> <C-k>
-" <A-f> and <A-b> to jump words
-noremap! ƒ <C-Right>
-noremap! ∫ <C-Left>
-map! ÷ ƒ
-" <A-b> mapped to this character using Ukelele
-map! ← ∫
-" <A-d> to delete a word forward
-inoremap ∂ <C-o>dw
-cnoremap ∂ <C-Right><C-w>
-imap ћ ∂
-cmap ћ ∂
-" Create new change to be able to undo <C-u> and <C-w> deletions
-" http://vim.wikia.com/wiki/Recover_from_accidental_Ctrl-U
-inoremap <C-u> <C-g>u<C-u>
-inoremap <C-w> <C-g>u<C-w>
-inoremap <C-k> <C-g>u<C-o>D
-
-" Take what's typed into account when moving through commands history
-cnoremap <C-p> <Up>
-cnoremap <C-n> <Down>
-
-" }}} Readline
-
-" Alt+ mappings for the terminal {{{
-
-function s:tmap_meta(key) abort
-  call term_sendkeys(bufnr('%'), "\<Esc>" . a:key)
-endfunction
-
-let s:terminal_alt_keys_to_pass = {
-      \   'ƒ': 'f',
-      \   '∫': 'b',
-      \   '≠': 'c',
-      \   '∆': 'l',
-      \   '∇': 'u',
-      \   '∂': 'd',
-      \ }
-
-for from_key in keys(s:terminal_alt_keys_to_pass)
-  let to_key = s:terminal_alt_keys_to_pass[from_key]
-  execute 'tnoremap <silent> ' . from_key . ' ' . &termwinkey . ':call <SID>tmap_meta("' . to_key . '")<CR>'
-endfor
-
-" }}} Alt+ mappings for the terminal
-
 "  Clever <C-l> {{{
 
 nnoremap <silent> <C-l> :nohlsearch <Bar> call <SID>Refresh()<CR><C-l>
@@ -87,30 +39,6 @@ nnoremap <D-CR> o<Esc>
 inoremap <D-CR> <Esc>o
 
 " }}} Add new lines from NORMAL mode
-
-" CHange word case {{{
-
-" Change word case in NORMAL mode
-" <A-c> - capitalize
-nnoremap ç ebguiw~e
-" <A-l> - lowercase
-nnoremap ¬ ebguiwe
-" <A-S-l> - uppercase
-nnoremap Ò ebgUiwe
-
-" Change word case in INSERT mode
-" <A-c> - capitalize
-imap ç <Esc>ça
-imap ≠ ç
-" <A-l> - lowercase
-imap ¬ <Esc>¬a
-imap ∆ ¬
-" <A-u> - uppercase
-imap Ò <Esc>Òa
-" Depends on Russian layout modified by Ukelele
-imap ∇ Ò
-
-" }}} CHange word case
 
 " Window management {{{
 
