@@ -3,6 +3,7 @@ augroup HighlightMergeConflictMarkers
   autocmd!
   autocmd Syntax * syntax match MergeConflictMarker containedin=ALL /\v^[><\|=]{7,11}( .*)?$/
 augroup END
+
 highlight link MergeConflictMarker Error
 
 command! FindMergeConflictMarkers normal /\v^[><\|=]{7,11}( .*)?$<CR>

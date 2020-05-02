@@ -1,3 +1,9 @@
+augroup RubocopGx
+  autocmd!
+  autocmd BufNewFile,BufRead rubocop.yml,.rubocop.yml,.rubocop_todo.yml
+        \ nnoremap <buffer> <silent> gx :call <SID>RubocopGx()<cr>
+augroup END
+
 " gx to open Rubocop cops documentation in a browser
 function! s:RubocopGx() abort
   let l:cfile = expand('<cfile>')
@@ -16,9 +22,3 @@ function! s:RubocopGx() abort
     call OpenInBrowser('<cfile>')
   endif
 endfunction
-
-augroup RubocopGx
-  autocmd!
-  autocmd BufNewFile,BufRead rubocop.yml,.rubocop.yml,.rubocop_todo.yml
-        \ nnoremap <buffer> <silent> gx :call <SID>RubocopGx()<cr>
-augroup END

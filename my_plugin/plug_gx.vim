@@ -1,3 +1,8 @@
+augroup PlugGx
+  autocmd!
+  autocmd BufNewFile,BufRead plug.vim nnoremap <buffer> <silent> gx :call <SID>plug_gx()<cr>
+augroup END
+
 " gx to open GitHub URLs in browser
 function! s:plug_gx() abort
   if getline('.') =~# '^"\? *Plug\s'
@@ -9,8 +14,3 @@ function! s:plug_gx() abort
     call OpenInBrowser('<cfile>')
   endif
 endfunction
-
-augroup PlugGx
-  autocmd!
-  autocmd BufNewFile,BufRead plug.vim nnoremap <buffer> <silent> gx :call <SID>plug_gx()<cr>
-augroup END

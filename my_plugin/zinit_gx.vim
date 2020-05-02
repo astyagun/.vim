@@ -1,3 +1,8 @@
+augroup ZinitGx
+  autocmd!
+  autocmd BufNewFile,BufRead *.zsh nnoremap <buffer><silent> gx :call <SID>zinit_gx()<cr>
+augroup END
+
 " gx to open GitHub URLs in browser
 function! s:zinit_gx() abort
   if getline('.') =~# '\v^\s*(zpl|zplg|zplugin)\s+(load|light)\s'
@@ -9,8 +14,3 @@ function! s:zinit_gx() abort
     call OpenInBrowser('<cfile>')
   endif
 endfunction
-
-augroup ZinitGx
-  autocmd!
-  autocmd BufNewFile,BufRead *.zsh nnoremap <buffer><silent> gx :call <SID>zinit_gx()<cr>
-augroup END

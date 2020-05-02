@@ -2,6 +2,11 @@ let s:vim_path = expand('~/.vim')
 let $MYVIMRC   = s:vim_path . '/init.vim'
 let $MYGVIMRC  = s:vim_path . '/ginit.vim'
 
+augroup ReloadConfiguration
+  autocmd!
+  autocmd BufWritePost .vimrc,*.vim call ReloadConfiguration()
+augroup END
+
 if !exists('*ReloadConfiguration')
   function ReloadConfiguration() abort
     source $MYVIMRC
@@ -13,11 +18,6 @@ if !exists('*ReloadConfiguration')
     doautocmd User ConfigurationReloaded
   endfunction
 endif
-
-augroup ReloadConfiguration
-  autocmd!
-  autocmd BufWritePost .vimrc,*.vim call ReloadConfiguration()
-augroup END
 
 map <Leader>ve :edit $MYVIMRC<CR>
 map <Leader>vp :edit <C-r>=fnamemodify(expand("$MYVIMRC"), ":p:h")<CR>/config/plug.vim<CR>

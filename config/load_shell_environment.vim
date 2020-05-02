@@ -1,3 +1,9 @@
+augroup LoadShellEnvironment
+  autocmd!
+  autocmd VimEnter * call timer_start(1, { _ -> execute('call <SID>LoadShellEnvironment()') })
+  autocmd User ConfigurationReloaded call s:LoadShellEnvironment()
+augroup end
+
 function! s:LoadShellEnvironment() abort
   let g:ShellEnvironment = {}
 
@@ -13,9 +19,3 @@ function! s:LoadShellEnvironment() abort
     doautocmd User ShellEnvironmentLoaded
   endif
 endfunction
-
-augroup LoadShellEnvironment
-  autocmd!
-  autocmd VimEnter * call timer_start(1, { _ -> execute('call <SID>LoadShellEnvironment()') })
-  autocmd User ConfigurationReloaded call s:LoadShellEnvironment()
-augroup end

@@ -12,6 +12,18 @@ set keymap=russian-jcukenmac
 set iminsert=0
 set imsearch=0
 
+augroup XkbSwitchCustomizations
+  autocmd!
+  " Reset to US layout
+  autocmd VimEnter,FocusGained * if mode() != 'i'
+        \ | call libcall(g:XkbSwitchLib, 'Xkb_Switch_setXkbLayout', g:XkbSwitchNLayout)
+        \ | endif
+  " Treat terminal mode as INSERT mode
+  autocmd TerminalWinOpen * call s:XkbSwitchToILayoutOfAlternateBuffer()
+  autocmd WinLeave * if &buftype ==# 'terminal' | call s:XkbSwitchToDefaultLayout() | endif
+  autocmd User StartifyBufferOpened if IsInVimwikiDir() | let g:XkbSwitchILayout = 'ru' | endif
+augroup END
+
 function! s:XkbSwitchToILayoutOfAlternateBuffer() abort
   let l:ilayout_of_alternate_buffer = getbufvar(
         \   bufname(winbufnr(winnr('#'))),
@@ -34,15 +46,3 @@ function! s:XkbSwitchToDefaultLayout() abort
         \   g:XkbSwitchNLayout
         \ )
 endfunction
-
-augroup XkbSwitchCustomizations
-  autocmd!
-  " Reset to US layout
-  autocmd VimEnter,FocusGained * if mode() != 'i'
-        \ | call libcall(g:XkbSwitchLib, 'Xkb_Switch_setXkbLayout', g:XkbSwitchNLayout)
-        \ | endif
-  " Treat terminal mode as INSERT mode
-  autocmd TerminalWinOpen * call s:XkbSwitchToILayoutOfAlternateBuffer()
-  autocmd WinLeave * if &buftype ==# 'terminal' | call s:XkbSwitchToDefaultLayout() | endif
-  autocmd User StartifyBufferOpened if IsInVimwikiDir() | let g:XkbSwitchILayout = 'ru' | endif
-augroup END

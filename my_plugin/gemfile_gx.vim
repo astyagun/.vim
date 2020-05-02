@@ -1,3 +1,8 @@
+augroup GemfileGx
+  autocmd!
+  autocmd BufNewFile,BufRead Gemfile,*.gemspec nnoremap <buffer> <silent> gx :call <SID>GemfileGx()<cr>
+augroup END
+
 " gx to open Rubygems URLs in browser
 function! s:GemfileGx() abort
   let l:line = getline('.')
@@ -10,8 +15,3 @@ function! s:GemfileGx() abort
     call OpenInBrowser('<cfile>')
   endif
 endfunction
-
-augroup GemfileGx
-  autocmd!
-  autocmd BufNewFile,BufRead Gemfile,*.gemspec nnoremap <buffer> <silent> gx :call <SID>GemfileGx()<cr>
-augroup END

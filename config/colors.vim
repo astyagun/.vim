@@ -58,4 +58,4 @@ function! s:SetBatThemeEnvironmentVariable() abort
 endfunction
 
 " Create new buffer with examples of highlighting groups
-command! HiTest so $VIMRUNTIME/syntax/hitest.vim
+command! HiTest source $VIMRUNTIME/syntax/hitest.vim

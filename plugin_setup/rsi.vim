@@ -40,6 +40,12 @@ let s:meta_keys_to_map = {
       \ 'u': ['¨', 'ѓ'],
       \ }
 
+augroup SetMetaKeyMappings
+  autocmd!
+  autocmd VimEnter * call s:SetMetaKeyMappings()
+  autocmd User ConfigurationReloaded call s:SetMetaKeyMappings()
+augroup end
+
 function! s:SendTerminalMetaCombination(key) abort
   call term_sendkeys(bufnr('%'), "\<Esc>" . a:key)
 endfunction
@@ -66,11 +72,5 @@ function! s:SetMetaKeyMappings() abort
     endfor
   endfor
 endfunction
-
-augroup SetMetaKeyMappings
-  autocmd!
-  autocmd VimEnter * call s:SetMetaKeyMappings()
-  autocmd User ConfigurationReloaded call s:SetMetaKeyMappings()
-augroup end
 
 " }}} Add meta mappings

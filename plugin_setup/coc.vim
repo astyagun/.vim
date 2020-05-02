@@ -7,6 +7,19 @@ let g:coc_global_extensions = [
 
 inoremap <silent><expr> <C-Space> coc#refresh()
 
+augroup Coc
+  autocmd!
+
+  autocmd FileType ruby nnoremap <buffer><silent> <C-]> :call <SID>GotoDefinition()<CR>
+  autocmd FileType ruby nnoremap <buffer><silent> <C-w><C-]> :wincmd s <Bar> call <SID>GotoDefinition()<CR>
+  autocmd FileType vim setlocal tagfunc=CocTagFunc
+
+  autocmd FileType ruby nnoremap <buffer><silent> K :call CocAction('doHover')<CR>
+  autocmd FileType ruby,vim,json setlocal formatexpr=CocAction('formatSelected')
+
+  autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
+augroup end
+
 function! s:GotoDefinition() abort
   let l:current_tag = expand('<cWORD>')
 
@@ -29,16 +42,3 @@ function! s:GotoDefinition() abort
     call settagstack(winnr(), #{curidx: l:new_tag_index, items: l:new_tag_items}, 'r')
   endif
 endfunction
-
-augroup Coc
-  autocmd!
-
-  autocmd FileType ruby nnoremap <buffer><silent> <C-]> :call <SID>GotoDefinition()<CR>
-  autocmd FileType ruby nnoremap <buffer><silent> <C-w><C-]> :wincmd s <Bar> call <SID>GotoDefinition()<CR>
-  autocmd FileType vim setlocal tagfunc=CocTagFunc
-
-  autocmd FileType ruby nnoremap <buffer><silent> K :call CocAction('doHover')<CR>
-  autocmd FileType ruby,vim,json setlocal formatexpr=CocAction('formatSelected')
-
-  autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
-augroup end
