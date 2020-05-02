@@ -29,8 +29,9 @@ let g:lightline.inactive = {
 
 " Keymap name {{{
 
-let g:lightline.component['keymap_name'] = '%{&iminsert && exists("b:keymap_name") ? toupper(b:keymap_name) : ""}'
-let g:lightline.component_visible_condition['keymap_name'] = '&iminsert && exists("b:keymap_name")'
+let g:lightline.component['keymap_name'] =
+      \ '%{exists("b:keymap_name") ? ((&iminsert ? "I" : "") . (&imsearch ? "S" : "")) : ""}'
+let g:lightline.component_visible_condition['keymap_name'] = 'exists("b:keymap_name") && (&iminsert || &imsearch)'
 
 " }}} Keymap name
 
