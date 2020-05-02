@@ -7,6 +7,8 @@ endfunction
 " Make sure only :py3 is used
 py3 ''
 
+source ~/.vim/config/load_shell_environment.vim
+
 call s:SourceFilesFromDirectory('plugin_setup')
 source ~/.vim/config/plug.vim
 

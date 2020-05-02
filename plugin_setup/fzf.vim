@@ -10,18 +10,14 @@ augroup END
 
 augroup ImportFzfEnvironmentVariablesFromShell
   autocmd!
-  " Need to delay, because the 'shell' option is set later in the startup sequence
-  autocmd VimEnter * call timer_start(1, { _ -> execute('call <SID>ImportFzfEnvironmentVariablesFromShell()') })
-  autocmd User ConfigurationReloaded call s:ImportFzfEnvironmentVariablesFromShell()
+  autocmd User ShellEnvironmentLoaded call s:ImportFzfEnvironmentVariablesFromShell()
 augroup END
 
 function! s:ImportFzfEnvironmentVariablesFromShell() abort
-  for line in systemlist('env | grep "^FZF_"')
-    let variable_string = split(line, '=')
-    let variable_name = variable_string[0]
-    let variable_value = join(variable_string[1:-1], '=')
-    let escaped_variable_value = substitute(variable_value, '"', '\\"', 'g')
+  for environment_variable_name in filter(keys(g:ShellEnvironment), 'v:val =~# "^FZF_"')
+    let l:variable_value = g:ShellEnvironment[environment_variable_name]
+    let l:escaped_variable_value = substitute(l:variable_value, '"', '\\"', 'g')
 
-    execute 'let $' . variable_name . ' = "' . escaped_variable_value . '"'
+    execute 'let $' . environment_variable_name . ' = "' . l:escaped_variable_value . '"'
   endfor
 endfunction
