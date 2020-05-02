@@ -39,7 +39,7 @@ function! s:ApplyCustomHighlights() abort
 endfunction
 
 function! s:ApplyCustomColorschemeHighlights() abort
-  if &background is 'dark'
+  if &background is# 'dark'
     highlight Visual guibg=#646F83
     highlight Search guifg=white guibg=#545558
     highlight Folded guifg=#dfdfe0

@@ -1,23 +1,20 @@
+set encoding=utf-8
+scriptencoding utf-8
+
 " General {{{
 
-" Save files before compilation
-set autowrite
-" Syntax and file types
-if !exists('g:syntax_on')
-  syntax on
-endif
 filetype plugin indent on
-set rubydll=/usr/lib/libruby.dylib
+set autowrite
 set nomodeline
+set rubydll=/usr/lib/libruby.dylib
 set termwinkey=†
+syntax on
 
 " }}} General
 
 " Encoding {{{
 
 language messages ru_RU.UTF-8
-scriptencoding utf-8
-set encoding=utf-8
 set langmenu=ru_RU.UTF-8
 
 " }}} Encoding

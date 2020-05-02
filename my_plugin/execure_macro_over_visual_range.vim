@@ -3,6 +3,6 @@
 xnoremap @ :<C-u>call ExecuteMacroOverVisualRange()<CR>
 
 function! ExecuteMacroOverVisualRange() abort
-  echo "@" . getcmdline()
+  echo '@' . getcmdline()
   execute ":'<,'>normal @" . nr2char(getchar())
 endfunction

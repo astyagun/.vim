@@ -1,3 +1,5 @@
+scriptencoding utf-8
+
 " Don't highlight tabs in Fugitive windows
 augroup FugitiveHightlight
   autocmd!

@@ -5,7 +5,7 @@ function! CaptureMessage(cmd) abort
   redir END
 
   if empty(message)
-    echoerr "No output"
+    echoerr 'No output'
   else
     " Use "new" instead of "tabnew" below if you prefer split windows instead of tabs
     new

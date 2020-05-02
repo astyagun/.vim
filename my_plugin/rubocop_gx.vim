@@ -4,9 +4,9 @@ function! s:RubocopGx() abort
   echom l:cfile
   if !filereadable(l:cfile) && l:cfile =~? '^\w\+/\w\+$'
     let [l:group, l:cop_name] = split(tolower(l:cfile), '/')
-    if l:group == 'rails'
+    if l:group ==# 'rails'
       let l:url = 'https://docs.rubocop.org/projects/rails/en/stable/cops_' . l:group . '/#' . l:group . l:cop_name
-    elseif l:group == 'rspec' || l:group == 'capybara' || l:group == 'factorybot'
+    elseif l:group ==# 'rspec' || l:group ==# 'capybara' || l:group ==# 'factorybot'
       let l:url = 'https://docs.rubocop.org/projects/rspec/en/stable/cops_' . l:group . '/#' . l:group . l:cop_name
     else
       let l:url = 'https://docs.rubocop.org/en/stable/cops_' . l:group . '/#' . l:group . l:cop_name
