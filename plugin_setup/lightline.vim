@@ -14,12 +14,9 @@ let g:lightline.active = {
       \   'left': [['mode', 'keymap_name'], ['shrinkable_filename', 'fugitive_version'], ['readonly', 'modified']],
       \   'right': [
       \     [
-      \       'asyncrun_failure',
-      \       'linter_errors',
-      \       'linter_warnings',
-      \       'asyncrun_running',
-      \       'percent',
-      \       'total_lines',
+      \       'linter_errors', 'asyncrun_failure',
+      \       'linter_warnings', 'linter_running', 'asyncrun_running',
+      \       'percent', 'total_lines',
       \     ],
       \     ['lineinfo'],
       \     ['fileformat', 'filetype']
@@ -133,17 +130,24 @@ augroup END
 
 call extend(g:lightline.component_expand, {
       \   'linter_errors': 'LightlineLinterErrors',
+      \   'linter_running': 'LightlineLinterRunning',
       \   'linter_warnings': 'LightlineLinterWarnings',
       \ })
 call extend(g:lightline.component_type, {
       \   'linter_errors': 'error',
+      \   'linter_running': 'warning',
       \   'linter_warnings': 'warning',
       \ })
 
 augroup ALEUpdateLightline
   autocmd!
-  autocmd User ALELint call lightline#update()
+  autocmd User ALELintPre let b:is_linter_running = v:true | call lightline#update()
+  autocmd User ALELintPost let b:is_linter_running = v:false | call lightline#update()
 augroup END
+
+function! LightlineLinterRunning() abort
+  return get(b:, 'is_linter_running') ? 'LINTING' : ''
+endfunction
 
 function! LightlineLinterErrors() abort
   let l:counts = ale#statusline#Count(bufnr(''))
