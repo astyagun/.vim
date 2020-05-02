@@ -44,4 +44,5 @@ augroup XkbSwitchCustomizations
   " Treat terminal mode as INSERT mode
   autocmd TerminalWinOpen * call s:XkbSwitchToILayoutOfAlternateBuffer()
   autocmd WinLeave * if &buftype ==# 'terminal' | call s:XkbSwitchToDefaultLayout() | endif
+  autocmd User StartifyBufferOpened if IsInVimwikiDir() | let g:XkbSwitchILayout = 'ru' | endif
 augroup END

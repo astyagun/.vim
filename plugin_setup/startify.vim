@@ -22,11 +22,3 @@ let g:startify_skiplist = [
       \ escape(fnamemodify(resolve($VIMRUNTIME), ':p'), '\') .'doc',
       \ 'plugged/.*/doc',
       \ ]
-
-augroup StartifyOpened
-  autocmd!
-  autocmd User StartifyBufferOpened
-        \  if vimwiki#base#find_wiki(getcwd()) > -1
-        \|   let g:XkbSwitchILayout = 'ru'
-        \| endif
-augroup end

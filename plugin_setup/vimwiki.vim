@@ -2,6 +2,7 @@ let g:vimwiki_list = [
       \   #{
       \     auto_toc:         1,
       \     ext:              '.md',
+      \     index:            'Содержание',
       \     links_space_char: '_',
       \     path:             '~/Nextcloud/Notes',
       \     path_html:        '~/Nextcloud/Notes HTML',
@@ -9,15 +10,16 @@ let g:vimwiki_list = [
       \   }
       \ ]
 
-let g:vimwiki_auto_header = 1
-let g:vimwiki_global_ext = 0
-let g:vimwiki_hl_cb_checked = 1
-let g:vimwiki_hl_headers = 1
-let g:vimwiki_links_header = 'Сгенерированные ссылки'
+let g:vimwiki_auto_header       = 1
+let g:vimwiki_dir_link          = 'Содержание'
+let g:vimwiki_global_ext        = 0
+let g:vimwiki_hl_cb_checked     = 1
+let g:vimwiki_hl_headers        = 1
+let g:vimwiki_links_header      = 'Сгенерированные ссылки'
 let g:vimwiki_markdown_link_ext = 1
-let g:vimwiki_menu = ''
-let g:vimwiki_tags_header = 'Сгенерированные ссылки на тэги'
-let g:vimwiki_toc_header = 'Содержание'
+let g:vimwiki_menu              = ''
+let g:vimwiki_tags_header       = 'Сгенерированные ссылки на тэги'
+let g:vimwiki_toc_header        = 'Содержание'
 
 let g:vimwiki_key_mappings =
   \ #{
@@ -25,7 +27,18 @@ let g:vimwiki_key_mappings =
   \   html:    0,
   \ }
 
-function s:CustomizeVimwikiMappings() abort
+augroup Vimwiki
+  autocmd!
+  autocmd FileType vimwiki call s:CustomizeVimwikiBufferMappings()
+  autocmd User StartifyBufferOpened if g:IsInVimwikiDir() | call s:CustomizeVimwikiMappings() | endif
+augroup END
+
+function! s:CustomizeVimwikiMappings() abort
+  nmap <Leader>ww <Plug>VimwikiIndex
+  nmap <Leader>wt <Plug>VimwikiTabIndex
+endfunction
+
+function! s:CustomizeVimwikiBufferMappings() abort
   nnoremap <buffer> <D-CR> o<Esc>
   nnoremap <buffer> <S-CR> O<Esc>
 
@@ -34,7 +47,6 @@ function s:CustomizeVimwikiMappings() abort
   map <buffer> <Plug>VimwikiNoop2 <Plug>VimwikiRemoveHeaderLevel
 endfunction
 
-augroup Vimwiki
-  autocmd!
-  autocmd FileType vimwiki call s:CustomizeVimwikiMappings()
-augroup END
+function! IsInVimwikiDir() abort
+  return vimwiki#base#find_wiki(getcwd()) > -1
+endfunction
