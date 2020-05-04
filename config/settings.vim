@@ -7,7 +7,7 @@ filetype plugin indent on
 set autowrite
 set nomodeline
 set rubydll=/usr/lib/libruby.dylib
-set termwinkey=†
+set termwinkey=† " Free up <C-w> for delete a word backwards. Use <C-\><C-n> to return to NORMAL mode.
 syntax on
 
 " }}} General
@@ -22,11 +22,8 @@ set langmenu=ru_RU.UTF-8
 " Formatting {{{
 
 set autoindent
-set cinwords=unless,def,class,if,else,elsif,while,for,switch
 set conceallevel=2
 set formatoptions=crqnj
-set nosmartindent
-set preserveindent
 set shiftround
 set shiftwidth=2 tabstop=2 softtabstop=2 expandtab
 set textwidth=120
@@ -44,27 +41,16 @@ let &colorcolumn = &textwidth + 1
 let &listchars = "tab:\uBB\uBB,trail:\uB7,nbsp:~"
 let &showbreak = '> '
 set breakindent
-set cmdheight=1
 set cursorline
 set fillchars=vert:│,fold:·
-set guioptions-=rL
 set laststatus=2
 set linebreak " Wrap lines at convenient points
 set list
-set noballooneval
-set noerrorbells visualbell t_vb=
-set nonumber
-set norelativenumber
-set ruler
 set scrolloff=2
 set shortmess+=c
-set showcmd
-set showmode
-set showtabline=1
 set sidescrolloff=5
 set signcolumn=yes
 set updatetime=300
-set wrap
 
 augroup CursorLine
   autocmd!
@@ -78,7 +64,7 @@ augroup END
 
 let &grepprg = 'rg --vimgrep --hidden --no-ignore-vcs --ignore-file ~/.files/zsh/find.ignore'
 set confirm
-set diffopt=filler,vertical,hiddenoff,internal,indent-heuristic,algorithm:patience
+set diffopt=filler,closeoff,vertical,hiddenoff,internal,indent-heuristic,algorithm:patience
 set foldmethod=marker
 set foldminlines=2
 set foldnestmax=10
@@ -101,9 +87,6 @@ set notagbsearch
 
 " Editing {{{
 
-set nobomb
-set noimcmdline
-set nospell
 set spelllang=ru_yo,en_us
 set wildignore=*.o,*.obj,*~,vendor/bundle/**/* " Stuff to ignore when tab completing
 set wildmenu " Enable <C-n> and <C-p> to scroll through matches
