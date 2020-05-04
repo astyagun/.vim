@@ -31,6 +31,11 @@ set shiftround
 set shiftwidth=2 tabstop=2 softtabstop=2 expandtab
 set textwidth=120
 
+augroup AfterFormatOptions
+  autocmd!
+  autocmd FileType * setlocal formatoptions-=o
+augroup END
+
 " }}} Formatting
 
 " Visual {{{
