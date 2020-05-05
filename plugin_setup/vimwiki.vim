@@ -23,8 +23,9 @@ let g:vimwiki_toc_header        = 'Содержание'
 
 let g:vimwiki_key_mappings =
   \ #{
-  \   global:  0,
-  \   html:    0,
+  \   global: 0,
+  \   html:   0,
+  \   links:  0,
   \ }
 
 augroup Vimwiki
@@ -39,12 +40,20 @@ function! s:CustomizeVimwikiMappings() abort
 endfunction
 
 function! s:CustomizeVimwikiBufferMappings() abort
-  nnoremap <buffer> <D-CR> o<Esc>
-  nnoremap <buffer> <S-CR> O<Esc>
+  nmap <buffer> <CR> <Plug>VimwikiFollowLink
+  vmap <buffer> <CR> <Plug>VimwikiNormalizeLinkVisualCR
+  nmap <buffer> + <Plug>VimwikiNormalizeLink
+  vmap <buffer> + <Plug>VimwikiNormalizeLinkVisual
+  nmap <buffer> <Leader>ws <Plug>VimwikiSplitLink
+  nmap <buffer> <Leader>wv <Plug>VimwikiVSplitLink
+  nmap <buffer> <Backspace> <Plug>VimwikiGoBackLink
 
-  " Unmap header mappings to avoid conflicts with other mapping, that I have (- to :Explore)
-  map <buffer> <Plug>VimwikiNoop1 <Plug>VimwikiAddHeaderLevel
-  map <buffer> <Plug>VimwikiNoop2 <Plug>VimwikiRemoveHeaderLevel
+  nmap <buffer> <Tab> <Plug>VimwikiNextLink
+  nmap <buffer> <S-Tab> <Plug>VimwikiPrevLink
+
+  nmap <buffer> <Leader>wn <Plug>VimwikiGoto
+  nmap <buffer> <Leader>wd <Plug>VimwikiDeleteLink
+  nmap <buffer> <Leader>wr <Plug>VimwikiRenameLink
 endfunction
 
 function! IsInVimwikiDir() abort
