@@ -54,6 +54,10 @@ function! s:CustomizeVimwikiBufferMappings() abort
   nmap <buffer> <Leader>wn <Plug>VimwikiGoto
   nmap <buffer> <Leader>wd <Plug>VimwikiDeleteLink
   nmap <buffer> <Leader>wr <Plug>VimwikiRenameLink
+
+  " Unmap header mappings to avoid conflicts with other mapping, that I have (- to :Explore)
+  map <buffer> <Plug> <Plug>VimwikiAddHeaderLevel
+  map <buffer> <Plug> <Plug>VimwikiRemoveHeaderLevel
 endfunction
 
 function! IsInVimwikiDir() abort
