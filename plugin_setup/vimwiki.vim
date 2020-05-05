@@ -4,8 +4,8 @@ let g:vimwiki_list = [
       \     ext:              '.md',
       \     index:            'Содержание',
       \     links_space_char: '_',
-      \     path:             '~/Nextcloud/Notes',
-      \     path_html:        '~/Nextcloud/Notes HTML',
+      \     path:             '~/Nextcloud/Заметки',
+      \     path_html:        '~/Nextcloud/Заметки HTML',
       \     syntax:           'markdown',
       \   }
       \ ]
