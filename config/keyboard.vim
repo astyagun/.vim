@@ -58,9 +58,6 @@ nnoremap <Leader><C-w>c :%bw<CR>
 " Select last edited or pasted text
 nnoremap gV `[v`]
 
-" Make Y act more consistently with other mappings
-nnoremap Y y$
-
 " Handle accidental <D-[> presses in INSERT mode
 imap <D-[> <C-[>
 
