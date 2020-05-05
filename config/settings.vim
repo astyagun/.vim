@@ -40,6 +40,7 @@ augroup END
 let &colorcolumn = &textwidth + 1
 let &listchars = "tab:\uBB\uBB,trail:\uB7,nbsp:~"
 let &showbreak = '> '
+set belloff=all
 set breakindent
 set cursorline
 set fillchars=vert:│,fold:·
