@@ -67,7 +67,6 @@ function! s:CustomizeVimwikiBufferMappings() abort
   nmap <buffer> <S-Tab> <Plug>VimwikiPrevLink
 
   nmap <buffer> <Leader>wn <Plug>VimwikiGoto
-  nmap <buffer> <Leader>wd <Plug>VimwikiDeleteLink
   nmap <buffer> <Leader>wr <Plug>VimwikiRenameLink
 
   " Unmap header mappings to avoid conflicts with other mapping, that I have (- to :Explore)
