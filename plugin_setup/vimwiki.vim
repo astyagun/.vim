@@ -52,6 +52,7 @@ function! s:CustomizeVimwikiMappings() abort
   nmap <Leader>wt <Plug>VimwikiTabIndex
   nmap <Leader>wi <Plug>VimwikiMakeDiaryNote
   nmap <Leader>wI <Plug>VimwikiDiaryIndex
+  nmap <Leader>wp :e Личное/Горизонты/1_Проекты.md<CR>
 endfunction
 
 function! s:CustomizeVimwikiBufferMappings() abort
