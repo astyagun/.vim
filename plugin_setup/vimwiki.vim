@@ -36,9 +36,10 @@ let g:vimwiki_diary_months = {
 
 let g:vimwiki_key_mappings =
   \ #{
-  \   global: 0,
-  \   html:   0,
-  \   links:  0,
+  \   global:  0,
+  \   headers: 0,
+  \   html:    0,
+  \   links:   0,
   \ }
 
 augroup Vimwiki
@@ -56,6 +57,8 @@ function! s:CustomizeVimwikiMappings() abort
 endfunction
 
 function! s:CustomizeVimwikiBufferMappings() abort
+  " Links
+
   nmap <buffer> <CR> <Plug>VimwikiFollowLink
   vmap <buffer> <CR> <Plug>VimwikiNormalizeLinkVisualCR
   nmap <buffer> + <Plug>VimwikiNormalizeLink
@@ -70,9 +73,18 @@ function! s:CustomizeVimwikiBufferMappings() abort
   nmap <buffer> <Leader>wn <Plug>VimwikiGoto
   nmap <buffer> <Leader>wr <Plug>VimwikiRenameLink
 
-  " Unmap header mappings to avoid conflicts with other mapping, that I have (- to :Explore)
-  map <buffer> <Plug> <Plug>VimwikiAddHeaderLevel
-  map <buffer> <Plug> <Plug>VimwikiRemoveHeaderLevel
+  " Headers
+
+  nmap ]u <Plug>VimwikiGoToParentHeader
+  nmap [u <Plug>VimwikiGoToParentHeader
+  nmap ]] <Plug>VimwikiGoToNextHeader
+  nmap [[ <Plug>VimwikiGoToPrevHeader
+  nmap ]= <Plug>VimwikiGoToNextSiblingHeader
+  nmap [= <Plug>VimwikiGoToPrevSiblingHeader
+  omap aH <Plug>VimwikiTextObjHeaderSub
+  vmap aH <Plug>VimwikiTextObjHeaderSubV
+  omap iH <Plug>VimwikiTextObjHeaderSubContent
+  vmap iH <Plug>VimwikiTextObjHeaderSubContentV
 endfunction
 
 function! IsInVimwikiDir() abort
