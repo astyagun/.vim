@@ -5,10 +5,9 @@ let g:vimwiki_list = [
       \     diary_caption_level:    2,
       \     diary_header:           'Входящие',
       \     diary_index:            'Содержание',
-      \     diary_rel_path:         '1_Входящие',
+      \     diary_rel_path:         '1 Входящие',
       \     ext:                    '.md',
       \     index:                  'Содержание',
-      \     links_space_char:       '_',
       \     path:                   '~/Nextcloud/Заметки',
       \     path_html:              '~/Nextcloud/Заметки HTML',
       \     syntax:                 'markdown',
@@ -53,7 +52,7 @@ function! s:CustomizeVimwikiMappings() abort
   nmap <Leader>wt <Plug>VimwikiTabIndex
   nmap <Leader>wi <Plug>VimwikiMakeDiaryNote
   nmap <Leader>wI <Plug>VimwikiDiaryIndex
-  nmap <Leader>wp :e Личное/Горизонты/1_Проекты.md<CR>
+  nmap <Leader>wp :e Личное/Горизонты/1\ Проекты.md<CR>
 endfunction
 
 function! s:CustomizeVimwikiBufferMappings() abort
