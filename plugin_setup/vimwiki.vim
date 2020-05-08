@@ -1,3 +1,5 @@
+scriptencoding utf-8
+
 let g:vimwiki_list = [
       \   #{
       \     auto_toc:               1,
@@ -53,6 +55,7 @@ function! s:CustomizeVimwikiMappings() abort
   nmap <Leader>wi <Plug>VimwikiMakeDiaryNote
   nmap <Leader>wI <Plug>VimwikiDiaryIndex
   nmap <Leader>wp :e Личное/Горизонты/1\ Проекты.md<CR>
+  nmap <Leader>wg :call <SID>VimwikiGlobalGoto()<CR>
 endfunction
 
 function! s:CustomizeVimwikiBufferMappings() abort
@@ -88,4 +91,27 @@ endfunction
 
 function! IsInVimwikiDir() abort
   return vimwiki#base#find_wiki(getcwd()) > -1
+endfunction
+
+function! s:VimwikiGlobalGoto() abort
+  let l:prefill_path = ''
+  if &filetype ==# 'netrw'
+    let l:prefill_path = expand('%')
+  endif
+
+  if &filetype !=# 'vimwiki'
+    " Current file being a vimwiki file is a prerequisite for completion to work currently
+    silent VimwikiIndex
+  endif
+
+  let l:old_imsearch = &imsearch
+  setlocal imsearch=1
+
+  let l:goto_target = input('Go to: ', l:prefill_path . '/', 'customlist,vimwiki#base#complete_links_escaped')
+
+  let &l:imsearch = l:old_imsearch
+
+  if !empty(l:goto_target)
+    execute 'VimwikiGoto ' . fnameescape(l:goto_target)
+  endif
 endfunction
