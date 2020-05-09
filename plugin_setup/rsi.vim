@@ -16,10 +16,10 @@ noremap! <D-k> <C-k>
 nnoremap <M-c> ebguiw~he
 imap <M-c> <Esc><M-c>a
 " <A-l> - lowercase
-nnoremap <M-l> ebwguiwe
+nnoremap <M-l> ebguiwe
 imap <M-l> <Esc><M-l>a
 " <A-S-l> - uppercase
-nnoremap <M-u> ebwgUiwe
+nnoremap <M-u> ebgUiwe
 imap <M-u> <Esc><M-u>a
 
 " }}} Change word case in NORMAL and INSERT modes
