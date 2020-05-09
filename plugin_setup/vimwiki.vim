@@ -95,7 +95,7 @@ endfunction
 function! s:VimwikiGlobalGoto() abort
   let l:prefill_path = ''
   if &filetype ==# 'netrw'
-    let l:prefill_path = expand('%')
+    let l:prefill_path = expand('%') . '/'
   endif
 
   if &filetype !=# 'vimwiki'
@@ -106,7 +106,7 @@ function! s:VimwikiGlobalGoto() abort
   let l:old_imsearch = &imsearch
   setlocal imsearch=1
 
-  let l:goto_target = input('Go to: ', l:prefill_path . '/', 'customlist,vimwiki#base#complete_links_escaped')
+  let l:goto_target = input('Go to: ', l:prefill_path, 'customlist,vimwiki#base#complete_links_escaped')
 
   let &l:imsearch = l:old_imsearch
 
