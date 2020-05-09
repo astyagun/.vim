@@ -21,7 +21,6 @@ let g:vimwiki_dir_link          = 'Содержание'
 let g:vimwiki_folding           = 'expr'
 let g:vimwiki_global_ext        = 0
 let g:vimwiki_hl_cb_checked     = 1
-let g:vimwiki_hl_headers        = 1
 let g:vimwiki_links_header      = 'Сгенерированные ссылки'
 let g:vimwiki_markdown_link_ext = 1
 let g:vimwiki_menu              = ''
