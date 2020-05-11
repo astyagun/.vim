@@ -1,10 +1,10 @@
 " Many things are borrowed from https://github.com/tpope/vim-vinegar/blob/master/plugin/vinegar.vim
-let g:netrw_altv    = 1 " open files on right
-let g:netrw_banner  = 0
-let g:netrw_hide    = 1
-let g:netrw_home    = '~/.vim/history'
-let g:netrw_nobeval = 1
-let g:netrw_preview = 1 " open previews vertically
+let g:netrw_altv      = 1 " open files on right
+let g:netrw_banner    = 0
+let g:netrw_home      = '~/.vim/history'
+let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+'
+let g:netrw_nobeval   = 1
+let g:netrw_preview   = 1 " open previews vertically
 
 map - :Explore<CR>
 map <Leader>- :Explore .<CR>
