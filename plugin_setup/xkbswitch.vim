@@ -16,7 +16,7 @@ augroup XkbSwitchCustomizations
   autocmd!
   " Reset to US layout
   autocmd VimEnter,FocusGained * if mode() != 'i'
-        \ | call libcall(g:XkbSwitchLib, 'Xkb_Switch_setXkbLayout', g:XkbSwitchNLayout)
+        \ | call s:XkbSwitchToDefaultLayout()
         \ | endif
   " Treat terminal mode as INSERT mode
   autocmd TerminalWinOpen * call s:XkbSwitchToILayoutOfAlternateBuffer()
