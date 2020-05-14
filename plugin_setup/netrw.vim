@@ -18,8 +18,6 @@ augroup NetrwMappings
 augroup END
 
 function! s:SetupNetrw() abort
-  nnoremap <buffer><silent> cg :execute 'keepjumps cd ' .<SID>FNameEscape(b:netrw_curdir)<CR>
-  nnoremap <buffer><silent> cl :execute 'keepjumps lcd '.<SID>FNameEscape(b:netrw_curdir)<CR>
   nnoremap <buffer> . :<C-U> <C-r>=<SID>Escaped(line('.'), line('.') - 1 + v:count1)<CR><Home>
   xnoremap <buffer> . <Esc>: <C-r>=<SID>Escaped(line("'<"), line("'>"))<CR><Home>
   nmap <buffer> ! .!
@@ -27,15 +25,6 @@ function! s:SetupNetrw() abort
 
   nmap <buffer> <C-l> <Nop>
   nunmap <buffer> <C-l>
-endfunction
-
-" Borrowed from vim-vinegar
-function! s:FNameEscape(file) abort
-  if exists('*fnameescape')
-    return fnameescape(a:file)
-  else
-    return escape(a:file," \t\n*?[{`$\\%#'\"|!<")
-  endif
 endfunction
 
 function! s:Escaped(first, last) abort
