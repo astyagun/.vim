@@ -9,6 +9,8 @@ py3 ''
 
 source ~/.vim/config/load_shell_environment.vim
 
+let g:sidebar_width = 30
+
 call s:SourceFilesFromDirectory('plugin_setup')
 source ~/.vim/config/plug.vim
 

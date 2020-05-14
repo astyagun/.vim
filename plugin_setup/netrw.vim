@@ -5,11 +5,12 @@ let g:netrw_home      = '~/.vim/history'
 let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+'
 let g:netrw_nobeval   = 1
 let g:netrw_preview   = 1 " open previews vertically
+let g:netrw_winsize   = -g:sidebar_width
 
 map - :Explore<CR>
 map <Leader>- :Explore .<CR>
-map _ <C-w>v\<C-w><Bar>:Explore<CR>
-map <Leader>_ <C-w>v\<C-w><Bar>:Explore .<CR>
+map _ :Vexplore<CR>
+map <Leader>_ :Vexplore .<CR>
 
 augroup NetrwMappings
   autocmd!

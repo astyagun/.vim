@@ -43,7 +43,7 @@ inoremap <D-CR> <Esc>o
 " Window management {{{
 
 " Useful for netrw and quickfix windows
-nnoremap <Leader><C-w><Bar> 40<C-w><Bar>
+nnoremap <Leader><C-w><Bar> :execute <C-r>=g:sidebar_width<CR> . 'wincmd <Bar>'<CR>
 nnoremap <Leader><C-w>_ 10<C-w>_
 " Mazimize window
 nnoremap <C-w>/ <C-w>_<C-w><Bar>
