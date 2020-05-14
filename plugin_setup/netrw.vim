@@ -14,7 +14,7 @@ map <Leader>_ :Vexplore .<CR>
 
 augroup NetrwMappings
   autocmd!
-  autocmd FileType netrw call s:SetupNetrw()
+  autocmd FileType netrw call s:SetupNetrw() | setlocal signcolumn=no
 augroup END
 
 function! s:SetupNetrw() abort
