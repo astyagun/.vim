@@ -13,14 +13,14 @@ map <Leader>_ <C-w>v\<C-w><Bar>:Explore .<CR>
 
 augroup NetrwMappings
   autocmd!
-  autocmd FileType netrw call s:setup_netrw()
+  autocmd FileType netrw call s:SetupNetrw()
 augroup END
 
-function! s:setup_netrw() abort
-  nnoremap <buffer> <silent> cg :exe 'keepjumps cd ' .<SID>fnameescape(b:netrw_curdir)<CR>
-  nnoremap <buffer> <silent> cl :exe 'keepjumps lcd '.<SID>fnameescape(b:netrw_curdir)<CR>
-  nnoremap <buffer> . :<C-U> <C-R>=<SID>escaped(line('.'), line('.') - 1 + v:count1)<CR><Home>
-  xnoremap <buffer> . <Esc>: <C-R>=<SID>escaped(line("'<"), line("'>"))<CR><Home>
+function! s:SetupNetrw() abort
+  nnoremap <buffer><silent> cg :execute 'keepjumps cd ' .<SID>FNameEscape(b:netrw_curdir)<CR>
+  nnoremap <buffer><silent> cl :execute 'keepjumps lcd '.<SID>FNameEscape(b:netrw_curdir)<CR>
+  nnoremap <buffer> . :<C-U> <C-r>=<SID>Escaped(line('.'), line('.') - 1 + v:count1)<CR><Home>
+  xnoremap <buffer> . <Esc>: <C-r>=<SID>Escaped(line("'<"), line("'>"))<CR><Home>
   nmap <buffer> ! .!
   xmap <buffer> ! .!
 
@@ -29,7 +29,7 @@ function! s:setup_netrw() abort
 endfunction
 
 " Borrowed from vim-vinegar
-function! s:fnameescape(file) abort
+function! s:FNameEscape(file) abort
   if exists('*fnameescape')
     return fnameescape(a:file)
   else
@@ -37,7 +37,7 @@ function! s:fnameescape(file) abort
   endif
 endfunction
 
-function! s:escaped(first, last) abort
+function! s:Escaped(first, last) abort
   let files = getline(a:first, a:last)
   call filter(files, 'v:val !~# "^\" "')
   call map(files, 'substitute(v:val, "[/*|@=]\\=\\%(\\t.*\\)\\=$", "", "")')
