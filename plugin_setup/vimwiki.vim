@@ -1,5 +1,7 @@
 scriptencoding utf-8
 
+" Options {{{
+
 let g:vimwiki_list = [
       \   #{
       \     auto_toc:               1,
@@ -34,6 +36,8 @@ let g:vimwiki_diary_months = {
       \ 10: 'Октябрь', 11: 'Ноябрь',  12: 'Декабрь'
       \ }
 
+" }}} Options
+
 let g:vimwiki_key_mappings =
   \ #{
   \   global:  0,
@@ -49,6 +53,8 @@ augroup Vimwiki
   autocmd User StartifyBufferOpened if g:IsInVimwikiDir() | call s:CustomizeVimwikiMappings() | endif
 augroup END
 
+" function s:CustomizeVimwikiMappings {{{
+
 function! s:CustomizeVimwikiMappings() abort
   nmap <Leader>ww <Plug>VimwikiIndex
   nmap <Leader>wt <Plug>VimwikiTabIndex
@@ -57,6 +63,10 @@ function! s:CustomizeVimwikiMappings() abort
   nmap <Leader>wp :e Личное/Горизонты/1\ Проекты.md<CR>
   nmap <Leader>wg :call <SID>VimwikiGlobalGoto()<CR>
 endfunction
+
+" }}} function s:CustomizeVimwikiMappings
+
+" function s:CustomizeVimwikiBufferMappings {{{
 
 function! s:CustomizeVimwikiBufferMappings() abort
   " Links
@@ -91,9 +101,13 @@ function! s:CustomizeVimwikiBufferMappings() abort
   vmap <buffer> <C-Space> <Plug>VimwikiToggleListItem
 endfunction
 
+" }}} function s:CustomizeVimwikiBufferMappings
+
 function! IsInVimwikiDir() abort
   return vimwiki#base#find_wiki(getcwd()) > -1
 endfunction
+
+" function s:VimwikiGlobalGoto {{{
 
 function! s:VimwikiGlobalGoto() abort
   let l:current_buffer = bufnr()
@@ -121,3 +135,5 @@ function! s:VimwikiGlobalGoto() abort
     execute 'silent buffer ' . l:current_buffer
   endif
 endfunction
+
+" }}} function s:VimwikiGlobalGoto
