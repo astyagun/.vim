@@ -93,15 +93,16 @@ function! IsInVimwikiDir() abort
 endfunction
 
 function! s:VimwikiGlobalGoto() abort
+  let l:current_buffer = bufnr()
   let l:prefill_path = ''
   if &filetype ==# 'netrw'
     let l:prefill_path = expand('%') . '/'
   endif
 
-  if &filetype !=# 'vimwiki'
-    " Current file being a vimwiki file is a prerequisite for completion to work currently
-    silent VimwikiIndex
-  endif
+  " - Current file being a vimwiki file is a prerequisite for completion to work currently
+  " - Root index file being opened is required for completion to complete from the wiki root, which is required by
+  "   VimwikiGoto
+  silent VimwikiIndex
 
   let l:old_imsearch = &imsearch
   setlocal imsearch=1
@@ -111,6 +112,9 @@ function! s:VimwikiGlobalGoto() abort
   let &l:imsearch = l:old_imsearch
 
   if !empty(l:goto_target)
-    execute 'VimwikiGoto ' . fnameescape(l:goto_target)
+    let l:goto_target = substitute(l:goto_target, '\(\\\)\@<! ', '\\ ', 'g') " Escape unescaped spaces
+    execute 'VimwikiGoto ' . l:goto_target
+  else
+    execute 'silent buffer ' . l:current_buffer
   endif
 endfunction
