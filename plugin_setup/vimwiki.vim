@@ -40,6 +40,7 @@ let g:vimwiki_key_mappings =
   \   headers: 0,
   \   html:    0,
   \   links:   0,
+  \   lists:   0,
   \ }
 
 augroup Vimwiki
@@ -86,6 +87,11 @@ function! s:CustomizeVimwikiBufferMappings() abort
   vmap aH <Plug>VimwikiTextObjHeaderSubV
   omap iH <Plug>VimwikiTextObjHeaderSubContent
   vmap iH <Plug>VimwikiTextObjHeaderSubContentV
+
+  " Lists
+
+  nmap <buffer> <C-Space> <Plug>VimwikiToggleListItem
+  vmap <buffer> <C-Space> <Plug>VimwikiToggleListItem
 endfunction
 
 function! IsInVimwikiDir() abort
