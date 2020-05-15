@@ -77,16 +77,16 @@ function! s:CustomizeVimwikiBufferMappings() abort
 
   " Headers
 
-  nmap ]u <Plug>VimwikiGoToParentHeader
-  nmap [u <Plug>VimwikiGoToParentHeader
-  nmap ]] <Plug>VimwikiGoToNextHeader
-  nmap [[ <Plug>VimwikiGoToPrevHeader
-  nmap ]= <Plug>VimwikiGoToNextSiblingHeader
-  nmap [= <Plug>VimwikiGoToPrevSiblingHeader
-  omap aH <Plug>VimwikiTextObjHeaderSub
-  vmap aH <Plug>VimwikiTextObjHeaderSubV
-  omap iH <Plug>VimwikiTextObjHeaderSubContent
-  vmap iH <Plug>VimwikiTextObjHeaderSubContentV
+  nmap <buffer> ]u <Plug>VimwikiGoToParentHeader
+  nmap <buffer> [u <Plug>VimwikiGoToParentHeader
+  nmap <buffer> ]] <Plug>VimwikiGoToNextHeader
+  nmap <buffer> [[ <Plug>VimwikiGoToPrevHeader
+  nmap <buffer> ]= <Plug>VimwikiGoToNextSiblingHeader
+  nmap <buffer> [= <Plug>VimwikiGoToPrevSiblingHeader
+  omap <buffer> aH <Plug>VimwikiTextObjHeaderSub
+  vmap <buffer> aH <Plug>VimwikiTextObjHeaderSubV
+  omap <buffer> iH <Plug>VimwikiTextObjHeaderSubContent
+  vmap <buffer> iH <Plug>VimwikiTextObjHeaderSubContentV
 
   " Lists
 
