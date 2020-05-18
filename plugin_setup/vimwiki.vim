@@ -49,7 +49,7 @@ let g:vimwiki_key_mappings =
 
 augroup Vimwiki
   autocmd!
-  autocmd FileType vimwiki call s:CustomizeVimwikiBufferMappings()
+  autocmd FileType vimwiki call s:CustomizeVimwikiBufferMappings() | setlocal foldenable foldlevel=1
   autocmd User StartifyBufferOpened if g:IsInVimwikiDir() | call s:CustomizeVimwikiMappings() | endif
 augroup END
 
