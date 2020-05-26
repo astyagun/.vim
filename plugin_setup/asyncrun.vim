@@ -1,3 +1,5 @@
+let g:asyncrun_save = 1
+
 " https://github.com/skywind3000/asyncrun.vim/wiki/Cooperate-with-famous-plugins#fugitive
 command! -bang -nargs=* -complete=file Make set eventignore= | AsyncRun -save=1 -program=make @ <args>
 

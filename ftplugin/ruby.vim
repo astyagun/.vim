@@ -1,3 +1,5 @@
+compiler rails
+
 " Folding
 let ruby_fold            = 1
 let ruby_foldable_groups = 'def # __END__'
