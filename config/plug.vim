@@ -126,4 +126,6 @@ Plug 'vimwiki/vimwiki', #{branch: 'dev'}
 
 call plug#end()
 
+command! PC PlugClean
+command! PI PlugInstall
 command! PU PlugUpgrade <Bar> PlugUpdate
