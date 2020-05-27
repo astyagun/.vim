@@ -9,8 +9,8 @@ let g:netrw_winsize   = -g:sidebar_width
 
 map - :Explore<CR>
 map <Leader>- :Explore .<CR>
-map _ :Vexplore<CR>
-map <Leader>_ :Vexplore .<CR>
+map _ :50Vexplore<CR>
+map <Leader>_ :50Vexplore .<CR>
 
 augroup NetrwMappings
   autocmd!
