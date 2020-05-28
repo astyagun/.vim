@@ -7,10 +7,28 @@ let g:netrw_nobeval   = 1
 let g:netrw_preview   = 1 " open previews vertically
 let g:netrw_winsize   = -g:sidebar_width
 
-map - :Explore<CR>
+" Global mappings {{{
+
+map - :call <SID>ExploreAndSelectCurrentFile()<CR>
+map _ :call <SID>ExploreAndSelectCurrentFile(v:false)<CR>
 map <Leader>- :Explore .<CR>
-map _ :50Vexplore<CR>
 map <Leader>_ :50Vexplore .<CR>
+
+function! s:ExploreAndSelectCurrentFile(horizontal = v:true) abort
+  let l:current_file_name = expand('%:t')
+
+  if a:horizontal
+    Explore
+  else
+    50Vexplore
+  endif
+
+  call search('\V\^' . l:current_file_name . '\$', 'c')
+endfunction
+
+" }}} Global mappings
+
+" Buffer local mappings {{{
 
 augroup NetrwMappings
   autocmd!
@@ -33,3 +51,5 @@ function! s:Escaped(first, last) abort
   call map(files, 'substitute(v:val, "[/*|@=]\\=\\%(\\t.*\\)\\=$", "", "")')
   return join(map(files, 'fnamemodify(b:netrw_curdir."/".v:val,":~:.")'), ' ')
 endfunction
+
+" }}} Buffer local mappings
