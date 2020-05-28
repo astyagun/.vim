@@ -8,5 +8,6 @@ command! ConvertNoteFromJoplin call <SID>ConvertNoteFromJoplin()
 function! s:ConvertNoteFromJoplin() abort
   1s/^\([^#]\)/# \1/e
   %s/^\(\s*\)- -/\1-/e
+  %s/- \[x\]/- [X]/e
   RetabJoplin
 endfunction
