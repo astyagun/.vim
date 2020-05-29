@@ -113,7 +113,10 @@ function! s:VimwikiGlobalGoto() abort
   let l:current_buffer = bufnr()
   let l:prefill_path = ''
   if &filetype ==# 'netrw'
-    let l:prefill_path = expand('%') . '/'
+    let l:current_buffer_path = expand('%')
+    if l:current_buffer_path !=# getcwd()
+      let l:prefill_path = l:current_buffer_path . '/'
+    endif
   endif
 
   " - Current file being a vimwiki file is a prerequisite for completion to work currently
