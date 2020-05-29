@@ -9,5 +9,5 @@ set macligatures
 set macthinstrokes
 set noballooneval
 
-set columns=135
+set columns=123
 set lines=42
