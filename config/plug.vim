@@ -20,7 +20,6 @@ Plug '/usr/local/opt/fzf'
 Plug 'Konfekt/FastFold'
 Plug 'andymass/vim-matchup'
 Plug 'haya14busa/vim-edgemotion'
-Plug 'henrik/vim-indexed-search' " Show 'Match 123 of 456 /search term/' in Vim searches
 Plug 'junegunn/fzf.vim'
 Plug 'kshenoy/vim-signature'
 Plug 'mhinz/vim-startify'
