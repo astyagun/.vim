@@ -1,6 +1,6 @@
 augroup GemfileGx
   autocmd!
-  autocmd BufNewFile,BufRead Gemfile,*.gemspec nnoremap <buffer> <silent> gx :call <SID>GemfileGx()<cr>
+  autocmd BufNewFile,BufRead Gemfile,*.gemspec nnoremap <expr><buffer><silent> gx <SID>GemfileGx()
 augroup END
 
 " gx to open Rubygems URLs in browser

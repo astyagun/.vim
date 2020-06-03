@@ -11,7 +11,7 @@ inoremap <silent><expr> <C-Space> coc#refresh()
 augroup Coc
   autocmd!
 
-  autocmd FileType ruby nnoremap <buffer><silent> <C-]> :call <SID>GotoDefinition()<CR>
+  autocmd FileType ruby nnoremap <expr><buffer><silent> <C-]> <SID>GotoDefinition()
   autocmd FileType ruby nnoremap <buffer><silent> <C-w><C-]> :wincmd s <Bar> call <SID>GotoDefinition()<CR>
   autocmd FileType vim setlocal tagfunc=CocTagFunc
 

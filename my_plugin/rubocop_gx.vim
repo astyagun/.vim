@@ -1,7 +1,7 @@
 augroup RubocopGx
   autocmd!
   autocmd BufNewFile,BufRead rubocop.yml,.rubocop.yml,.rubocop_todo.yml
-        \ nnoremap <buffer> <silent> gx :call <SID>RubocopGx()<cr>
+        \ nnoremap <expr><buffer><silent> gx <SID>RubocopGx()
 augroup END
 
 " gx to open Rubocop cops documentation in a browser

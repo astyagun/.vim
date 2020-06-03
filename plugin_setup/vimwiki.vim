@@ -61,7 +61,7 @@ function! s:CustomizeVimwikiMappings() abort
   nmap <Leader>wi <Plug>VimwikiMakeDiaryNote
   nmap <Leader>wI <Plug>VimwikiDiaryIndex
   nmap <Leader>wp :e Личное/Горизонты/1\ Проекты.md<CR>
-  nmap <Leader>wg :call <SID>VimwikiGlobalGoto()<CR>
+  nmap <expr> <Leader>wg <SID>VimwikiGlobalGoto()
 endfunction
 
 " }}} function s:CustomizeVimwikiMappings
