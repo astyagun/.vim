@@ -11,11 +11,11 @@ function! s:RubocopGx() abort
   if !filereadable(l:cfile) && l:cfile =~? '^\w\+/\w\+$'
     let [l:group, l:cop_name] = split(tolower(l:cfile), '/')
     if l:group ==# 'rails'
-      let l:url = 'https://docs.rubocop.org/projects/rails/en/stable/cops_' . l:group . '/#' . l:group . l:cop_name
+      let l:url = 'https://docs.rubocop.org/rubocop-rails/cops_' . l:group . '.html#' . l:group . l:cop_name
     elseif l:group ==# 'rspec' || l:group ==# 'capybara' || l:group ==# 'factorybot'
-      let l:url = 'https://docs.rubocop.org/projects/rspec/en/stable/cops_' . l:group . '/#' . l:group . l:cop_name
+      let l:url = 'https://docs.rubocop.org/rubocop-rspec/cops_' . l:group . '.html#' . l:group . l:cop_name
     else
-      let l:url = 'https://docs.rubocop.org/en/stable/cops_' . l:group . '/#' . l:group . l:cop_name
+      let l:url = 'https://docs.rubocop.org/rubocop/cops_' . l:group . '.html#' . l:group . l:cop_name
     endif
     call OpenInBrowser(l:url)
   else
