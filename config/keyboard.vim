@@ -14,7 +14,6 @@ nmap <Leader>= :call Preserve("normal gg=G")<CR>
 "  Clever <C-l> {{{
 
 nnoremap <silent> <C-l> :nohlsearch <Bar> call <SID>Refresh()<CR><C-l>
-imap <C-l> <Esc><C-l>
 
 function! s:Refresh() abort
   if has('diff')
