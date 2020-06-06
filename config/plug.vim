@@ -77,6 +77,7 @@ Plug 'whatyouhide/vim-textobj-xmlattr', #{for: ['html', 'eruby']}
 
 " File types {{{
 
+Plug 'chr4/nginx.vim', #{for: 'nginx'}
 Plug 'kannokanno/previm', #{on: 'PrevimOpen'} " Markdown and Mermaid live preview with :PrevimOpen command
 Plug 'kchmck/vim-coffee-script', #{for: 'coffee'}
 Plug 'martinda/Jenkinsfile-vim-syntax', #{for: 'Jeninsfile'}
