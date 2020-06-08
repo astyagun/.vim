@@ -4,7 +4,6 @@ let g:netrw_banner    = 0
 let g:netrw_home      = '~/.vim/history'
 let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+'
 let g:netrw_nobeval   = 1
-let g:netrw_preview   = 1 " open previews vertically
 let g:netrw_winsize   = -g:sidebar_width
 
 " Global mappings {{{
