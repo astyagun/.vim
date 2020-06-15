@@ -79,8 +79,8 @@ function! s:CustomizeVimwikiBufferMappings() abort
   nmap <buffer> <Leader>wv <Plug>VimwikiVSplitLink
   nmap <buffer> <Backspace> <Plug>VimwikiGoBackLink
   nmap <buffer> <Leader>wr <Plug>VimwikiRenameLink
-  nmap <buffer> <Tab> <Plug>VimwikiNextLink
-  nmap <buffer> <S-Tab> <Plug>VimwikiPrevLink
+  nmap <buffer> ]v <Plug>VimwikiNextLink
+  nmap <buffer> [v <Plug>VimwikiPrevLink
 
   " Headers
 
