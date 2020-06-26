@@ -5,7 +5,7 @@ let g:test#strategy = 'asyncrun'
 function! TestDockerTransform(cmd) abort
   let l:container_name = systemlist('dkc-executable-container')[0]
   return 'docker-compose exec -T ' . l:container_name
-        \. ' bash -c ' . shellescape('RUBYOPT=-W0 NO_COVERAGE=true ' . a:cmd)
+        \. ' bash -c ' . shellescape('RUBYOPT=-W0 NO_COVERAGE=true RAILS_ENV=test ' . a:cmd)
 endfunction
 let g:test#custom_transformations = {'docker': function('TestDockerTransform')}
 let g:test#transformation = 'docker'
