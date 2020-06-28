@@ -1,18 +1,18 @@
-let s:middot = '·'
-let s:raquo = '»'
+let s:filler_char = '·'
+let s:prefix_char = '+'
 
 function! ruby#foldtext() abort
   let l:line = getline(v:foldstart)
   let l:preview_maxwidth = &columns - 7 - strdisplaywidth(s:stats()) - 2
 
   let l:preview = s:drop_trailing_do(l:line)[0:(l:preview_maxwidth - 1)]
-  let l:pre_padding = repeat(s:middot, strdisplaywidth(substitute(l:preview, '^\( *\).*', '\1', '')) - 2)
-  let l:preview = substitute(l:preview, '^ *', s:raquo . l:pre_padding . ' ', '')
+  let l:pre_padding = repeat(s:filler_char, strdisplaywidth(substitute(l:preview, '^\( *\).*', '\1', '')) - 2)
+  let l:preview = substitute(l:preview, '^ *', s:prefix_char . l:pre_padding . ' ', '')
 
-  let l:padding = repeat(s:middot, l:preview_maxwidth - strdisplaywidth(l:preview) + 1)
+  let l:padding = repeat(s:filler_char, l:preview_maxwidth - strdisplaywidth(l:preview) + 1)
   let l:padding = substitute(l:padding, '\(^.\|.$\)', ' ', 'g')
 
-  return l:preview . l:padding . s:stats() . ' ' . s:middot
+  return l:preview . l:padding . s:stats() . ' ' . s:filler_char
 endfunction
 
 function! s:stats() abort
