@@ -27,6 +27,24 @@ let g:lightline.inactive = {
       \   'right': [['percent', 'total_lines'], ['lineinfo'], ['fileformat', 'filetype']]
       \ }
 
+" Shortened mode names {{{
+
+let g:lightline.mode_map = {
+      \ 'n' : 'N',
+      \ 'i' : 'I',
+      \ 'R' : 'R',
+      \ 'v' : 'V',
+      \ 'V' : 'VL',
+      \ "\<C-v>": 'VB',
+      \ 'c' : 'C',
+      \ 's' : 'S',
+      \ 'S' : 'SL',
+      \ "\<C-s>": 'SB',
+      \ 't': 'T',
+      \ }
+
+" }}} Shortened mode names
+
 " Keymap name {{{
 
 let g:lightline.component['keymap_name'] =
