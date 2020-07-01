@@ -1,3 +1,9 @@
+let g:fzf_action = {
+      \   'ctrl-s': 'split',
+      \   'ctrl-t': 'tab split',
+      \   'ctrl-v': 'vsplit'
+      \ }
+
 nnoremap <D-p> :Files<CR>
 nnoremap <D-P> :Files <C-r>=expand('%:h')<CR><CR>
 nnoremap <Leader><D-b> :Buffers<CR>
