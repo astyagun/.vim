@@ -39,13 +39,19 @@ function! s:ApplyCustomHighlights() abort
 endfunction
 
 function! s:ApplyCustomColorschemeHighlights() abort
+  highlight clear DiffText
+
   if &background is# 'dark'
     highlight Visual guibg=#646F83
     highlight Search guifg=white guibg=#545558
     highlight Folded guifg=#dfdfe0
+    highlight DiffText guifg=#dfdfe0 guibg=#675548
   else
     highlight clear Folded
     highlight link Folded StatusLineNC
+    highlight clear DiffChange
+    highlight DiffChange guibg=#fdfae6
+    highlight DiffText guifg=#262626 guibg=#fef869
   endif
 endfunction
 
