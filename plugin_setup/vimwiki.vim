@@ -49,13 +49,13 @@ let g:vimwiki_key_mappings =
 
 augroup Vimwiki
   autocmd!
-  autocmd FileType vimwiki call s:CustomizeVimwikiBufferMappings() | setlocal foldenable foldlevel=1
-  autocmd User StartifyBufferOpened if g:IsInVimwikiDir() | call s:CustomizeVimwikiMappings() | endif
+  autocmd FileType vimwiki call s:VimwikiLocalCustomization() | setlocal foldenable foldlevel=1
+  autocmd User StartifyBufferOpened if g:IsInVimwikiDir() | call s:VimwikiGlobalCustomization() | endif
 augroup END
 
-" function s:CustomizeVimwikiMappings {{{
+" function s:VimwikiGlobalCustomization {{{
 
-function! s:CustomizeVimwikiMappings() abort
+function! s:VimwikiGlobalCustomization() abort
   nmap <Leader>ww <Plug>VimwikiIndex
   nmap <Leader>wt <Plug>VimwikiTabIndex
   nmap <Leader>wi <Plug>VimwikiMakeDiaryNote
@@ -64,11 +64,11 @@ function! s:CustomizeVimwikiMappings() abort
   nmap <Leader>wg :call <SID>VimwikiGlobalGoto()<CR>
 endfunction
 
-" }}} function s:CustomizeVimwikiMappings
+" }}} function s:VimwikiGlobalCustomization
 
-" function s:CustomizeVimwikiBufferMappings {{{
+" function s:VimwikiLocalCustomization {{{
 
-function! s:CustomizeVimwikiBufferMappings() abort
+function! s:VimwikiLocalCustomization() abort
   " Links
 
   nmap <buffer> <CR> <Plug>VimwikiFollowLink
@@ -99,9 +99,13 @@ function! s:CustomizeVimwikiBufferMappings() abort
 
   nmap <buffer> <C-Space> <Plug>VimwikiToggleListItem
   vmap <buffer> <C-Space> <Plug>VimwikiToggleListItem
+
+  " Commands
+
+  command! VimwikiCopyUrl !vimwiki-copy-url %
 endfunction
 
-" }}} function s:CustomizeVimwikiBufferMappings
+" }}} function s:VimwikiLocalCustomization
 
 function! IsInVimwikiDir() abort
   return vimwiki#base#find_wiki(getcwd()) > -1
