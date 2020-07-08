@@ -6,7 +6,7 @@ let g:fzf_action = {
 
 nnoremap <D-p> :Files<CR>
 nnoremap <D-P> :Files <C-r>=expand('%:h')<CR><CR>
-nnoremap <Leader><D-b> :Buffers<CR>
+nnoremap <D-u> :Buffers<CR>
 
 augroup HideFZFStatusline
   autocmd!
