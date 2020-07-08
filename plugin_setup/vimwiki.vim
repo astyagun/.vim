@@ -102,7 +102,7 @@ function! s:VimwikiLocalCustomization() abort
 
   " Commands
 
-  command! VimwikiCopyUrl !vimwiki-copy-url %
+  command! VimwikiCopyUrl !vimwiki-copy-urls '%'
 endfunction
 
 " }}} function s:VimwikiLocalCustomization
