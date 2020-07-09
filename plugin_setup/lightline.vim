@@ -16,15 +16,15 @@ let g:lightline.active = {
       \     [
       \       'linter_errors', 'asyncrun_failure',
       \       'linter_warnings', 'linter_running', 'asyncrun_running',
-      \       'percent', 'total_lines',
+      \       'lineinfo', 'percent',
       \     ],
-      \     ['lineinfo'],
-      \     ['fileformat', 'filetype']
+      \     ['total_lines'],
+      \     ['filetype']
       \   ]
       \ }
 let g:lightline.inactive = {
       \   'left': [['shrinkable_filename', 'fugitive_version'], ['modified']],
-      \   'right': [['percent', 'total_lines'], ['lineinfo'], ['fileformat', 'filetype']]
+      \   'right': [['lineinfo', 'percent'], ['total_lines'], ['filetype']]
       \ }
 
 " Keymap name {{{
