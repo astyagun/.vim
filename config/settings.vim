@@ -47,6 +47,7 @@ set fillchars=vert:│,fold:·
 set laststatus=2
 set linebreak " Wrap lines at convenient points
 set list
+set noruler " Allows <C-g> to show line information
 set scrolloff=2
 set shortmess+=c
 set sidescrolloff=5

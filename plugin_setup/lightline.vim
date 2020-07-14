@@ -8,23 +8,23 @@ let g:lightline.component_function          = {}
 let g:lightline.component_type              = {}
 let g:lightline.component_visible_condition = {}
 
-let s:min_window_width_and_file_name_length_difference_for_full_file_name = 55
+let s:min_window_width_and_file_name_length_difference_for_full_file_name = 25
 
 let g:lightline.active = {
-      \   'left': [['mode', 'keymap_name'], ['shrinkable_filename', 'fugitive_version'], ['readonly', 'modified']],
+      \   'left': [['mode', 'keymap_name'], ['shrinkable_filename'], ['fugitive_version']],
       \   'right': [
       \     [
       \       'linter_errors', 'asyncrun_failure',
       \       'linter_warnings', 'linter_running', 'asyncrun_running',
-      \       'lineinfo', 'percent',
+      \       'filetype'
       \     ],
-      \     ['total_lines'],
-      \     ['filetype']
+      \     ['readonly'],
+      \     ['modified']
       \   ]
       \ }
 let g:lightline.inactive = {
-      \   'left': [['shrinkable_filename', 'fugitive_version'], ['modified']],
-      \   'right': [['lineinfo', 'percent'], ['total_lines'], ['filetype']]
+      \   'left': [['shrinkable_filename'], ['fugitive_version']],
+      \   'right': [['filetype'], ['readonly'], ['modified']]
       \ }
 
 " Keymap name {{{
@@ -48,14 +48,14 @@ endfunction
 
 augroup LightlineShrinkableFilename
   autocmd!
-  autocmd BufRead,BufWritePost,VimResized * if exists('b:lightline_shrinkable_filename_cached') |
+  autocmd BufRead,BufWritePost,VimResized,WinEnter,WinLeave * if exists('b:lightline_shrinkable_filename_cached') |
         \   unlet b:lightline_shrinkable_filename_cached |
         \ endif
 augroup END
 
 function! LightlineShrinkableFilename() abort
   let l:file_name = substitute(@%, '^fugitive://.*/\.git//\d/', '', '')
-  let l:file_name_length = len(l:file_name)
+  let l:file_name_length = strchars(l:file_name)
   let l:window_width_without_file_name = winwidth(0) - l:file_name_length
 
   if l:file_name_length > 0
@@ -78,7 +78,7 @@ let g:lightline.component_function['fugitive_version'] = 'LightlineFugitiveVersi
 
 function! LightlineFugitiveVersion() abort
   if @% =~# '^fugitive://'
-    return ':' . matchstr(@%, '^fugitive://.*\.git//\zs\d\ze/')
+    return matchstr(@%, '^fugitive://.*\.git//\zs\d\ze/')
   else
     return ''
   endif
