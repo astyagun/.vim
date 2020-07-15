@@ -89,6 +89,7 @@ set notagbsearch
 
 " Editing {{{
 
+set completeopt=menuone,popup
 set spelllang=ru_yo,en_us
 set wildignore=*.o,*.obj,*~,vendor/bundle/**/* " Stuff to ignore when tab completing
 set wildmenu " Enable <C-n> and <C-p> to scroll through matches
