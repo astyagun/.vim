@@ -6,7 +6,7 @@ let g:coc_global_extensions = [
       \ 'coc-vimlsp',
       \ ]
 
-inoremap <silent><expr> <C-Space> coc#refresh()
+inoremap <silent><expr> <C-x><C-d> coc#refresh()
 
 augroup Coc
   autocmd!
