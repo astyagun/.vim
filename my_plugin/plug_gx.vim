@@ -7,7 +7,7 @@ augroup END
 function! s:PlugGx() abort
   if getline('.') =~# '^"\? *Plug\s'
     let l:cfile = expand('<cfile>')
-    if !filereadable(l:cfile) && l:cfile !=# 'Plug'
+    if !empty(l:cfile) && l:cfile !=# 'Plug'
       call OpenInBrowser('https://github.com/' . l:cfile)
     endif
   else

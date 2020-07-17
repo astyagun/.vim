@@ -7,7 +7,7 @@ augroup END
 function! s:ZinitGx() abort
   if getline('.') =~# '\v^\s*(zinit|zi|zpl|zplg|zplugin)\s+(load|light)\s'
     let l:cfile = expand('<cfile>')
-    if !filereadable(l:cfile) && l:cfile !=# '\v(zinit|zi|zpl|zplg|zplugin|load|light|lucid)'
+    if !empty(l:cfile) && l:cfile !=# '\v(zinit|zi|zpl|zplg|zplugin|load|light|lucid)'
       call OpenInBrowser('https://github.com/' . l:cfile)
     endif
   else

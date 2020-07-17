@@ -7,8 +7,7 @@ augroup END
 " gx to open Rubocop cops documentation in a browser
 function! s:RubocopGx() abort
   let l:cfile = expand('<cfile>')
-  echom l:cfile
-  if !filereadable(l:cfile) && l:cfile =~? '^\w\+/\w\+$'
+  if !empty(l:cfile) && l:cfile =~? '^\w\+/\w\+$'
     let [l:group, l:cop_name] = split(tolower(l:cfile), '/')
     if l:group ==# 'rails'
       let l:url = 'https://docs.rubocop.org/rubocop-rails/cops_' . l:group . '.html#' . l:group . l:cop_name
