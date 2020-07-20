@@ -10,8 +10,8 @@ nnoremap <D-u> :Buffers<CR>
 
 augroup HideFZFStatusline
   autocmd!
-  autocmd FileType fzf set laststatus=0 noshowmode noruler
-        \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler
+  autocmd FileType fzf set laststatus=0 noshowmode
+        \| autocmd BufLeave <buffer> set laststatus=2 showmode
 augroup END
 
 augroup ImportFzfEnvironmentVariablesFromShell
