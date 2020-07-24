@@ -52,6 +52,19 @@ nnoremap <Leader><C-w>c :%bw<CR>
 
 " }}} Window management
 
+" Yanking file path into global pasteboard {{{
+
+" Relative path (src/foo.txt)
+nnoremap <Leader>yf :let @+=expand("%")<CR>
+" Absolute path (/something/src/foo.txt)
+nnoremap <Leader>yp :let @+=expand("%:p")<CR>
+" Filename (foo.txt)
+nnoremap <Leader>yn :let @+=expand("%:t")<CR>
+" Directory name (/something/src)
+nnoremap <Leader>yd :let @+=expand("%:p:h")<CR>
+
+" }}} Yanking file path into global pasteboard
+
 " Other {{{
 
 " Select last edited or pasted text
