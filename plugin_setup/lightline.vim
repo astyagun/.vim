@@ -11,7 +11,7 @@ let g:lightline.component_visible_condition = {}
 let s:min_window_width_and_file_name_length_difference_for_full_file_name = 25
 
 let g:lightline.active = {
-      \   'left': [['mode', 'keymap_name'], ['shrinkable_filename'], ['fugitive_version']],
+      \   'left': [['shrinkable_filename'], ['fugitive_version'], ['keymap_name']],
       \   'right': [
       \     [
       \       'linter_errors', 'asyncrun_failure',
