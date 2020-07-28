@@ -57,7 +57,6 @@ augroup END
 
 function! s:VimwikiGlobalCustomization() abort
   nmap <Leader>ww <Plug>VimwikiIndex
-  nmap <Leader>wt <Plug>VimwikiTabIndex
   nmap <Leader>wi <Plug>VimwikiMakeDiaryNote
   nmap <Leader>wI <Plug>VimwikiDiaryIndex
   nmap <Leader>wp :e Личное/Горизонты/1\ Проекты.md<CR>
@@ -77,6 +76,7 @@ function! s:VimwikiLocalCustomization() abort
   vmap <buffer> + <Plug>VimwikiNormalizeLinkVisual
   nmap <buffer> <Leader>ws <Plug>VimwikiSplitLink
   nmap <buffer> <Leader>wv <Plug>VimwikiVSplitLink
+  nmap <buffer> <Leader>wt <Plug>VimwikiTabnewLink
   nmap <buffer> <Backspace> <Plug>VimwikiGoBackLink
   nmap <buffer> <Leader>wr <Plug>VimwikiRenameLink
   nmap <buffer> ]v <Plug>VimwikiNextLink
