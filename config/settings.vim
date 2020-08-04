@@ -44,6 +44,7 @@ set belloff=all
 set breakindent
 set cursorline
 set fillchars=vert:│,fold:·
+set foldtext=g:FoldText()
 set laststatus=2
 set linebreak " Wrap lines at convenient points
 set list
