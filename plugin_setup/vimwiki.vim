@@ -97,8 +97,18 @@ function! s:VimwikiLocalCustomization() abort
 
   " Lists
 
-  nmap <buffer> <C-Space> <Plug>VimwikiToggleListItem
-  vmap <buffer> <C-Space> <Plug>VimwikiToggleListItem
+  nmap <buffer> <Space> <Plug>VimwikiToggleListItem
+  vmap <buffer> <Space> <Plug>VimwikiToggleListItem
+  nmap <buffer> <Leader><Space> <Plug>VimwikiToggleRejectedListItem
+  vmap <buffer> <Leader><Space> <Plug>VimwikiToggleRejectedListItem
+  nmap <buffer> <C-Space> <Plug>VimwikiRemoveSingleCB
+  vmap <buffer> <C-Space> <Plug>VimwikiRemoveSingleCB
+  nmap <buffer> <Leader><C-Space> <Plug>VimwikiRemoveCBInList
+  vmap <buffer> <Leader><C-Space> <Plug>VimwikiRemoveCBInList
+  nmap <buffer> <Leader>wl :VimwikiChangeSymbolTo -<CR>
+  vmap <buffer> <Leader>wl :VimwikiChangeSymbolTo -<CR>
+  nmap <buffer> <Leader>wL :VimwikiChangeSymbolInListTo -<CR>
+  vmap <buffer> <Leader>wL :VimwikiChangeSymbolInListTo -<CR>
 
   " Commands
 
