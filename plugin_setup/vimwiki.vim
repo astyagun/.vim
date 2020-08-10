@@ -61,6 +61,11 @@ function! s:VimwikiGlobalCustomization() abort
   nmap <Leader>wI <Plug>VimwikiDiaryIndex
   nmap <Leader>wp :e Личное/Горизонты/1\ Проекты.md<CR>
   nmap <Leader>wg :call <SID>VimwikiGlobalGoto()<CR>
+
+  augroup NetrwVimwikiNewFileMapping
+    autocmd!
+    autocmd FileType netrw nmap <buffer> % \wg
+  augroup END
 endfunction
 
 " }}} function s:VimwikiGlobalCustomization
