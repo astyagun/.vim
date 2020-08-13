@@ -16,5 +16,5 @@ function! s:WipeHiddenBuffers() abort
     endif
   endfor
 
-  echom l:closed_count . ' hidden buffers wiped out'
+  echom "Очищено буферов: " . l:closed_count
 endfunction
