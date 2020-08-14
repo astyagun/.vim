@@ -11,20 +11,19 @@ let g:lightline.component_visible_condition = {}
 let s:min_window_width_and_file_name_length_difference_for_full_file_name = 25
 
 let g:lightline.active = {
-      \   'left': [['shrinkable_filename'], ['fugitive_version'], ['keymap_name']],
+      \   'left': [['shrinkable_filename', 'modified'], ['fugitive_version'], ['keymap_name']],
       \   'right': [
       \     [
       \       'linter_errors', 'asyncrun_failure',
       \       'linter_warnings', 'linter_running', 'asyncrun_running',
       \       'filetype'
       \     ],
-      \     ['readonly'],
-      \     ['modified']
+      \     ['readonly']
       \   ]
       \ }
 let g:lightline.inactive = {
-      \   'left': [['shrinkable_filename'], ['fugitive_version']],
-      \   'right': [['filetype'], ['readonly'], ['modified']]
+      \   'left': [['shrinkable_filename', 'modified'], ['fugitive_version']],
+      \   'right': [['filetype'], ['readonly']]
       \ }
 
 " Keymap name {{{
