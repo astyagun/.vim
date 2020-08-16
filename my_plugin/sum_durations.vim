@@ -17,7 +17,7 @@
 "
 " Calling command without a range counts durations on current line
 "
-" Providing bang (!) makes command count months (M) and years (Y)
+" Providing bang (!) makes command count months (M) and years (Y) instead of minutes and hours
 
 command! -nargs=0 -range -bang SumDurations <line1>,<line2>call s:SumDurations(<bang>1)
 
