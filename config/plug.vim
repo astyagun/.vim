@@ -50,6 +50,7 @@ Plug 'vim-scripts/YankRing.vim'
 Plug 'SirVer/ultisnips'
 Plug 'alvan/vim-closetag', #{for: 'html'}
 Plug 'honza/vim-snippets'
+Plug 'mattn/emmet-vim', #{for: ['html', 'css'], on: 'EmmetInstall'}
 Plug 'tmsvg/pear-tree'
 
 " }}} Snippets and other insertions
@@ -82,12 +83,14 @@ Plug 'kannokanno/previm', #{on: 'PrevimOpen'} " Markdown and Mermaid live previe
 Plug 'kchmck/vim-coffee-script', #{for: 'coffee'}
 Plug 'martinda/Jenkinsfile-vim-syntax', #{for: 'Jeninsfile'}
 Plug 'mechatroner/rainbow_csv', #{for: 'csv'}
+Plug 'othree/html5.vim', #{for: 'html'}
 Plug 'pearofducks/ansible-vim', #{for: ['yaml.ansible', 'ansible_hosts', 'jinja2', '*.jinja2']}
 Plug 'plasticboy/vim-markdown', #{for: 'markdown'}
 Plug 'slim-template/vim-slim', #{for: 'slim'}
 Plug 'sudar/vim-arduino-syntax', #{for: 'arduino'}
 Plug 'tpope/vim-git'
 Plug 'tpope/vim-haml', #{for: 'haml'}
+Plug 'tpope/vim-liquid', #{for: 'liquid'}
 Plug 'vim-ruby/vim-ruby', #{for: ['ruby', 'eruby']}
 Plug 'vim-scripts/confluencewiki.vim', #{for: 'confluencewiki'}
 Plug 'zinit-zsh/zinit-vim-syntax'
