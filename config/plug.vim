@@ -68,9 +68,7 @@ Plug 'kana/vim-textobj-entire'
 Plug 'kana/vim-textobj-indent'
 Plug 'kana/vim-textobj-line'
 Plug 'kana/vim-textobj-user'
-Plug 'sgur/vim-textobj-parameter'
 Plug 'tek/vim-textobj-ruby', #{for: ['ruby', 'eruby', 'haml']}
-Plug 'wellle/targets.vim'
 Plug 'whatyouhide/vim-textobj-erb', #{for: 'eruby'}
 Plug 'whatyouhide/vim-textobj-xmlattr', #{for: ['html', 'eruby']}
 
