@@ -76,22 +76,11 @@ Plug 'whatyouhide/vim-textobj-xmlattr', #{for: ['html', 'eruby']}
 
 " File types {{{
 
-Plug 'chr4/nginx.vim', #{for: 'nginx'}
 Plug 'kannokanno/previm', #{on: 'PrevimOpen'} " Markdown and Mermaid live preview with :PrevimOpen command
-Plug 'kchmck/vim-coffee-script', #{for: 'coffee'}
-Plug 'martinda/Jenkinsfile-vim-syntax', #{for: 'Jeninsfile'}
 Plug 'mechatroner/rainbow_csv', #{for: 'csv'}
-Plug 'othree/html5.vim', #{for: 'html'}
-Plug 'pearofducks/ansible-vim', #{for: ['yaml.ansible', 'ansible_hosts', 'jinja2', '*.jinja2']}
-Plug 'plasticboy/vim-markdown', #{for: 'markdown'}
-Plug 'slim-template/vim-slim', #{for: 'slim'}
-Plug 'sudar/vim-arduino-syntax', #{for: 'arduino'}
-Plug 'tpope/vim-git'
-Plug 'tpope/vim-haml', #{for: 'haml'}
+Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-liquid', #{for: 'liquid'}
-Plug 'vim-ruby/vim-ruby', #{for: ['ruby', 'eruby']}
 Plug 'vim-scripts/confluencewiki.vim', #{for: 'confluencewiki'}
-Plug 'zinit-zsh/zinit-vim-syntax'
 
 " }}} File types
 
