@@ -11,7 +11,7 @@ nmap <Leader>= :call Preserve("normal gg=G")<CR>
 
 " }}} Formatting
 
-"  Clever <C-l> {{{
+" Clever <C-l> {{{
 
 nnoremap <silent> <C-l> :nohlsearch <Bar> call <SID>Refresh()<CR><C-l>
 
@@ -74,5 +74,9 @@ nnoremap gV `[v`]
 
 " Handle accidental <D-[> presses in INSERT mode
 imap <D-[> <C-[>
+
+" Paste from system pasteboard. Replaces a default unintuitive mapping.
+noremap <D-v> "+p
+inoremap <D-v> <C-r>+
 
 " }}} Other
