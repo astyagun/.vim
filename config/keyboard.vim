@@ -56,6 +56,8 @@ nnoremap <Leader><C-w>c :%bw<CR>
 
 " Relative path (src/foo.txt)
 nnoremap <Leader>yf :let @+=expand("%")<CR>
+" Relative path with line number (src/foo.txt:25)
+nnoremap <Leader>yl :let @+=expand("%").":".line(".")<CR>
 " Absolute path (/something/src/foo.txt)
 nnoremap <Leader>yp :let @+=expand("%:p")<CR>
 " Filename (foo.txt)
