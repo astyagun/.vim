@@ -21,4 +21,4 @@ endif
 
 map <Leader>ve :edit $MYVIMRC<CR>
 map <Leader>vp :edit <C-r>=fnamemodify(expand("$MYVIMRC"), ":p:h")<CR>/config/plug.vim<CR>
-map <expr> <Leader>vs ReloadConfiguration()
+map <Leader>vs :call ReloadConfiguration()<CR>
