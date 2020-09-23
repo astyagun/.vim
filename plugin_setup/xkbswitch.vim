@@ -15,7 +15,7 @@ set imsearch=0
 augroup XkbSwitchCustomizations
   autocmd!
   " Reset to US layout
-  autocmd VimEnter,FocusGained * if mode() != 'i'
+  autocmd VimEnter,FocusGained * if mode() != 'i' || &buftype ==# 'terminal'
         \ | call s:XkbSwitchToDefaultLayout()
         \ | endif
   " Treat terminal mode as INSERT mode
