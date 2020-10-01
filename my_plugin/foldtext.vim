@@ -1,20 +1,19 @@
 let s:filler_char = '·'
-let s:prefix_char = '+'
 
 function! g:FoldText() abort
   let l:line = getline(v:foldstart)
   let l:stats = s:Stats()
-  let l:preview_maxwidth = &columns - 7 - strdisplaywidth(l:stats) - 2
+  let l:preview_maxwidth = &colorcolumn - strdisplaywidth(l:stats) - 1
 
-  let l:preview = s:dropTrailingDo(l:line)[0:(l:preview_maxwidth - 1)]
-  let l:pre_padding = repeat(s:filler_char, strdisplaywidth(substitute(l:preview, '^\( *\).*', '\1', '')) - 2)
-  let l:preview = substitute(l:preview, '^ *', s:prefix_char . l:pre_padding . ' ', '')
+  let l:preview = s:dropTrailingDo(l:line)
+  let l:pre_padding = repeat(s:filler_char, indent(v:foldstart) - 1)
+  if indent(v:foldstart) > 0
+    let l:pre_padding .= " "
+  endif
+  let l:preview = substitute(l:preview, '^ *', l:pre_padding, '')
   let l:preview = s:RemoveCommentsAndMarkersFromPreview(l:preview)
 
-  let l:padding = repeat(s:filler_char, l:preview_maxwidth - strdisplaywidth(l:preview) + 1)
-  let l:padding = substitute(l:padding, '\(^.\|.$\)', ' ', 'g')
-
-  return l:preview . l:padding . l:stats . ' ' . s:filler_char
+  return l:preview . ' ' . l:stats . ' ' . s:filler_char
 endfunction
 
 function! s:Stats() abort
