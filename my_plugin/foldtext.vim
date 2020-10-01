@@ -3,7 +3,8 @@ let s:prefix_char = '+'
 
 function! g:FoldText() abort
   let l:line = getline(v:foldstart)
-  let l:preview_maxwidth = &columns - 7 - strdisplaywidth(s:Stats()) - 2
+  let l:stats = s:Stats()
+  let l:preview_maxwidth = &columns - 7 - strdisplaywidth(l:stats) - 2
 
   let l:preview = s:dropTrailingDo(l:line)[0:(l:preview_maxwidth - 1)]
   let l:pre_padding = repeat(s:filler_char, strdisplaywidth(substitute(l:preview, '^\( *\).*', '\1', '')) - 2)
@@ -13,7 +14,7 @@ function! g:FoldText() abort
   let l:padding = repeat(s:filler_char, l:preview_maxwidth - strdisplaywidth(l:preview) + 1)
   let l:padding = substitute(l:padding, '\(^.\|.$\)', ' ', 'g')
 
-  return l:preview . l:padding . s:Stats() . ' ' . s:filler_char
+  return l:preview . l:padding . l:stats . ' ' . s:filler_char
 endfunction
 
 function! s:Stats() abort
