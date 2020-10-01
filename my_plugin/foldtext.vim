@@ -17,7 +17,7 @@ function! g:FoldText() abort
 endfunction
 
 function! s:Stats() abort
-  let l:inner_block = range(v:foldstart + 1, prevnonblank(v:foldend) - 1)
+  let l:inner_block = range(v:foldstart + 1, prevnonblank(v:foldend))
 
   " Don't count blank lines
   call filter(l:inner_block, "getline(v:val) !~# '^\\s*$'")
