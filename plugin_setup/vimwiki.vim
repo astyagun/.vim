@@ -20,7 +20,7 @@ let g:vimwiki_list = [
 
 let g:vimwiki_auto_header       = 1
 let g:vimwiki_dir_link          = 'Содержание'
-let g:vimwiki_folding           = 'expr'
+let g:vimwiki_folding           = 'custom'
 let g:vimwiki_global_ext        = 0
 let g:vimwiki_hl_cb_checked     = 1
 let g:vimwiki_links_header      = 'Сгенерированные ссылки'
@@ -118,6 +118,12 @@ function! s:VimwikiLocalCustomization() abort
   " Commands
 
   command! VimwikiCopyUrl !vimwiki-copy-urls '%'
+
+  " Folding with custom 'foldtext'
+
+  setlocal foldmethod=expr
+  setlocal foldexpr=VimwikiFoldLevel(v:lnum)
+  setlocal foldtext=g:FoldText()
 endfunction
 
 " }}} function s:VimwikiLocalCustomization
