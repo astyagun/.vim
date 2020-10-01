@@ -12,13 +12,13 @@ noremap! <D-k> <C-k>
 
 " Change word case in NORMAL and INSERT modes {{{
 
-" <A-c> - capitalize
+" Capitalize
 nnoremap <M-c> ebguiw~he
 imap <M-c> <Esc><M-c>a
-" <A-l> - lowercase
+" Lowercase
 nnoremap <M-l> ebguiwe
 imap <M-l> <Esc><M-l>a
-" <A-S-l> - uppercase
+" Uppercase
 nnoremap <M-u> ebgUiwe
 imap <M-u> <Esc><M-u>a
 
