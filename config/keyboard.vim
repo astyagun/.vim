@@ -29,7 +29,7 @@ endfunction
 
 " Add new lines from NORMAL mode {{{
 
-" Add lines before and after current without leaving NORMAL mode
+" Add lines before and after current one
 nnoremap <D-S-CR> O<Esc>
 inoremap <D-S-CR> <Esc>O
 nnoremap <S-CR> O<Esc>
@@ -73,10 +73,10 @@ nnoremap <Leader>yd :let @+=expand("%:p:h")<CR>
 nnoremap gV `[v`]
 
 " Handle accidental <D-[> presses in INSERT mode
-imap <D-[> <C-[>
+noremap! <D-[> <C-[>
 
 " Paste from system pasteboard. Replaces a default unintuitive mapping.
 noremap <D-v> "+p
-inoremap <D-v> <C-r>+
+noremap! <D-v> <C-r>+
 
 " }}} Other
