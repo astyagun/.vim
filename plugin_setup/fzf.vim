@@ -3,6 +3,7 @@ let g:fzf_action = {
       \   'ctrl-t': 'tab split',
       \   'ctrl-v': 'vsplit'
       \ }
+let g:fzf_preview_window = 'right:hidden'
 
 nnoremap <D-p> :Files<CR>
 nnoremap <D-P> :Files <C-r>=expand('%:h')<CR><CR>
