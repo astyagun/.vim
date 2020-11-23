@@ -14,13 +14,13 @@ set imsearch=0
 
 augroup XkbSwitchCustomizations
   autocmd!
-  " Reset to US layout
-  autocmd VimEnter,FocusGained * if mode() != 'i' || &buftype ==# 'terminal'
-        \ | call s:XkbSwitchToDefaultLayout()
-        \ | endif
-  " Treat terminal mode as INSERT mode
+  autocmd VimEnter,FocusGained * if mode() ==# "i" || &buftype ==# "terminal"
+        \|    call s:XkbSwitchToDefaultILayout()
+        \|  else
+        \|    call s:XkbSwitchToDefaultNLayout()
+        \|  endif
   autocmd TerminalWinOpen * call s:XkbSwitchToILayoutOfAlternateBuffer()
-  autocmd WinLeave * if &buftype ==# 'terminal' | call s:XkbSwitchToDefaultLayout() | endif
+  autocmd WinLeave * if &buftype ==# 'terminal' | call s:XkbSwitchToDefaultNLayout() | endif
   autocmd User StartifyBufferOpened if IsInVimwikiDir() | let g:XkbSwitchILayout = 'ru' | endif
 augroup END
 
@@ -39,10 +39,20 @@ function! s:XkbSwitchToILayoutOfAlternateBuffer() abort
   endif
 endfunction
 
-function! s:XkbSwitchToDefaultLayout() abort
+function! s:XkbSwitchToDefaultNLayout() abort
   call libcall(
         \   g:XkbSwitchLib,
         \   'Xkb_Switch_setXkbLayout',
         \   g:XkbSwitchNLayout
         \ )
+endfunction
+
+function! s:XkbSwitchToDefaultILayout() abort
+  if !empty(g:XkbSwitchILayout)
+    call libcall(
+          \   g:XkbSwitchLib,
+          \   'Xkb_Switch_setXkbLayout',
+          \   g:XkbSwitchILayout
+          \ )
+  endif
 endfunction
