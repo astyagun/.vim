@@ -6,9 +6,9 @@ let g:fzf_action = {
 let g:fzf_layout = #{down: 20}
 let g:fzf_preview_window = 'right:hidden'
 
-nnoremap <D-p> :Files<CR>
-nnoremap <D-P> :Files <C-r>=expand('%:h')<CR><CR>
-nnoremap <D-u> :Buffers<CR>
+nnoremap <D-p> :doautocmd User BeforeFzfOpen <Bar> Files<CR>
+nnoremap <D-P> :doautocmd User BeforeFzfOpen <Bar> Files <C-r>=expand('%:h')<CR><CR>
+nnoremap <D-u> :doautocmd User BeforeFzfOpen <Bar> Buffers<CR>
 
 augroup HideFZFStatusline
   autocmd!
