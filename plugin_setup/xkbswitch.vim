@@ -18,7 +18,7 @@ augroup XkbSwitchCustomizations
   autocmd!
 
   autocmd VimEnter,FocusGained * if mode() ==# "i" || &buftype ==# "terminal"
-        \|    call s:XkbSwitchToDefaultILayout()
+        \|    call s:XkbSwitchToCurrentILayout()
         \|  else
         \|    call s:XkbSwitchToDefaultNLayout()
         \|  endif
@@ -69,16 +69,16 @@ function! s:XkbSwitchToDefaultNLayout() abort
 endfunction
 
 " }}} s:XkbSwitchToDefaultNLayout
-" function s:XkbSwitchToDefaultILayout {{{
+" function s:XkbSwitchToCurrentILayout {{{
 
-function! s:XkbSwitchToDefaultILayout() abort
+function! s:XkbSwitchToCurrentILayout() abort
   if !empty(g:XkbSwitchILayout)
     call libcall(
           \   g:XkbSwitchLib,
           \   g:XkbSwitch["set"],
-          \   g:XkbSwitchILayout
+          \   get(b:, "xkb_ilayout", g:XkbSwitchILayout)
           \ )
   endif
 endfunction
 
-" }}} s:XkbSwitchToDefaultILayout
+" }}} s:XkbSwitchToCurrentILayout
