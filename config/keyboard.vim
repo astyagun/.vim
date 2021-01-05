@@ -76,7 +76,8 @@ nnoremap gV `[v`]
 noremap! <D-[> <C-[>
 
 " Paste from system pasteboard. Replaces a default unintuitive mapping.
-noremap <D-v> "+p
-noremap! <D-v> <C-r>+
+noremap <D-v> "+p'[=']
+imap <D-v> <C-[><D-v>
+cnoremap <D-v> <C-r>+
 
 " }}} Other
