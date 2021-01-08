@@ -15,7 +15,7 @@ let g:sidebar_width = 30
 call s:SourceFilesFromDirectory('plugin_setup')
 source ~/.vim/config/plug.vim
 
-source ~/.vim/config/settings.vim
+source ~/.vim/config/options.vim
 source ~/.vim/config/colors.vim
 source ~/.vim/config/gui.vim
 source ~/.vim/config/keyboard.vim
