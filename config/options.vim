@@ -71,6 +71,7 @@ set diffopt=filler,closeoff,vertical,hiddenoff,internal,indent-heuristic,algorit
 set foldmethod=marker
 set foldminlines=2
 set foldnestmax=10
+set foldopen-=block
 set grepformat=%f:%l:%c:%m
 set hidden
 set ignorecase
