@@ -1,8 +1,30 @@
 snippet rspec
 require "rails_helper"
 
-RSpec.describe ${1:`!v substitute(substitute(expand('%:p:t:r'), '_spec$', '', ''), '\(_\|^\)\(.\)', '\u\2', 'g')`}, type: :${2} do
+RSpec.describe ${1:`!v substitute(substitute(expand('%:p:t:r'), '_spec$', '', ''), '\(_\|^\)\(.\)', '\u\2', 'g')`} do
 	${3}
+end
+endsnippet
+
+snippet ra
+require "rspec/autorun"
+
+class ${1:Sandbox}
+	def call(${2})
+		${5}
+	end
+end
+
+RSpec.describe $1 do
+	let(:instance) { described_class.new }
+
+	describe "#call" do
+		subject { instance.call(**arguments) }
+
+		let(:arguments) { {${3}} }
+
+		it { is_expected.to eq ${4} }
+	end
 end
 endsnippet
 
