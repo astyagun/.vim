@@ -4,8 +4,13 @@ let g:test#strategy = 'asyncrun'
 
 function! TestDockerTransform(cmd) abort
   let l:container_name = systemlist('dkc-executable-container')[0]
+  let l:cmd_prefix = ""
+  if l:container_name ==# "spring"
+    let l:cmd_prefix = "spring "
+  end
+
   return 'docker-compose exec -T ' . l:container_name
-        \. ' bash -c ' . shellescape('RUBYOPT=-W0 NO_COVERAGE=true RAILS_ENV=test ' . a:cmd)
+        \. ' bash -c ' . shellescape('RUBYOPT=-W0 NO_COVERAGE=true RAILS_ENV=test ' . l:cmd_prefix . a:cmd)
 endfunction
 let g:test#custom_transformations = {'docker': function('TestDockerTransform')}
 let g:test#transformation = 'docker'
