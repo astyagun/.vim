@@ -19,5 +19,6 @@ source ~/.vim/config/options.vim
 source ~/.vim/config/colors.vim
 source ~/.vim/config/gui.vim
 source ~/.vim/config/keyboard.vim
+source ~/.vim/config/abbreviations.vim
 
 call s:SourceFilesFromDirectory('my_plugin')
