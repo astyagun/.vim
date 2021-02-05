@@ -17,7 +17,6 @@ Plug 'xtal8/traces.vim'
 " Navigation and window management {{{
 
 Plug '/usr/local/opt/fzf'
-Plug 'Konfekt/FastFold'
 Plug 'andymass/vim-matchup'
 Plug 'haya14busa/vim-edgemotion'
 Plug 'junegunn/fzf.vim'
