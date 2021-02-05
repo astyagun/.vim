@@ -9,6 +9,7 @@ let g:fzf_preview_window = 'right:hidden'
 nnoremap <D-p> :doautocmd User BeforeFzfOpen <Bar> Files<CR>
 nnoremap <D-P> :doautocmd User BeforeFzfOpen <Bar> Files <C-r>=expand('%:h')<CR><CR>
 nnoremap <D-u> :doautocmd User BeforeFzfOpen <Bar> Buffers<CR>
+nnoremap <D-g> :doautocmd User BeforeFzfOpen <Bar> BTags<CR>
 
 augroup HideFZFStatusline
   autocmd!
