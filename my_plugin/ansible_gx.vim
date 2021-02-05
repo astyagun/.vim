@@ -8,7 +8,11 @@ function! s:AnsibleGx() abort
   if getline('.') =~# '^[^#].*:'
     let l:cfile = expand('<cfile>')
     if !empty(l:cfile) && l:cfile !=# '-'
-      call OpenInBrowser('https://docs.ansible.com/ansible/latest/index.html#stp=1&stq=' . l:cfile)
+      if l:cfile !~# '://'
+        call OpenInBrowser('https://docs.ansible.com/ansible/latest/index.html#stp=1&stq=' . l:cfile)
+      else
+        call OpenInBrowser('<cfile>')
+      endif
     endif
   else
     call OpenInBrowser('<cfile>')
