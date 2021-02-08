@@ -47,8 +47,8 @@ inoremap <silent> <Plug>(fzf-custom-snippet-complete-trigger) <C-o>:call <SID>Fz
 function! s:FzfCompleteSnippet() abort
   let s:fzf_snippet_options = fzf#wrap({
         \ "source": UltiSnips#SnippetsInCurrentScope()->keys(),
-        \ "sink": function("s:FzfSnippedSelectedCallback"),
-        \ "preview": v:false})
+        \ "options": "--no-preview",
+        \ "sink": function("s:FzfSnippedSelectedCallback")})
   call feedkeys("\<Plug>(fzf-custom-snippet-complete-trigger)")
   return ""
 endfunction
