@@ -1,9 +1,13 @@
 let g:coc_global_extensions = [
+      \ 'coc-css',
+      \ 'coc-html',
       \ 'coc-json',
       \ 'coc-markdownlint',
+      \ 'coc-sh',
       \ 'coc-solargraph',
       \ 'coc-ultisnips',
       \ 'coc-vimlsp',
+      \ 'coc-yaml',
       \ ]
 
 inoremap <silent><expr> <C-x><C-d> coc#refresh()
