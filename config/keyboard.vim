@@ -75,8 +75,4 @@ nnoremap gV `[v`]
 " Handle accidental <D-[> presses in INSERT mode
 noremap! <D-[> <C-[>
 
-" Paste from system pasteboard. Replaces a default unintuitive mapping.
-noremap <D-v> "+p
-noremap! <D-v> <C-r>+
-
 " }}} Other
