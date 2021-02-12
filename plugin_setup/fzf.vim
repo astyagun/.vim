@@ -6,11 +6,11 @@ let g:fzf_action = {
 let g:fzf_layout = #{down: 20}
 let g:fzf_preview_window = 'right:hidden'
 
-nnoremap <D-P> :doautocmd User BeforeFzfOpen <Bar> Files <C-r>=expand('%:h')<CR><CR>
-nnoremap <D-p> :doautocmd User BeforeFzfOpen <Bar> Files<CR>
+nnoremap <silent> <D-P> :doautocmd User BeforeFzfOpen <Bar> Files <C-r>=expand('%:h')<CR><CR>
+nnoremap <silent> <D-p> :doautocmd User BeforeFzfOpen <Bar> Files<CR>
 
-nnoremap <D-g> :doautocmd User BeforeFzfOpen <Bar> BTags<CR>
-nnoremap <D-u> :doautocmd User BeforeFzfOpen <Bar> Buffers<CR>
+nnoremap <silent> <D-g> :doautocmd User BeforeFzfOpen <Bar> BTags<CR>
+nnoremap <silent> <D-u> :doautocmd User BeforeFzfOpen <Bar> Buffers<CR>
 
 augroup HideFZFStatusline
   autocmd!
@@ -68,3 +68,44 @@ function! s:FzfSnippedSelectedCallback(snippet) abort
 endfunction
 
 " }}} Snippets
+
+" Ruby tags {{{
+
+augroup FzfRubyBufferTags
+  autocmd!
+  autocmd FileType ruby nnoremap <buffer><silent> <D-g> :call <SID>FzfRubyBufferTags()<CR>
+augroup END
+
+function! s:FzfRubyBufferTags() abort
+  let l:current_file = expand('%')
+  if !filereadable(l:current_file)
+    throw "Save the file first"
+  endif
+
+  let l:command = printf(
+        \ "ripper-tags --tag-file - --excmd=number '%s' 2>/dev/null"
+        \ . "| grep --invert-match '^!'"
+        \ . "| cut -f 1,3,4"
+        \ . "| sort --numeric-sort --key 2"
+        \ . "| column -t"
+        \ , l:current_file
+        \ )
+  let l:buffer_tags = split(system(l:command), "\n")
+  if v:shell_error
+    throw get(l:buffer_tags, 0, "Failed to extract tags")
+  elseif empty(l:buffer_tags)
+    throw "No tags found"
+  endif
+
+  call fzf#run(fzf#wrap({
+        \ "source": l:buffer_tags,
+        \ "options": "--no-preview",
+        \ "sink": function("s:FzfRubyBufferTagsCallback")}))
+endfunction
+
+function! s:FzfRubyBufferTagsCallback(tag) abort
+  let l:tag_line_number = substitute(split(a:tag)[1], ';"', '', '')
+  execute "normal! " . l:tag_line_number . "Gzvzz^"
+endfunction
+
+" }}} Ruby tags
