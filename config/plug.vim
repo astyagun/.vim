@@ -85,6 +85,7 @@ Plug 'vim-scripts/confluencewiki.vim', #{for: 'confluencewiki'}
 
 " Integrations {{{
 
+Plug 'antoinemadec/coc-fzf'
 Plug 'janko-m/vim-test', #{for: 'ruby'} " Depends on skywind3000/asyncrun.vim
 Plug 'lambdalisue/vim-gista', #{on: 'Gista'}
 Plug 'mhinz/vim-signify'
