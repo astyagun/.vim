@@ -5,11 +5,11 @@
   "diagnostic.warningSign": "W",
   "markdownlint.config": {"line_length": false},
   "solargraph.checkGemVersion": false,
-  "solargraph.diagnostics": true,
+  "solargraph.diagnostics": false,
   "solargraph.externalServer": {"host": "localhost", "port": 7658},
   "solargraph.promptDownload": false,
   "solargraph.transport": "external",
   "solargraph.useBundler": false,
-  "suggest.autoTrigger": "always",
-  "suggest.keepCompleteopt": false
+  "suggest.autoTrigger": "trigger",
+  "suggest.keepCompleteopt": true
 }
