@@ -23,9 +23,12 @@ set langmenu=ru_RU.UTF-8
 
 set autoindent
 set conceallevel=2
+set expandtab
 set formatoptions=crqnj
 set shiftround
-set shiftwidth=2 tabstop=2 softtabstop=2 expandtab
+set shiftwidth=0 " Use 'tabstop' value
+set softtabstop=-1 " Use 'shiftwidth' value
+set tabstop=2
 set textwidth=120
 
 augroup AfterFormatOptions
