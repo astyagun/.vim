@@ -67,6 +67,20 @@ nnoremap <Leader>yd :let @+=expand("%:p:h")<CR>
 
 " }}} Yanking file path into global pasteboard
 
+" Switch to a tab by number {{{
+
+nnoremap <D-1> 1gt
+nnoremap <D-2> 2gt
+nnoremap <D-3> 3gt
+nnoremap <D-4> 4gt
+nnoremap <D-5> 5gt
+nnoremap <D-6> 6gt
+nnoremap <D-7> 7gt
+nnoremap <D-8> 8gt
+nnoremap <D-9> 9gt
+
+" }}} Switch to a tab by number
+
 " Other {{{
 
 " Select last edited or pasted text
