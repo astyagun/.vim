@@ -27,7 +27,7 @@ let g:startify_skiplist = [
 
 " Per-project 'textwidth' and 'colorcolumn' based on Rubocop LineLength {{{
 
-autocmd User StartifyBufferOpened call <SID>SetProjectTextwidth()
+autocmd User StartifyBufferOpened,ConfigurationReloaded call <SID>SetProjectTextwidth()
 
 function! s:SetProjectTextwidth() abort
   let l:rubocop_line_length = s:RubocopLineLength()
