@@ -20,9 +20,7 @@ augroup Coc
   autocmd FileType vim setlocal tagfunc=CocTagFunc
 
   autocmd FileType ruby nnoremap <buffer><silent> <D-g> :CocFzfList outline<CR>
-
   autocmd FileType ruby nnoremap <buffer><silent> K :call CocAction('doHover')<CR>
-  autocmd FileType ruby,vim,json setlocal formatexpr=CocAction('formatSelected')
 
   autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
 augroup end
