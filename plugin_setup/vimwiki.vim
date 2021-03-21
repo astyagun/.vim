@@ -115,6 +115,11 @@ function! s:VimwikiLocalCustomization() abort
   nmap <buffer> <Leader>wL :VimwikiChangeSymbolInListTo -<CR>
   vmap <buffer> <Leader>wL :VimwikiChangeSymbolInListTo -<CR>
 
+  " Custom mappings
+
+  " Convert Taskpaper item with a link into a list item with a link
+  nmap <buffer> \wa 0t@Dv^wS]Jxys$)jdd
+
   " Commands
 
   command! VimwikiCopyUrl !vimwiki-copy-urls '%'
