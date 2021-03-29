@@ -20,3 +20,4 @@ nmap <silent> <Leader>tf :wall<CR>:TestFile<CR>
 nmap <silent> <Leader>ta :wall<CR>:TestSuite<CR>
 nmap <silent> <Leader>tl :wall<CR>:TestLast<CR>
 nmap <silent> <Leader>tv :wall<CR>:TestVisit<CR>
+nmap <silent> <Leader>tr :AsyncRun true<CR>
