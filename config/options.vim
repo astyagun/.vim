@@ -29,7 +29,6 @@ set shiftround
 set shiftwidth=0 " Use 'tabstop' value
 set softtabstop=-1 " Use 'shiftwidth' value
 set tabstop=2
-set textwidth=120
 
 augroup AfterFormatOptions
   autocmd!
@@ -40,11 +39,11 @@ augroup END
 
 " Visual {{{
 
-let &colorcolumn = &textwidth + 1
 let &listchars = "tab:->,trail:\uB7,nbsp:~"
 let &showbreak = '> '
 set belloff=all
 set breakindent
+set colorcolumn=+1
 set cursorline
 set fillchars=vert:│,fold:·
 set foldtext=g:FoldText()

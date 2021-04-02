@@ -23,31 +23,3 @@ let g:startify_skiplist = [
       \ escape(fnamemodify(resolve($VIMRUNTIME), ':p'), '\') .'doc',
       \ 'plugged/.*/doc',
       \ ]
-
-
-" Per-project 'textwidth' and 'colorcolumn' based on Rubocop LineLength {{{
-
-autocmd User StartifyBufferOpened,ConfigurationReloaded call <SID>SetProjectTextwidth()
-
-function! s:SetProjectTextwidth() abort
-  let l:rubocop_line_length = s:RubocopLineLength()
-  if l:rubocop_line_length
-    let &textwidth = l:rubocop_line_length
-    let &colorcolumn = l:rubocop_line_length + 1
-  endif
-endfunction
-
-function! s:RubocopLineLength() abort
-  if !filereadable(".rubocop.yml")
-    return v:false
-  endif
-
-  let l:result = system('rg --multiline "(?s)Layout/LineLength:.+?^\S" .rubocop.yml | rg Max | cut -d: -f2')
-  if v:shell_error || empty(l:result)
-    return v:false
-  endif
-
-  return str2nr(l:result)
-endfunction
-
-" }}} Per-project `textwidth` based on Rubocop LineLength
