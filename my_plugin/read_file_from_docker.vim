@@ -1,6 +1,7 @@
 command! ReadFileFromDocker call <SID>ReadFileFromDocker()
 
 function! s:ReadFileFromDocker() abort
+  " https://github.com/astyagun/.files/blob/master/bin/dkc-executable-container
   let l:container_name = systemlist('dkc-executable-container')[0]
   let l:current_column = col('.')
   let l:current_line   = line('.')
