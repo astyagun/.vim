@@ -1,3 +1,5 @@
+" See what current file looks like on the Docker side
+
 command! ReadFileFromDocker call <SID>ReadFileFromDocker()
 
 function! s:ReadFileFromDocker() abort
