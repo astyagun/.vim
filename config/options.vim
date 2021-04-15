@@ -53,6 +53,7 @@ set list
 set noruler " Allows <C-g> to show line information
 set scrolloff=2
 set shortmess+=c
+set showcmd
 set sidescrolloff=5
 set signcolumn=yes
 set updatetime=300
