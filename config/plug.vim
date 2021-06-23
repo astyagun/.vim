@@ -22,6 +22,7 @@ Plug 'haya14busa/vim-edgemotion'
 Plug 'junegunn/fzf.vim'
 Plug 'kshenoy/vim-signature'
 Plug 'mhinz/vim-startify'
+Plug 'tpope/vim-projectionist'
 Plug 'tpope/vim-unimpaired'
 Plug 'tyru/open-browser.vim'
 
