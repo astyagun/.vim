@@ -100,21 +100,6 @@ function! s:VimwikiLocalCustomization() abort
   omap <buffer> iH <Plug>VimwikiTextObjHeaderSubContent
   vmap <buffer> iH <Plug>VimwikiTextObjHeaderSubContentV
 
-  " Lists
-
-  nmap <buffer> <Space> <Plug>VimwikiToggleListItem
-  vmap <buffer> <Space> <Plug>VimwikiToggleListItem
-  nmap <buffer> <Leader><Space> <Plug>VimwikiToggleRejectedListItem
-  vmap <buffer> <Leader><Space> <Plug>VimwikiToggleRejectedListItem
-  nmap <buffer> <C-Space> <Plug>VimwikiRemoveSingleCB
-  vmap <buffer> <C-Space> <Plug>VimwikiRemoveSingleCB
-  nmap <buffer> <Leader><C-Space> <Plug>VimwikiRemoveCBInList
-  vmap <buffer> <Leader><C-Space> <Plug>VimwikiRemoveCBInList
-  nmap <buffer> <Leader>wl :VimwikiChangeSymbolTo -<CR>
-  vmap <buffer> <Leader>wl :VimwikiChangeSymbolTo -<CR>
-  nmap <buffer> <Leader>wL :VimwikiChangeSymbolInListTo -<CR>
-  vmap <buffer> <Leader>wL :VimwikiChangeSymbolInListTo -<CR>
-
   " Custom mappings
 
   " Convert Taskpaper item with a link into a list item with a link
