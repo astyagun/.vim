@@ -4,6 +4,9 @@ compiler markdown
 
 nnoremap <buffer> <Plug> <Plug>Markdown_OpenUrlUnderCursor
 
+" Disable Lexima, fixes Russian letter "э" being remapped to "'" in INSERT mode by the XkbSwitch plugin
+let b:lexima_disabled = 1
+
 " Lists
 
 nmap <silent><script><buffer> <Space> :VimwikiToggleListItem<CR>
