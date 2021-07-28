@@ -2,8 +2,16 @@ snippet shrug
 ¯\_(ツ)_/¯
 endsnippet
 
+snippet d "YYYY-MM-DD" w
+`!v strftime("%Y-%m-%d")`
+endsnippet
+
 snippet d1 "YYYY-MM-DD + 1 day" w
 `!v strftime("%Y-%m-%d", localtime() + 60 * 60 * 24)`
+endsnippet
+
+snippet d2 "YYYY-MM-DD + 2 days" w
+`!v strftime("%Y-%m-%d", localtime() + 60 * 60 * 24 * 2)`
 endsnippet
 
 snippet d3 "YYYY-MM-DD + 3 days" w
@@ -14,8 +22,16 @@ snippet d4 "YYYY-MM-DD + 4 days" w
 `!v strftime("%Y-%m-%d", localtime() + 60 * 60 * 24 * 4)`
 endsnippet
 
+snippet д "YYYY-MM-DD" w
+`!v strftime("%Y-%m-%d")`
+endsnippet
+
 snippet д1 "YYYY-MM-DD + 1 day" w
 `!v strftime("%Y-%m-%d", localtime() + 60 * 60 * 24)`
+endsnippet
+
+snippet д2 "YYYY-MM-DD + 2 days" w
+`!v strftime("%Y-%m-%d", localtime() + 60 * 60 * 24 * 2)`
 endsnippet
 
 snippet д3 "YYYY-MM-DD + 3 days" w
@@ -24,8 +40,4 @@ endsnippet
 
 snippet д4 "YYYY-MM-DD + 4 days" w
 `!v strftime("%Y-%m-%d", localtime() + 60 * 60 * 24 * 4)`
-endsnippet
-
-snippet дата "YYYY-MM-DD" w
-`!v strftime("%Y-%m-%d")`
 endsnippet

@@ -23,3 +23,48 @@ $1
 ## Ideas
 ## Projects and next actions
 endsnippet
+
+snippet о "Отчёт с сегодняшней датой" w
+## `!v strftime("%Y-%m-%d")`
+
+- Вчера
+	- ${1}
+- Сегодня
+	- ${2}
+endsnippet
+
+snippet о1 "Отчёт с завтрашней датой" w
+## `!v strftime("%Y-%m-%d", localtime() + 60 * 60 * 24)`
+
+- Вчера
+	- ${1}
+- Сегодня
+	- ${2}
+endsnippet
+
+snippet о2 "Отчёт с датой 2 дня вперёд" w
+## `!v strftime("%Y-%m-%d", localtime() + 60 * 60 * 24 * 2)`
+
+- Вчера
+	- ${1}
+- Сегодня
+	- ${2}
+endsnippet
+
+snippet о3 "Отчёт с датой 3 дня вперёд" w
+## `!v strftime("%Y-%m-%d", localtime() + 60 * 60 * 24 * 3)`
+
+- Вчера
+	- ${1}
+- Сегодня
+	- ${2}
+endsnippet
+
+snippet о4 "Отчёт с датой 2 дня вперёд" w
+## `!v strftime("%Y-%m-%d", localtime() + 60 * 60 * 24 * 4)`
+
+- Вчера
+	- ${1}
+- Сегодня
+	- ${2}
+endsnippet
