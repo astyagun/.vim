@@ -49,7 +49,7 @@ let g:vimwiki_key_mappings =
 
 augroup Vimwiki
   autocmd!
-  autocmd FileType vimwiki call s:VimwikiLocalCustomization() | setlocal foldenable foldlevel=2
+  autocmd FileType vimwiki call s:VimwikiLocalCustomization()
   autocmd User StartifyBufferOpened if g:IsInVimwikiDir() | call s:VimwikiGlobalCustomization() | endif
 augroup END
 
@@ -111,9 +111,17 @@ function! s:VimwikiLocalCustomization() abort
 
   " Folding with custom 'foldtext'
 
-  setlocal foldmethod=expr
+  setlocal foldenable
   setlocal foldexpr=VimwikiFoldLevel(v:lnum)
+  setlocal foldmethod=expr
   setlocal foldtext=g:FoldText()
+
+  if line("$") <= &lines
+    setlocal foldlevel=2
+  else
+    " Fold more header levels in longer files
+    setlocal foldlevel=1
+  endif
 endfunction
 
 " }}} function s:VimwikiLocalCustomization
