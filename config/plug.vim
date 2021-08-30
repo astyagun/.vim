@@ -49,7 +49,6 @@ Plug 'vim-scripts/YankRing.vim'
 
 Plug 'SirVer/ultisnips'
 Plug 'alvan/vim-closetag', #{for: 'html'}
-Plug 'cohama/lexima.vim'
 Plug 'honza/vim-snippets'
 Plug 'mattn/emmet-vim', #{for: ['html', 'css'], on: 'EmmetInstall'}
 
