@@ -96,7 +96,7 @@ Plug 'shumphrey/fugitive-gitlab.vim'
 Plug 'skywind3000/asyncrun.vim', #{on: 'AsyncRun'}
 Plug 't9md/vim-ruby-xmpfilter', #{for: 'ruby'}
 Plug 'tpope/vim-eunuch' " Unix commands
-Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-fugitive', #{tag: 'v*'}
 Plug 'tpope/vim-rhubarb'
 Plug 'w0rp/ale'
 
