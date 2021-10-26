@@ -2,7 +2,6 @@ call plug#begin()
 
 " Visual {{{
 
-Plug 'PeterRincker/vim-searchlight'
 Plug 'arzg/vim-colors-xcode'
 Plug 'chrisbra/Colorizer', #{on: 'ColorHighlight'}
 Plug 'gerw/vim-HiLinkTrace', #{on: 'HLT'}
