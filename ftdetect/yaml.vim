@@ -1,1 +1,1 @@
-autocmd BufNewFile,BufRead .reek,*.yml.sample setfiletype yaml
+autocmd BufNewFile,BufRead .ansible-lint,.reek,*.yml.sample setfiletype yaml
