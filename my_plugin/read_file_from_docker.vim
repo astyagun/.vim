@@ -14,7 +14,9 @@ function! s:ReadFileFromDocker() abort
   $delete
 
   setlocal buftype=nofile bufhidden=wipe noswapfile nobuflisted nomodified
-  execute 'setfiletype ' . l:file_type
+  if !empty(l:file_type)
+    execute 'setfiletype ' . l:file_type
+  endif
   execute ':'            . l:current_line
   execute ':normal '     . l:current_column . '|'
   normal! zv
