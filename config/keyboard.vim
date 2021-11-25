@@ -50,6 +50,10 @@ nnoremap <C-w>/ <C-w>_<C-w><Bar>
 " Close all buffers
 nnoremap <Leader><C-w>c :%bw<CR>
 
+" Move tab
+noremap <D-C-{> :-tabmove<CR>
+noremap <D-C-}> :+tabmove<CR>
+
 " }}} Window management
 
 " Yanking file path into global pasteboard {{{
