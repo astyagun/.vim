@@ -1,6 +1,8 @@
 let g:projectionist_heuristics = {
       \   "Gemfile": {
       \     "app/*.rb": {"alternate": "spec/{}_spec.rb"},
+      \     "Gemfile": {"alternate": "Gemfile.lock"},
+      \     "Gemfile.lock": {"alternate": "Gemfile"},
       \     "lib/*.rb": {
       \       "alternate": [
       \         "spec/{}_spec.rb",
