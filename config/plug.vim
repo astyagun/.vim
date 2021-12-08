@@ -24,6 +24,7 @@ Plug 'mhinz/vim-startify'
 Plug 'tpope/vim-projectionist'
 Plug 'tpope/vim-unimpaired'
 Plug 'tyru/open-browser.vim'
+packadd cfilter
 
 " }}} Navigation and window management
 
