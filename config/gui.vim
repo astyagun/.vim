@@ -10,4 +10,4 @@ set macthinstrokes
 set noballooneval
 
 set columns=123
-set lines=50
+set lines=61
