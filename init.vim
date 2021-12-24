@@ -5,7 +5,6 @@ function! s:SourceFilesFromDirectory(directory_name) abort
 endfunction
 
 " Make sure current version of Python 3 is used
-set pythonthreedll=/usr/local/Frameworks/Python.framework/Versions/Current/Python
 py3 ''
 
 source ~/.vim/config/load_shell_environment.vim
