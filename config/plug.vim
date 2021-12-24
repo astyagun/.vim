@@ -15,7 +15,6 @@ Plug 'xtal8/traces.vim'
 
 " Navigation and window management {{{
 
-Plug '/usr/local/opt/fzf'
 Plug 'andymass/vim-matchup'
 Plug 'haya14busa/vim-edgemotion'
 Plug 'junegunn/fzf.vim'
@@ -25,6 +24,7 @@ Plug 'tpope/vim-projectionist'
 Plug 'tpope/vim-unimpaired'
 Plug 'tyru/open-browser.vim'
 packadd cfilter
+set rtp+=/opt/homebrew/opt/fzf
 
 " }}} Navigation and window management
 
