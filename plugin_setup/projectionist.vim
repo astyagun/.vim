@@ -18,3 +18,5 @@ let g:projectionist_heuristics = {
       \     "spec/lib/*_spec.rb": {"alternate": "lib/{}.rb"}
       \   }
       \ }
+
+map <Leader>a :A<CR>
