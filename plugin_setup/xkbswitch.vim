@@ -1,4 +1,4 @@
-let g:MyXkbSwitchNLayout = "org.sil.ukelele.keyboardlayout..keylayout.USmodified"
+let g:MyXkbSwitchNLayout = "org.sil.ukelele.keyboardlayout.usmodified.u.s.modified"
 
 let g:XkbSwitchEnabled   = 1
 let g:XkbSwitchIMappings = ["ru"]
