@@ -24,7 +24,13 @@ Plug 'tpope/vim-projectionist'
 Plug 'tpope/vim-unimpaired'
 Plug 'tyru/open-browser.vim'
 packadd cfilter
-set rtp+=/opt/homebrew/opt/fzf
+
+if filereadable('/opt/homebrew/bin/brew')
+  let s:homebrew_prefix = '/opt/homebrew'
+else
+  let s:homebrew_prefix = '/usr/local'
+endif
+execute 'set rtp+=' . s:homebrew_prefix . '/opt/fzf'
 
 " }}} Navigation and window management
 
