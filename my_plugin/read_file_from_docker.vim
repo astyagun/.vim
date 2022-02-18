@@ -10,7 +10,7 @@ function! s:ReadFileFromDocker() abort
   let l:file_type      = &filetype
 
   new
-  execute '0read !docker-compose exec ' . l:container_name . " cat '#'"
+  execute '0read !docker compose exec ' . l:container_name . " cat '#'"
   $delete
 
   setlocal buftype=nofile bufhidden=wipe noswapfile nobuflisted nomodified

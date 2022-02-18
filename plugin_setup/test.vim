@@ -9,7 +9,7 @@ function! TestDockerTransform(cmd) abort
     let l:cmd_prefix = "spring "
   end
 
-  return 'docker-compose exec -T ' . l:container_name
+  return 'docker compose exec -T ' . l:container_name
         \. ' bash -c ' . shellescape('RUBYOPT=-W0 NO_COVERAGE=true RAILS_ENV=test ' . l:cmd_prefix . a:cmd)
 endfunction
 let g:test#custom_transformations = {'docker': function('TestDockerTransform')}
