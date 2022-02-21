@@ -10,12 +10,17 @@ nmap <silent><script><buffer> <Space> :VimwikiToggleListItem<CR>
 vmap <silent><script><buffer> <Space> :VimwikiToggleListItem<CR>
 nmap <silent><script><buffer> <Leader><Space> :VimwikiToggleRejectedListItem<CR>
 vmap <silent><script><buffer> <Leader><Space> :VimwikiToggleRejectedListItem<CR>
-nmap <silent><script><buffer> <C-Space> :VimwikiRemoveSingleCB<CR>
-vmap <silent><script><buffer> <C-Space> :VimwikiRemoveSingleCB<CR>
-nmap <silent><script><buffer> <Leader><C-Space> :VimwikiRemoveCBInList<CR>
+nmap <silent><script><buffer> <S-Space> :VimwikiRemoveSingleCB<CR>
+vmap <silent><script><buffer> <S-Space> :VimwikiRemoveSingleCB<CR>
+nmap <silent><script><buffer> <Leader><S-Space> :VimwikiRemoveCBInList<CR>
 nmap <silent><script><buffer> <Leader>wl :VimwikiChangeSymbolTo -<CR>
 vmap <silent><script><buffer> <Leader>wl :VimwikiChangeSymbolTo -<CR>
 nmap <silent><script><buffer> <Leader>wL :VimwikiChangeSymbolInListTo -<CR>
+" TODO: Add commands for these mappings
+" omap <silent><buffer> al <Plug>VimwikiTextObjListChildren
+" vmap <silent><buffer> al <Plug>VimwikiTextObjListChildrenV
+" omap <silent><buffer> il <Plug>VimwikiTextObjListSingle
+" vmap <silent><buffer> il <Plug>VimwikiTextObjListSingleV
 
 command! -buffer -range VimwikiToggleListItem call vimwiki#lst#toggle_cb(<line1>, <line2>)
 command! -buffer -range VimwikiToggleRejectedListItem
