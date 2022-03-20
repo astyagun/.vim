@@ -6,21 +6,20 @@ nnoremap <buffer> <Plug> <Plug>Markdown_OpenUrlUnderCursor
 
 " Lists
 
-nmap <silent><script><buffer> <Space> :VimwikiToggleListItem<CR>
-vmap <silent><script><buffer> <Space> :VimwikiToggleListItem<CR>
-nmap <silent><script><buffer> <Leader><Space> :VimwikiToggleRejectedListItem<CR>
-vmap <silent><script><buffer> <Leader><Space> :VimwikiToggleRejectedListItem<CR>
-nmap <silent><script><buffer> <S-Space> :VimwikiRemoveSingleCB<CR>
-vmap <silent><script><buffer> <S-Space> :VimwikiRemoveSingleCB<CR>
-nmap <silent><script><buffer> <Leader><S-Space> :VimwikiRemoveCBInList<CR>
-nmap <silent><script><buffer> <Leader>wl :VimwikiChangeSymbolTo -<CR>
-vmap <silent><script><buffer> <Leader>wl :VimwikiChangeSymbolTo -<CR>
-nmap <silent><script><buffer> <Leader>wL :VimwikiChangeSymbolInListTo -<CR>
-" TODO: Add commands for these mappings
-" omap <silent><buffer> al <Plug>VimwikiTextObjListChildren
-" vmap <silent><buffer> al <Plug>VimwikiTextObjListChildrenV
-" omap <silent><buffer> il <Plug>VimwikiTextObjListSingle
-" vmap <silent><buffer> il <Plug>VimwikiTextObjListSingleV
+nnoremap <silent><buffer> <Space> :<C-u>VimwikiToggleListItem<CR>
+vnoremap <silent><buffer> <Space> :<C-u>VimwikiToggleListItem<CR>
+nnoremap <silent><buffer> <Leader><Space> :<C-u>VimwikiToggleRejectedListItem<CR>
+vnoremap <silent><buffer> <Leader><Space> :<C-u>VimwikiToggleRejectedListItem<CR>
+nnoremap <silent><buffer> <S-Space> :<C-u>VimwikiRemoveSingleCB<CR>
+vnoremap <silent><buffer> <S-Space> :<C-u>VimwikiRemoveSingleCB<CR>
+nnoremap <silent><buffer> <Leader><S-Space> :<C-u>VimwikiRemoveCBInList<CR>
+nnoremap <silent><buffer> <Leader>wl :<C-u>VimwikiChangeSymbolTo -<CR>
+vnoremap <silent><buffer> <Leader>wl :<C-u>VimwikiChangeSymbolTo -<CR>
+nnoremap <silent><buffer> <Leader>wL :<C-u>VimwikiChangeSymbolInListTo -<CR>
+onoremap <silent><buffer> al :<C-u>call vimwiki#lst#TO_list_item(0, 0)<CR>
+vnoremap <silent><buffer> al :<C-u>call vimwiki#lst#TO_list_item(0, 1)<CR>
+onoremap <silent><buffer> il :<C-u>call vimwiki#lst#TO_list_item(1, 0)<CR>
+vnoremap <silent><buffer> il :<C-u>call vimwiki#lst#TO_list_item(1, 1)<CR>
 
 command! -buffer -range VimwikiToggleListItem call vimwiki#lst#toggle_cb(<line1>, <line2>)
 command! -buffer -range VimwikiToggleRejectedListItem
