@@ -1,6 +1,7 @@
 let g:projectionist_heuristics = {
       \   "Gemfile": {
       \     "app/*.rb": {"alternate": "spec/{}_spec.rb"},
+      \     "app/controllers/*_controller.rb": {"type": "controller", "alternate": "spec/requests/{}_spec.rb"},
       \     "Gemfile": {"alternate": "Gemfile.lock"},
       \     "Gemfile.lock": {"alternate": "Gemfile"},
       \     "lib/*.rb": {
@@ -15,7 +16,8 @@ let g:projectionist_heuristics = {
       \         "lib/{}.rb"
       \       ]
       \     },
-      \     "spec/lib/*_spec.rb": {"alternate": "lib/{}.rb"}
+      \     "spec/lib/*_spec.rb": {"alternate": "lib/{}.rb"},
+      \     "spec/requests/*_spec.rb": {"type": "requestspec", "alternate": "app/controllers/{}_controller.rb"},
       \   }
       \ }
 
