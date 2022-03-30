@@ -2,10 +2,10 @@ function! s:SetColorscheme() abort
   highlight clear
   if exists('v:os_appearance') && v:os_appearance != 1
     set background=light
-    colorscheme xcodelight
+    colorscheme xcodelighthc
   else
     set background=dark
-    colorscheme xcodedark
+    colorscheme xcodedarkhc
   endif
   silent doautocmd User ColorSchemeChanged
   redraw!
