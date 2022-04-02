@@ -107,6 +107,6 @@ set wildmode=longest,list:longest,full " Make cmdline tab completion similar to 
 " Command line {{{
 
 set shell=/bin/zsh
-set shellcmdflag=-ic
+set shellcmdflag=-lc
 
 " }}} Command line
