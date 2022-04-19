@@ -1,4 +1,5 @@
 {
+  "coc.source.file.triggerCharacters": [],
   "diagnostic.errorSign": "E",
   "diagnostic.hintSign": "H",
   "diagnostic.infoSign": "I",
@@ -10,6 +11,6 @@
   "solargraph.promptDownload": false,
   "solargraph.transport": "external",
   "solargraph.useBundler": false,
-  "suggest.autoTrigger": "trigger",
-  "suggest.keepCompleteopt": true
+  "suggest.autoTrigger": "none",
+  "suggest.noselect": true
 }
