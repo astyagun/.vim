@@ -83,6 +83,11 @@ set nostartofline
 set sessionoptions-=options
 set smartcase
 
+augroup PreviewWindowFolding
+  autocmd!
+  autocmd BufReadPre * if &previewwindow | setlocal nofoldenable | endif
+augroup END
+
 " }}}
 
 " Search {{{
