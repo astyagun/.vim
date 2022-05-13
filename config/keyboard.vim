@@ -56,21 +56,6 @@ noremap <D-C-}> :+tabmove<CR>
 
 " }}} Window management
 
-" Yanking file path into global pasteboard {{{
-
-" Relative path (src/foo.txt)
-nnoremap <Leader>yf :let @+=expand("%")<CR>
-" Relative path with line number (src/foo.txt:25)
-nnoremap <Leader>yl :let @+=expand("%").":".line(".")<CR>
-" Absolute path (/something/src/foo.txt)
-nnoremap <Leader>yp :let @+=expand("%:p")<CR>
-" Filename (foo.txt)
-nnoremap <Leader>yn :let @+=expand("%:t")<CR>
-" Directory name (/something/src)
-nnoremap <Leader>yd :let @+=expand("%:p:h")<CR>
-
-" }}} Yanking file path into global pasteboard
-
 " Switch to a tab by number {{{
 
 nnoremap <D-1> 1gt
