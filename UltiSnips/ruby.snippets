@@ -1,3 +1,16 @@
+global !p
+
+def write_instance_vars(arglist, snip):
+	args = str(arglist).split(',')
+	for arg in args:
+		name = arg.strip().replace(':', ' ').split(' ', 1)[0]
+		if name:
+			snip += '    @{} = {}'.format(name, name)
+		else:
+			snip += ''
+
+endglobal
+
 snippet rspec
 require "rails_helper"
 
@@ -10,8 +23,8 @@ snippet ra
 require "rspec/autorun"
 
 class ${1:Sandbox}
-	def call(${2})
-		${5}
+	def call(${2})`!p write_instance_vars(t[2],snip)`
+		${0}
 	end
 end
 
@@ -21,7 +34,7 @@ RSpec.describe $1 do
 	describe "#call" do
 		subject { instance.call(**arguments) }
 
-		let(:arguments) { {${3}} }
+		let(:arguments) { {$2} }
 
 		it { is_expected.to eq ${4} }
 	end
