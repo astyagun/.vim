@@ -12,6 +12,7 @@ let g:coc_global_extensions = [
       \ ]
 
 inoremap <silent><expr> <C-x><C-d> coc#refresh()
+map <Leader>cf :CocCommand editor.action.formatDocument<CR><Esc>
 map <Leader>cr :CocRestart<CR><Esc>
 
 augroup Coc
