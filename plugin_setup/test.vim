@@ -21,3 +21,7 @@ nmap <silent> <Leader>ta :wall<CR>:TestSuite<CR>
 nmap <silent> <Leader>tl :wall<CR>:TestLast<CR>
 nmap <silent> <Leader>tv :wall<CR>:TestVisit<CR>
 nmap <silent> <Leader>tr :AsyncRun true<CR>
+
+" Open screenshots from Rails system tests
+nmap <silent> <Leader>ts :silent !open tmp/screenshots/*.png<CR>
+nmap <silent> <Leader>th :silent tabe tmp/screenshots/*.html<CR>
