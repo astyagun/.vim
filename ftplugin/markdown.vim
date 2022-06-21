@@ -6,27 +6,27 @@ nnoremap <buffer> <Plug> <Plug>Markdown_OpenUrlUnderCursor
 
 " Lists
 
-nnoremap <silent><buffer> <Space> :<C-u>VimwikiToggleListItem<CR>
-vnoremap <silent><buffer> <Space> :<C-u>VimwikiToggleListItem<CR>
-nnoremap <silent><buffer> <Leader><Space> :<C-u>VimwikiToggleRejectedListItem<CR>
-vnoremap <silent><buffer> <Leader><Space> :<C-u>VimwikiToggleRejectedListItem<CR>
-nnoremap <silent><buffer> <S-Space> :<C-u>VimwikiRemoveSingleCB<CR>
-vnoremap <silent><buffer> <S-Space> :<C-u>VimwikiRemoveSingleCB<CR>
-nnoremap <silent><buffer> <Leader><S-Space> :<C-u>VimwikiRemoveCBInList<CR>
-nnoremap <silent><buffer> <Leader>wl :<C-u>VimwikiChangeSymbolTo -<CR>
-vnoremap <silent><buffer> <Leader>wl :<C-u>VimwikiChangeSymbolTo -<CR>
-nnoremap <silent><buffer> <Leader>wL :<C-u>VimwikiChangeSymbolInListTo -<CR>
-onoremap <silent><buffer> al :<C-u>call vimwiki#lst#TO_list_item(0, 0)<CR>
-vnoremap <silent><buffer> al :<C-u>call vimwiki#lst#TO_list_item(0, 1)<CR>
-onoremap <silent><buffer> il :<C-u>call vimwiki#lst#TO_list_item(1, 0)<CR>
-vnoremap <silent><buffer> il :<C-u>call vimwiki#lst#TO_list_item(1, 1)<CR>
+nnoremap <silent><script><buffer> <Space> :CustomVimwikiToggleListItem<CR>
+vnoremap <silent><script><buffer> <Space> :CustomVimwikiToggleListItem<CR>
+nnoremap <silent><script><buffer> <Leader><Space> :CustomVimwikiToggleRejectedListItem<CR>
+vnoremap <silent><script><buffer> <Leader><Space> :CustomVimwikiToggleRejectedListItem<CR>
+nnoremap <silent><script><buffer> <S-Space> :CustomVimwikiRemoveSingleCB<CR>
+vnoremap <silent><script><buffer> <S-Space> :CustomVimwikiRemoveSingleCB<CR>
+nnoremap <silent><script><buffer> <Leader><S-Space> :CustomVimwikiRemoveCBInList<CR>
+nnoremap <silent><script><buffer> <Leader>wl :CustomVimwikiChangeSymbolTo -<CR>
+vnoremap <silent><script><buffer> <Leader>wl :CustomVimwikiChangeSymbolTo -<CR>
+nnoremap <silent><script><buffer> <Leader>wL :CustomVimwikiChangeSymbolInListTo -<CR>
+onoremap <silent><script><buffer> al :call vimwiki#lst#TO_list_item(0, 0)<CR>
+vnoremap <silent><script><buffer> al :call vimwiki#lst#TO_list_item(0, 1)<CR>
+onoremap <silent><script><buffer> il :call vimwiki#lst#TO_list_item(1, 0)<CR>
+vnoremap <silent><script><buffer> il :call vimwiki#lst#TO_list_item(1, 1)<CR>
 
-command! -buffer -range VimwikiToggleListItem call vimwiki#lst#toggle_cb(<line1>, <line2>)
-command! -buffer -range VimwikiToggleRejectedListItem
+command! -buffer -range CustomVimwikiToggleListItem call vimwiki#lst#toggle_cb(<line1>, <line2>)
+command! -buffer -range CustomVimwikiToggleRejectedListItem
       \ call vimwiki#lst#toggle_rejected_cb(<line1>, <line2>)
-command! -buffer -range VimwikiRemoveSingleCB call vimwiki#lst#remove_cb(<line1>, <line2>)
-command! -buffer VimwikiRemoveCBInList call vimwiki#lst#remove_cb_in_list()
-command! -buffer -range -nargs=1 VimwikiChangeSymbolTo
+command! -buffer -range CustomVimwikiRemoveSingleCB call vimwiki#lst#remove_cb(<line1>, <line2>)
+command! -buffer CustomVimwikiRemoveCBInList call vimwiki#lst#remove_cb_in_list()
+command! -buffer -range -nargs=1 CustomVimwikiChangeSymbolTo
       \ call vimwiki#lst#change_marker(<line1>, <line2>, <f-args>, 'n')
-command! -buffer -nargs=1 VimwikiChangeSymbolInListTo
+command! -buffer -nargs=1 CustomVimwikiChangeSymbolInListTo
       \ call vimwiki#lst#change_marker_in_list(<f-args>)
