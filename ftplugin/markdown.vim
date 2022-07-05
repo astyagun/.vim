@@ -13,9 +13,9 @@ vnoremap <silent><script><buffer> <Leader><Space> :CustomVimwikiToggleRejectedLi
 nnoremap <silent><script><buffer> <S-Space> :CustomVimwikiRemoveSingleCB<CR>
 vnoremap <silent><script><buffer> <S-Space> :CustomVimwikiRemoveSingleCB<CR>
 nnoremap <silent><script><buffer> <Leader><S-Space> :CustomVimwikiRemoveCBInList<CR>
-nnoremap <silent><script><buffer> <Leader>wl :CustomVimwikiChangeSymbolTo -<CR>
-vnoremap <silent><script><buffer> <Leader>wl :CustomVimwikiChangeSymbolTo -<CR>
-nnoremap <silent><script><buffer> <Leader>wL :CustomVimwikiChangeSymbolInListTo -<CR>
+nnoremap <silent><script><buffer> <Leader>Wl :CustomVimwikiChangeSymbolTo -<CR>
+vnoremap <silent><script><buffer> <Leader>Wl :CustomVimwikiChangeSymbolTo -<CR>
+nnoremap <silent><script><buffer> <Leader>WL :CustomVimwikiChangeSymbolInListTo -<CR>
 onoremap <silent><script><buffer> al :call vimwiki#lst#TO_list_item(0, 0)<CR>
 vnoremap <silent><script><buffer> al :call vimwiki#lst#TO_list_item(0, 1)<CR>
 onoremap <silent><script><buffer> il :call vimwiki#lst#TO_list_item(1, 0)<CR>
