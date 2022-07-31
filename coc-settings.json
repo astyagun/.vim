@@ -13,5 +13,6 @@
   "solargraph.transport": "external",
   "solargraph.useBundler": false,
   "suggest.autoTrigger": "none",
-  "suggest.noselect": true
+  "suggest.noselect": true,
+  "yaml.schemaStore.enable": false
 }
