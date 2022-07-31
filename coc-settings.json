@@ -4,6 +4,7 @@
   "diagnostic.hintSign": "H",
   "diagnostic.infoSign": "I",
   "diagnostic.warningSign": "W",
+  "json.enableDefaultSchemas": false,
   "markdownlint.config": {"line_length": false},
   "solargraph.checkGemVersion": false,
   "solargraph.diagnostics": false,
