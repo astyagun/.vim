@@ -41,14 +41,19 @@ inoremap <D-CR> <Esc>o
 
 " Window management {{{
 
+" Open file under cursor in a VERTICAL split instead of default HORIZONTAL
+nnoremap <Leader><C-w>f <C-w>f<C-w>H
+nnoremap <Leader><C-w><C-f> <C-w><C-f><C-w>H
+nnoremap <Leader><C-w>F <C-w>F<C-w>H
+
+" Close all buffers
+nnoremap <Leader><C-w>c :%bw<CR>
+
 " Useful for netrw and quickfix windows
 nnoremap <Leader><C-w><Bar> :execute <C-r>=g:sidebar_width<CR> . 'wincmd <Bar>'<CR>
 nnoremap <Leader><C-w>_ 10<C-w>_
 " Mazimize window
 nnoremap <C-w>/ <C-w>_<C-w><Bar>
-
-" Close all buffers
-nnoremap <Leader><C-w>c :%bw<CR>
 
 " Move tab
 noremap <D-C-{> :-tabmove<CR>
