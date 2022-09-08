@@ -81,7 +81,7 @@ Plug 'whatyouhide/vim-textobj-xmlattr', #{for: ['html', 'eruby']}
 
 " File types {{{
 
-Plug 'kannokanno/previm', #{on: 'PrevimOpen'} " Markdown and Mermaid live preview with :PrevimOpen command
+Plug 'iamcco/markdown-preview.nvim', #{do: 'cd app && yarn install', for: ['markdown']}
 Plug 'mechatroner/rainbow_csv', #{for: 'csv'}
 Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-liquid', #{for: 'liquid'}
