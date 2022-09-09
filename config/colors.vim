@@ -1,3 +1,6 @@
+let g:xcodedarkhc_green_comments = 1
+let g:xcodelighthc_green_comments = 1
+
 function! s:SetColorscheme() abort
   highlight clear
   if exists('v:os_appearance') && v:os_appearance != 1
