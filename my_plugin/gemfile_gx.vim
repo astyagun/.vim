@@ -9,9 +9,9 @@ function! s:GemfileGx() abort
   if l:line =~# '^ *gem\s' || l:line =~# '^ *spec.add_dependency\s' || l:line =~# '^ *spec.add_development_dependency\s'
     let l:cfile = expand('<cfile>')
     if !empty(l:cfile) && l:cfile !=# 'gem' && l:cfile !=# 'spec.add_dependency' && l:cfile !=# 'spec.add_development_dependency'
-      call OpenInBrowser('https://rubygems.org/gems/' . l:cfile)
+      call openbrowser#open('https://rubygems.org/gems/' . l:cfile)
     endif
   else
-    call OpenInBrowser('<cfile>')
+    call OpenInNetRW()
   endif
 endfunction

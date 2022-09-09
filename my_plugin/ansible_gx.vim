@@ -9,12 +9,12 @@ function! s:AnsibleGx() abort
     let l:cfile = expand('<cfile>')
     if !empty(l:cfile) && l:cfile !=# '-'
       if l:cfile !~# '://'
-        call OpenInBrowser('https://docs.ansible.com/ansible/latest/index.html#stp=1&stq=' . l:cfile)
+        call openbrowser#open('https://docs.ansible.com/ansible/latest/index.html#stp=1&stq=' . l:cfile)
       else
-        call OpenInBrowser('<cfile>')
+        call OpenInNetRW()
       endif
     endif
   else
-    call OpenInBrowser('<cfile>')
+    call OpenInNetRW()
   endif
 endfunction

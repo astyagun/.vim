@@ -16,8 +16,8 @@ function! s:RubocopGx() abort
     else
       let l:url = 'https://docs.rubocop.org/rubocop/cops_' . l:group . '.html#' . l:group . l:cop_name
     endif
-    call OpenInBrowser(l:url)
+    call openbrowser#open(l:url)
   else
-    call OpenInBrowser('<cfile>')
+    call OpenInNetRW()
   endif
 endfunction

@@ -8,9 +8,9 @@ function! s:ZinitGx() abort
   if getline('.') =~# '\v^\s*(zinit|zi|zpl|zplg|zplugin)\s+(load|light)\s'
     let l:cfile = expand('<cfile>')
     if !empty(l:cfile) && l:cfile !=# '\v(zinit|zi|zpl|zplg|zplugin|load|light|lucid)'
-      call OpenInBrowser('https://github.com/' . l:cfile)
+      call openbrowser#open('https://github.com/' . l:cfile)
     endif
   else
-    call OpenInBrowser('<cfile>')
+    call OpenInNetRW()
   endif
 endfunction
