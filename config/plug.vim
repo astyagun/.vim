@@ -49,6 +49,9 @@ Plug 'tpope/vim-surround'
 Plug 'vim-scripts/LargeFile'
 Plug 'vim-scripts/YankRing.vim'
 
+" Should probably be loaded after tpope/vim-rsi plugin
+Plug 'ryvnf/readline.vim'
+
 " }}} Editing
 
 " Snippets and other insertions {{{
