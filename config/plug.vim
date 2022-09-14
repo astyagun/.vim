@@ -15,6 +15,8 @@ Plug 'xtal8/traces.vim'
 
 " Navigation and window management {{{
 
+Plug 'AndrewRadev/bufferize.vim'
+Plug 'AndrewRadev/linediff.vim'
 Plug 'andymass/vim-matchup'
 Plug 'haya14busa/vim-edgemotion'
 Plug 'junegunn/fzf.vim'
@@ -36,6 +38,7 @@ execute 'set rtp+=' . s:homebrew_prefix . '/opt/fzf'
 
 " Editing {{{
 
+Plug 'AndrewRadev/sideways.vim'
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'AndrewRadev/switch.vim'
 Plug 'junegunn/vim-easy-align'
