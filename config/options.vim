@@ -106,6 +106,7 @@ set spelllang=ru_yo,en_us
 set wildignore=*.o,*.obj,*~,vendor/bundle/**/* " Stuff to ignore when tab completing
 set wildmenu " Enable <C-n> and <C-p> to scroll through matches
 set wildmode=longest,list:longest,full " Make cmdline tab completion similar to bash
+set wildoptions=fuzzy
 
 " }}} Editing
 
