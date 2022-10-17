@@ -43,17 +43,22 @@ function! s:ApplyCustomColorschemeHighlights() abort
   highlight clear DiffText
   highlight clear Error
 
+  highlight clear qfLineNr
+  highlight link qfLineNr Folded
+
   if &background is# 'dark'
-    highlight Visual guibg=#646F83
-    highlight Search guifg=white guibg=#545558
-    highlight Folded guifg=#dfdfe0
     highlight DiffText guifg=#dfdfe0 guibg=#675548
     highlight Error guifg=#ff0000 guibg=#7f180a
+    highlight Folded guifg=#dfdfe0
+    highlight Search guifg=white guibg=#545558
+    highlight Visual guibg=#646F83
   else
     highlight clear Folded
     highlight link Folded StatusLineNC
+
     highlight clear DiffChange
     highlight DiffChange guibg=#fdfae6
+
     highlight DiffText guifg=#262626 guibg=#fef869
     highlight Error guifg=#ff0000 guibg=#ffbfbf
   endif
