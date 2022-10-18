@@ -1,5 +1,5 @@
 let g:projectionist_heuristics = {
-      \   "Gemfile": {
+      \   "Gemfile|package.yml": {
       \     "app/*.rb": {"alternate": "spec/{}_spec.rb"},
       \     "app/controllers/*_controller.rb": {"type": "controller", "alternate": "spec/requests/{}_spec.rb"},
       \     "Gemfile": {"alternate": "Gemfile.lock"},
@@ -20,5 +20,3 @@ let g:projectionist_heuristics = {
       \     "spec/requests/*_spec.rb": {"type": "requestspec", "alternate": "app/controllers/{}_controller.rb"},
       \   }
       \ }
-
-map <Leader>a :A<CR>
