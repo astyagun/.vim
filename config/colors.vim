@@ -8,6 +8,7 @@ function! s:SetColorscheme() abort
   else
     colorscheme xcodedarkhc
   endif
+  echohl None
   silent doautocmd User ColorSchemeChanged
   redraw!
 endfunction
