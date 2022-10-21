@@ -40,19 +40,15 @@ augroup END
 " Visual {{{
 
 let &listchars = "tab:->,trail:\uB7,nbsp:~"
-let &showbreak = '> '
 set belloff=all
-set breakindent
 set colorcolumn=+1
 set cursorline
 set display+=lastline
 set fillchars=vert:│,fold:·
-set foldtext=g:FoldText()
 set laststatus=2
 set linebreak " Wrap lines at convenient points
 set list
 set noruler " Allows <C-g> to show line information
-set scrolloff=2
 set shortmess+=c
 set shortmess-=S
 set showcmd
@@ -65,6 +61,30 @@ augroup CursorLine
   autocmd WinEnter * setlocal cursorline
   autocmd WinLeave * setlocal nocursorline
 augroup END
+
+augroup NoLongLinesOnly
+  autocmd!
+  autocmd BufRead,BufNewFile * call s:SetOptionsForFilesWithoutLongLines()
+augroup END
+
+function! s:SetOptionsForFilesWithoutLongLines() abort
+  let l:file_has_long_lines = search('\%>3000c', 'nw') != 0
+
+  if l:file_has_long_lines
+    " Set default values for files with long lines to enhance performance
+    setlocal showbreak=
+    setlocal nobreakindent
+    setlocal foldtext=foldtext()
+    setlocal scrolloff=0
+  else
+    " Customize options for normal files
+    " These options slow down moving through long lines
+    let &l:showbreak = '> '
+    setlocal breakindent
+    setlocal foldtext=g:FoldText()
+    setlocal scrolloff=2
+  endif
+endfunction
 
 " }}} Visual
 
