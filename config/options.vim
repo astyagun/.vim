@@ -45,6 +45,7 @@ set belloff=all
 set breakindent
 set colorcolumn=+1
 set cursorline
+set display+=lastline
 set fillchars=vert:│,fold:·
 set foldtext=g:FoldText()
 set laststatus=2
