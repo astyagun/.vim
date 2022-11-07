@@ -19,6 +19,10 @@ RSpec.describe ${1:`!v substitute(substitute(expand('%:p:t:r'), '_spec$', '', ''
 end
 endsnippet
 
+snippet letsm "let with super().merge" b
+let(:${1:options}) { super().merge(${0}) }
+endsnippet
+
 snippet ra
 require "rspec/autorun"
 
