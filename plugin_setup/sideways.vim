@@ -1,2 +1,2 @@
-nnoremap <D-j> :SidewaysRight<CR>
-nnoremap <D-k> :SidewaysLeft<CR>
+nnoremap <silent> <D-j> :SidewaysRight<CR>
+nnoremap <silent> <D-k> :SidewaysLeft<CR>
