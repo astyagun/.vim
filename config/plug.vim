@@ -102,7 +102,6 @@ Plug 'janko-m/vim-test', #{for: 'ruby'} " Depends on skywind3000/asyncrun.vim
 Plug 'lambdalisue/vim-gista', #{on: 'Gista'}
 Plug 'mhinz/vim-signify'
 Plug 'neoclide/coc.nvim', #{branch: 'release'}
-Plug 'rbong/vim-flog', #{on: ['Flog', 'Flogsplit']}
 Plug 'samoshkin/vim-mergetool', #{on: 'MergetoolStart'}
 Plug 'shumphrey/fugitive-gitlab.vim'
 Plug 'skywind3000/asyncrun.vim', #{on: 'AsyncRun'}
