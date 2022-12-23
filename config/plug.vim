@@ -7,6 +7,7 @@ Plug 'chrisbra/Colorizer', #{on: 'ColorHighlight'}
 Plug 'gerw/vim-HiLinkTrace', #{on: 'HLT'}
 Plug 'itchyny/lightline.vim'
 Plug 'machakann/vim-highlightedyank'
+Plug 'tpope/vim-characterize'
 Plug 'xtal8/traces.vim'
 
 " Plug 'rhysd/vim-color-spring-night'
