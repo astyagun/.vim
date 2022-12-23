@@ -44,6 +44,7 @@ Plug 'AndrewRadev/switch.vim'
 Plug 'junegunn/vim-easy-align'
 Plug 'lyokha/vim-xkbswitch'
 Plug 'mbbill/undotree', #{on: 'UndotreeToggle'}
+Plug 'rhysd/conflict-marker.vim'
 Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-repeat'
