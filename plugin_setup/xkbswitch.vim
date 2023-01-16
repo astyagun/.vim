@@ -7,7 +7,6 @@ let g:XkbSwitchNLayout   = g:MyXkbSwitchNLayout
 
 " Enable keymap
 let g:XkbSwitchAssistNKeymap = 1    " for commands r and f
-let g:XkbSwitchAssistSKeymap = 1    " for search lines
 let g:XkbSwitchKeymapNames   = {"org.sil.ukelele.keyboardlayout.russianmodified.russianmodified": "ru"}
 set keymap=russian-jcukenmac
 
