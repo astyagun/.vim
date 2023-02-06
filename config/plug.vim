@@ -100,6 +100,7 @@ Plug 'vim-scripts/confluencewiki.vim', #{for: 'confluencewiki'}
 " Integrations {{{
 
 Plug 'antoinemadec/coc-fzf'
+Plug 'dense-analysis/ale'
 Plug 'janko-m/vim-test', #{for: 'ruby'} " Depends on skywind3000/asyncrun.vim
 Plug 'lambdalisue/vim-gista', #{on: 'Gista'}
 Plug 'mhinz/vim-signify'
@@ -112,7 +113,6 @@ Plug 'tpope/vim-dadbod', #{on: 'DB'}
 Plug 'tpope/vim-eunuch' " Unix commands
 Plug 'tpope/vim-fugitive', #{tag: 'v*'}
 Plug 'tpope/vim-rhubarb'
-Plug 'w0rp/ale'
 
 " }}} Integrations
 
