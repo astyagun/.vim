@@ -54,6 +54,7 @@ set shortmess-=S
 set showcmd
 set sidescrolloff=5
 set signcolumn=yes
+set smoothscroll
 set updatetime=300
 
 augroup CursorLine
