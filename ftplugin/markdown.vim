@@ -1,5 +1,5 @@
-setlocal spell
 setlocal nofoldenable
+setlocal spell
 compiler markdown
 
 map <buffer> <CR> <Plug>Markdown_EditUrlUnderCursor
