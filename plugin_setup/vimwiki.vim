@@ -155,7 +155,6 @@ function! s:VimwikiGlobalGoto() abort
   let &l:imsearch = l:old_imsearch
 
   if !empty(l:goto_target)
-    let l:goto_target = substitute(l:goto_target, '\(\\\)\@<! ', '\\ ', 'g') " Escape unescaped spaces
     execute 'VimwikiGoto ' . l:goto_target
   else
     execute 'silent buffer ' . l:current_buffer
