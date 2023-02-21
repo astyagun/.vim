@@ -19,6 +19,18 @@ if !exists('*ReloadConfiguration')
   endfunction
 endif
 
-map <Leader>ve :edit $MYVIMRC<CR>
-map <Leader>vp :edit <C-r>=fnamemodify(expand("$MYVIMRC"), ":p:h")<CR>/config/plug.vim<CR>
 map <Leader>vs :call ReloadConfiguration()<CR>
+
+augroup VimConfigMappings
+  autocmd!
+  autocmd User StartifyBufferOpened if s:IsInVimConfigDir() | call s:AddVimConfigMaps() | endif
+augroup END
+
+function! s:IsInVimConfigDir() abort
+  return getcwd() == s:vim_path
+endfunction
+
+function! s:AddVimConfigMaps() abort
+  map <Leader>ve :edit $MYVIMRC<CR>
+  map <Leader>vp :edit <C-r>=fnamemodify(expand("$MYVIMRC"), ":p:h")<CR>/config/plug.vim<CR>
+endfunction
