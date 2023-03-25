@@ -135,6 +135,6 @@ set wildoptions=fuzzy
 " Command line {{{
 
 set shell=/bin/zsh
-set shellcmdflag=-lc
+set shellcmdflag=-c
 
 " }}} Command line
