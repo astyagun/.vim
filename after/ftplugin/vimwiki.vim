@@ -1,1 +1,2 @@
- setlocal comments=b:>,b:*,b:+,b:- formatoptions+=r
+setlocal comments=b:>,b:*,b:+,b:-
+setlocal formatoptions-=c formatoptions-=t formatoptions+=r
