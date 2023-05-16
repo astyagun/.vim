@@ -41,6 +41,7 @@ augroup END
 
 let &listchars = "tab:->,trail:\uB7,nbsp:~"
 set belloff=all
+set cmdheight=2
 set colorcolumn=+1
 set cursorline
 set display+=lastline
