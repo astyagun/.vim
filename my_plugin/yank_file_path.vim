@@ -22,7 +22,13 @@ function! s:YankGitHubLink(lines) abort
   endif
 
   let l:command = "gh browse '" . expand("%") . l:line_numbers . "' -nb $(git show master --format=%H --no-patch)"
-  let @+=systemlist(l:command)[0]
+  let l:result = systemlist(l:command)
+  if !v:shell_error
+    let @+=l:result[0]
+    echom "Copied: " . l:result[0]
+  else
+    echoe "Error copying link: " . join(l:result, "\n")
+  endif
 endfunction
 
 command! -range -bang YankGitHubLink <line1>,<line2>call <SID>YankGitHubLink(<bang>0)
