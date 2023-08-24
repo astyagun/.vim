@@ -15,7 +15,7 @@ nnoremap <Leader>yd :let @+=expand("%:p:h")<CR>
 "  GitHub links  "
 """"""""""""""""""
 
-function! s:YankGitHubLink(lines) abort
+function! s:YankGitHubLink(lines) range abort
   let l:line_numbers = ""
   if a:lines
     let l:line_numbers = ":" . a:firstline . "-" . a:lastline
