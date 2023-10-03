@@ -1,2 +1,2 @@
-command! GrepTODO grep 'TODO\|FIXME\|OPTIMIZE\|HACK\|REVIEW\|XXX'
-command! FindTODO normal /TODO\|FIXME\|OPTIMIZE\|HACK\|REVIEW\|XXX<CR>
+execute "command! GrepTODO grep '" . join(g:TodoVariations, '\|') . "'"
+execute 'command! FindTODO normal /' . join(g:TodoVariations, '\|') . '<CR>'

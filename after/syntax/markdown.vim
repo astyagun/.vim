@@ -1,4 +1,5 @@
-syntax keyword mdTodo TODO FIXME
+syntax case match
+execute 'syntax keyword mdTodo ' . join(g:TodoVariations, ' ')
 syntax cluster mkdNonListItem add=mdTodo
 highlight link mdTodo Todo
 

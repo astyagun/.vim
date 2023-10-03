@@ -10,6 +10,16 @@ py3 ''
 source ~/.vim/config/load_shell_environment.vim
 
 let g:sidebar_width = 30
+let g:TodoVariations = [
+      \   'TODO',
+      \   'FIXME',
+      \   'NOTE',
+      \   'WARN',
+      \   'OPTIMIZE',
+      \   'HACK',
+      \   'REVIEW',
+      \   'XXX'
+      \ ]
 
 call s:SourceFilesFromDirectory('plugin_setup')
 source ~/.vim/config/plug.vim

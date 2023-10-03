@@ -1,1 +1,2 @@
-syntax match shTodo contained /\<\%(NOTE\|OPTIMIZE\|HACK\|REVIEW\)\ze:\=\>/
+syntax case match
+execute 'syntax match shTodo contained /\<\%(' . join(g:TodoVariations, '\|') . '\)\ze:\=\>/'
