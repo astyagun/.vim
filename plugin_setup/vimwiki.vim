@@ -56,15 +56,15 @@ augroup END
 " function s:VimwikiGlobalCustomization {{{
 
 function! s:VimwikiGlobalCustomization() abort
-  nmap <Leader>ww <Plug>VimwikiIndex
-  nmap <Leader>wi <Plug>VimwikiMakeDiaryNote
-  nmap <Leader>wI <Plug>VimwikiDiaryIndex
-  nmap <Leader>wp :e Личное/Горизонты/1\ Проекты.md<CR>
-  nmap <Leader>wg :call <SID>VimwikiGlobalGoto()<CR>
+  nmap <Leader>Ww <Plug>VimwikiIndex
+  nmap <Leader>Wi <Plug>VimwikiMakeDiaryNote
+  nmap <Leader>WI <Plug>VimwikiDiaryIndex
+  nmap <Leader>Wp :e Личное/Горизонты/1\ Проекты.md<CR>
+  nmap <Leader>Wg :call <SID>VimwikiGlobalGoto()<CR>
 
   augroup NetrwVimwikiNewFileMapping
     autocmd!
-    autocmd FileType netrw nmap <buffer> % \wg
+    autocmd FileType netrw nmap <buffer> % <Leader>Wg
   augroup END
 endfunction
 
@@ -79,11 +79,11 @@ function! s:VimwikiLocalCustomization() abort
   vmap <buffer> <CR> <Plug>VimwikiNormalizeLinkVisualCR
   nmap <buffer> + <Plug>VimwikiNormalizeLink
   vmap <buffer> + <Plug>VimwikiNormalizeLinkVisual
-  nmap <buffer> <Leader>ws <Plug>VimwikiSplitLink
-  nmap <buffer> <Leader>wv <Plug>VimwikiVSplitLink
-  nmap <buffer> <Leader>wt <Plug>VimwikiTabnewLink
+  nmap <buffer> <Leader>Ws <Plug>VimwikiSplitLink
+  nmap <buffer> <Leader>Wv <Plug>VimwikiVSplitLink
+  nmap <buffer> <Leader>Wt <Plug>VimwikiTabnewLink
   nmap <buffer> <Backspace> <Plug>VimwikiGoBackLink
-  nmap <buffer> <Leader>wr <Plug>VimwikiRenameLink
+  nmap <buffer> <Leader>Wr <Plug>VimwikiRenameLink
   nmap <buffer> ]v <Plug>VimwikiNextLink
   nmap <buffer> [v <Plug>VimwikiPrevLink
 
@@ -103,7 +103,7 @@ function! s:VimwikiLocalCustomization() abort
   " Custom mappings
 
   " Convert Taskpaper item with a link into a list item with a link
-  nmap <buffer> \wa 0t@Dv^wS]Jxys$)jdd
+  nmap <buffer> <Leader>Wa 0t@Dv^wS]Jxys$)jdd
 
   " Commands
 
