@@ -95,7 +95,6 @@ endfunction
 let &grepprg = 'rg --vimgrep --hidden --no-ignore-vcs --ignore-file ~/.files/zsh/find.ignore'
 set confirm
 set diffopt=filler,closeoff,vertical,hiddenoff,internal,indent-heuristic,algorithm:patience
-set smoothscroll
 set foldmethod=indent
 set foldminlines=2
 set foldnestmax=10
@@ -106,6 +105,7 @@ set ignorecase
 set nostartofline
 set sessionoptions-=options
 set smartcase
+set smoothscroll
 
 augroup PreviewWindowFolding
   autocmd!
