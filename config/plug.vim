@@ -42,7 +42,6 @@ execute 'set rtp+=' . s:homebrew_prefix . '/opt/fzf'
 Plug 'AndrewRadev/sideways.vim'
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'AndrewRadev/switch.vim'
-Plug 'github/copilot.vim'
 Plug 'junegunn/vim-easy-align'
 Plug 'lyokha/vim-xkbswitch'
 Plug 'mbbill/undotree', #{on: 'UndotreeToggle'}
