@@ -1,4 +1,5 @@
 let g:coc_global_extensions = [
+      \ '@yaegassy/coc-ansible',
       \ 'coc-css',
       \ 'coc-docker',
       \ 'coc-html',
@@ -10,6 +11,10 @@ let g:coc_global_extensions = [
       \ 'coc-vimlsp',
       \ 'coc-yaml',
       \ ]
+
+let g:coc_filetype_map = {
+      \ 'yaml.ansible': 'ansible'
+      \ }
 
 inoremap <silent><expr> <C-x><C-d> coc#refresh()
 map <Leader>cf :CocCommand editor.action.formatDocument<CR><Esc>
