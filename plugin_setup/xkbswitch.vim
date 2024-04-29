@@ -16,11 +16,12 @@ set imsearch=0
 augroup XkbSwitchCustomizations
   autocmd!
 
-  autocmd VimEnter,FocusGained * if mode() ==# "i" || &buftype ==# "terminal"
-        \|    call s:XkbSwitchToCurrentILayout()
-        \|  else
-        \|    call s:XkbSwitchToDefaultNLayout()
-        \|  endif
+  " This would be good to have, but it slows down Vim startup
+  " autocmd FocusGained * if mode() ==# "i" || &buftype ==# "terminal"
+  "       \|    call s:XkbSwitchToCurrentILayout()
+  "       \|  else
+  "       \|    call s:XkbSwitchToDefaultNLayout()
+  "       \|  endif
 
   " Vimwiki notes directory
 
