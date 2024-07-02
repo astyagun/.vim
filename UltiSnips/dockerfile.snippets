@@ -1,0 +1,11 @@
+snippet i "Apt install" w
+RUN apt-get update \
+  && apt-get install -y --no-install-recommends \
+    $0 \
+  && rm -rf /var/lib/apt/lists/*
+endsnippet
+
+snippet u "Add user" w
+RUN adduser --disabled-password --gecos '' ${1:app}
+USER $1
+endsnippet
