@@ -5,3 +5,15 @@ endsnippet
 snippet moded "Directory access permissions" w
 mode: u=rwx,g=rx,o=rx
 endsnippet
+
+snippet dv "Debug variable" w
+- name: Debug variable
+	ansible.builtin.debug:
+		var: $1
+endsnippet
+
+snippet dm "Debug message" w
+- name: Debug message
+	ansible.builtin.debug:
+		msg: $1
+endsnippet
