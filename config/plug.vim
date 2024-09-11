@@ -92,6 +92,7 @@ Plug 'whatyouhide/vim-textobj-xmlattr', #{for: ['html', 'eruby']}
 
 Plug 'iamcco/markdown-preview.nvim', #{do: 'cd app && yarn install', for: ['markdown']}
 Plug 'mechatroner/rainbow_csv', #{for: 'csv'}
+Plug 'rickhowe/diffunitsyntax'
 Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-liquid', #{for: 'liquid'}
 Plug 'vim-scripts/confluencewiki.vim', #{for: 'confluencewiki'}
