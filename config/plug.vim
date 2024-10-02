@@ -95,6 +95,7 @@ Plug 'mechatroner/rainbow_csv', #{for: 'csv'}
 Plug 'rickhowe/diffunitsyntax'
 Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-liquid', #{for: 'liquid'}
+Plug 'trapd00r/vidir', #{for: 'vidir'}
 Plug 'vim-scripts/confluencewiki.vim', #{for: 'confluencewiki'}
 
 " }}} File types
