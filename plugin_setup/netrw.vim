@@ -19,7 +19,7 @@ function! s:ExploreAndSelectCurrentFile(horizontal = v:true) abort
   if a:horizontal
     Explore
   else
-    50Vexplore
+    50Vexplore!
   endif
 
   call search('\V\^' . l:current_file_name . '\$', 'c')
