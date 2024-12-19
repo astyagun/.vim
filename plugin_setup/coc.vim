@@ -7,6 +7,7 @@ let g:coc_global_extensions = [
       \ 'coc-markdownlint',
       \ 'coc-sh',
       \ 'coc-solargraph',
+      \ 'coc-toml',
       \ 'coc-ultisnips',
       \ 'coc-vimlsp',
       \ 'coc-yaml',
