@@ -105,7 +105,6 @@ Plug 'vim-scripts/confluencewiki.vim', #{for: 'confluencewiki'}
 Plug 'antoinemadec/coc-fzf'
 Plug 'dense-analysis/ale'
 Plug 'janko-m/vim-test', #{for: 'ruby'} " Depends on skywind3000/asyncrun.vim
-Plug 'lambdalisue/vim-gista', #{on: 'Gista'}
 Plug 'mhinz/vim-signify'
 Plug 'neoclide/coc.nvim', #{branch: 'release'}
 Plug 'samoshkin/vim-mergetool', #{on: 'MergetoolStart'}
