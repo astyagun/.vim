@@ -3,7 +3,7 @@ if !has('gui_running')
 endif
 
 set guifont=JetBrains\ Mono:h13
-set guioptions=g
+set guioptions=gc
 set linespace=0
 set macligatures
 set macthinstrokes
