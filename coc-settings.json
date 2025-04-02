@@ -14,5 +14,6 @@
   "solargraph.useBundler": false,
   "suggest.autoTrigger": "none",
   "suggest.noselect": true,
-  "yaml.schemaStore.enable": false
+  "yaml.schemaStore.enable": false,
+  "yaml.schemaStore.url": ""
 }
