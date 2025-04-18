@@ -104,6 +104,8 @@ function! s:VimwikiLocalCustomization() abort
 
   " Convert Taskpaper item with a link into a list item with a link
   nmap <buffer> <Leader>Wa 0t@Dv^wS]Jxys$)jdd
+  " Fetch IMDB rating
+  nmap <buffer> <Leader>Wi 0/imdb\.com<CR>yiuo<Esc>p!!xargs xh get -b <Bar> htmlq --text '[data-testid=hero-rating-bar__aggregate-rating__score]' <Bar> head -n1<CR>f/D0DkwPa <Esc>jdd
 
   " Commands
 
