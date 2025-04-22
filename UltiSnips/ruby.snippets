@@ -52,3 +52,11 @@ endsnippet
 snippet .tp ".tap(&method(:pp))" w
 .tap(&method(:pp))
 endsnippet
+
+snippet gemfile "gemfile block for inline gems installation" w
+require 'bundler/inline'
+gemfile do
+	gem '$1'
+end
+$0
+endsnippet
