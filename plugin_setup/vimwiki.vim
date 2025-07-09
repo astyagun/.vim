@@ -103,9 +103,9 @@ function! s:VimwikiLocalCustomization() abort
   " Custom mappings
 
   " Convert Taskpaper item with a link into a list item with a link
-  nmap <buffer> <Leader>Wa 0t@Dv^wS]Jxys$)jdd
+  nmap <buffer> <Leader>Wa :call <SID>VimwikiConvertFromTaskPaper()<CR>
   " Fetch IMDB rating
-  nmap <buffer> <Leader>Wi 0/imdb\.com<CR>yiuo<Esc>p!!xargs xh get -b <Bar> htmlq --text '[data-testid=hero-rating-bar__aggregate-rating__score]' <Bar> head -n1<CR>f/D0DkwPa <Esc>jdd
+  nmap <buffer> <Leader>Wi :call <SID>VimwikiFetchIMDBRating()<CR>
 
   " Commands
 
@@ -164,3 +164,37 @@ function! s:VimwikiGlobalGoto() abort
 endfunction
 
 " }}} function s:VimwikiGlobalGoto
+
+" Remove tags and trailing empty line, make first line a link text and the second line a link URL
+" function s:VimwikiConvertFromTaskPaper {{{
+function! s:VimwikiConvertFromTaskPaper() abort
+  substitute /\v\s*- (.*) \@\w+.*\n\s*(.*)\n/- [\1](\2)/
+endfunction
+" }}} function s:VimwikiConvertFromTaskPaper
+
+" function s:VimwikiFetchIMDBRating {{{
+
+function! s:VimwikiFetchIMDBRating() abort
+  " Original: 0/imdb\.com<CR>yiuo<Esc>p!!xargs xh get -b <Bar> htmlq --text '[data-testid=hero-rating-bar__aggregate-rating__score]' <Bar> head -n1<CR>f/D0DkwPa <Esc>jdd
+
+  let l:line = getline(line("."))
+
+  " Find IMDB URL in current line
+  let l:imdb_url = matchstr(l:line, '\vhttps://(www|m)\.imdb\.com/title/tt\d+')
+  if empty(l:imdb_url)
+    echoe "No IMDB URL found in current line"
+  endif
+
+  " Fetch rating from IMDB
+  let l:imdb_fetch_result = systemlist($"xh get {l:imdb_url} -b| htmlq --text '[data-testid=hero-rating-bar__aggregate-rating__score]' | head -n1")
+  if empty(l:imdb_fetch_result)
+    echoe "Error fetching rating from IMDB"
+  endif
+  let l:imdb_rating = substitute(l:imdb_fetch_result[0], "/10$", "", "")
+
+  " Add rating to current line
+  let l:new_line = substitute(l:line, '\v^(\s*(- )?)(.*)$', $'\1{l:imdb_rating} \3', "")
+  call setline(line("."), l:new_line)
+endfunction
+
+" }}} function s:VimwikiFetchIMDBRating
