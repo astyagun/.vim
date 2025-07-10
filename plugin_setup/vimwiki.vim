@@ -183,14 +183,21 @@ function! s:VimwikiFetchIMDBRating() abort
   let l:imdb_url = matchstr(l:line, '\vhttps://(www|m)\.imdb\.com/title/tt\d+')
   if empty(l:imdb_url)
     echoe "No IMDB URL found in current line"
+    return
   endif
 
   " Fetch rating from IMDB
   let l:imdb_fetch_result = systemlist($"xh get {l:imdb_url} -b| htmlq --text '[data-testid=hero-rating-bar__aggregate-rating__score]' | head -n1")
   if empty(l:imdb_fetch_result)
     echoe "Error fetching rating from IMDB"
+    return
   endif
   let l:imdb_rating = substitute(l:imdb_fetch_result[0], "/10$", "", "")
+
+  if match(l:imdb_rating, '\zs\d\.\d\ze') < 0
+    echoe "Error: " . l:imdb_rating
+    return
+  endif
 
   " Add rating to current line
   let l:new_line = substitute(l:line, '\v^(\s*(- )?)(.*)$', $'\1{l:imdb_rating} \3', "")
