@@ -168,7 +168,7 @@ endfunction
 " Remove tags and trailing empty line, make first line a link text and the second line a link URL
 " function s:VimwikiConvertFromTaskPaper {{{
 function! s:VimwikiConvertFromTaskPaper() abort
-  substitute /\v\s*- (.*) \@\w+.*\n\s*(.*)\n/- [\1](\2)/
+  substitute /\v^\s*- (.{-})%( \@\w+\(\w+\))+\n\s*(.+)\n/- [\1](\2)/
 endfunction
 " }}} function s:VimwikiConvertFromTaskPaper
 
