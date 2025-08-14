@@ -1,23 +1,25 @@
+vim9script
+
 augroup RubocopGx
   autocmd!
   autocmd BufNewFile,BufRead rubocop.yml,.rubocop.yml,.rubocop_todo.yml
-        \ nnoremap <expr><buffer><silent> gx <SID>RubocopGx()
+        \ nnoremap <buffer><silent> gx :call <SID>RubocopGx()<CR>
 augroup END
 
-" gx to open Rubocop cops documentation in a browser
-function! s:RubocopGx() abort
-  let l:cfile = expand('<cfile>')
-  if !empty(l:cfile) && l:cfile =~? '^\w\+/\w\+$'
-    let [l:group, l:cop_name] = split(tolower(l:cfile), '/')
-    if l:group ==# 'rails' || l:group ==# "performance"
-      let l:url = 'https://docs.rubocop.org/rubocop-' . l:group . '/cops_' . l:group . '.html#' . l:group . l:cop_name
-    elseif l:group ==# 'rspec' || l:group ==# 'capybara' || l:group ==# 'factorybot'
-      let l:url = 'https://docs.rubocop.org/rubocop-rspec/cops_' . l:group . '.html#' . l:group . l:cop_name
+# gx to open Rubocop cops documentation in a browser
+def RubocopGx()
+  var cfile = expand('<cfile>')
+  if !empty(cfile) && cfile =~? '^\w\+/\w\+$'
+    var [group, cop_name] = split(tolower(cfile), '/')
+    if group ==# 'rails' || group ==# "performance"
+      var url = 'https://docs.rubocop.org/rubocop-' .. group .. '/cops_' .. group .. '.html#' .. group .. cop_name
+    elseif group ==# 'rspec' || group ==# 'capybara' || group ==# 'factorybot'
+      var url = 'https://docs.rubocop.org/rubocop-rspec/cops_' .. group .. '.html#' .. group .. cop_name
     else
-      let l:url = 'https://docs.rubocop.org/rubocop/cops_' . l:group . '.html#' . l:group . l:cop_name
+      var url = 'https://docs.rubocop.org/rubocop/cops_' .. group .. '.html#' .. group .. cop_name
     endif
-    call openbrowser#open(l:url)
+    dist#vim9#Open(url)
   else
-    call OpenInNetRW()
+    dist#vim9#Open(cfile)
   endif
-endfunction
+enddef

@@ -1,20 +1,23 @@
+vim9script
+
 augroup AnsibleGx
   autocmd!
-  autocmd FileType yaml.ansible nnoremap <expr><buffer><silent> gx <SID>AnsibleGx()
+  autocmd FileType yaml.ansible nnoremap <buffer><silent> gx :call <SID>AnsibleGx()<CR>
 augroup END
 
-" gx to open Ansible documentation in browser
-function! s:AnsibleGx() abort
+# gx to open Ansible documentation in browser
+def AnsibleGx()
+  var cfile = expand('<cfile>')
+
   if getline('.') =~# '^[^#].*:'
-    let l:cfile = expand('<cfile>')
-    if !empty(l:cfile) && l:cfile !=# '-'
-      if l:cfile !~# '://'
-        call openbrowser#open('https://docs.ansible.com/ansible/latest/index.html#stp=1&stq=' . l:cfile)
+    if !empty(cfile) && cfile !=# '-'
+      if cfile !~# '://'
+        dist#vim9#Open('https://docs.ansible.com/ansible/latest/index.html#stp=1&stq=' .. cfile)
       else
-        call OpenInNetRW()
+        dist#vim9#Open(cfile)
       endif
     endif
   else
-    call OpenInNetRW()
+    dist#vim9#Open(cfile)
   endif
-endfunction
+enddef

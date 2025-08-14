@@ -1,17 +1,20 @@
+vim9script
+
 augroup GemfileGx
   autocmd!
-  autocmd BufNewFile,BufRead Gemfile,*.gemspec nnoremap <expr><buffer><silent> gx <SID>GemfileGx()
+  autocmd BufNewFile,BufRead gems.rb,Gemfile,*.gemspec nnoremap <buffer><silent> gx :call <SID>GemfileGx()<CR>
 augroup END
 
-" gx to open Rubygems URLs in browser
-function! s:GemfileGx() abort
-  let l:line = getline('.')
-  if l:line =~# '^ *gem\s' || l:line =~# '^ *spec.add_dependency\s' || l:line =~# '^ *spec.add_development_dependency\s'
-    let l:cfile = expand('<cfile>')
-    if !empty(l:cfile) && l:cfile !=# 'gem' && l:cfile !=# 'spec.add_dependency' && l:cfile !=# 'spec.add_development_dependency'
-      call openbrowser#open('https://rubygems.org/gems/' . l:cfile)
+# gx to open Rubygems URLs in browser
+def GemfileGx()
+  var line = getline('.')
+  var cfile = expand('<cfile>')
+
+  if line =~# '^ *gem\s' || line =~# '^ *spec.add_dependency\s' || line =~# '^ *spec.add_development_dependency\s'
+    if !empty(cfile) && cfile !=# 'gem' && cfile !=# 'spec.add_dependency' && cfile !=# 'spec.add_development_dependency'
+      dist#vim9#Open('https://rubygems.org/gems/' .. cfile)
     endif
   else
-    call OpenInNetRW()
+    dist#vim9#Open(cfile)
   endif
-endfunction
+enddef

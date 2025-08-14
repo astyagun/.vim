@@ -1,16 +1,18 @@
+vim9script
+
 augroup PlugGx
   autocmd!
-  autocmd BufNewFile,BufRead plug.vim nnoremap <expr><buffer><silent> gx <SID>PlugGx()
+  autocmd BufNewFile,BufRead plug.vim nnoremap <buffer><silent> gx :call <SID>PlugGx()<CR>
 augroup END
 
-" gx to open GitHub URLs in browser
-function! s:PlugGx() abort
+# gx to open GitHub URLs in browser
+def PlugGx()
+  var cfile = expand('<cfile>')
   if getline('.') =~# '^"\? *Plug\s'
-    let l:cfile = expand('<cfile>')
-    if !empty(l:cfile) && l:cfile !=# 'Plug'
-      call openbrowser#open('https://github.com/' . l:cfile)
+    if !empty(cfile) && cfile !=# 'Plug'
+      dist#vim9#Open('https://github.com/' .. cfile)
     endif
   else
-    call OpenInNetRW()
+    dist#vim9#Open(cfile)
   endif
-endfunction
+enddef

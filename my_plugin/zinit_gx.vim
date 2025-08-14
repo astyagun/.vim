@@ -1,16 +1,18 @@
+vim9script
+
 augroup ZinitGx
   autocmd!
-  autocmd BufNewFile,BufRead *.zsh nnoremap <expr><buffer><silent> gx <SID>ZinitGx()
+  autocmd BufNewFile,BufRead *.zsh nnoremap <buffer><silent> gx :call <SID>ZinitGx()<CR>
 augroup END
 
-" gx to open GitHub URLs in browser
-function! s:ZinitGx() abort
+# gx to open GitHub URLs in browser
+def ZinitGx()
+  var cfile = expand('<cfile>')
   if getline('.') =~# '\v^\s*(zinit|zi|zpl|zplg|zplugin)\s+(load|light)\s'
-    let l:cfile = expand('<cfile>')
-    if !empty(l:cfile) && l:cfile !=# '\v(zinit|zi|zpl|zplg|zplugin|load|light|lucid)'
-      call openbrowser#open('https://github.com/' . l:cfile)
+    if !empty(cfile) && cfile !=# '\v(zinit|zi|zpl|zplg|zplugin|load|light|lucid)'
+      dist#vim9#Open('https://github.com/' .. cfile)
     endif
   else
-    call OpenInNetRW()
+    dist#vim9#Open(cfile)
   endif
-endfunction
+enddef
