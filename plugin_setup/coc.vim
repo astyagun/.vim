@@ -24,12 +24,12 @@ map <Leader>cr :CocRestart<CR><Esc>
 augroup Coc
   autocmd!
 
-  autocmd FileType ruby nnoremap <buffer><silent> <C-]> :call <SID>GotoDefinition()<CR>
-  autocmd FileType ruby nnoremap <buffer><silent> <C-w><C-]> :wincmd s <Bar> call <SID>GotoDefinition()<CR>
+  autocmd FileType ruby,cs nnoremap <buffer><silent> <C-]> :call <SID>GotoDefinition()<CR>
+  autocmd FileType ruby,cs nnoremap <buffer><silent> <C-w><C-]> :wincmd s <Bar> call <SID>GotoDefinition()<CR>
   autocmd FileType vim setlocal tagfunc=CocTagFunc
 
-  autocmd FileType ruby nnoremap <buffer><silent> <D-g> :CocFzfList outline<CR>
-  autocmd FileType ruby nnoremap <buffer><silent> K :call CocAction('doHover')<CR>
+  autocmd FileType ruby,vim,cs nnoremap <buffer><silent> <D-g> :CocFzfList outline<CR>
+  autocmd FileType ruby,vim,cs nnoremap <buffer><silent> K :call CocAction('doHover')<CR>
 
   autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
 augroup end
