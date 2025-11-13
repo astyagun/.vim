@@ -94,7 +94,7 @@ endfunction
 
 let &grepprg = 'rg --vimgrep --hidden --no-ignore-vcs --ignore-file ~/.files/zsh/find.ignore'
 set confirm
-set diffopt=filler,closeoff,vertical,hiddenoff,internal,indent-heuristic,algorithm:patience
+set diffopt=filler,closeoff,vertical,hiddenoff,internal,indent-heuristic,algorithm:patience,inline:char
 set foldmethod=indent
 set foldminlines=2
 set foldnestmax=10
