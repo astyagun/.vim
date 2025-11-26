@@ -188,7 +188,8 @@ function! s:VimwikiFetchIMDBRating() abort
   endif
 
   " Fetch rating from IMDB
-  let l:imdb_fetch_result = systemlist($"xh get {l:imdb_url} -b| htmlq --text '[data-testid=hero-rating-bar__aggregate-rating__score]' | head -n1")
+  let l:request_user_agent = "User-Agent:Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.6 Safari/605.1.15"
+  let l:imdb_fetch_result = systemlist($"xh get {l:imdb_url} '{l:request_user_agent}' -b | htmlq --text '[data-testid=hero-rating-bar__aggregate-rating__score]' | head -n1")
   if empty(l:imdb_fetch_result)
     echoe "Error fetching rating from IMDB"
     return
