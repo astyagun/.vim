@@ -104,8 +104,10 @@ function! s:VimwikiLocalCustomization() abort
 
   " Convert Taskpaper item with a link into a list item with a link
   nmap <buffer> <Leader>Wa :call <SID>VimwikiConvertFromTaskPaper()<CR>
+  vmap <buffer> <Leader>Wa :g/-/call <SID>VimwikiConvertFromTaskPaper() <Bar> nohl<CR>
   " Fetch IMDB rating
   nmap <buffer> <Leader>Wi :call <SID>VimwikiFetchIMDBRating()<CR>
+  vmap <buffer> <Leader>Wi :g/-/call <SID>VimwikiFetchIMDBRating() <Bar> nohl<CR>
 
   " Commands
 
