@@ -5,7 +5,7 @@ scriptencoding utf-8
 
 filetype plugin indent on
 set autowrite
-set nomodeline
+set modeline
 set rubydll=/usr/lib/libruby.dylib
 set termwinkey=† " Free up <C-w> for delete a word backwards. Use <C-\><C-n> to return to NORMAL mode.
 syntax on
