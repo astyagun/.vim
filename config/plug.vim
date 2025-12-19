@@ -63,6 +63,7 @@ Plug 'ryvnf/readline.vim'
 
 Plug 'SirVer/ultisnips'
 Plug 'alvan/vim-closetag', #{for: 'html'}
+Plug 'ggml-org/llama.vim'
 Plug 'honza/vim-snippets'
 Plug 'mattn/emmet-vim', #{for: ['html', 'css'], on: 'EmmetInstall'}
 Plug 'tpope/vim-endwise'
