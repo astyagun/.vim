@@ -180,10 +180,25 @@ endfunction
 function! s:VimwikiFetchIMDBRating() abort
   " Original: 0/imdb\.com<CR>yiuo<Esc>p!!xargs xh get -b <Bar> htmlq --text '[data-testid=hero-rating-bar__aggregate-rating__score]' <Bar> head -n1<CR>f/D0DkwPa <Esc>jdd
 
+  if empty(matchstr(getline(line(".")), '\v^\s*-( \d+\.\d)* +\[.+\]\(https://(www|m)\.imdb\.com/title/tt\d+/.*\)\s*$'))
+    echoe "Given line doesn't match expected format"
+    return
+  end
+
+  " Normalize URL
+  " m.imdb.com -> www.imdb.com
+  if !empty(matchstr(getline(line(".")), '\v\(https:\/\/m\.imdb\.com\/.*\)'))
+    substitute/\v\(https:\/\/m\.imdb\.com\/(.*)\)/(https:\/\/www.imdb.com\/\1)/
+  endif
+  " Remove query params
+  if !empty(matchstr(getline(line(".")), '\v\(.*\?.+\)'))
+    substitute/\v\((https:\/\/www\.imdb\.com\/title\/tt\d+\/).*\)/(\1)/
+  endif
+
   let l:line = getline(line("."))
 
   " Find IMDB URL in current line
-  let l:imdb_url = matchstr(l:line, '\vhttps://(www|m)\.imdb\.com/title/tt\d+')
+  let l:imdb_url = matchstr(l:line, '\vhttps://www\.imdb\.com/title/tt\d+')
   if empty(l:imdb_url)
     echoe "No IMDB URL found in current line"
     return
