@@ -6,14 +6,12 @@ let g:coc_global_extensions = [
       \ 'coc-json',
       \ 'coc-markdownlint',
       \ 'coc-sh',
+      \ 'coc-solargraph',
       \ 'coc-toml',
       \ 'coc-ultisnips',
       \ 'coc-vimlsp',
       \ 'coc-yaml',
       \ ]
-
-" Disabled for now, because it only stands in the way for somple Ruby scripts, when there's no language server
-      " \ 'coc-solargraph',
 
 let g:coc_filetype_map = {
       \ 'yaml.ansible': 'ansible'
