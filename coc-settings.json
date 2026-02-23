@@ -7,7 +7,7 @@
   "json.enableDefaultSchemas": false,
   "markdownlint.config": {"line_length": false},
   "solargraph.checkGemVersion": false,
-  "solargraph.diagnostics": true,
+  "solargraph.diagnostics": false,
   "solargraph.promptDownload": false,
   "solargraph.useBundler": false,
   "suggest.autoTrigger": "none",
