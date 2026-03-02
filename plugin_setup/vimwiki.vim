@@ -105,9 +105,9 @@ function! s:VimwikiLocalCustomization() abort
   " Convert Taskpaper item with a link into a list item with a link
   nmap <buffer> <Leader>Wa :call <SID>VimwikiConvertFromTaskPaper()<CR>
   vmap <buffer> <Leader>Wa :g/-/call <SID>VimwikiConvertFromTaskPaper() <Bar> nohl<CR>
-  " Fetch IMDB rating
-  nmap <buffer> <Leader>Wi :call <SID>VimwikiFetchIMDBRating()<CR>
-  vmap <buffer> <Leader>Wi :g/-/call <SID>VimwikiFetchIMDBRating() <Bar> nohl<CR>
+  " Fetch IMDb rating
+  nmap <buffer> <Leader>Wi :call <SID>VimwikiFetchIMDbRating()<CR>
+  vmap <buffer> <Leader>Wi :g/-/call <SID>VimwikiFetchIMDbRating() <Bar> nohl<CR>
 
   " Commands
 
@@ -175,12 +175,12 @@ function! s:VimwikiConvertFromTaskPaper() abort
 endfunction
 " }}} function s:VimwikiConvertFromTaskPaper
 
-" function s:VimwikiFetchIMDBRating {{{
+" function s:VimwikiFetchIMDbRating {{{
 
-function! s:VimwikiFetchIMDBRating() abort
+function! s:VimwikiFetchIMDbRating() abort
   " Original: 0/imdb\.com<CR>yiuo<Esc>p!!xargs xh get -b <Bar> htmlq --text '[data-testid=hero-rating-bar__aggregate-rating__score]' <Bar> head -n1<CR>f/D0DkwPa <Esc>jdd
 
-  if empty(matchstr(getline(line(".")), '\v^\s*-( \d+\.\d)* +\[.+\]\(https://(www|m)\.imdb\.com/title/tt\d+/.*\)\s*$'))
+  if empty(matchstr(getline(line(".")), '\v^\s*-( \d+\.\d| \?)* +\[.+\]\(https://(www|m)\.imdb\.com/title/tt\d+/.*\)\s*$'))
     echoe "Given line doesn't match expected format"
     return
   end
@@ -197,25 +197,34 @@ function! s:VimwikiFetchIMDBRating() abort
 
   let l:line = getline(line("."))
 
-  " Find IMDB URL in current line
+  " Find IMDb URL and IMDb ID in current line
   let l:imdb_url = matchstr(l:line, '\vhttps://www\.imdb\.com/title/tt\d+')
   if empty(l:imdb_url)
-    echoe "No IMDB URL found in current line"
+    echoe "No IMDb URL found in current line"
+    return
+  endif
+  let l:imdb_id = matchstr(l:imdb_url, '\v(/)@<=tt\d+\ze')
+
+  " Fetch IMDb rating from Poiskkino API
+  if empty($POISKKINO_TOKEN)
+    echoe "POISKKINO_TOKEN environment variable not set"
+    return
+  endif
+  let l:imdb_fetch_command = $"xh get https://api.poiskkino.dev/v1.5/movie externalId.imdb=={l:imdb_id} selectFields==rating X-API-KEY:$POISKKINO_TOKEN -b | jq '.docs[0].rating.imdb'"
+  let l:imdb_rating = systemlist(l:imdb_fetch_command)[0]
+  if empty(l:imdb_rating)
+    echoe "Error fetching IMDb rating from Poiskkino API"
     return
   endif
 
-  " Fetch rating from IMDB
-  let l:request_user_agent = "User-Agent:Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.6 Safari/605.1.15"
-  let l:imdb_fetch_result = systemlist($"xh get {l:imdb_url} '{l:request_user_agent}' -b | htmlq --text '[data-testid=hero-rating-bar__aggregate-rating__score]' | head -n1")
-  if empty(l:imdb_fetch_result)
-    echoe "Error fetching rating from IMDB"
-    return
-  endif
-  let l:imdb_rating = substitute(l:imdb_fetch_result[0], "/10$", "", "")
-
-  if match(l:imdb_rating, '\zs\d\.\d\ze') < 0
+  if match(l:imdb_rating, '\v\zs\d(\.\d)?\ze') < 0 && l:imdb_rating != "null"
     echoe "Error: " . l:imdb_rating
     return
+  endif
+  if l:imdb_rating == "null"
+    let l:imdb_rating = "?"
+  else
+    let l:imdb_rating = printf("%.1f", str2float(l:imdb_rating))
   endif
 
   " Add rating to current line
@@ -223,4 +232,4 @@ function! s:VimwikiFetchIMDBRating() abort
   call setline(line("."), l:new_line)
 endfunction
 
-" }}} function s:VimwikiFetchIMDBRating
+" }}} function s:VimwikiFetchIMDbRating
