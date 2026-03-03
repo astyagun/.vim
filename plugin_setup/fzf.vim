@@ -10,6 +10,7 @@ nnoremap <silent> <D-p> :doautocmd User BeforeFzfOpen <Bar> Files<CR>
 
 nnoremap <silent> <D-g> :doautocmd User BeforeFzfOpen <Bar> BTags<CR>
 nnoremap <silent> <D-u> :doautocmd User BeforeFzfOpen <Bar> Buffers<CR>
+nnoremap <silent> <D-r> :doautocmd User BeforeFzfOpen <Bar> History<CR>
 
 augroup HideFZFStatusline
   autocmd!
