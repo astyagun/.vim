@@ -203,29 +203,23 @@ function! s:VimwikiFetchIMDbRating() abort
     echoe "No IMDb URL found in current line"
     return
   endif
-  let l:imdb_id = matchstr(l:imdb_url, '\v(/)@<=tt\d+\ze')
 
-  " Fetch IMDb rating from Poiskkino API
-  if empty($POISKKINO_TOKEN)
-    echoe "POISKKINO_TOKEN environment variable not set"
+  " Fetch IMDb rating
+  let l:imdb_fetch_command = $"webpage {l:imdb_url} | htmlq --text '[data-testid=hero-rating-bar__aggregate-rating__score]'"
+  let l:imdb_fetch_result = systemlist(l:imdb_fetch_command)[0]
+  if empty(l:imdb_fetch_result)
+    echoe "Error fetching IMDb rating"
     return
   endif
-  let l:imdb_fetch_command = $"xh get https://api.poiskkino.dev/v1.5/movie externalId.imdb=={l:imdb_id} selectFields==rating X-API-KEY:$POISKKINO_TOKEN -b | jq '.docs[0].rating.imdb'"
-  let l:imdb_rating = systemlist(l:imdb_fetch_command)[0]
-  if empty(l:imdb_rating)
-    echoe "Error fetching IMDb rating from Poiskkino API"
-    return
-  endif
+  let l:imdb_rating = substitute(l:imdb_fetch_result, "/10$", "", "")
+  let l:imdb_rating = printf("%.1f", str2float(l:imdb_rating))
 
-  if match(l:imdb_rating, '\v\zs\d(\.\d)?\ze') < 0 && l:imdb_rating != "null"
+  if match(l:imdb_rating, '\v\zs\d(\.\d)?\ze') < 0
     echoe "Error: " . l:imdb_rating
     return
   endif
-  if l:imdb_rating == "null"
-    let l:imdb_rating = "?"
-  else
-    let l:imdb_rating = printf("%.1f", str2float(l:imdb_rating))
-  endif
+
+  echom "Fetched rating IMDb: " . l:imdb_rating
 
   " Add rating to current line
   let l:new_line = substitute(l:line, '\v^(\s*(- )?)(.*)$', $'\1{l:imdb_rating} \3', "")
