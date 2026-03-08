@@ -18,12 +18,12 @@ let g:llama_config.show_info = 0
 
 let g:llama_config.keymap_debug_toggle    = "<Plug>Noop"
 let g:llama_config.keymap_fim_accept_full = "<D-i>"
-let g:llama_config.keymap_fim_accept_line = "<D-e>"
-let g:llama_config.keymap_fim_accept_word = "<D-l>"
+let g:llama_config.keymap_fim_accept_line = "<D-l>"
+let g:llama_config.keymap_fim_accept_word = "<D-e>"
 let g:llama_config.keymap_fim_trigger     = "<D-j>"
 let g:llama_config.keymap_inst_accept     = "<Leader><D-i>"
 let g:llama_config.keymap_inst_cancel     = "<Esc>"
-let g:llama_config.keymap_inst_continue   = "<Leader><D-l>"
+let g:llama_config.keymap_inst_continue   = "<Leader><D-e>"
 let g:llama_config.keymap_inst_rerun      = "<Leader><D-r>"
 let g:llama_config.keymap_inst_trigger    = "<Leader><D-j>"
 
