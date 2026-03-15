@@ -91,6 +91,7 @@ Plug 'whatyouhide/vim-textobj-xmlattr', #{for: ['html', 'eruby']}
 
 " File types {{{
 
+Plug 'ElmCast/elm-vim', #{for: 'elm'}
 Plug 'iamcco/markdown-preview.nvim', #{do: 'cd app && yarn install', for: ['markdown']}
 Plug 'mechatroner/rainbow_csv', #{for: 'csv'}
 Plug 'rickhowe/diffunitsyntax'
