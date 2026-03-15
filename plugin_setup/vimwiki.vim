@@ -205,13 +205,21 @@ function! s:VimwikiFetchIMDbRating() abort
   endif
 
   " Fetch IMDb rating
-  let l:imdb_fetch_command = $"webpage {l:imdb_url} | htmlq --text '[data-testid=hero-rating-bar__aggregate-rating__score]'"
-  let l:imdb_fetch_result = systemlist(l:imdb_fetch_command)[0]
-  if empty(l:imdb_fetch_result)
+  let l:imdb_fetch_command = $"webpage {l:imdb_url}"
+  let l:imdb_page = system(l:imdb_fetch_command)
+  if v:shell_error || empty(l:imdb_page)
+    echoe "Error fetching IMDb page"
+    return
+  endif
+  let l:imdb_raw_rating = systemlist(
+        \ "htmlq --text '[data-testid=hero-rating-bar__aggregate-rating__score]'",
+        \ l:imdb_page
+        \ )[0]
+  if v:shell_error || empty(l:imdb_raw_rating)
     echoe "Error fetching IMDb rating"
     return
   endif
-  let l:imdb_rating = substitute(l:imdb_fetch_result, "/10$", "", "")
+  let l:imdb_rating = substitute(l:imdb_raw_rating, "/10$", "", "")
   let l:imdb_rating = printf("%.1f", str2float(l:imdb_rating))
 
   if match(l:imdb_rating, '\v\zs\d(\.\d)?\ze') < 0
@@ -219,7 +227,7 @@ function! s:VimwikiFetchIMDbRating() abort
     return
   endif
 
-  echom "Fetched rating IMDb: " . l:imdb_rating
+  echom "Fetched rating from IMDb: " . l:imdb_rating
 
   " Add rating to current line
   let l:new_line = substitute(l:line, '\v^(\s*(- )?)(.*)$', $'\1{l:imdb_rating} \3', "")
