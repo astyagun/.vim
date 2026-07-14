@@ -31,7 +31,7 @@ imap <M-u> <Esc><M-u>a
 " NOTE: Depends on dead key state being removed from <M-u> key using Ukelele
 
 let s:meta_keys_to_map = {
-      \ 'b': ['∫', 'и'],
+      \ 'b': ['∫', '←'],
       \ 'c': ['ç', '≠'],
       \ 'd': ['∂', 'ћ'],
       \ 'f': ['ƒ', '÷'],
