@@ -6,7 +6,7 @@ let g:XkbSwitchLib       = "/usr/local/lib/libInputSourceSwitcher.dylib"
 let g:XkbSwitchNLayout   = g:MyXkbSwitchNLayout
 
 " Enable keymap
-let g:XkbSwitchAssistNKeymap = 1    " for commands r and f
+let g:XkbSwitchAssistNKeymap = 1 " for commands r and f
 let g:XkbSwitchKeymapNames   = {"com.apple.keylayout.Russian": "ru"} " Use `issw -l` to list current keymap names
 set keymap=russian-jcukenmac
 
