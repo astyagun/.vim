@@ -29,6 +29,7 @@ imap <M-u> <Esc><M-u>a
 " NOTE: Depends on 'nomacmeta'
 " NOTE: Depends on dead key state being removed from <M-n> key using Ukelele
 " NOTE: Depends on dead key state being removed from <M-u> key using Ukelele
+" NOTE: Depends on <M-и> key printing "←", this was the case befire, but now has to be set using Ukelele
 
 let s:meta_keys_to_map = {
       \ 'b': ['∫', '←'],
