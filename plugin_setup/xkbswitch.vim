@@ -1,4 +1,4 @@
-let g:MyXkbSwitchNLayout = "com.apple.keylayout.US" " Use `issw -l` to list current keymap names
+let g:MyXkbSwitchNLayout = "org.sil.ukelele.keyboardlayout.usa.us" " Use `issw -l` to list current keymap names
 
 let g:XkbSwitchEnabled   = 1
 let g:XkbSwitchIMappings = ["ru"]
@@ -7,7 +7,7 @@ let g:XkbSwitchNLayout   = g:MyXkbSwitchNLayout
 
 " Enable keymap
 let g:XkbSwitchAssistNKeymap = 1 " for commands r and f
-let g:XkbSwitchKeymapNames   = {"com.apple.keylayout.Russian": "ru"} " Use `issw -l` to list current keymap names
+let g:XkbSwitchKeymapNames   = {"org.sil.ukelele.keyboardlayout.russian.russian": "ru"} " Use `issw -l` to list current keymap names
 set keymap=russian-jcukenmac
 
 set iminsert=0
