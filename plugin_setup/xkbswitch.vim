@@ -25,7 +25,11 @@ augroup XkbSwitchCustomizations
 
   " Vimwiki notes directory
 
-  autocmd User StartifyBufferOpened if IsInVimwikiDir() | let g:XkbSwitchILayout = "ru" | endif
+  autocmd User StartifyBufferOpened if IsInVimwikiDir()
+        \|   let g:XkbSwitchILayout = "ru"
+        \|   set iminsert=1
+        \|   set imsearch=1
+        \| endif
 
   " Fzf in Vimwiki notes directory
 
