@@ -2,6 +2,7 @@
 *.swp
 *~
 .DS_Store
+/.coc.env
 /autoload/plug.vim
 /autoload/plug.vim.old
 /history/

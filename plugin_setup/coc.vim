@@ -17,6 +17,10 @@ let g:coc_filetype_map = {
       \ 'yaml.ansible': 'ansible'
       \ }
 
+" Pass alternative $ANSIBLE_HOME to ansible-lint, so that mock_modules stop messing up ~/.ansible directory
+call system("echo ANSIBLE_HOME=$HOME/.cache/ansible-lint > $HOME/.vim/.coc.env")
+let g:coc_node_args = ["--env-file", $HOME . "/.vim/.coc.env"]
+
 inoremap <silent><expr> <C-x><C-d> coc#refresh()
 map <Leader>cf :CocCommand editor.action.formatDocument<CR><Esc>
 map <Leader>cr :CocRestart<CR><Esc>
