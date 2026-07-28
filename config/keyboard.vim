@@ -61,6 +61,12 @@ noremap <D-C-}> :+tabmove<CR>
 
 " }}} Window management
 
+" Paste {{{
+
+map <D-v> "+pgV=
+
+" }}} Paste
+
 " Switch to a tab by number {{{
 
 nnoremap <D-1> 1gt
