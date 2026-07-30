@@ -15,6 +15,10 @@ map <silent> <Leader>_ :50Vexplore .<CR>
 
 function! s:ExploreAndSelectCurrentFile(horizontal = v:true) abort
   let l:current_file_name = expand('%:t')
+  let l:exe = ""
+  if executable(expand('%'))
+    let l:exe = "*"
+  endif
 
   if a:horizontal
     Explore
@@ -22,7 +26,7 @@ function! s:ExploreAndSelectCurrentFile(horizontal = v:true) abort
     50Vexplore!
   endif
 
-  call search('\V\^' . l:current_file_name . '\$', 'c')
+  call search('\V\^' . l:current_file_name . l:exe . '\$', 'c')
 endfunction
 
 " }}} Global mappings
