@@ -11,7 +11,7 @@ let g:netrw_winsize   = -g:sidebar_width
 map <silent> - :call <SID>ExploreAndSelectCurrentFile()<CR>
 map <silent> _ :call <SID>ExploreAndSelectCurrentFile(v:false)<CR>
 map <silent> <Leader>- :Explore .<CR>
-map <silent> <Leader>_ :50Vexplore .<CR>
+map <silent> <Leader>_ :50Vexplore! .<CR>
 
 function! s:ExploreAndSelectCurrentFile(horizontal = v:true) abort
   let l:current_file_name = expand('%:t')
