@@ -64,7 +64,7 @@ noremap <D-C-}> :+tabmove<CR>
 " Paste {{{
 
 map <D-v> "+pgV=
-imap <D-v> <C-o>"+p
+imap <D-v> <C-r>+
 
 " }}} Paste
 
