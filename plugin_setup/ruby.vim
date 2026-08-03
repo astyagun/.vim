@@ -1,8 +1,8 @@
 " Indentation
 " https://github.com/vim-ruby/vim-ruby/tree/master/doc
-let g:ruby_indent_assignment_style     = 'hanging'
+let g:ruby_indent_assignment_style     = 'variable'
 let g:ruby_indent_block_style          = 'do'
-let g:ruby_indent_hanging_elements     = 1
+let g:ruby_indent_hanging_elements     = 0
 
 " Completion
 let g:rubycomplete_buffer_loading      = 1
