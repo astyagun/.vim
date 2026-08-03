@@ -108,6 +108,9 @@ function! s:VimwikiLocalCustomization() abort
   " Fetch IMDb rating
   nmap <buffer> <Leader>Wi :call <SID>VimwikiFetchIMDbRating()<CR>
   vmap <buffer> <Leader>Wi :g/-/call <SID>VimwikiFetchIMDbRating() <Bar> nohl<CR>
+  " Fetch Kinopoisk rating
+  nmap <buffer> <Leader>Wk :call <SID>VimwikiFetchKinopoiskRating()<CR>
+  vmap <buffer> <Leader>Wk :g/-/call <SID>VimwikiFetchKinopoiskRating() <Bar> nohl<CR>
 
   " Commands
 
@@ -235,3 +238,63 @@ function! s:VimwikiFetchIMDbRating() abort
 endfunction
 
 " }}} function s:VimwikiFetchIMDbRating
+
+" function s:VimwikiFetchKinopoiskRating {{{
+
+function! s:VimwikiFetchKinopoiskRating() abort
+  if empty(matchstr(getline(line(".")), '\v^\s*-( \d+\.\d| \?)* +\[.+\]\(https://www\.kinopoisk\.ru/series/\d+/.*\)\s*$'))
+    echoe "Given line doesn't match expected format"
+    return
+  end
+
+  " " Normalize URL
+  " " m.imdb.com -> www.imdb.com
+  " if !empty(matchstr(getline(line(".")), '\v\(https:\/\/m\.imdb\.com\/.*\)'))
+  "   substitute/\v\(https:\/\/m\.imdb\.com\/(.*)\)/(https:\/\/www.imdb.com\/\1)/
+  " endif
+  " Remove query params
+  if !empty(matchstr(getline(line(".")), '\v\(.*\?.+\)'))
+    substitute/\v\((https:\/\/www\.kinopoisk\.ru\/series\/\d+\/).*\)/(\1)/
+  endif
+
+  let l:line = getline(line("."))
+
+  " Find Kinopoisk URL and Kinopoisk ID in current line
+  let l:kinopoisk_url = matchstr(l:line, '\vhttps://www\.kinopoisk\.ru/series/\d+')
+  if empty(l:kinopoisk_url)
+    echoe "No Kinopoisk URL found in current line"
+    return
+  endif
+
+  " Fetch Kinopoisk rating
+  let l:kinopoisk_fetch_command = $"webpage {l:kinopoisk_url}"
+  let l:kinopoisk_page = system(l:kinopoisk_fetch_command)
+  if v:shell_error || empty(l:kinopoisk_page)
+    echoe "Error fetching Kinopoisk page"
+    return
+  endif
+  let l:kinopoisk_raw_rating = systemlist(
+        \ "htmlq --text '[data-tid=\"kp-movie-rating.rating-value\"] span'",
+        \ l:kinopoisk_page
+        \ )[0]
+  if v:shell_error || empty(l:kinopoisk_raw_rating)
+    echoe "Error fetching Kinopoisk rating"
+    return
+  endif
+  let l:kinopoisk_rating = l:kinopoisk_raw_rating
+  " let l:kinopoisk_rating = substitute(l:kinopoisk_raw_rating, "/10$", "", "")
+  " let l:kinopoisk_rating = printf("%.1f", str2float(l:kinopoisk_rating))
+
+  if match(l:kinopoisk_rating, '\v\zs\d(\.\d)?\ze') < 0
+    echoe "Error: " . l:kinopoisk_rating
+    return
+  endif
+
+  echom "Fetched rating from Kinopoisk: " . l:kinopoisk_rating
+
+  " Add rating to current line
+  let l:new_line = substitute(l:line, '\v^(\s*(- )?)(.*)$', $'\1{l:kinopoisk_rating} \3', "")
+  call setline(line("."), l:new_line)
+endfunction
+
+" }}} function s:VimwikiFetchKinopoiskRating
