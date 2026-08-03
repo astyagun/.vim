@@ -13,13 +13,13 @@ def RubocopGx()
     var [group, cop_name] = split(tolower(cfile), '/')
     var url: string
     if group ==# 'rails' || group ==# "performance"
-      url = 'https://docs.rubocop.org/rubocop-' .. group .. '/cops_' .. group .. '.html#' .. group .. cop_name
+      url = 'https://docs.rubocop.org/rubocop-' .. group .. '/latest/cops_' .. group .. '.html\#' .. group .. cop_name
     elseif group ==# 'rspec' || group ==# 'capybara' || group ==# 'factorybot'
-      url = 'https://docs.rubocop.org/rubocop-rspec/cops_' .. group .. '.html#' .. group .. cop_name
+      url = 'https://docs.rubocop.org/rubocop-rspec/latest/cops_' .. group .. '.html\#' .. group .. cop_name
     else
-      url = 'https://docs.rubocop.org/rubocop/cops_' .. group .. '.html#' .. group .. cop_name
+      url = 'https://docs.rubocop.org/rubocop/latest/cops_' .. group .. '.html\#' .. group .. cop_name
     endif
-    dist#vim9#Open(url)
+    execute "!open -a Safari '" .. url .. "'"
   else
     dist#vim9#Open(cfile)
   endif
