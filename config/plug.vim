@@ -104,11 +104,9 @@ Plug 'vim-scripts/confluencewiki.vim', #{for: 'confluencewiki'}
 
 " Integrations {{{
 
-Plug 'antoinemadec/coc-fzf'
 Plug 'dense-analysis/ale'
 Plug 'janko-m/vim-test', #{for: 'ruby'} " Depends on skywind3000/asyncrun.vim
 Plug 'mhinz/vim-signify'
-Plug 'neoclide/coc.nvim', #{branch: 'release'}
 Plug 'samoshkin/vim-mergetool', #{on: 'MergetoolStart'}
 Plug 'shumphrey/fugitive-gitlab.vim'
 Plug 'skywind3000/asyncrun.vim', #{on: 'AsyncRun'}

@@ -30,4 +30,4 @@ let g:llama_config.keymap_inst_rerun      = "<Leader><D-r>"
 let g:llama_config.keymap_inst_trigger    = "<Leader><D-j>"
 
 map <Leader>le :LlamaEnable<CR>
-map <Leader>ld :LlamaDisable<CR>
+map <Leader>lE :LlamaDisable<CR>
