@@ -113,7 +113,7 @@ Plug 'skywind3000/asyncrun.vim', #{on: 'AsyncRun'}
 Plug 't9md/vim-ruby-xmpfilter', #{for: 'ruby'}
 Plug 'tpope/vim-dadbod', #{on: 'DB'}
 Plug 'tpope/vim-eunuch' " Unix commands
-Plug 'tpope/vim-fugitive', #{tag: 'v*'}
+Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
 
 " }}} Integrations
