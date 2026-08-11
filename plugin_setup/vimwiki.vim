@@ -286,7 +286,7 @@ function! s:VimwikiFetchKinopoiskRating() abort
   " let l:kinopoisk_rating = printf("%.1f", str2float(l:kinopoisk_rating))
 
   if match(l:kinopoisk_rating, '\v\zs\d(\.\d)?\ze') < 0
-    echoe "Error: " . l:kinopoisk_rating
+    echoe "Error, rating doesn't match expected pattern: " . l:kinopoisk_rating
     return
   endif
 
