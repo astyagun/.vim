@@ -65,6 +65,7 @@ noremap <D-C-}> :+tabmove<CR>
 
 map <D-v> "+pgV=
 imap <D-v> <C-o>:setl paste<CR><C-r>+<C-o>:setl nopaste<CR>
+cmap <D-v> <C-r>+
 
 " }}} Paste
 
