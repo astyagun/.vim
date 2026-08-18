@@ -115,6 +115,7 @@ Plug 'tpope/vim-dadbod', #{on: 'DB'}
 Plug 'tpope/vim-eunuch' " Unix commands
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
+" Plug 'yegappan/lsp' " TODO: Use this when I need a full-featured LSP support
 
 " }}} Integrations
 
