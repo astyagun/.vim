@@ -1,5 +1,6 @@
 scriptencoding utf-8
 
+let g:ale_biome_options            = "--indent-syle=space"
 let g:ale_change_sign_column_color = 0
 let g:ale_completion_enabled       = 1
 let g:ale_echo_cursor              = 0
@@ -17,11 +18,17 @@ let g:ale_linter_aliases = {
       \   "arduino": "cpp",
       \ }
 let g:ale_linters = {
+      \   "javascript": ["biome"],
+      \   "json": ["biome", "jq"],
       \   "ruby": ["solargraph", "ruby", "rubocop", "reek"],
+      \   "typescript": ["biome"],
       \   "zsh":  ["shell", "shellcheck"],
       \ }
 let g:ale_fixers = {
+      \   "javascript": ["biome"],
+      \   "json": ["biome", "jq"],
       \   "ruby": ["solargraph", "rubocop"],
+      \   "typescript": ["biome"],
       \ }
 
 function! s:ALERubocopFix() range abort
