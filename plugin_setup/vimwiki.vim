@@ -247,11 +247,11 @@ function! s:VimwikiFetchKinopoiskRating() abort
     return
   end
 
-  " " Normalize URL
-  " " m.imdb.com -> www.imdb.com
-  " if !empty(matchstr(getline(line(".")), '\v\(https:\/\/m\.imdb\.com\/.*\)'))
-  "   substitute/\v\(https:\/\/m\.imdb\.com\/(.*)\)/(https:\/\/www.imdb.com\/\1)/
-  " endif
+  " Normalize name and URL
+  " Remove noise from title
+  if !empty(matchstr(getline(line(".")), ' — описание, интересные факты — Кинопоиск'))
+    substitute/ — описание, интересные факты — Кинопоиск//
+  endif
   " Remove query params
   if !empty(matchstr(getline(line(".")), '\v\(.*\?.+\)'))
     substitute/\v\((https:\/\/www\.kinopoisk\.ru\/series\/\d+\/).*\)/(\1)/
