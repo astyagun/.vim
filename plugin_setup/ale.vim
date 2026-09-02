@@ -4,6 +4,7 @@ let g:ale_biome_options            = "--indent-syle=space"
 let g:ale_change_sign_column_color = 0
 let g:ale_completion_enabled       = 1
 let g:ale_echo_cursor              = 0
+let g:ale_hover_cursor             = 0
 let g:ale_ruby_reek_show_wiki_link = 1
 let g:ale_ruby_rubocop_options     = "--display-style-guide --parallel"
 let g:ale_set_balloons             = 0
