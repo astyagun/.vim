@@ -111,6 +111,9 @@ function! s:VimwikiLocalCustomization() abort
   " Fetch Kinopoisk rating
   nmap <buffer> <Leader>Wk :call <SID>VimwikiFetchKinopoiskRating()<CR>
   vmap <buffer> <Leader>Wk :g/-/call <SID>VimwikiFetchKinopoiskRating() <Bar> nohl<CR>
+  " Fetch Shikimori rating
+  nmap <buffer> <Leader>Wh :call <SID>VimwikiFetchShikimoriRating()<CR>
+  vmap <buffer> <Leader>Wh :g/-/call <SID>VimwikiFetchShikimoriRating() <Bar> nohl<CR>
 
   " Commands
 
@@ -226,7 +229,7 @@ function! s:VimwikiFetchIMDbRating() abort
   let l:imdb_rating = printf("%.1f", str2float(l:imdb_rating))
 
   if match(l:imdb_rating, '\v\zs\d(\.\d)?\ze') < 0
-    echoe "Error: " . l:imdb_rating
+    echoe "Error, rating doesn't match expected pattern: " . l:imdb_rating
     return
   endif
 
@@ -298,3 +301,58 @@ function! s:VimwikiFetchKinopoiskRating() abort
 endfunction
 
 " }}} function s:VimwikiFetchKinopoiskRating
+
+" function s:VimwikiFetchShikimoriRating {{{
+
+function! s:VimwikiFetchShikimoriRating() abort
+  if empty(matchstr(getline(line(".")), '\v^\s*-( \d+\.\d| \?)* +\[.+\]\(https://shikimori\.io/animes/\d+-[^)]+\)\s*$'))
+    echoe "Given line doesn't match expected format"
+    return
+  end
+
+  " Normalize URL
+  " Remove query params
+  if !empty(matchstr(getline(line(".")), '\v\(.*\?.+\)'))
+    substitute/\v\((https:\/\/shikimori\.io\/animes\/\d+-[A-z-]+).*\)/(\1)/
+  endif
+
+  let l:line = getline(line("."))
+
+  " Find Shikimori URL in current line
+  let l:shikimori_url = matchstr(l:line, '\vhttps://shikimori\.io/animes/\d+-[^)]+')
+  if empty(l:shikimori_url)
+    echoe "No Shikimori URL found in current line"
+    return
+  endif
+
+  " Fetch Shikimori rating
+  let l:shikimori_fetch_command = $"webpage {l:shikimori_url}"
+  let l:shikimori_page = system(l:shikimori_fetch_command)
+  if v:shell_error || empty(l:shikimori_page)
+    echoe "Error fetching Shikimori page"
+    return
+  endif
+  let l:shikimori_raw_rating = systemlist(
+        \ "htmlq --attribute content 'meta[itemprop=\"ratingValue\"]'",
+        \ l:shikimori_page
+        \ )[0]
+  if v:shell_error || empty(l:shikimori_raw_rating)
+    echoe "Error fetching Shikimori rating"
+    return
+  endif
+  let l:shikimori_rating = l:shikimori_raw_rating
+  let l:shikimori_rating = printf("%.1f", str2float(l:shikimori_rating))
+
+  if match(l:shikimori_rating, '\v\zs\d(\.\d)?\ze') < 0
+    echoe "Error, rating doesn't match expected pattern: " . l:shikimori_rating
+    return
+  endif
+
+  echom "Fetched rating from Shikimori: " . l:shikimori_rating
+
+  " Add rating to current line
+  let l:new_line = substitute(l:line, '\v^(\s*(- )?)(.*)$', $'\1{l:shikimori_rating} \3', "")
+  call setline(line("."), l:new_line)
+endfunction
+
+" }}} function s:VimwikiFetchShikimoriRating
