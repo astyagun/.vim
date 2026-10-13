@@ -13,8 +13,6 @@ function! s:SetColorscheme() abort
   redraw!
 endfunction
 
-call s:SetColorscheme()
-
 if exists('##OSAppearanceChanged')
   augroup OSAppearance
     autocmd!
@@ -38,6 +36,9 @@ function! s:ApplyCustomHighlights() abort
 
   " Hide tilde from empty lines after file contents
   highlight EndOfBuffer guifg=bg
+
+  highlight link ALEVirtualTextError Operator
+  highlight link ALEVirtualTextWarning ModeMsg
 endfunction
 
 function! s:ApplyCustomColorschemeHighlights() abort
@@ -75,3 +76,5 @@ endfunction
 
 " Create new buffer with examples of highlighting groups
 command! HiTest source $VIMRUNTIME/syntax/hitest.vim
+
+call s:SetColorscheme()
