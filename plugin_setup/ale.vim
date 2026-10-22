@@ -45,6 +45,33 @@ command! -range ALERubocopFix <line1>,<line2>call <SID>ALERubocopFix()
 
 set omnifunc=ale#completion#OmniFunc
 
+" Enable completion in JSON {{{ "
+
+" vscode-json-language-server advertises completion only when the client
+" declares completionItem.snippetSupport, which ALE hardcodes to false, so ALE
+" never sends textDocument/completion for JSON. Open the gate after the server
+" starts, using ALE's public autoload API.
+function! s:ALEJsonEnableCompletion() abort
+  for [l:id, l:conn] in items(ale#lsp#GetConnections())
+    if get(l:conn, "language", "") isnot# "json"
+      continue
+    endif
+
+    if !ale#lsp#HasCapability(l:id, "completion")
+      call ale#lsp#UpdateCapabilities(l:id, {
+            \   "completionProvider": {"triggerCharacters": ["\"", ":"]},
+            \ })
+    endif
+  endfor
+endfunction
+
+augroup ale_json_completion
+  autocmd!
+  autocmd User ALELSPStarted call <SID>ALEJsonEnableCompletion()
+augroup END
+
+" }}} Enable completion in JSON "
+
 map <Leader>ll <Plug>(ale_lint)
 map <Leader>lr <Plug>(ale_reset)
 map <Leader>ld <Plug>(ale_detail)
