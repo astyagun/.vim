@@ -18,17 +18,21 @@ let g:ale_c_build_dir_names = ["build-uno", "build", "bin"]
 let g:ale_linter_aliases = {
       \   "arduino": "cpp",
       \ }
+" Ruby: disable Brakeman, that works on the whole project and is slow
+" Zsh: has only "shell" by default
 let g:ale_linters = {
-      \   "javascript": ["biome"],
-      \   "json": ["biome", "jq"],
-      \   "ruby": ["solargraph", "ruby", "rubocop", "reek"],
-      \   "typescript": ["biome"],
-      \   "zsh":  ["shell", "shellcheck"],
+      \   "ruby": ["ruby", "rubocop", "reek", "solargraph"],
+      \   "zsh":  ["shell", "shellcheck", "bash-language-server"]
       \ }
+" Is empty by default, has to be enabled explicitly
 let g:ale_fixers = {
+      \   "css":        ["biome"],
       \   "javascript": ["biome"],
-      \   "json": ["biome", "jq"],
-      \   "ruby": ["solargraph", "rubocop"],
+      \   "json":       ["biome"],
+      \   "jsonc":      ["biome"],
+      \   "ruby":       ["rubocop"],
+      \   "sql":        ["pgformatter"],
+      \   "toml":       ["tombi_format"],
       \   "typescript": ["biome"],
       \ }
 
