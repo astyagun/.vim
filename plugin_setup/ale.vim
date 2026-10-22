@@ -1,6 +1,6 @@
 scriptencoding utf-8
 
-let g:ale_biome_options            = "--indent-syle=space"
+let g:ale_biome_options            = "--indent-style=space"
 let g:ale_change_sign_column_color = 0
 let g:ale_completion_enabled       = 1
 let g:ale_echo_cursor              = 0
@@ -71,6 +71,45 @@ augroup ale_json_completion
 augroup END
 
 " }}} Enable completion in JSON "
+
+" Enable hover on K {{{ "
+
+" Map K for hover once per buffer, only after a language server that reports
+" hover support has connected for that buffer. Buffers without such a server
+" keep the default K behaviour, and filetype plugins that map K themselves
+" keep their mapping.
+function! s:ALEMapHover() abort
+  if get(b:, "ale_hover_mapped", 0)
+    return
+  endif
+
+  let l:k_map = maparg("K", "n", v:false, v:true)
+
+  if !empty(l:k_map) && l:k_map.buffer
+    let b:ale_hover_mapped = 1
+
+    return
+  endif
+
+  for [l:id, l:conn] in items(ale#lsp#GetConnections())
+    if get(l:conn, "language", "") isnot# &filetype
+    \|| !ale#lsp#HasCapability(l:id, "hover")
+      continue
+    endif
+
+    let b:ale_hover_mapped = 1
+    nmap <buffer><silent> K <Plug>(ale_hover)
+
+    return
+  endfor
+endfunction
+
+augroup ale_hover_map
+  autocmd!
+  autocmd User ALELSPStarted call <SID>ALEMapHover()
+augroup END
+
+" }}} Enable hover on K "
 
 map <Leader>ll <Plug>(ale_lint)
 map <Leader>lr <Plug>(ale_reset)
