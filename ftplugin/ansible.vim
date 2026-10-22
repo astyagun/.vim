@@ -1,4 +1,4 @@
-nnoremap K :call <SID>OpenAnsibleDoc()<CR>
+nnoremap <buffer> K :call <SID>OpenAnsibleDoc()<CR>
 
 function! s:OpenAnsibleDoc() abort
   let l:cword = expand("<cword>")
