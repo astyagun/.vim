@@ -255,6 +255,9 @@ function! s:VimwikiFetchKinopoiskRating() abort
   if !empty(matchstr(getline(line(".")), ' — описание, интересные факты — Кинопоиск'))
     substitute/ — описание, интересные факты — Кинопоиск//
   endif
+  if !empty(matchstr(getline(line(".")), ', все серии'))
+    substitute/, все серии//
+  endif
   " Remove query params
   if !empty(matchstr(getline(line(".")), '\v\(.*\?.+\)'))
     substitute/\v\((https:\/\/www\.kinopoisk\.ru\/series\/\d+\/).*\)/(\1)/
